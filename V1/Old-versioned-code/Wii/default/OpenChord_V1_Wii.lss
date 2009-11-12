@@ -1,0 +1,3830 @@
+
+OpenChord_V1_Wii.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000026  00800100  00001faa  0000203e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00001faa  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000145  00800126  00800126  00002064  2**0
+                  ALLOC
+  3 .debug_aranges 00000040  00000000  00000000  00002064  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 00000157  00000000  00000000  000020a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000011c5  00000000  00000000  000021fb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000411  00000000  00000000  000033c0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000cd3  00000000  00000000  000037d1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000e0  00000000  00000000  000044a4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000035f  00000000  00000000  00004584  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000005f9  00000000  00000000  000048e3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000090  00000000  00000000  00004edc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 53 05 	jmp	0xaa6	; 0xaa6 <__ctors_end>
+       4:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+       8:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+       c:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      10:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      14:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      18:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      1c:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      20:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      24:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      28:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      2c:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      30:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      34:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      38:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      3c:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      40:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      44:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      48:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      4c:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      50:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      54:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      58:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      5c:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      60:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      64:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      68:	0c 94 d3 0e 	jmp	0x1da6	; 0x1da6 <__vector_26>
+      6c:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      70:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      74:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+      78:	0c 94 70 05 	jmp	0xae0	; 0xae0 <__bad_interrupt>
+
+0000007c <ans_tbl>:
+      7c:	a8 77 a6 e0 f7 43 5a 35 85 e2 72 97 8f b7 1a 62     .w...CZ5..r....b
+      8c:	87 38 0d 67 c7 be 4f 3e 20 76 37 8f 68 b7 a9 26     .8.g..O> v7.h..&
+      9c:	3f 2b 10 e3 30 7e 90 0e 85 0a                       ?+..0~....
+
+000000a6 <sboxes>:
+      a6:	70 51 03 86 40 0d 4f eb 3e cc d1 87 35 bd f5 0b     pQ..@.O.>...5...
+      b6:	5e d0 f8 f2 d5 e2 6c 31 0c ad fc 21 c3 78 c1 06     ^.....l1...!.x..
+      c6:	c2 4c 55 e6 4a 34 48 11 1e da e7 1a 84 a0 96 a7     .LU.J4H.........
+      d6:	e3 7f af 63 9c fa 23 5b 79 c8 9e ba b2 c9 22 12     ...c..#[y.....".
+      e6:	4b b3 a1 b6 32 49 a2 e1 89 39 10 66 c5 07 8f 54     K...2I...9.f...T
+      f6:	ea 91 ca 3f f9 19 f0 d7 46 bc 28 1b 61 e8 2f 6a     ...?....F.(.a./j
+     106:	ae 9d f6 4e 09 14 77 4d db 1f 2e 7b 7c f1 43 a3     ...N..wM...{|.C.
+     116:	00 b8 13 8c 85 b9 29 75 88 fd d2 56 1c 50 97 41     ......)u...V.P.A
+     126:	e5 3b 60 b5 c0 64 ee 98 d6 2d 25 a4 aa cd 7d a8     .;`..d...-%...}.
+     136:	83 c6 ab be 44 99 26 3c ce 9f bf d3 cb 76 7a 7e     ....D.&<.....vz~
+     146:	82 01 8a 9a 80 1d 0e b0 5c d4 38 62 f4 30 e0 8e     ........\.8b.0..
+     156:	53 b7 02 57 ac a6 52 0a 6d 92 65 17 24 33 45 72     S..W..R.m.e.$3Er
+     166:	74 b1 b4 f7 5d ed 2c ff 47 37 5a 90 bb df 2a 16     t...].,.G7Z...*.
+     176:	59 95 d9 c4 27 67 73 c7 68 fe a5 dd 6b 5f 93 d8     Y...'gs.h...k_..
+     186:	ec 05 3a 8d 6e fb 3d a9 69 36 f3 94 de ef 15 6f     ..:.n.=.i6.....o
+     196:	8b 9b 08 0f dc 81 18 20 04 e4 71 cf e9 2b 42 58     ....... ..q..+BX
+     1a6:	01 a0 a9 62 d6 3f 85 a7 b6 d4 fa 15 66 17 09 bd     ...b.?......f...
+     1b6:	5d 14 34 26 59 72 91 54 06 4f f8 b0 5b 74 93 99     ].4&Yr.T.O..[t..
+     1c6:	8c f2 45 cd ea 4e ad 10 4a e5 ca ee df c6 6f 9f     ..E..N..J.....o.
+     1d6:	88 8e 02 cc 08 a8 77 94 6d 21 b1 28 e4 39 79 96     ......w.m!.(.9y.
+     1e6:	60 71 81 16 2e e6 78 b9 c4 46 9a 42 ae b7 7c 43     `q....x..F.B..|C
+     1f6:	b3 22 1a 86 c2 32 3d 2d 9c d2 29 e9 63 9b d1 31     ."...2=-..).c..1
+     206:	38 5e 1e 36 41 bb 03 18 2b 3e bf 68 61 fc 52 c0     8^.6A...+>.ha.R.
+     216:	de e0 0a 58 13 5a 00 be 1c 90 0e 53 12 fd e2 6e     ...X.Z.....S...n
+     226:	ba ce 24 27 44 7f 87 a3 a1 d5 50 40 e3 f9 83 f7     ..$'D.....P@....
+     236:	c7 a2 35 c8 db 19 ab 2f 11 25 ed 33 9e 55 e1 48     ..5..../.%.3.U.H
+     246:	af 73 84 da 2a aa 51 eb 9d 95 b2 cb e7 70 80 fe     .s..*.Q......p..
+     256:	4c 65 04 ef c5 f1 c3 3a b4 f5 5f 23 89 dd 30 a5     Le.....:.._#..0.
+     266:	8b d3 f6 dc 4d 64 d7 f0 8f ec 56 37 5c a4 0d 07     ....Md....V7\...
+     276:	76 8a 2c 0b b5 d8 c1 1f e8 3b f4 4b 1b 47 6c 49     v.,......;.K.GlI
+     286:	67 7b 92 cf 75 7e 20 d9 7d 3c 97 7a d0 05 6b 0f     g{..u~ .}<.z..k.
+     296:	1d fb 82 98 57 8d f3 6a bc ac c9 a6 ff b8 69 0c     ....W..j......i.
+     2a6:	4c 4d 72 07 5a 49 33 8d a2 ab 46 3d 63 0d a0 97     LMr.ZI3...F=c...
+     2b6:	ff f0 f5 fa c0 e9 db 62 e4 e1 74 43 dc 86 18 29     .......b..tC...)
+     2c6:	37 f4 06 e2 ed 6f 90 48 1e 2d 1d ea 73 94 54 df     7....o.H.-..s.T.
+     2d6:	25 f6 47 27 d9 11 77 c9 84 1c 5b 5c 51 81 a6 22     %.G'..w...[\Q.."
+     2e6:	3e 24 96 c8 8a ec 82 7c 09 b8 45 4a 57 bb 2f 50     >$.....|..EJW./P
+     2f6:	75 8e 61 70 8c 6c af d0 fd b4 1b ae de fe 3b b5     u.ap.l........;.
+     306:	36 bd 55 01 0e 9c 41 56 5f b3 26 03 83 ba 13 4b     6.U...AV_.&....K
+     316:	ca c5 0a f8 60 a5 b9 c7 c3 98 32 fb 12 f9 a7 92     ....`.....2.....
+     326:	aa 68 f3 78 7e 05 20 21 02 e8 bf f2 b0 59 8f d2     .h.x~. !.....Y..
+     336:	cb 87 65 15 f1 1a b2 30 ad ee 58 a3 8b 66 1f 2c     ..e....0..X..f.,
+     346:	d7 5d 19 85 a8 e6 d3 6b a1 0c 91 93 6a 5e 0b 79     .].....k....j^.y
+     356:	e3 dd 00 4f 3c 89 6e 71 69 a9 ac 40 e5 99 28 c6     ...O<.nqi..@..(.
+     366:	31 4e 7a cd 08 9e 7d ef 17 fc 88 d8 a4 6d 44 95     1Nz...}......mD.
+     376:	d1 b7 d4 9b be 2a 34 64 2b cf 2e eb 38 ce 23 e0     .....*4d+...8.#.
+     386:	3a 3f f7 7b 9f 10 53 bc 52 67 16 e7 80 76 04 c4     :?.{..S.Rg...v..
+     396:	b6 c1 c2 7f 9a da d5 39 42 14 9d b1 0f 35 d6 cc     .......9B....5..
+     3a6:	b9 da 38 0c a2 9c 09 1f 06 b1 b6 fd 1a 69 23 30     ..8..........i#0
+     3b6:	c4 de 01 d1 f4 58 29 37 1c 7d d5 bf ff bd c8 c9     .....X)7.}......
+     3c6:	cf 65 be 7b 78 97 98 67 08 b3 26 57 f7 fa 40 ad     .e.{x..g..&W..@.
+     3d6:	8e 75 a6 7c db 91 8b 51 99 d4 17 7a 90 8d ce 63     .u.|...Q...z...c
+     3e6:	cb 4e a0 ab 18 3a 5b 50 7f 21 74 c1 bb b8 b7 ba     .N...:[P.!t.....
+     3f6:	0b 35 95 31 59 9a 4d 04 07 1e 5a 76 13 f3 71 83     .5.1Y.M...Zv..q.
+     406:	d0 86 03 a8 39 42 aa 28 e6 e4 d8 5d d3 d0 6e 6f     ....9B.(...]..no
+     416:	96 fb 5e bc 56 c2 5f 85 9b e7 af d2 3b 84 6a a7     ..^.V._.....;.j.
+     426:	53 c5 44 49 a5 f9 36 72 3d 2c d9 1b a1 f5 4f 93     S.DI..6r=,....O.
+     436:	9d 68 47 41 16 ca 2a 4c a3 87 d6 e5 19 2e 77 15     .hGA..*L......w.
+     446:	6d 70 c0 df b2 00 46 ed c6 6c 43 60 92 2d a9 22     mp....F..lC`.-."
+     456:	45 8f 34 55 ae a4 0a 66 32 e0 dc 02 ac e8 20 8c     E.4U...f2..... .
+     466:	89 62 4a fe ee c3 e3 3c f1 79 05 e9 f6 27 33 cc     .bJ....<.y...'3.
+     476:	f2 9e 11 81 7e 80 10 8a 82 9f 48 0d d7 b4 fc 2f     ....~.....H..../
+     486:	b5 c7 dd 88 14 6b 2b 54 ea 1d 94 5c b0 ef 12 24     .....k+T...\...$
+     496:	cd eb e1 e2 64 73 3f 0e 52 61 25 3e f8 0f 4b ec     ....ds?.Ra%>..K.
+     4a6:	c0 00 30 f6 02 49 3d 10 6e 20 c9 a6 2f fe 2c 2b     ..0..I=.n ../.,+
+     4b6:	75 2e 45 26 ab 48 a9 80 fc 04 cc d3 b5 ba a3 38     u.E&.H.........8
+     4c6:	31 7d 01 d9 a7 7b 96 b6 63 69 4e f7 de e0 78 ca     1}...{..ciN...x.
+     4d6:	50 aa 41 91 65 88 e4 21 85 da 3a 27 be 1c 3e 42     P.A.e..!..:'..>B
+     4e6:	5e 17 52 7f 1f 89 24 6f 8f 5c 67 74 0e 12 87 8d     ^.R...$o.\gt....
+     4f6:	e9 34 ed 73 c4 f8 61 5b 05 df 59 4c 97 79 83 18     .4.s..a[..YL.y..
+     506:	a4 55 95 eb bd 53 f5 f1 57 66 46 9f b2 81 09 51     .U...S..WfF....Q
+     516:	86 22 16 dd 23 93 76 29 c2 d7 1d d4 bf 36 3f ea     ."..#.v).....6?.
+     526:	4b 11 32 b9 62 54 60 d6 6d 43 9a 0d 92 9c b0 ef     K.2.bT`.mC......
+     536:	58 6c 9d 77 2d 70 fa f3 b3 0b e2 40 7e f4 8a e5     Xl.w-p.....@~...
+     546:	8c 3c 56 71 d1 64 e1 82 0a cb 13 15 90 ec 03 99     .<Vq.d..........
+     556:	af 14 5d 0f 33 4a 94 a5 a8 35 1b e3 6a c6 28 ff     ..].3J...5..j.(.
+     566:	4d e7 25 84 ac 08 ae c5 a2 2a b8 37 0c 7a a0 c3     M.%......*.7.z..
+     576:	ce ad 06 1a 9e 8b fb d5 d0 c1 1e d0 b4 9b b1 44     ...............D
+     586:	f2 47 c7 68 cf 72 bb 4f 5a f9 dc 6b db d2 e8 7c     .G.h.r.OZ..k...|
+     596:	c8 ee 98 a1 e6 d8 39 07 5f fd 8e 19 b7 3b bc cd     ......9._....;..
+     5a6:	7c e3 81 73 b2 11 bf 6f 20 98 fe 75 96 ef 6c da     |..s...o ..u..l.
+     5b6:	50 e1 09 72 54 45 ba 34 80 5b ed 3e 53 2c 87 a4     P..rTE.4.[.>S,..
+     5c6:	57 f3 33 3f 3c b7 67 b4 a3 25 60 4f 07 6b 1b 47     W.3?<.g..%`O.k.G
+     5d6:	15 0f e4 0a ea d1 32 78 36 49 8d 4b d2 bc a5 dc     ......2x6I.K....
+     5e6:	1d 0d 4d cd 9a 82 5f fc 94 65 be e2 f4 c9 1e 44     ..M..._..e.....D
+     5f6:	cb 9e 0c 64 71 26 63 b3 14 e8 40 70 8a 0e 19 42     ...dq&c...@p...B
+     606:	6d ac 88 10 5c df 41 a9 ad e5 fb 74 cc d5 06 8e     m...\.A....t....
+     616:	59 86 ce 1f 3d 76 e0 8f b9 77 27 7b a6 d8 29 d3     Y...=v...w'{..).
+     626:	ec b8 13 f7 fa c3 51 6a de 4a 5a eb c2 8b 23 48     ......Qj.JZ...#H
+     636:	92 cf 62 a8 99 f8 d0 2e 85 61 43 c8 bd f0 05 93     ..b......aC.....
+     646:	ca 4e f1 7d 30 fd c4 69 66 2f 08 b1 52 f9 21 e6     .N.}0..if/..R.!.
+     656:	7a 2b dd 39 84 ff c0 91 d6 37 d4 7f 2d 9b 5d a1     z+.9.....7..-.].
+     666:	3b 6e b5 c5 46 04 f5 90 ee 7e 83 1c 03 56 b6 aa     ;n..F....~...V..
+     676:	00 17 01 35 55 79 0b 12 bb 1a 31 e7 02 28 16 c1     ...5Uy....1..(..
+     686:	f6 a2 db 18 9c 89 68 38 97 ab c7 2a d7 3a f2 c6     ......h8...*.:..
+     696:	24 4c b0 58 a0 22 5e 9d d9 a7 e9 ae af 8c 95 9f     $L.X."^.........
+     6a6:	28 b7 20 d7 b0 30 c3 09 19 c0 67 d6 00 3c 7e e7     (. ..0....g..<~.
+     6b6:	e9 f4 08 5a f8 b8 2e 05 a6 25 9e 5c d8 15 0d e1     ...Z.....%.\....
+     6c6:	f6 11 54 6b cd 21 46 66 5e 84 ad 06 38 29 44 c5     ..Tk.!Ff^...8)D.
+     6d6:	a2 ce f1 aa c1 40 71 86 b5 ef fc 36 a8 cb 0a 48     .....@q....6...H
+     6e6:	27 45 64 a3 af 8c b2 c6 9f 07 89 dc 17 d3 49 79     'Ed...........Iy
+     6f6:	fb fe 1d d0 b9 88 43 52 bc 01 78 2b 7d 94 c7 0e     ......CR..x+}...
+     706:	de a5 d5 9b cc f7 61 7a c2 74 81 39 03 ab 96 a0     ......az.t.9....
+     716:	37 bd 2d 72 75 3f c9 d4 8e 6f f9 8d ed 62 db 1c     7.-ru?...o...b..
+     726:	df 04 ac 1b 6c 14 4b 63 d0 bf b4 82 ec 7b 1a 59     ....l.Kc.....{.Y
+     736:	92 d2 10 60 b6 3d 5f e6 80 6e 70 c4 f2 35 d9 7c     ...`.=_..np..5.|
+     746:	ee e5 41 a4 5b 50 dd bb 4c f3 1f 9d 5d 57 55 51     ..A.[P..L...]WUQ
+     756:	97 e3 58 42 4d 9c 73 ba c8 77 31 69 26 ae ea 8a     ..XBM.s..w1i&...
+     766:	da 22 b3 87 56 fa 93 0b 34 16 33 e8 e4 53 be a9     ."..V...4.3..S..
+     776:	b1 3a 3e f5 90 6a cf 3b 12 fd 8f 9a a7 47 91 99     .:>..j.;.....G..
+     786:	eb 0f 24 ff 23 18 85 4e 7f 0c e0 a1 d2 d1 2c 2a     ..$.#..N......,*
+     796:	4a 02 4f 1e 95 68 8b 98 83 6d 76 ca 65 32 13 2f     J.O..h...mv.e2./
+     7a6:	c3 82 9a a4 ba 81 60 37 34 35 fc 80 a8 51 65 67     ......`745...Qeg
+     7b6:	ed 30 5f 10 d3 4a 27 2f 13 b9 2a d2 cc e1 ef ae     .0_..J'/..*.....
+     7c6:	eb be f4 bd cf 43 b3 c5 88 84 b7 dd 39 40 ce 48     .....C......9@.H
+     7d6:	6d 9b 72 61 7e e7 a1 4e 53 2e 77 3b e2 c9 36 22     m.ra~..NS.w;..6"
+     7e6:	1b 6e 73 b1 03 b2 4c 87 a9 d4 4d 0f d8 15 6c aa     .ns...L...M...l.
+     7f6:	18 f6 49 57 5d fb 7a 14 94 63 a0 11 b0 9e de 05     ..IW].z..c......
+     806:	46 c8 ee 47 db dc 24 89 9c 91 97 29 e9 7b c1 07     F..G..$....).{..
+     816:	1e b8 fd fe ac c6 62 98 4f f1 79 e0 e8 6b 78 56     ......b.O.y..kxV
+     826:	b6 8d 04 50 86 ca 6f 20 e6 ea e5 76 17 1c 74 7f     ...P..o ...v..t.
+     836:	bc 0d 2c 85 f7 66 96 e4 8b 75 3f 4b d9 38 af 7c     ..,..f...u?K.8.|
+     846:	da 0b 83 2d 31 32 a2 f5 1d 59 41 45 bf 3c 1f f8     ...-12...YAE.<..
+     856:	f9 8a d0 16 25 69 12 99 9d 21 95 ab 01 a6 d7 b5     ....%i...!......
+     866:	c0 7d ff 58 0e 3a 92 d1 55 e3 08 9f d6 3e 52 8e     .}.X.:..U....>R.
+     876:	fa a3 c7 02 cd df 8f 64 19 8c f3 a7 0c 5e 0a 6a     .......d.....^.j
+     886:	09 f0 93 5b 42 c2 06 23 ec 71 ad b4 cb bb 70 28     ...[B..#.q....p(
+     896:	d5 1a 5c 33 68 5a 00 44 90 a5 c4 26 3d 2b f2 54     ..\3hZ.D...&=+.T
+     8a6:	96 ad da 1f ed 33 e1 81 69 08 0d 0a db 35 77 9a     .....3..i....5w.
+     8b6:	64 d1 fc 78 aa 1b d0 67 a0 dd fa 6c 63 71 05 84     d..x...g...lcq..
+     8c6:	17 6a 89 4f 66 7f c6 50 55 92 6f bd e7 d2 40 72     .j.Of..PU.o...@r
+     8d6:	8d bb ec 06 42 8a e4 88 9d 7e 7a 82 27 13 41 1a     ....B....~z.'.A.
+     8e6:	af c8 a4 76 b4 c2 fe 6d 1c d9 61 30 b3 7c ea f7     ...v...m..a0.|..
+     8f6:	29 0f f2 3b 51 c1 de 5f e5 2a 2f 99 0b 5d a3 2b     )..;Q.._.*/..].+
+     906:	4a ab 95 a5 d3 58 56 ee 28 31 00 cc 15 46 ca e6     J....XV.(1...F..
+     916:	86 38 3c 65 f5 e3 9f d6 5b 09 49 83 70 2d 53 a9     .8<e....[.I.p-S.
+     926:	7d e2 c4 ac 8e 5e b8 25 f4 b9 57 f3 f1 68 47 b2     }....^.%..W..hG.
+     936:	a2 59 20 ce 34 79 5c 90 0e 1e be d5 22 23 b1 c9     .Y .4y\....."#..
+     946:	18 62 16 2e 91 3e 07 8f d8 3f 93 3d d4 9b df 85     .b...>...?.=....
+     956:	21 fb 11 74 97 c7 d7 dc 4c 19 45 98 e9 43 02 4b     !..t....L.E..C.K
+     966:	bc c3 04 9c 6b f0 75 52 a7 26 f6 c5 ba cf b0 b7     ....k.uR.&......
+     976:	ae 5a a1 bf 03 8b 80 12 6e 0c eb f9 c0 44 24 ef     .Z......n....D$.
+     986:	10 f8 a8 8c e8 7b ff 9e 2c cd 60 36 87 b5 94 a6     .....{..,.`6....
+     996:	54 73 3a 14 4e 01 1d b6 fd 37 48 4d 39 cb e0 32     Ts:.N....7HM9..2
+	...
+
+00000aa6 <__ctors_end>:
+     aa6:	11 24       	eor	r1, r1
+     aa8:	1f be       	out	0x3f, r1	; 63
+     aaa:	cf ef       	ldi	r28, 0xFF	; 255
+     aac:	d4 e0       	ldi	r29, 0x04	; 4
+     aae:	de bf       	out	0x3e, r29	; 62
+     ab0:	cd bf       	out	0x3d, r28	; 61
+
+00000ab2 <__do_copy_data>:
+     ab2:	11 e0       	ldi	r17, 0x01	; 1
+     ab4:	a0 e0       	ldi	r26, 0x00	; 0
+     ab6:	b1 e0       	ldi	r27, 0x01	; 1
+     ab8:	ea ea       	ldi	r30, 0xAA	; 170
+     aba:	ff e1       	ldi	r31, 0x1F	; 31
+     abc:	02 c0       	rjmp	.+4      	; 0xac2 <.do_copy_data_start>
+
+00000abe <.do_copy_data_loop>:
+     abe:	05 90       	lpm	r0, Z+
+     ac0:	0d 92       	st	X+, r0
+
+00000ac2 <.do_copy_data_start>:
+     ac2:	a6 32       	cpi	r26, 0x26	; 38
+     ac4:	b1 07       	cpc	r27, r17
+     ac6:	d9 f7       	brne	.-10     	; 0xabe <.do_copy_data_loop>
+
+00000ac8 <__do_clear_bss>:
+     ac8:	12 e0       	ldi	r17, 0x02	; 2
+     aca:	a6 e2       	ldi	r26, 0x26	; 38
+     acc:	b1 e0       	ldi	r27, 0x01	; 1
+     ace:	01 c0       	rjmp	.+2      	; 0xad2 <.do_clear_bss_start>
+
+00000ad0 <.do_clear_bss_loop>:
+     ad0:	1d 92       	st	X+, r1
+
+00000ad2 <.do_clear_bss_start>:
+     ad2:	ab 36       	cpi	r26, 0x6B	; 107
+     ad4:	b1 07       	cpc	r27, r17
+     ad6:	e1 f7       	brne	.-8      	; 0xad0 <.do_clear_bss_loop>
+     ad8:	0e 94 03 06 	call	0xc06	; 0xc06 <main>
+     adc:	0c 94 d3 0f 	jmp	0x1fa6	; 0x1fa6 <_exit>
+
+00000ae0 <__bad_interrupt>:
+     ae0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000ae4 <wm_timer_inc>:
+												int buttonStringPatterns[][6], char *controllerMode);
+
+void wm_timer_inc()  // This function is unused by me.
+{
+        return;
+}
+     ae4:	08 95       	ret
+
+00000ae6 <setTimer>:
+
+
+
+void setTimer(void) //This sets up a timer to handle the green button thing
+{
+	PRR &= ~(1<<PRTIM1);	// ensure power to Timer/Counter1
+     ae6:	e4 e6       	ldi	r30, 0x64	; 100
+     ae8:	f0 e0       	ldi	r31, 0x00	; 0
+     aea:	80 81       	ld	r24, Z
+     aec:	87 7f       	andi	r24, 0xF7	; 247
+     aee:	80 83       	st	Z, r24
+
+	TCCR1A &= ~(1<<COM1A1);  // This prevents OC2A pin from doing anything
+     af0:	e0 e8       	ldi	r30, 0x80	; 128
+     af2:	f0 e0       	ldi	r31, 0x00	; 0
+     af4:	80 81       	ld	r24, Z
+     af6:	8f 77       	andi	r24, 0x7F	; 127
+     af8:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<COM1A0);  ///  to the pins
+     afa:	80 81       	ld	r24, Z
+     afc:	8f 7b       	andi	r24, 0xBF	; 191
+     afe:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<COM1B1);  
+     b00:	80 81       	ld	r24, Z
+     b02:	8f 7d       	andi	r24, 0xDF	; 223
+     b04:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<COM1B0);
+     b06:	80 81       	ld	r24, Z
+     b08:	8f 7e       	andi	r24, 0xEF	; 239
+     b0a:	80 83       	st	Z, r24
+
+	TCCR1A &= ~(1<<WGM11);  // These bits set up normal mode on the Waveform Generation
+     b0c:	80 81       	ld	r24, Z
+     b0e:	8d 7f       	andi	r24, 0xFD	; 253
+     b10:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<WGM10);  // This means that the counter acts like a normal timer,
+     b12:	80 81       	ld	r24, Z
+     b14:	8e 7f       	andi	r24, 0xFE	; 254
+     b16:	80 83       	st	Z, r24
+	TCCR1B &= ~(1<<WGM12);  // not some sort of fancy digital-analog converter or anything
+     b18:	e1 e8       	ldi	r30, 0x81	; 129
+     b1a:	f0 e0       	ldi	r31, 0x00	; 0
+     b1c:	80 81       	ld	r24, Z
+     b1e:	87 7f       	andi	r24, 0xF7	; 247
+     b20:	80 83       	st	Z, r24
+	TCCR1B &= ~(1<<WGM13);  // It counts up to 65536 and overflows to zero
+     b22:	80 81       	ld	r24, Z
+     b24:	8f 7e       	andi	r24, 0xEF	; 239
+     b26:	80 83       	st	Z, r24
+
+	TCCR1B |= (1<<CS12);   // These set the clock to CPU (8MHz) / 1024 
+     b28:	80 81       	ld	r24, Z
+     b2a:	84 60       	ori	r24, 0x04	; 4
+     b2c:	80 83       	st	Z, r24
+	TCCR1B &= ~(1<<CS11);  // or roughly 8 kHz (7.8125 kHz)
+     b2e:	80 81       	ld	r24, Z
+     b30:	8d 7f       	andi	r24, 0xFD	; 253
+     b32:	80 83       	st	Z, r24
+	TCCR1B |= (1<<CS10);   // When counting from zero to 0xFFFF, it takes about 8 seconds
+     b34:	80 81       	ld	r24, Z
+     b36:	81 60       	ori	r24, 0x01	; 1
+     b38:	80 83       	st	Z, r24
+
+	// The counter's value is stored in TCNT1
+}
+     b3a:	08 95       	ret
+
+00000b3c <readFrets>:
+
+
+//readF reads the frets for a single string, and returns an int acting as a boolean array
+//  telling which frets are being touched by the string.
+void readFrets(int guitarString, int* stringState)
+{
+     b3c:	1f 93       	push	r17
+     b3e:	cf 93       	push	r28
+     b40:	df 93       	push	r29
+     b42:	eb 01       	movw	r28, r22
+  	string_port &= ~(1<<guitarString);  // Set the string LOW
+     b44:	92 b1       	in	r25, 0x02	; 2
+     b46:	21 e0       	ldi	r18, 0x01	; 1
+     b48:	30 e0       	ldi	r19, 0x00	; 0
+     b4a:	02 c0       	rjmp	.+4      	; 0xb50 <readFrets+0x14>
+     b4c:	22 0f       	add	r18, r18
+     b4e:	33 1f       	adc	r19, r19
+     b50:	8a 95       	dec	r24
+     b52:	e2 f7       	brpl	.-8      	; 0xb4c <readFrets+0x10>
+     b54:	12 2f       	mov	r17, r18
+     b56:	82 2f       	mov	r24, r18
+     b58:	80 95       	com	r24
+     b5a:	89 23       	and	r24, r25
+     b5c:	82 b9       	out	0x02, r24	; 2
+     b5e:	84 e1       	ldi	r24, 0x14	; 20
+     b60:	90 e0       	ldi	r25, 0x00	; 0
+
+inline void doXnops(int x)
+{
+	while (x >= 0)
+	{
+		nop();
+     b62:	00 00       	nop
+		x--;
+     b64:	01 97       	sbiw	r24, 0x01	; 1
+	return;
+}
+
+inline void doXnops(int x)
+{
+	while (x >= 0)
+     b66:	2f ef       	ldi	r18, 0xFF	; 255
+     b68:	8f 3f       	cpi	r24, 0xFF	; 255
+     b6a:	92 07       	cpc	r25, r18
+     b6c:	d1 f7       	brne	.-12     	; 0xb62 <readFrets+0x26>
+
+	// Then we have to delay for a while, since right after the switch, the pin values
+	// jump around a bit
+	doXnops(20);	
+	// Read the values on the frets
+  	int i = fret_pin;               
+     b6e:	86 b1       	in	r24, 0x06	; 6
+	i = fret_pin;
+     b70:	86 b1       	in	r24, 0x06	; 6
+	i = fret_pin;		// More delay funcitonality... without these delays, there is some bouncing
+     b72:	86 b1       	in	r24, 0x06	; 6
+	i = fret_pin;		// on the pins, so the read screws up.
+     b74:	86 b1       	in	r24, 0x06	; 6
+	// Next, since the fret pin is zero if the a fret is grounded, we do a mask to isolate each pin from 
+	//  the port, which will return a zero if pressed and non-zero if unpressed. So we ! that to get a 1 if
+	//  the string touches that fret and a zero if it doesn't touch, which we then load into our storage 
+	//  integer.
+
+ 	*stringState |= ( (!(i & (1<<green_pin))) << 1); //green fret
+     b76:	83 fd       	sbrc	r24, 3
+     b78:	03 c0       	rjmp	.+6      	; 0xb80 <readFrets+0x44>
+     b7a:	42 e0       	ldi	r20, 0x02	; 2
+     b7c:	50 e0       	ldi	r21, 0x00	; 0
+     b7e:	02 c0       	rjmp	.+4      	; 0xb84 <readFrets+0x48>
+     b80:	40 e0       	ldi	r20, 0x00	; 0
+     b82:	50 e0       	ldi	r21, 0x00	; 0
+ 	*stringState |= ( (!(i & (1<<red_pin))) << 2); //red fret
+     b84:	84 fd       	sbrc	r24, 4
+     b86:	03 c0       	rjmp	.+6      	; 0xb8e <readFrets+0x52>
+     b88:	a4 e0       	ldi	r26, 0x04	; 4
+     b8a:	b0 e0       	ldi	r27, 0x00	; 0
+     b8c:	02 c0       	rjmp	.+4      	; 0xb92 <readFrets+0x56>
+     b8e:	a0 e0       	ldi	r26, 0x00	; 0
+     b90:	b0 e0       	ldi	r27, 0x00	; 0
+ 	*stringState |= ( (!(i & (1<<yellow_pin))) << 3); //yellow fret
+     b92:	85 fd       	sbrc	r24, 5
+     b94:	03 c0       	rjmp	.+6      	; 0xb9c <readFrets+0x60>
+     b96:	e8 e0       	ldi	r30, 0x08	; 8
+     b98:	f0 e0       	ldi	r31, 0x00	; 0
+     b9a:	02 c0       	rjmp	.+4      	; 0xba0 <readFrets+0x64>
+     b9c:	e0 e0       	ldi	r30, 0x00	; 0
+     b9e:	f0 e0       	ldi	r31, 0x00	; 0
+ 	*stringState |= ( (!(i & (1<<blue_pin))) << 4); //blue fret
+     ba0:	86 fd       	sbrc	r24, 6
+     ba2:	03 c0       	rjmp	.+6      	; 0xbaa <readFrets+0x6e>
+     ba4:	60 e1       	ldi	r22, 0x10	; 16
+     ba6:	70 e0       	ldi	r23, 0x00	; 0
+     ba8:	02 c0       	rjmp	.+4      	; 0xbae <readFrets+0x72>
+     baa:	60 e0       	ldi	r22, 0x00	; 0
+     bac:	70 e0       	ldi	r23, 0x00	; 0
+ 	*stringState |= ( (!(i & (1<<orange_pin))) << 5); //orange fret
+     bae:	88 23       	and	r24, r24
+     bb0:	99 27       	eor	r25, r25
+     bb2:	87 fd       	sbrc	r24, 7
+     bb4:	90 95       	com	r25
+     bb6:	80 95       	com	r24
+     bb8:	90 95       	com	r25
+     bba:	88 27       	eor	r24, r24
+     bbc:	99 0f       	add	r25, r25
+     bbe:	88 1f       	adc	r24, r24
+     bc0:	99 27       	eor	r25, r25
+     bc2:	25 e0       	ldi	r18, 0x05	; 5
+     bc4:	88 0f       	add	r24, r24
+     bc6:	99 1f       	adc	r25, r25
+     bc8:	2a 95       	dec	r18
+     bca:	e1 f7       	brne	.-8      	; 0xbc4 <readFrets+0x88>
+
+	// Also, if we strummed a string, hold that in the 'zeroth' fret
+	i = pick_pin;
+     bcc:	26 b1       	in	r18, 0x06	; 6
+ 	*stringState |= ( (!(i & (1<<strum_pin))) << 0); //pick touching the string
+     bce:	30 e0       	ldi	r19, 0x00	; 0
+     bd0:	36 95       	lsr	r19
+     bd2:	27 95       	ror	r18
+     bd4:	36 95       	lsr	r19
+     bd6:	27 95       	ror	r18
+     bd8:	20 95       	com	r18
+     bda:	30 95       	com	r19
+     bdc:	21 70       	andi	r18, 0x01	; 1
+     bde:	30 70       	andi	r19, 0x00	; 0
+     be0:	42 2b       	or	r20, r18
+     be2:	53 2b       	or	r21, r19
+     be4:	4a 2b       	or	r20, r26
+     be6:	5b 2b       	or	r21, r27
+     be8:	4e 2b       	or	r20, r30
+     bea:	5f 2b       	or	r21, r31
+     bec:	46 2b       	or	r20, r22
+     bee:	57 2b       	or	r21, r23
+     bf0:	48 2b       	or	r20, r24
+     bf2:	59 2b       	or	r21, r25
+     bf4:	59 83       	std	Y+1, r21	; 0x01
+     bf6:	48 83       	st	Y, r20
+
+	//Turn the string back HIGH and return
+	string_port |= (1<<guitarString); 
+     bf8:	82 b1       	in	r24, 0x02	; 2
+     bfa:	18 2b       	or	r17, r24
+     bfc:	12 b9       	out	0x02, r17	; 2
+	return;
+}
+     bfe:	df 91       	pop	r29
+     c00:	cf 91       	pop	r28
+     c02:	1f 91       	pop	r17
+     c04:	08 95       	ret
+
+00000c06 <main>:
+	 -Under config mode, the loop reads in the values of the strings and frets, assigns that current
+	  string-fret combination to correspond to a button press, then locks that combination in when 
+	  'Plus' is pressed and moves on to changing the next button.  It also sets the button data structure
+	  to display the current controller button being programmed, and then sends that data to the controller.
+*/ 
+{
+     c06:	2f 92       	push	r2
+     c08:	3f 92       	push	r3
+     c0a:	4f 92       	push	r4
+     c0c:	5f 92       	push	r5
+     c0e:	6f 92       	push	r6
+     c10:	7f 92       	push	r7
+     c12:	8f 92       	push	r8
+     c14:	9f 92       	push	r9
+     c16:	af 92       	push	r10
+     c18:	bf 92       	push	r11
+     c1a:	cf 92       	push	r12
+     c1c:	df 92       	push	r13
+     c1e:	ef 92       	push	r14
+     c20:	ff 92       	push	r15
+     c22:	0f 93       	push	r16
+     c24:	1f 93       	push	r17
+     c26:	df 93       	push	r29
+     c28:	cf 93       	push	r28
+     c2a:	cd b7       	in	r28, 0x3d	; 61
+     c2c:	de b7       	in	r29, 0x3e	; 62
+     c2e:	c8 55       	subi	r28, 0x58	; 88
+     c30:	d0 40       	sbci	r29, 0x00	; 0
+     c32:	0f b6       	in	r0, 0x3f	; 63
+     c34:	f8 94       	cli
+     c36:	de bf       	out	0x3e, r29	; 62
+     c38:	0f be       	out	0x3f, r0	; 63
+     c3a:	cd bf       	out	0x3d, r28	; 61
+        return;
+}
+
+inline void init(void) // This just initialized variables, mostly to zero
+{
+	int zero6array[6] = {0,0,0,0,0,0};  // These 3 lines set greenTimers and triedGreen to zeros
+     c3c:	fe 01       	movw	r30, r28
+     c3e:	3d 96       	adiw	r30, 0x0d	; 13
+     c40:	8c e0       	ldi	r24, 0x0C	; 12
+     c42:	df 01       	movw	r26, r30
+     c44:	1d 92       	st	X+, r1
+     c46:	8a 95       	dec	r24
+     c48:	e9 f7       	brne	.-6      	; 0xc44 <main+0x3e>
+	memcpy(greenTimers, zero6array, 6);  
+     c4a:	aa e4       	ldi	r26, 0x4A	; 74
+     c4c:	b2 e0       	ldi	r27, 0x02	; 2
+     c4e:	86 e0       	ldi	r24, 0x06	; 6
+     c50:	01 90       	ld	r0, Z+
+     c52:	0d 92       	st	X+, r0
+     c54:	81 50       	subi	r24, 0x01	; 1
+     c56:	e1 f7       	brne	.-8      	; 0xc50 <main+0x4a>
+	memcpy(triedGreen, zero6array, 6);
+     c58:	a8 e5       	ldi	r26, 0x58	; 88
+     c5a:	b2 e0       	ldi	r27, 0x02	; 2
+     c5c:	fe 01       	movw	r30, r28
+     c5e:	3d 96       	adiw	r30, 0x0d	; 13
+     c60:	86 e0       	ldi	r24, 0x06	; 6
+     c62:	01 90       	ld	r0, Z+
+     c64:	0d 92       	st	X+, r0
+     c66:	81 50       	subi	r24, 0x01	; 1
+     c68:	e1 f7       	brne	.-8      	; 0xc62 <main+0x5c>
+
+    // initialize button data array
+    but_dat[0] = 0b00011111;
+     c6a:	8f e1       	ldi	r24, 0x1F	; 31
+     c6c:	80 93 64 02 	sts	0x0264, r24
+    but_dat[1] = 0b00011111;
+     c70:	80 93 65 02 	sts	0x0265, r24
+    but_dat[2] = 0b00001111; // last 5 bits are touchbar data, should be 0F for no touching
+     c74:	8f e0       	ldi	r24, 0x0F	; 15
+     c76:	80 93 66 02 	sts	0x0266, r24
+    but_dat[3] = 0b00001111; // last 5 bits are whammy bar data, should be 0F probably
+     c7a:	80 93 67 02 	sts	0x0267, r24
+    but_dat[4] = 0b11111111; // no buttons pressed (with the Wiimote, 0 is pressed)
+     c7e:	8f ef       	ldi	r24, 0xFF	; 255
+     c80:	80 93 68 02 	sts	0x0268, r24
+    but_dat[5] = 0b11111111; // no buttons pressed
+     c84:	80 93 69 02 	sts	0x0269, r24
+
+	// Set the fret pins as input pins, with internal resistor
+	fret_ddr &= ~(1<<green_pin);        // input
+     c88:	3b 98       	cbi	0x07, 3	; 7
+	fret_port |= (1<<green_pin);		//pull-up enabled	
+     c8a:	43 9a       	sbi	0x08, 3	; 8
+	fret_ddr &= ~(1<<red_pin);
+     c8c:	3c 98       	cbi	0x07, 4	; 7
+	fret_port |= (1<<red_pin);
+     c8e:	44 9a       	sbi	0x08, 4	; 8
+	fret_ddr &= ~(1<<yellow_pin);
+     c90:	3d 98       	cbi	0x07, 5	; 7
+	fret_port |= (1<<yellow_pin);
+     c92:	45 9a       	sbi	0x08, 5	; 8
+	fret_ddr &= ~(1<<blue_pin);
+     c94:	3e 98       	cbi	0x07, 6	; 7
+	fret_port |= (1<<blue_pin);
+     c96:	46 9a       	sbi	0x08, 6	; 8
+	fret_ddr &= ~(1<<orange_pin);
+     c98:	3f 98       	cbi	0x07, 7	; 7
+	fret_port |= (1<<orange_pin);
+     c9a:	47 9a       	sbi	0x08, 7	; 8
+
+	// Set the pins on strumming and plus as inputs, with internal resistor
+	misc_ddr &= ~(1<<plus_pin);
+     c9c:	0f 98       	cbi	0x01, 7	; 1
+	misc_port |= (1<<plus_pin);
+     c9e:	17 9a       	sbi	0x02, 7	; 2
+	misc_ddr &= ~(1<<minus_pin);
+     ca0:	0e 98       	cbi	0x01, 6	; 1
+	misc_port |= (1<<minus_pin);
+     ca2:	16 9a       	sbi	0x02, 6	; 2
+	
+	pick_ddr &= ~(1<<strum_pin);
+     ca4:	3a 98       	cbi	0x07, 2	; 7
+	pick_port |= (1<<strum_pin);
+     ca6:	42 9a       	sbi	0x08, 2	; 8
+
+	
+
+	// Set the string pins as output pins, outputting HIGH
+	/* MAKE SURE YOU HAVE DIODES OPPOSING THIS CURRENT OUTFLOW! */
+	string_ddr |= (1<<first_string);  //output
+     ca8:	08 9a       	sbi	0x01, 0	; 1
+	string_port |= (1<<first_string); // set high
+     caa:	10 9a       	sbi	0x02, 0	; 2
+	string_ddr |= (1<<second_string);  
+     cac:	09 9a       	sbi	0x01, 1	; 1
+	string_port |= (1<<second_string);
+     cae:	11 9a       	sbi	0x02, 1	; 2
+	string_ddr |= (1<<third_string);  
+     cb0:	0a 9a       	sbi	0x01, 2	; 1
+	string_port |= (1<<third_string);
+     cb2:	12 9a       	sbi	0x02, 2	; 2
+	string_ddr |= (1<<fourth_string);  
+     cb4:	0b 9a       	sbi	0x01, 3	; 1
+	string_port |= (1<<fourth_string);
+     cb6:	13 9a       	sbi	0x02, 3	; 2
+	string_ddr |= (1<<fifth_string);  
+     cb8:	0c 9a       	sbi	0x01, 4	; 1
+	string_port |= (1<<fifth_string);
+     cba:	14 9a       	sbi	0x02, 4	; 2
+	string_ddr |= (1<<sixth_string);  
+     cbc:	0d 9a       	sbi	0x01, 5	; 1
+	string_port |= (1<<sixth_string);
+     cbe:	15 9a       	sbi	0x02, 5	; 2
+*/ 
+{
+
+	init(); // Initialize the pins and stuff
+
+	int stringState[6] = {0,0,0,0,0,0}; // This stores an int for each string,
+     cc0:	8e 01       	movw	r16, r28
+     cc2:	0f 5f       	subi	r16, 0xFF	; 255
+     cc4:	1f 4f       	sbci	r17, 0xFF	; 255
+     cc6:	8c e0       	ldi	r24, 0x0C	; 12
+     cc8:	f8 01       	movw	r30, r16
+     cca:	11 92       	st	Z+, r1
+     ccc:	8a 95       	dec	r24
+     cce:	e9 f7       	brne	.-6      	; 0xcca <main+0xc4>
+
+	int buttonStringPatterns[NUMBER_OF_FRETS][6];
+
+
+  	// Start the wiimote communication and make wiimote think this is a guitar
+    wm_init(guitar_id, but_dat, cal_data, wm_timer_inc);
+     cd0:	80 e0       	ldi	r24, 0x00	; 0
+     cd2:	91 e0       	ldi	r25, 0x01	; 1
+     cd4:	64 e6       	ldi	r22, 0x64	; 100
+     cd6:	72 e0       	ldi	r23, 0x02	; 2
+     cd8:	46 e0       	ldi	r20, 0x06	; 6
+     cda:	51 e0       	ldi	r21, 0x01	; 1
+     cdc:	22 e7       	ldi	r18, 0x72	; 114
+     cde:	35 e0       	ldi	r19, 0x05	; 5
+     ce0:	0e 94 fa 0b 	call	0x17f4	; 0x17f4 <wm_init>
+
+	setTimer(); // Start the timer going
+     ce4:	0e 94 73 05 	call	0xae6	; 0xae6 <setTimer>
+     ce8:	22 24       	eor	r2, r2
+     cea:	aa 24       	eor	r10, r10
+     cec:	bb 24       	eor	r11, r11
+     cee:	33 24       	eor	r3, r3
+     cf0:	77 24       	eor	r7, r7
+
+    while(1)
+    {
+        // We first read all the strings for button hits and store them into
+		//  our stringState array.  Strum processing is also handled here for now.
+        readFrets(first_string,  &stringState[0]);
+     cf2:	66 96       	adiw	r28, 0x16	; 22
+     cf4:	0f af       	std	Y+63, r16	; 0x3f
+     cf6:	66 97       	sbiw	r28, 0x16	; 22
+     cf8:	67 96       	adiw	r28, 0x17	; 23
+     cfa:	1f af       	std	Y+63, r17	; 0x3f
+     cfc:	67 97       	sbiw	r28, 0x17	; 23
+     cfe:	80 e0       	ldi	r24, 0x00	; 0
+     d00:	90 e0       	ldi	r25, 0x00	; 0
+     d02:	66 96       	adiw	r28, 0x16	; 22
+     d04:	6f ad       	ldd	r22, Y+63	; 0x3f
+     d06:	66 97       	sbiw	r28, 0x16	; 22
+     d08:	67 96       	adiw	r28, 0x17	; 23
+     d0a:	7f ad       	ldd	r23, Y+63	; 0x3f
+     d0c:	67 97       	sbiw	r28, 0x17	; 23
+     d0e:	0e 94 9e 05 	call	0xb3c	; 0xb3c <readFrets>
+		readFrets(second_string, &stringState[1]);
+     d12:	81 e0       	ldi	r24, 0x01	; 1
+     d14:	90 e0       	ldi	r25, 0x00	; 0
+     d16:	be 01       	movw	r22, r28
+     d18:	6d 5f       	subi	r22, 0xFD	; 253
+     d1a:	7f 4f       	sbci	r23, 0xFF	; 255
+     d1c:	0e 94 9e 05 	call	0xb3c	; 0xb3c <readFrets>
+		readFrets(third_string,  &stringState[2]);
+     d20:	82 e0       	ldi	r24, 0x02	; 2
+     d22:	90 e0       	ldi	r25, 0x00	; 0
+     d24:	be 01       	movw	r22, r28
+     d26:	6b 5f       	subi	r22, 0xFB	; 251
+     d28:	7f 4f       	sbci	r23, 0xFF	; 255
+     d2a:	0e 94 9e 05 	call	0xb3c	; 0xb3c <readFrets>
+		readFrets(fourth_string, &stringState[3]);
+     d2e:	83 e0       	ldi	r24, 0x03	; 3
+     d30:	90 e0       	ldi	r25, 0x00	; 0
+     d32:	be 01       	movw	r22, r28
+     d34:	69 5f       	subi	r22, 0xF9	; 249
+     d36:	7f 4f       	sbci	r23, 0xFF	; 255
+     d38:	0e 94 9e 05 	call	0xb3c	; 0xb3c <readFrets>
+		readFrets(fifth_string,  &stringState[4]);
+     d3c:	84 e0       	ldi	r24, 0x04	; 4
+     d3e:	90 e0       	ldi	r25, 0x00	; 0
+     d40:	be 01       	movw	r22, r28
+     d42:	67 5f       	subi	r22, 0xF7	; 247
+     d44:	7f 4f       	sbci	r23, 0xFF	; 255
+     d46:	0e 94 9e 05 	call	0xb3c	; 0xb3c <readFrets>
+		readFrets(sixth_string,  &stringState[5]);
+     d4a:	85 e0       	ldi	r24, 0x05	; 5
+     d4c:	90 e0       	ldi	r25, 0x00	; 0
+     d4e:	be 01       	movw	r22, r28
+     d50:	65 5f       	subi	r22, 0xF5	; 245
+     d52:	7f 4f       	sbci	r23, 0xFF	; 255
+     d54:	0e 94 9e 05 	call	0xb3c	; 0xb3c <readFrets>
+
+		if ((controllerMode == NOTES) || (controllerMode == CHORDS))
+     d58:	f2 e0       	ldi	r31, 0x02	; 2
+     d5a:	7f 16       	cp	r7, r31
+     d5c:	21 f0       	breq	.+8      	; 0xd66 <main+0x160>
+     d5e:	24 e0       	ldi	r18, 0x04	; 4
+     d60:	72 16       	cp	r7, r18
+     d62:	09 f0       	breq	.+2      	; 0xd66 <main+0x160>
+     d64:	50 c1       	rjmp	.+672    	; 0x1006 <main+0x400>
+		{
+			// Check to see if we're trying to enter Config Mode; disabled if we're playing with frets
+			if (configMode == 0)
+     d66:	22 20       	and	r2, r2
+     d68:	09 f0       	breq	.+2      	; 0xd6c <main+0x166>
+     d6a:	75 c0       	rjmp	.+234    	; 0xe56 <main+0x250>
+// This function tests to see if you're pressing the top 4 strings on the orange fret,
+//  thereby activating config mode. Works with both chords and scales.
+
+inline char testForConfigMode(int stringState[], int buttonStringPatterns[][6], char *controllerMode)
+{
+	if ((stringState[0] == 0b00110000) &&
+     d6c:	89 81       	ldd	r24, Y+1	; 0x01
+     d6e:	9a 81       	ldd	r25, Y+2	; 0x02
+     d70:	c0 97       	sbiw	r24, 0x30	; 48
+     d72:	09 f0       	breq	.+2      	; 0xd76 <main+0x170>
+     d74:	4c c1       	rjmp	.+664    	; 0x100e <main+0x408>
+     d76:	8b 81       	ldd	r24, Y+3	; 0x03
+     d78:	9c 81       	ldd	r25, Y+4	; 0x04
+     d7a:	c0 97       	sbiw	r24, 0x30	; 48
+     d7c:	09 f0       	breq	.+2      	; 0xd80 <main+0x17a>
+     d7e:	47 c1       	rjmp	.+654    	; 0x100e <main+0x408>
+     d80:	8d 81       	ldd	r24, Y+5	; 0x05
+     d82:	9e 81       	ldd	r25, Y+6	; 0x06
+     d84:	c0 97       	sbiw	r24, 0x30	; 48
+     d86:	09 f0       	breq	.+2      	; 0xd8a <main+0x184>
+     d88:	42 c1       	rjmp	.+644    	; 0x100e <main+0x408>
+     d8a:	8f 81       	ldd	r24, Y+7	; 0x07
+     d8c:	98 85       	ldd	r25, Y+8	; 0x08
+     d8e:	89 2b       	or	r24, r25
+     d90:	09 f0       	breq	.+2      	; 0xd94 <main+0x18e>
+     d92:	3d c1       	rjmp	.+634    	; 0x100e <main+0x408>
+     d94:	89 85       	ldd	r24, Y+9	; 0x09
+     d96:	9a 85       	ldd	r25, Y+10	; 0x0a
+     d98:	89 2b       	or	r24, r25
+     d9a:	09 f0       	breq	.+2      	; 0xd9e <main+0x198>
+     d9c:	38 c1       	rjmp	.+624    	; 0x100e <main+0x408>
+     d9e:	8b 85       	ldd	r24, Y+11	; 0x0b
+     da0:	9c 85       	ldd	r25, Y+12	; 0x0c
+     da2:	89 2b       	or	r24, r25
+     da4:	09 f0       	breq	.+2      	; 0xda8 <main+0x1a2>
+     da6:	33 c1       	rjmp	.+614    	; 0x100e <main+0x408>
+		(stringState[4] == 0b00000000) &&
+		(stringState[5] == 0b00000000))
+	{
+		// If we're playing with notes, when we enter config mode, we need to clear the 
+		//  button string patterns once so we can rebuild them.
+		if (*controllerMode == NOTES)
+     da8:	82 e0       	ldi	r24, 0x02	; 2
+     daa:	78 16       	cp	r7, r24
+     dac:	09 f0       	breq	.+2      	; 0xdb0 <main+0x1aa>
+     dae:	d9 c4       	rjmp	.+2482   	; 0x1762 <main+0xb5c>
+		{
+			buttonStringPatterns[0][0] = 0;	buttonStringPatterns[0][1] = 0;
+     db0:	1a 8e       	std	Y+26, r1	; 0x1a
+     db2:	19 8e       	std	Y+25, r1	; 0x19
+     db4:	1c 8e       	std	Y+28, r1	; 0x1c
+     db6:	1b 8e       	std	Y+27, r1	; 0x1b
+			buttonStringPatterns[0][2] = 0;	buttonStringPatterns[0][3] = 0;
+     db8:	1e 8e       	std	Y+30, r1	; 0x1e
+     dba:	1d 8e       	std	Y+29, r1	; 0x1d
+     dbc:	18 a2       	std	Y+32, r1	; 0x20
+     dbe:	1f 8e       	std	Y+31, r1	; 0x1f
+			buttonStringPatterns[0][4] = 0;	buttonStringPatterns[0][5] = 0;
+     dc0:	1a a2       	std	Y+34, r1	; 0x22
+     dc2:	19 a2       	std	Y+33, r1	; 0x21
+     dc4:	1c a2       	std	Y+36, r1	; 0x24
+     dc6:	1b a2       	std	Y+35, r1	; 0x23
+			buttonStringPatterns[1][0] = 0;	buttonStringPatterns[1][1] = 0;
+     dc8:	1e a2       	std	Y+38, r1	; 0x26
+     dca:	1d a2       	std	Y+37, r1	; 0x25
+     dcc:	18 a6       	std	Y+40, r1	; 0x28
+     dce:	1f a2       	std	Y+39, r1	; 0x27
+			buttonStringPatterns[1][2] = 0;	buttonStringPatterns[1][3] = 0;
+     dd0:	1a a6       	std	Y+42, r1	; 0x2a
+     dd2:	19 a6       	std	Y+41, r1	; 0x29
+     dd4:	1c a6       	std	Y+44, r1	; 0x2c
+     dd6:	1b a6       	std	Y+43, r1	; 0x2b
+			buttonStringPatterns[1][4] = 0;	buttonStringPatterns[1][5] = 0;
+     dd8:	1e a6       	std	Y+46, r1	; 0x2e
+     dda:	1d a6       	std	Y+45, r1	; 0x2d
+     ddc:	18 aa       	std	Y+48, r1	; 0x30
+     dde:	1f a6       	std	Y+47, r1	; 0x2f
+			buttonStringPatterns[2][0] = 0;	buttonStringPatterns[2][1] = 0;
+     de0:	1a aa       	std	Y+50, r1	; 0x32
+     de2:	19 aa       	std	Y+49, r1	; 0x31
+     de4:	1c aa       	std	Y+52, r1	; 0x34
+     de6:	1b aa       	std	Y+51, r1	; 0x33
+			buttonStringPatterns[2][2] = 0;	buttonStringPatterns[2][3] = 0;
+     de8:	1e aa       	std	Y+54, r1	; 0x36
+     dea:	1d aa       	std	Y+53, r1	; 0x35
+     dec:	18 ae       	std	Y+56, r1	; 0x38
+     dee:	1f aa       	std	Y+55, r1	; 0x37
+			buttonStringPatterns[2][4] = 0;	buttonStringPatterns[2][5] = 0;
+     df0:	1a ae       	std	Y+58, r1	; 0x3a
+     df2:	19 ae       	std	Y+57, r1	; 0x39
+     df4:	1c ae       	std	Y+60, r1	; 0x3c
+     df6:	1b ae       	std	Y+59, r1	; 0x3b
+			buttonStringPatterns[3][0] = 0;	buttonStringPatterns[3][1] = 0;
+     df8:	1e ae       	std	Y+62, r1	; 0x3e
+     dfa:	1d ae       	std	Y+61, r1	; 0x3d
+     dfc:	21 96       	adiw	r28, 0x01	; 1
+     dfe:	1f ae       	std	Y+63, r1	; 0x3f
+     e00:	1e ae       	std	Y+62, r1	; 0x3e
+     e02:	21 97       	sbiw	r28, 0x01	; 1
+			buttonStringPatterns[3][2] = 0;	buttonStringPatterns[3][3] = 0;
+     e04:	23 96       	adiw	r28, 0x03	; 3
+     e06:	1f ae       	std	Y+63, r1	; 0x3f
+     e08:	1e ae       	std	Y+62, r1	; 0x3e
+     e0a:	23 97       	sbiw	r28, 0x03	; 3
+     e0c:	25 96       	adiw	r28, 0x05	; 5
+     e0e:	1f ae       	std	Y+63, r1	; 0x3f
+     e10:	1e ae       	std	Y+62, r1	; 0x3e
+     e12:	25 97       	sbiw	r28, 0x05	; 5
+			buttonStringPatterns[3][4] = 0;	buttonStringPatterns[3][5] = 0;
+     e14:	27 96       	adiw	r28, 0x07	; 7
+     e16:	1f ae       	std	Y+63, r1	; 0x3f
+     e18:	1e ae       	std	Y+62, r1	; 0x3e
+     e1a:	27 97       	sbiw	r28, 0x07	; 7
+     e1c:	29 96       	adiw	r28, 0x09	; 9
+     e1e:	1f ae       	std	Y+63, r1	; 0x3f
+     e20:	1e ae       	std	Y+62, r1	; 0x3e
+     e22:	29 97       	sbiw	r28, 0x09	; 9
+			buttonStringPatterns[4][0] = 0;	buttonStringPatterns[4][1] = 0;
+     e24:	2b 96       	adiw	r28, 0x0b	; 11
+     e26:	1f ae       	std	Y+63, r1	; 0x3f
+     e28:	1e ae       	std	Y+62, r1	; 0x3e
+     e2a:	2b 97       	sbiw	r28, 0x0b	; 11
+     e2c:	2d 96       	adiw	r28, 0x0d	; 13
+     e2e:	1f ae       	std	Y+63, r1	; 0x3f
+     e30:	1e ae       	std	Y+62, r1	; 0x3e
+     e32:	2d 97       	sbiw	r28, 0x0d	; 13
+			buttonStringPatterns[4][2] = 0;	buttonStringPatterns[4][3] = 0;
+     e34:	2f 96       	adiw	r28, 0x0f	; 15
+     e36:	1f ae       	std	Y+63, r1	; 0x3f
+     e38:	1e ae       	std	Y+62, r1	; 0x3e
+     e3a:	2f 97       	sbiw	r28, 0x0f	; 15
+     e3c:	61 96       	adiw	r28, 0x11	; 17
+     e3e:	1f ae       	std	Y+63, r1	; 0x3f
+     e40:	1e ae       	std	Y+62, r1	; 0x3e
+     e42:	61 97       	sbiw	r28, 0x11	; 17
+			buttonStringPatterns[4][4] = 0;	buttonStringPatterns[4][5] = 0;\
+     e44:	63 96       	adiw	r28, 0x13	; 19
+     e46:	1f ae       	std	Y+63, r1	; 0x3f
+     e48:	1e ae       	std	Y+62, r1	; 0x3e
+     e4a:	63 97       	sbiw	r28, 0x13	; 19
+     e4c:	65 96       	adiw	r28, 0x15	; 21
+     e4e:	1f ae       	std	Y+63, r1	; 0x3f
+     e50:	1e ae       	std	Y+62, r1	; 0x3e
+     e52:	65 97       	sbiw	r28, 0x15	; 21
+     e54:	86 c4       	rjmp	.+2316   	; 0x1762 <main+0xb5c>
+				buttonToAssign = 0; // This variable keeps track of which button we're assigning
+				plusLock = 0; // This is a tool to let us test that in the prior cycle, plus was or wasn't on
+			}
+
+			// Config Mode operation
+			if (configMode == 1) 
+     e56:	91 e0       	ldi	r25, 0x01	; 1
+     e58:	29 16       	cp	r2, r25
+     e5a:	09 f0       	breq	.+2      	; 0xe5e <main+0x258>
+     e5c:	7d c4       	rjmp	.+2298   	; 0x1758 <main+0xb52>
+		return 0;
+}
+
+inline char testForEndConfigMode(int stringState[])
+{
+	if ((stringState[0] == 0b00000000) &&
+     e5e:	49 81       	ldd	r20, Y+1	; 0x01
+     e60:	5a 81       	ldd	r21, Y+2	; 0x02
+     e62:	41 15       	cp	r20, r1
+     e64:	51 05       	cpc	r21, r1
+     e66:	09 f0       	breq	.+2      	; 0xe6a <main+0x264>
+     e68:	80 c4       	rjmp	.+2304   	; 0x176a <main+0xb64>
+     e6a:	8b 81       	ldd	r24, Y+3	; 0x03
+     e6c:	9c 81       	ldd	r25, Y+4	; 0x04
+     e6e:	c0 97       	sbiw	r24, 0x30	; 48
+     e70:	09 f0       	breq	.+2      	; 0xe74 <main+0x26e>
+     e72:	7b c4       	rjmp	.+2294   	; 0x176a <main+0xb64>
+     e74:	8d 81       	ldd	r24, Y+5	; 0x05
+     e76:	9e 81       	ldd	r25, Y+6	; 0x06
+     e78:	c0 97       	sbiw	r24, 0x30	; 48
+     e7a:	09 f0       	breq	.+2      	; 0xe7e <main+0x278>
+     e7c:	76 c4       	rjmp	.+2284   	; 0x176a <main+0xb64>
+     e7e:	8f 81       	ldd	r24, Y+7	; 0x07
+     e80:	98 85       	ldd	r25, Y+8	; 0x08
+     e82:	89 2b       	or	r24, r25
+     e84:	09 f0       	breq	.+2      	; 0xe88 <main+0x282>
+     e86:	71 c4       	rjmp	.+2274   	; 0x176a <main+0xb64>
+     e88:	89 85       	ldd	r24, Y+9	; 0x09
+     e8a:	9a 85       	ldd	r25, Y+10	; 0x0a
+     e8c:	89 2b       	or	r24, r25
+     e8e:	09 f0       	breq	.+2      	; 0xe92 <main+0x28c>
+     e90:	6c c4       	rjmp	.+2264   	; 0x176a <main+0xb64>
+     e92:	8b 85       	ldd	r24, Y+11	; 0x0b
+     e94:	9c 85       	ldd	r25, Y+12	; 0x0c
+     e96:	89 2b       	or	r24, r25
+     e98:	09 f0       	breq	.+2      	; 0xe9c <main+0x296>
+     e9a:	67 c4       	rjmp	.+2254   	; 0x176a <main+0xb64>
+     e9c:	70 c4       	rjmp	.+2272   	; 0x177e <main+0xb78>
+	but_dat[5] = 0b11111111;
+
+	// Since 'colorOn' is 1 when a fret is pressed, we invert, shift, invert, and & it to set the
+	// corresponding button bit to zero, which corresponds to a button press.
+	if (*buttonToAssign == 0)
+		but_dat[5] &= ~(1 << GREEN_BIT);
+     e9e:	8f ee       	ldi	r24, 0xEF	; 239
+     ea0:	17 c0       	rjmp	.+46     	; 0xed0 <main+0x2ca>
+	else if(*buttonToAssign == 1)
+     ea2:	a1 e0       	ldi	r26, 0x01	; 1
+     ea4:	aa 16       	cp	r10, r26
+     ea6:	b1 04       	cpc	r11, r1
+     ea8:	11 f4       	brne	.+4      	; 0xeae <main+0x2a8>
+		but_dat[5] &= ~(1 << RED_BIT);
+     eaa:	8f eb       	ldi	r24, 0xBF	; 191
+     eac:	11 c0       	rjmp	.+34     	; 0xed0 <main+0x2ca>
+	else if(*buttonToAssign == 2)
+     eae:	b2 e0       	ldi	r27, 0x02	; 2
+     eb0:	ab 16       	cp	r10, r27
+     eb2:	b1 04       	cpc	r11, r1
+     eb4:	11 f4       	brne	.+4      	; 0xeba <main+0x2b4>
+		but_dat[5] &= ~(1 << YELLOW_BIT);
+     eb6:	87 ef       	ldi	r24, 0xF7	; 247
+     eb8:	0b c0       	rjmp	.+22     	; 0xed0 <main+0x2ca>
+	else if(*buttonToAssign == 3)
+     eba:	e3 e0       	ldi	r30, 0x03	; 3
+     ebc:	ae 16       	cp	r10, r30
+     ebe:	b1 04       	cpc	r11, r1
+     ec0:	11 f4       	brne	.+4      	; 0xec6 <main+0x2c0>
+		but_dat[5] &= ~(1 << BLUE_BIT);
+     ec2:	8f ed       	ldi	r24, 0xDF	; 223
+     ec4:	05 c0       	rjmp	.+10     	; 0xed0 <main+0x2ca>
+	else if(*buttonToAssign == 4)
+     ec6:	f4 e0       	ldi	r31, 0x04	; 4
+     ec8:	af 16       	cp	r10, r31
+     eca:	b1 04       	cpc	r11, r1
+     ecc:	19 f4       	brne	.+6      	; 0xed4 <main+0x2ce>
+		but_dat[5] &= ~(1 << ORANGE_BIT);
+     ece:	8f e7       	ldi	r24, 0x7F	; 127
+     ed0:	80 93 69 02 	sts	0x0269, r24
+
+	int i = misc_pin; // check for plus and minus
+	char plusOn = !(i & (1<<plus_pin)); //Plus and minus are held high normally, but pressing sets it low
+
+	// Code to debounce our plus button
+	if (plusOn != 0)
+     ed4:	07 99       	sbic	0x00, 7	; 0
+     ed6:	22 c0       	rjmp	.+68     	; 0xf1c <main+0x316>
+	{
+		// Setup a timer if 
+		if (previousPlusOn == 0)
+     ed8:	80 91 6a 02 	lds	r24, 0x026A
+     edc:	88 23       	and	r24, r24
+     ede:	61 f4       	brne	.+24     	; 0xef8 <main+0x2f2>
+		{
+			debounceTimer = TCNT1;
+     ee0:	80 91 84 00 	lds	r24, 0x0084
+     ee4:	90 91 85 00 	lds	r25, 0x0085
+     ee8:	90 93 57 02 	sts	0x0257, r25
+     eec:	80 93 56 02 	sts	0x0256, r24
+			previousPlusOn = 1;
+     ef0:	21 e0       	ldi	r18, 0x01	; 1
+     ef2:	20 93 6a 02 	sts	0x026A, r18
+     ef6:	79 c0       	rjmp	.+242    	; 0xfea <main+0x3e4>
+			plusOn = 0;
+		}
+		else if ( (TCNT1 - debounceTimer < DEBOUNCE_DELAY) && (TCNT1 - debounceTimer >= 0))
+     ef8:	80 91 84 00 	lds	r24, 0x0084
+     efc:	90 91 85 00 	lds	r25, 0x0085
+     f00:	20 91 56 02 	lds	r18, 0x0256
+     f04:	30 91 57 02 	lds	r19, 0x0257
+     f08:	82 1b       	sub	r24, r18
+     f0a:	93 0b       	sbc	r25, r19
+     f0c:	88 5e       	subi	r24, 0xE8	; 232
+     f0e:	93 40       	sbci	r25, 0x03	; 3
+     f10:	40 f4       	brcc	.+16     	; 0xf22 <main+0x31c>
+     f12:	80 91 84 00 	lds	r24, 0x0084
+     f16:	90 91 85 00 	lds	r25, 0x0085
+     f1a:	67 c0       	rjmp	.+206    	; 0xfea <main+0x3e4>
+			plusOn = 0;
+		}		
+	}
+	else
+	{
+		previousPlusOn = 0;
+     f1c:	10 92 6a 02 	sts	0x026A, r1
+     f20:	64 c0       	rjmp	.+200    	; 0xfea <main+0x3e4>
+	}
+
+	// Now, if you press plus, it will lock in whatever string pattern
+	// and advance to working on the next pattern.
+	if((plusOn) && (*plusLock == 0))
+     f22:	33 20       	and	r3, r3
+     f24:	09 f0       	breq	.+2      	; 0xf28 <main+0x322>
+     f26:	62 c0       	rjmp	.+196    	; 0xfec <main+0x3e6>
+	{
+
+		if (*controllerMode == CHORDS) 
+     f28:	b4 e0       	ldi	r27, 0x04	; 4
+     f2a:	7b 16       	cp	r7, r27
+     f2c:	d9 f4       	brne	.+54     	; 0xf64 <main+0x35e>
+		{   // Set the pattern to nothing pressed
+			buttonStringPatterns[*buttonToAssign][0] = 0;
+     f2e:	f5 01       	movw	r30, r10
+     f30:	ee 0f       	add	r30, r30
+     f32:	ff 1f       	adc	r31, r31
+     f34:	ea 0d       	add	r30, r10
+     f36:	fb 1d       	adc	r31, r11
+     f38:	ee 0f       	add	r30, r30
+     f3a:	ff 1f       	adc	r31, r31
+     f3c:	ee 0f       	add	r30, r30
+     f3e:	ff 1f       	adc	r31, r31
+     f40:	89 e1       	ldi	r24, 0x19	; 25
+     f42:	90 e0       	ldi	r25, 0x00	; 0
+     f44:	8c 0f       	add	r24, r28
+     f46:	9d 1f       	adc	r25, r29
+     f48:	e8 0f       	add	r30, r24
+     f4a:	f9 1f       	adc	r31, r25
+     f4c:	11 82       	std	Z+1, r1	; 0x01
+     f4e:	10 82       	st	Z, r1
+			buttonStringPatterns[*buttonToAssign][1] = 0;
+     f50:	13 82       	std	Z+3, r1	; 0x03
+     f52:	12 82       	std	Z+2, r1	; 0x02
+			buttonStringPatterns[*buttonToAssign][2] = 0;
+     f54:	15 82       	std	Z+5, r1	; 0x05
+     f56:	14 82       	std	Z+4, r1	; 0x04
+			buttonStringPatterns[*buttonToAssign][3] = 0;
+     f58:	17 82       	std	Z+7, r1	; 0x07
+     f5a:	16 82       	std	Z+6, r1	; 0x06
+			buttonStringPatterns[*buttonToAssign][4] = 0;
+     f5c:	11 86       	std	Z+9, r1	; 0x09
+     f5e:	10 86       	std	Z+8, r1	; 0x08
+			buttonStringPatterns[*buttonToAssign][5] = 0;
+     f60:	13 86       	std	Z+11, r1	; 0x0b
+     f62:	12 86       	std	Z+10, r1	; 0x0a
+		}
+			// Assign what's being pressed on the frets to what matches the current button press
+		buttonStringPatterns[*buttonToAssign][0] |= stringState[0];
+     f64:	f5 01       	movw	r30, r10
+     f66:	ee 0f       	add	r30, r30
+     f68:	ff 1f       	adc	r31, r31
+     f6a:	ea 0d       	add	r30, r10
+     f6c:	fb 1d       	adc	r31, r11
+     f6e:	ee 0f       	add	r30, r30
+     f70:	ff 1f       	adc	r31, r31
+     f72:	ee 0f       	add	r30, r30
+     f74:	ff 1f       	adc	r31, r31
+     f76:	a9 e1       	ldi	r26, 0x19	; 25
+     f78:	b0 e0       	ldi	r27, 0x00	; 0
+     f7a:	ac 0f       	add	r26, r28
+     f7c:	bd 1f       	adc	r27, r29
+     f7e:	ea 0f       	add	r30, r26
+     f80:	fb 1f       	adc	r31, r27
+     f82:	80 81       	ld	r24, Z
+     f84:	91 81       	ldd	r25, Z+1	; 0x01
+     f86:	84 2b       	or	r24, r20
+     f88:	95 2b       	or	r25, r21
+     f8a:	91 83       	std	Z+1, r25	; 0x01
+     f8c:	80 83       	st	Z, r24
+		buttonStringPatterns[*buttonToAssign][1] |= stringState[1];
+     f8e:	82 81       	ldd	r24, Z+2	; 0x02
+     f90:	93 81       	ldd	r25, Z+3	; 0x03
+     f92:	2b 81       	ldd	r18, Y+3	; 0x03
+     f94:	3c 81       	ldd	r19, Y+4	; 0x04
+     f96:	82 2b       	or	r24, r18
+     f98:	93 2b       	or	r25, r19
+     f9a:	93 83       	std	Z+3, r25	; 0x03
+     f9c:	82 83       	std	Z+2, r24	; 0x02
+		buttonStringPatterns[*buttonToAssign][2] |= stringState[2];
+     f9e:	84 81       	ldd	r24, Z+4	; 0x04
+     fa0:	95 81       	ldd	r25, Z+5	; 0x05
+     fa2:	2d 81       	ldd	r18, Y+5	; 0x05
+     fa4:	3e 81       	ldd	r19, Y+6	; 0x06
+     fa6:	82 2b       	or	r24, r18
+     fa8:	93 2b       	or	r25, r19
+     faa:	95 83       	std	Z+5, r25	; 0x05
+     fac:	84 83       	std	Z+4, r24	; 0x04
+		buttonStringPatterns[*buttonToAssign][3] |= stringState[3];
+     fae:	86 81       	ldd	r24, Z+6	; 0x06
+     fb0:	97 81       	ldd	r25, Z+7	; 0x07
+     fb2:	2f 81       	ldd	r18, Y+7	; 0x07
+     fb4:	38 85       	ldd	r19, Y+8	; 0x08
+     fb6:	82 2b       	or	r24, r18
+     fb8:	93 2b       	or	r25, r19
+     fba:	97 83       	std	Z+7, r25	; 0x07
+     fbc:	86 83       	std	Z+6, r24	; 0x06
+		buttonStringPatterns[*buttonToAssign][4] |= stringState[4];
+     fbe:	80 85       	ldd	r24, Z+8	; 0x08
+     fc0:	91 85       	ldd	r25, Z+9	; 0x09
+     fc2:	29 85       	ldd	r18, Y+9	; 0x09
+     fc4:	3a 85       	ldd	r19, Y+10	; 0x0a
+     fc6:	82 2b       	or	r24, r18
+     fc8:	93 2b       	or	r25, r19
+     fca:	91 87       	std	Z+9, r25	; 0x09
+     fcc:	80 87       	std	Z+8, r24	; 0x08
+		buttonStringPatterns[*buttonToAssign][5] |= stringState[5];
+     fce:	82 85       	ldd	r24, Z+10	; 0x0a
+     fd0:	93 85       	ldd	r25, Z+11	; 0x0b
+     fd2:	2b 85       	ldd	r18, Y+11	; 0x0b
+     fd4:	3c 85       	ldd	r19, Y+12	; 0x0c
+     fd6:	82 2b       	or	r24, r18
+     fd8:	93 2b       	or	r25, r19
+     fda:	93 87       	std	Z+11, r25	; 0x0b
+     fdc:	82 87       	std	Z+10, r24	; 0x0a
+
+		*plusLock = 1;
+		*buttonToAssign += 1;
+     fde:	08 94       	sec
+     fe0:	a1 1c       	adc	r10, r1
+     fe2:	b1 1c       	adc	r11, r1
+     fe4:	33 24       	eor	r3, r3
+     fe6:	33 94       	inc	r3
+     fe8:	01 c0       	rjmp	.+2      	; 0xfec <main+0x3e6>
+     fea:	33 24       	eor	r3, r3
+					// Now set up the data packet to the Wii to say we're pressing whatever button we're currently
+					// assigning, and if we're pressing 'plus', go ahead and lock that string combination in
+					configSetButtons(&buttonToAssign, &plusLock, buttonStringPatterns, stringState, &controllerMode);
+
+					// If we're done assigning buttons  return to normal mode or restat 
+					if (buttonToAssign >= 5 && plusLock == 0)
+     fec:	b5 e0       	ldi	r27, 0x05	; 5
+     fee:	ab 16       	cp	r10, r27
+     ff0:	b1 04       	cpc	r11, r1
+     ff2:	0c f4       	brge	.+2      	; 0xff6 <main+0x3f0>
+     ff4:	c8 c3       	rjmp	.+1936   	; 0x1786 <main+0xb80>
+     ff6:	33 20       	and	r3, r3
+     ff8:	09 f0       	breq	.+2      	; 0xffc <main+0x3f6>
+     ffa:	c5 c3       	rjmp	.+1930   	; 0x1786 <main+0xb80>
+					{
+						if (controllerMode == NOTES)
+     ffc:	e2 e0       	ldi	r30, 0x02	; 2
+     ffe:	7e 16       	cp	r7, r30
+    1000:	09 f0       	breq	.+2      	; 0x1004 <main+0x3fe>
+    1002:	bd c3       	rjmp	.+1914   	; 0x177e <main+0xb78>
+    1004:	be c3       	rjmp	.+1916   	; 0x1782 <main+0xb7c>
+							configMode = 0;
+		}	}	}	} // End of Config Mode code
+
+
+		// Normal operation
+		if (configMode == 0)
+    1006:	22 20       	and	r2, r2
+    1008:	09 f0       	breq	.+2      	; 0x100c <main+0x406>
+    100a:	a6 c3       	rjmp	.+1868   	; 0x1758 <main+0xb52>
+    100c:	03 c0       	rjmp	.+6      	; 0x1014 <main+0x40e>
+    100e:	33 24       	eor	r3, r3
+    1010:	aa 24       	eor	r10, r10
+    1012:	bb 24       	eor	r11, r11
+}
+
+inline void resetStringPatterns(int stringState[], int buttonStringPatterns[][6], char* controllerMode)
+{
+	// Test for the right keypress to start the mode
+	if ((stringState[0] == 0b00111000) &&
+    1014:	89 81       	ldd	r24, Y+1	; 0x01
+    1016:	9a 81       	ldd	r25, Y+2	; 0x02
+    1018:	88 33       	cpi	r24, 0x38	; 56
+    101a:	91 05       	cpc	r25, r1
+    101c:	e9 f4       	brne	.+58     	; 0x1058 <main+0x452>
+    101e:	8b 81       	ldd	r24, Y+3	; 0x03
+    1020:	9c 81       	ldd	r25, Y+4	; 0x04
+    1022:	c8 97       	sbiw	r24, 0x38	; 56
+    1024:	09 f0       	breq	.+2      	; 0x1028 <main+0x422>
+    1026:	e7 c0       	rjmp	.+462    	; 0x11f6 <main+0x5f0>
+    1028:	8d 81       	ldd	r24, Y+5	; 0x05
+    102a:	9e 81       	ldd	r25, Y+6	; 0x06
+    102c:	c8 97       	sbiw	r24, 0x38	; 56
+    102e:	09 f0       	breq	.+2      	; 0x1032 <main+0x42c>
+    1030:	e2 c0       	rjmp	.+452    	; 0x11f6 <main+0x5f0>
+    1032:	8f 81       	ldd	r24, Y+7	; 0x07
+    1034:	98 85       	ldd	r25, Y+8	; 0x08
+    1036:	89 2b       	or	r24, r25
+    1038:	09 f0       	breq	.+2      	; 0x103c <main+0x436>
+    103a:	dd c0       	rjmp	.+442    	; 0x11f6 <main+0x5f0>
+    103c:	89 85       	ldd	r24, Y+9	; 0x09
+    103e:	9a 85       	ldd	r25, Y+10	; 0x0a
+    1040:	89 2b       	or	r24, r25
+    1042:	09 f0       	breq	.+2      	; 0x1046 <main+0x440>
+    1044:	d8 c0       	rjmp	.+432    	; 0x11f6 <main+0x5f0>
+    1046:	8b 85       	ldd	r24, Y+11	; 0x0b
+    1048:	9c 85       	ldd	r25, Y+12	; 0x0c
+    104a:	89 2b       	or	r24, r25
+    104c:	09 f0       	breq	.+2      	; 0x1050 <main+0x44a>
+    104e:	d3 c0       	rjmp	.+422    	; 0x11f6 <main+0x5f0>
+		(stringState[2] == 0b00111000) &&
+		(stringState[3] == 0b00000000) &&
+		(stringState[4] == 0b00000000) &&
+		(stringState[5] == 0b00000000))
+	{
+		if (*controllerMode % 2 == 0) // This means that the mode is a full mode
+    1050:	70 fc       	sbrc	r7, 0
+    1052:	d1 c0       	rjmp	.+418    	; 0x11f6 <main+0x5f0>
+			{++*controllerMode;}  //This puts it into a transitional mode
+    1054:	73 94       	inc	r7
+    1056:	cf c0       	rjmp	.+414    	; 0x11f6 <main+0x5f0>
+	}
+
+	// And if we're not pressing that anymore, finish the transition
+	else if((stringState[0] == 0) &&
+    1058:	89 2b       	or	r24, r25
+    105a:	09 f0       	breq	.+2      	; 0x105e <main+0x458>
+    105c:	cc c0       	rjmp	.+408    	; 0x11f6 <main+0x5f0>
+    105e:	8b 81       	ldd	r24, Y+3	; 0x03
+    1060:	9c 81       	ldd	r25, Y+4	; 0x04
+    1062:	89 2b       	or	r24, r25
+    1064:	09 f0       	breq	.+2      	; 0x1068 <main+0x462>
+    1066:	c7 c0       	rjmp	.+398    	; 0x11f6 <main+0x5f0>
+    1068:	8d 81       	ldd	r24, Y+5	; 0x05
+    106a:	9e 81       	ldd	r25, Y+6	; 0x06
+    106c:	89 2b       	or	r24, r25
+    106e:	09 f0       	breq	.+2      	; 0x1072 <main+0x46c>
+    1070:	c2 c0       	rjmp	.+388    	; 0x11f6 <main+0x5f0>
+			(stringState[1] == 0) &&
+			(stringState[2] == 0)) 
+	{
+		if (*controllerMode == CHORDS_TO_FRETS) // since these modes are just numbers, we need to wrap around
+    1072:	f5 e0       	ldi	r31, 0x05	; 5
+    1074:	7f 16       	cp	r7, r31
+    1076:	11 f4       	brne	.+4      	; 0x107c <main+0x476>
+    1078:	77 24       	eor	r7, r7
+    107a:	bd c0       	rjmp	.+378    	; 0x11f6 <main+0x5f0>
+		{	
+			*controllerMode = FRETS;
+		}
+		
+		// Now, reset the buttonStringPattern array to be appropriate for the mode
+		if (*controllerMode  == FRETS_TO_NOTES)
+    107c:	21 e0       	ldi	r18, 0x01	; 1
+    107e:	72 16       	cp	r7, r18
+    1080:	09 f0       	breq	.+2      	; 0x1084 <main+0x47e>
+    1082:	5d c0       	rjmp	.+186    	; 0x113e <main+0x538>
+		{
+		    buttonStringPatterns[0][0] = 0b0000000; // [0][0] through [0][5] - green button
+    1084:	1a 8e       	std	Y+26, r1	; 0x1a
+    1086:	19 8e       	std	Y+25, r1	; 0x19
+			buttonStringPatterns[0][1] = 0b0001100; 
+    1088:	4c e0       	ldi	r20, 0x0C	; 12
+    108a:	50 e0       	ldi	r21, 0x00	; 0
+    108c:	5c 8f       	std	Y+28, r21	; 0x1c
+    108e:	4b 8f       	std	Y+27, r20	; 0x1b
+			buttonStringPatterns[0][2] = 0b0000000;	
+    1090:	1e 8e       	std	Y+30, r1	; 0x1e
+    1092:	1d 8e       	std	Y+29, r1	; 0x1d
+			buttonStringPatterns[0][3] = 0b0000110;
+    1094:	66 e0       	ldi	r22, 0x06	; 6
+    1096:	70 e0       	ldi	r23, 0x00	; 0
+    1098:	78 a3       	std	Y+32, r23	; 0x20
+    109a:	6f 8f       	std	Y+31, r22	; 0x1f
+			buttonStringPatterns[0][4] = 0b0000000;
+    109c:	1a a2       	std	Y+34, r1	; 0x22
+    109e:	19 a2       	std	Y+33, r1	; 0x21
+			buttonStringPatterns[0][5] = 0b0000010;
+    10a0:	82 e0       	ldi	r24, 0x02	; 2
+    10a2:	90 e0       	ldi	r25, 0x00	; 0
+    10a4:	9c a3       	std	Y+36, r25	; 0x24
+    10a6:	8b a3       	std	Y+35, r24	; 0x23
+
+			buttonStringPatterns[1][0] = 0b0000010; // [1][0] through [1][5] - red button
+    10a8:	9e a3       	std	Y+38, r25	; 0x26
+    10aa:	8d a3       	std	Y+37, r24	; 0x25
+			buttonStringPatterns[1][1] = 0b0000000; 
+    10ac:	18 a6       	std	Y+40, r1	; 0x28
+    10ae:	1f a2       	std	Y+39, r1	; 0x27
+			buttonStringPatterns[1][2] = 0b0000001;
+    10b0:	21 e0       	ldi	r18, 0x01	; 1
+    10b2:	30 e0       	ldi	r19, 0x00	; 0
+    10b4:	3a a7       	std	Y+42, r19	; 0x2a
+    10b6:	29 a7       	std	Y+41, r18	; 0x29
+			buttonStringPatterns[1][3] = 0b0000000;
+    10b8:	1c a6       	std	Y+44, r1	; 0x2c
+    10ba:	1b a6       	std	Y+43, r1	; 0x2b
+			buttonStringPatterns[1][4] = 0b0000001;
+    10bc:	3e a7       	std	Y+46, r19	; 0x2e
+    10be:	2d a7       	std	Y+45, r18	; 0x2d
+			buttonStringPatterns[1][5] = 0b0001100;
+    10c0:	58 ab       	std	Y+48, r21	; 0x30
+    10c2:	4f a7       	std	Y+47, r20	; 0x2f
+
+			buttonStringPatterns[2][0] = 0b0001100; // [2][0] through [2][5] - yellow button
+    10c4:	5a ab       	std	Y+50, r21	; 0x32
+    10c6:	49 ab       	std	Y+49, r20	; 0x31
+			buttonStringPatterns[2][1] = 0b0000000; // This is an A chord.
+    10c8:	1c aa       	std	Y+52, r1	; 0x34
+    10ca:	1b aa       	std	Y+51, r1	; 0x33
+			buttonStringPatterns[2][2] = 0b0000110;
+    10cc:	7e ab       	std	Y+54, r23	; 0x36
+    10ce:	6d ab       	std	Y+53, r22	; 0x35
+			buttonStringPatterns[2][3] = 0b0000000;
+    10d0:	18 ae       	std	Y+56, r1	; 0x38
+    10d2:	1f aa       	std	Y+55, r1	; 0x37
+			buttonStringPatterns[2][4] = 0b0000010;
+    10d4:	9a af       	std	Y+58, r25	; 0x3a
+    10d6:	89 af       	std	Y+57, r24	; 0x39
+			buttonStringPatterns[2][5] = 0b0000000;
+    10d8:	1c ae       	std	Y+60, r1	; 0x3c
+    10da:	1b ae       	std	Y+59, r1	; 0x3b
+									  
+			buttonStringPatterns[3][0] = 0b0000000; // [3][0] through [3][5] - blue button
+    10dc:	1e ae       	std	Y+62, r1	; 0x3e
+    10de:	1d ae       	std	Y+61, r1	; 0x3d
+			buttonStringPatterns[3][1] = 0b0000001; 
+    10e0:	21 96       	adiw	r28, 0x01	; 1
+    10e2:	3f af       	std	Y+63, r19	; 0x3f
+    10e4:	2e af       	std	Y+62, r18	; 0x3e
+    10e6:	21 97       	sbiw	r28, 0x01	; 1
+			buttonStringPatterns[3][2] = 0b0001100;
+    10e8:	23 96       	adiw	r28, 0x03	; 3
+    10ea:	5f af       	std	Y+63, r21	; 0x3f
+    10ec:	4e af       	std	Y+62, r20	; 0x3e
+    10ee:	23 97       	sbiw	r28, 0x03	; 3
+			buttonStringPatterns[3][3] = 0b0000000;
+    10f0:	25 96       	adiw	r28, 0x05	; 5
+    10f2:	1f ae       	std	Y+63, r1	; 0x3f
+    10f4:	1e ae       	std	Y+62, r1	; 0x3e
+    10f6:	25 97       	sbiw	r28, 0x05	; 5
+			buttonStringPatterns[3][4] = 0b0001100;
+    10f8:	27 96       	adiw	r28, 0x07	; 7
+    10fa:	5f af       	std	Y+63, r21	; 0x3f
+    10fc:	4e af       	std	Y+62, r20	; 0x3e
+    10fe:	27 97       	sbiw	r28, 0x07	; 7
+			buttonStringPatterns[3][5] = 0b0000000;
+    1100:	29 96       	adiw	r28, 0x09	; 9
+    1102:	1f ae       	std	Y+63, r1	; 0x3f
+    1104:	1e ae       	std	Y+62, r1	; 0x3e
+    1106:	29 97       	sbiw	r28, 0x09	; 9
+
+			buttonStringPatterns[4][0] = 0b0000000; // [4][0] through [4][5] - blue button
+    1108:	2b 96       	adiw	r28, 0x0b	; 11
+    110a:	1f ae       	std	Y+63, r1	; 0x3f
+    110c:	1e ae       	std	Y+62, r1	; 0x3e
+    110e:	2b 97       	sbiw	r28, 0x0b	; 11
+			buttonStringPatterns[4][1] = 0b0000110; 
+    1110:	2d 96       	adiw	r28, 0x0d	; 13
+    1112:	7f af       	std	Y+63, r23	; 0x3f
+    1114:	6e af       	std	Y+62, r22	; 0x3e
+    1116:	2d 97       	sbiw	r28, 0x0d	; 13
+			buttonStringPatterns[4][2] = 0b0000000;
+    1118:	2f 96       	adiw	r28, 0x0f	; 15
+    111a:	1f ae       	std	Y+63, r1	; 0x3f
+    111c:	1e ae       	std	Y+62, r1	; 0x3e
+    111e:	2f 97       	sbiw	r28, 0x0f	; 15
+			buttonStringPatterns[4][3] = 0b0000001;
+    1120:	61 96       	adiw	r28, 0x11	; 17
+    1122:	3f af       	std	Y+63, r19	; 0x3f
+    1124:	2e af       	std	Y+62, r18	; 0x3e
+    1126:	61 97       	sbiw	r28, 0x11	; 17
+			buttonStringPatterns[4][4] = 0b0000000;
+    1128:	63 96       	adiw	r28, 0x13	; 19
+    112a:	1f ae       	std	Y+63, r1	; 0x3f
+    112c:	1e ae       	std	Y+62, r1	; 0x3e
+    112e:	63 97       	sbiw	r28, 0x13	; 19
+			buttonStringPatterns[4][5] = 0b0000001;
+    1130:	65 96       	adiw	r28, 0x15	; 21
+    1132:	3f af       	std	Y+63, r19	; 0x3f
+    1134:	2e af       	std	Y+62, r18	; 0x3e
+    1136:	65 97       	sbiw	r28, 0x15	; 21
+    1138:	32 e0       	ldi	r19, 0x02	; 2
+    113a:	73 2e       	mov	r7, r19
+    113c:	5c c0       	rjmp	.+184    	; 0x11f6 <main+0x5f0>
+
+			*controllerMode = NOTES;
+		}
+		else if (*controllerMode  == NOTES_TO_CHORDS)
+    113e:	83 e0       	ldi	r24, 0x03	; 3
+    1140:	78 16       	cp	r7, r24
+    1142:	09 f0       	breq	.+2      	; 0x1146 <main+0x540>
+    1144:	58 c0       	rjmp	.+176    	; 0x11f6 <main+0x5f0>
+		{
+		    buttonStringPatterns[0][0] = 0b0001110; // [0][0] through [0][5] - green button
+    1146:	2e e0       	ldi	r18, 0x0E	; 14
+    1148:	30 e0       	ldi	r19, 0x00	; 0
+    114a:	3a 8f       	std	Y+26, r19	; 0x1a
+    114c:	29 8f       	std	Y+25, r18	; 0x19
+			buttonStringPatterns[0][1] = 0b0001110; // This is a G Chord
+    114e:	3c 8f       	std	Y+28, r19	; 0x1c
+    1150:	2b 8f       	std	Y+27, r18	; 0x1b
+			buttonStringPatterns[0][2] = 0b0000000;	
+    1152:	1e 8e       	std	Y+30, r1	; 0x1e
+    1154:	1d 8e       	std	Y+29, r1	; 0x1d
+			buttonStringPatterns[0][3] = 0b0000000;
+    1156:	18 a2       	std	Y+32, r1	; 0x20
+    1158:	1f 8e       	std	Y+31, r1	; 0x1f
+			buttonStringPatterns[0][4] = 0b0000000;
+    115a:	1a a2       	std	Y+34, r1	; 0x22
+    115c:	19 a2       	std	Y+33, r1	; 0x21
+			buttonStringPatterns[0][5] = 0b0001110;
+    115e:	3c a3       	std	Y+36, r19	; 0x24
+    1160:	2b a3       	std	Y+35, r18	; 0x23
+
+			buttonStringPatterns[1][0] = 0b0000000; // [1][0] through [1][5] - red button
+    1162:	1e a2       	std	Y+38, r1	; 0x26
+    1164:	1d a2       	std	Y+37, r1	; 0x25
+			buttonStringPatterns[1][1] = 0b0001110; // This is a C chord
+    1166:	38 a7       	std	Y+40, r19	; 0x28
+    1168:	2f a3       	std	Y+39, r18	; 0x27
+			buttonStringPatterns[1][2] = 0b0001110;
+    116a:	3a a7       	std	Y+42, r19	; 0x2a
+    116c:	29 a7       	std	Y+41, r18	; 0x29
+			buttonStringPatterns[1][3] = 0b0000000;
+    116e:	1c a6       	std	Y+44, r1	; 0x2c
+    1170:	1b a6       	std	Y+43, r1	; 0x2b
+			buttonStringPatterns[1][4] = 0b0001110;
+    1172:	3e a7       	std	Y+46, r19	; 0x2e
+    1174:	2d a7       	std	Y+45, r18	; 0x2d
+			buttonStringPatterns[1][5] = 0b0000000;
+    1176:	18 aa       	std	Y+48, r1	; 0x30
+    1178:	1f a6       	std	Y+47, r1	; 0x2f
+
+			buttonStringPatterns[2][0] = 0b0000000; // [2][0] through [2][5] - yellow button
+    117a:	1a aa       	std	Y+50, r1	; 0x32
+    117c:	19 aa       	std	Y+49, r1	; 0x31
+			buttonStringPatterns[2][1] = 0b0000110; // This is an E chord.
+    117e:	86 e0       	ldi	r24, 0x06	; 6
+    1180:	90 e0       	ldi	r25, 0x00	; 0
+    1182:	9c ab       	std	Y+52, r25	; 0x34
+    1184:	8b ab       	std	Y+51, r24	; 0x33
+			buttonStringPatterns[2][2] = 0b0000110;
+    1186:	9e ab       	std	Y+54, r25	; 0x36
+    1188:	8d ab       	std	Y+53, r24	; 0x35
+			buttonStringPatterns[2][3] = 0b0000110;
+    118a:	98 af       	std	Y+56, r25	; 0x38
+    118c:	8f ab       	std	Y+55, r24	; 0x37
+			buttonStringPatterns[2][4] = 0b0000000;
+    118e:	1a ae       	std	Y+58, r1	; 0x3a
+    1190:	19 ae       	std	Y+57, r1	; 0x39
+			buttonStringPatterns[2][5] = 0b0000000;
+    1192:	1c ae       	std	Y+60, r1	; 0x3c
+    1194:	1b ae       	std	Y+59, r1	; 0x3b
+									  
+			buttonStringPatterns[3][0] = 0b0000000; // [3][0] through [3][5] - blue button
+    1196:	1e ae       	std	Y+62, r1	; 0x3e
+    1198:	1d ae       	std	Y+61, r1	; 0x3d
+			buttonStringPatterns[3][1] = 0b0000000; // This an A chord
+    119a:	21 96       	adiw	r28, 0x01	; 1
+    119c:	1f ae       	std	Y+63, r1	; 0x3f
+    119e:	1e ae       	std	Y+62, r1	; 0x3e
+    11a0:	21 97       	sbiw	r28, 0x01	; 1
+			buttonStringPatterns[3][2] = 0b0000110;
+    11a2:	23 96       	adiw	r28, 0x03	; 3
+    11a4:	9f af       	std	Y+63, r25	; 0x3f
+    11a6:	8e af       	std	Y+62, r24	; 0x3e
+    11a8:	23 97       	sbiw	r28, 0x03	; 3
+			buttonStringPatterns[3][3] = 0b0000110;
+    11aa:	25 96       	adiw	r28, 0x05	; 5
+    11ac:	9f af       	std	Y+63, r25	; 0x3f
+    11ae:	8e af       	std	Y+62, r24	; 0x3e
+    11b0:	25 97       	sbiw	r28, 0x05	; 5
+			buttonStringPatterns[3][4] = 0b0000110;
+    11b2:	27 96       	adiw	r28, 0x07	; 7
+    11b4:	9f af       	std	Y+63, r25	; 0x3f
+    11b6:	8e af       	std	Y+62, r24	; 0x3e
+    11b8:	27 97       	sbiw	r28, 0x07	; 7
+			buttonStringPatterns[3][5] = 0b0000000;
+    11ba:	29 96       	adiw	r28, 0x09	; 9
+    11bc:	1f ae       	std	Y+63, r1	; 0x3f
+    11be:	1e ae       	std	Y+62, r1	; 0x3e
+    11c0:	29 97       	sbiw	r28, 0x09	; 9
+
+			buttonStringPatterns[4][0] = 0b0000000; // [4][0] through [4][5] - blue button
+    11c2:	2b 96       	adiw	r28, 0x0b	; 11
+    11c4:	1f ae       	std	Y+63, r1	; 0x3f
+    11c6:	1e ae       	std	Y+62, r1	; 0x3e
+    11c8:	2b 97       	sbiw	r28, 0x0b	; 11
+			buttonStringPatterns[4][1] = 0b0000000;	// This is a D chord 
+    11ca:	2d 96       	adiw	r28, 0x0d	; 13
+    11cc:	1f ae       	std	Y+63, r1	; 0x3f
+    11ce:	1e ae       	std	Y+62, r1	; 0x3e
+    11d0:	2d 97       	sbiw	r28, 0x0d	; 13
+			buttonStringPatterns[4][2] = 0b0000000;
+    11d2:	2f 96       	adiw	r28, 0x0f	; 15
+    11d4:	1f ae       	std	Y+63, r1	; 0x3f
+    11d6:	1e ae       	std	Y+62, r1	; 0x3e
+    11d8:	2f 97       	sbiw	r28, 0x0f	; 15
+			buttonStringPatterns[4][3] = 0b0001110;
+    11da:	61 96       	adiw	r28, 0x11	; 17
+    11dc:	3f af       	std	Y+63, r19	; 0x3f
+    11de:	2e af       	std	Y+62, r18	; 0x3e
+    11e0:	61 97       	sbiw	r28, 0x11	; 17
+			buttonStringPatterns[4][4] = 0b0001110;
+    11e2:	63 96       	adiw	r28, 0x13	; 19
+    11e4:	3f af       	std	Y+63, r19	; 0x3f
+    11e6:	2e af       	std	Y+62, r18	; 0x3e
+    11e8:	63 97       	sbiw	r28, 0x13	; 19
+			buttonStringPatterns[4][5] = 0b0001110;
+    11ea:	65 96       	adiw	r28, 0x15	; 21
+    11ec:	3f af       	std	Y+63, r19	; 0x3f
+    11ee:	2e af       	std	Y+62, r18	; 0x3e
+    11f0:	65 97       	sbiw	r28, 0x15	; 21
+    11f2:	24 e0       	ldi	r18, 0x04	; 4
+    11f4:	72 2e       	mov	r7, r18
+			resetStringPatterns(stringState, buttonStringPatterns, &controllerMode);
+			
+
+			// Next, using our strumState array, we process that data to figure out what sort
+			//  of buttons on the controller we want to emulate pressing.
+			if (!(controllerMode % 2))
+    11f6:	70 fe       	sbrs	r7, 0
+    11f8:	08 c0       	rjmp	.+16     	; 0x120a <main+0x604>
+    11fa:	70 e0       	ldi	r23, 0x00	; 0
+    11fc:	99 24       	eor	r9, r9
+    11fe:	10 e0       	ldi	r17, 0x00	; 0
+    1200:	cc 24       	eor	r12, r12
+    1202:	00 e0       	ldi	r16, 0x00	; 0
+    1204:	60 e0       	ldi	r22, 0x00	; 0
+    1206:	dd 24       	eor	r13, r13
+    1208:	53 c2       	rjmp	.+1190   	; 0x16b0 <main+0xaaa>
+												int buttonStringPatterns[][6], char* controllerMode)
+{
+	// Give us a place to store our data
+//dataForController processedData = newDataForController();
+
+	if (*controllerMode == CHORDS) // If we're playing with Chords - default is FRETS
+    120a:	94 e0       	ldi	r25, 0x04	; 4
+    120c:	79 16       	cp	r7, r25
+    120e:	09 f0       	breq	.+2      	; 0x1212 <main+0x60c>
+    1210:	1a c1       	rjmp	.+564    	; 0x1446 <main+0x840>
+    1212:	66 96       	adiw	r28, 0x16	; 22
+    1214:	8f ad       	ldd	r24, Y+63	; 0x3f
+    1216:	66 97       	sbiw	r28, 0x16	; 22
+    1218:	67 96       	adiw	r28, 0x17	; 23
+    121a:	9f ad       	ldd	r25, Y+63	; 0x3f
+    121c:	67 97       	sbiw	r28, 0x17	; 23
+    121e:	fc 01       	movw	r30, r24
+    1220:	20 e0       	ldi	r18, 0x00	; 0
+    1222:	30 e0       	ldi	r19, 0x00	; 0
+    1224:	99 24       	eor	r9, r9
+    1226:	70 e0       	ldi	r23, 0x00	; 0
+	{
+		for (int guitarString = 0; guitarString < 6; guitarString++)
+		 {
+
+			if (stringState[guitarString] & 1)
+    1228:	80 81       	ld	r24, Z
+    122a:	91 81       	ldd	r25, Z+1	; 0x01
+    122c:	80 ff       	sbrs	r24, 0
+    122e:	0c c0       	rjmp	.+24     	; 0x1248 <main+0x642>
+			{
+				stringState[guitarString] &= ~1; //Set the last bit to zero
+    1230:	8e 7f       	andi	r24, 0xFE	; 254
+    1232:	91 83       	std	Z+1, r25	; 0x01
+    1234:	80 83       	st	Z, r24
+				if (guitarString < 3)
+    1236:	23 30       	cpi	r18, 0x03	; 3
+    1238:	31 05       	cpc	r19, r1
+    123a:	24 f0       	brlt	.+8      	; 0x1244 <main+0x63e>
+    123c:	70 e0       	ldi	r23, 0x00	; 0
+    123e:	99 24       	eor	r9, r9
+    1240:	93 94       	inc	r9
+    1242:	02 c0       	rjmp	.+4      	; 0x1248 <main+0x642>
+    1244:	71 e0       	ldi	r23, 0x01	; 1
+    1246:	99 24       	eor	r9, r9
+	// Give us a place to store our data
+//dataForController processedData = newDataForController();
+
+	if (*controllerMode == CHORDS) // If we're playing with Chords - default is FRETS
+	{
+		for (int guitarString = 0; guitarString < 6; guitarString++)
+    1248:	2f 5f       	subi	r18, 0xFF	; 255
+    124a:	3f 4f       	sbci	r19, 0xFF	; 255
+    124c:	32 96       	adiw	r30, 0x02	; 2
+    124e:	26 30       	cpi	r18, 0x06	; 6
+    1250:	31 05       	cpc	r19, r1
+    1252:	51 f7       	brne	.-44     	; 0x1228 <main+0x622>
+				}
+			}
+		}
+	
+		// green
+		if(stringState[0] == buttonStringPatterns[0][0] &&
+    1254:	49 81       	ldd	r20, Y+1	; 0x01
+    1256:	5a 81       	ldd	r21, Y+2	; 0x02
+    1258:	89 8d       	ldd	r24, Y+25	; 0x19
+    125a:	9a 8d       	ldd	r25, Y+26	; 0x1a
+    125c:	48 17       	cp	r20, r24
+    125e:	59 07       	cpc	r21, r25
+    1260:	31 f5       	brne	.+76     	; 0x12ae <main+0x6a8>
+    1262:	2b 81       	ldd	r18, Y+3	; 0x03
+    1264:	3c 81       	ldd	r19, Y+4	; 0x04
+    1266:	8b 8d       	ldd	r24, Y+27	; 0x1b
+    1268:	9c 8d       	ldd	r25, Y+28	; 0x1c
+    126a:	28 17       	cp	r18, r24
+    126c:	39 07       	cpc	r19, r25
+    126e:	f9 f4       	brne	.+62     	; 0x12ae <main+0x6a8>
+    1270:	2d 81       	ldd	r18, Y+5	; 0x05
+    1272:	3e 81       	ldd	r19, Y+6	; 0x06
+    1274:	8d 8d       	ldd	r24, Y+29	; 0x1d
+    1276:	9e 8d       	ldd	r25, Y+30	; 0x1e
+    1278:	28 17       	cp	r18, r24
+    127a:	39 07       	cpc	r19, r25
+    127c:	c1 f4       	brne	.+48     	; 0x12ae <main+0x6a8>
+    127e:	2f 81       	ldd	r18, Y+7	; 0x07
+    1280:	38 85       	ldd	r19, Y+8	; 0x08
+    1282:	8f 8d       	ldd	r24, Y+31	; 0x1f
+    1284:	98 a1       	ldd	r25, Y+32	; 0x20
+    1286:	28 17       	cp	r18, r24
+    1288:	39 07       	cpc	r19, r25
+    128a:	89 f4       	brne	.+34     	; 0x12ae <main+0x6a8>
+    128c:	29 85       	ldd	r18, Y+9	; 0x09
+    128e:	3a 85       	ldd	r19, Y+10	; 0x0a
+    1290:	89 a1       	ldd	r24, Y+33	; 0x21
+    1292:	9a a1       	ldd	r25, Y+34	; 0x22
+    1294:	28 17       	cp	r18, r24
+    1296:	39 07       	cpc	r19, r25
+    1298:	51 f4       	brne	.+20     	; 0x12ae <main+0x6a8>
+    129a:	10 e0       	ldi	r17, 0x00	; 0
+    129c:	2b 85       	ldd	r18, Y+11	; 0x0b
+    129e:	3c 85       	ldd	r19, Y+12	; 0x0c
+    12a0:	8b a1       	ldd	r24, Y+35	; 0x23
+    12a2:	9c a1       	ldd	r25, Y+36	; 0x24
+    12a4:	28 17       	cp	r18, r24
+    12a6:	39 07       	cpc	r19, r25
+    12a8:	19 f4       	brne	.+6      	; 0x12b0 <main+0x6aa>
+    12aa:	11 e0       	ldi	r17, 0x01	; 1
+    12ac:	01 c0       	rjmp	.+2      	; 0x12b0 <main+0x6aa>
+    12ae:	10 e0       	ldi	r17, 0x00	; 0
+			{
+				data->greenOn = 1;
+	  		}
+
+		// red
+		if(stringState[0] == buttonStringPatterns[1][0] &&
+    12b0:	8d a1       	ldd	r24, Y+37	; 0x25
+    12b2:	9e a1       	ldd	r25, Y+38	; 0x26
+    12b4:	48 17       	cp	r20, r24
+    12b6:	59 07       	cpc	r21, r25
+    12b8:	39 f5       	brne	.+78     	; 0x1308 <main+0x702>
+    12ba:	2b 81       	ldd	r18, Y+3	; 0x03
+    12bc:	3c 81       	ldd	r19, Y+4	; 0x04
+    12be:	8f a1       	ldd	r24, Y+39	; 0x27
+    12c0:	98 a5       	ldd	r25, Y+40	; 0x28
+    12c2:	28 17       	cp	r18, r24
+    12c4:	39 07       	cpc	r19, r25
+    12c6:	01 f5       	brne	.+64     	; 0x1308 <main+0x702>
+    12c8:	2d 81       	ldd	r18, Y+5	; 0x05
+    12ca:	3e 81       	ldd	r19, Y+6	; 0x06
+    12cc:	89 a5       	ldd	r24, Y+41	; 0x29
+    12ce:	9a a5       	ldd	r25, Y+42	; 0x2a
+    12d0:	28 17       	cp	r18, r24
+    12d2:	39 07       	cpc	r19, r25
+    12d4:	c9 f4       	brne	.+50     	; 0x1308 <main+0x702>
+    12d6:	2f 81       	ldd	r18, Y+7	; 0x07
+    12d8:	38 85       	ldd	r19, Y+8	; 0x08
+    12da:	8b a5       	ldd	r24, Y+43	; 0x2b
+    12dc:	9c a5       	ldd	r25, Y+44	; 0x2c
+    12de:	28 17       	cp	r18, r24
+    12e0:	39 07       	cpc	r19, r25
+    12e2:	91 f4       	brne	.+36     	; 0x1308 <main+0x702>
+    12e4:	29 85       	ldd	r18, Y+9	; 0x09
+    12e6:	3a 85       	ldd	r19, Y+10	; 0x0a
+    12e8:	8d a5       	ldd	r24, Y+45	; 0x2d
+    12ea:	9e a5       	ldd	r25, Y+46	; 0x2e
+    12ec:	28 17       	cp	r18, r24
+    12ee:	39 07       	cpc	r19, r25
+    12f0:	59 f4       	brne	.+22     	; 0x1308 <main+0x702>
+    12f2:	cc 24       	eor	r12, r12
+    12f4:	2b 85       	ldd	r18, Y+11	; 0x0b
+    12f6:	3c 85       	ldd	r19, Y+12	; 0x0c
+    12f8:	8f a5       	ldd	r24, Y+47	; 0x2f
+    12fa:	98 a9       	ldd	r25, Y+48	; 0x30
+    12fc:	28 17       	cp	r18, r24
+    12fe:	39 07       	cpc	r19, r25
+    1300:	21 f4       	brne	.+8      	; 0x130a <main+0x704>
+    1302:	cc 24       	eor	r12, r12
+    1304:	c3 94       	inc	r12
+    1306:	01 c0       	rjmp	.+2      	; 0x130a <main+0x704>
+    1308:	cc 24       	eor	r12, r12
+			{
+				data->redOn = 1;
+	  		}
+	
+		// yellow
+		if(stringState[0] == buttonStringPatterns[2][0] &&
+    130a:	89 a9       	ldd	r24, Y+49	; 0x31
+    130c:	9a a9       	ldd	r25, Y+50	; 0x32
+    130e:	48 17       	cp	r20, r24
+    1310:	59 07       	cpc	r21, r25
+    1312:	31 f5       	brne	.+76     	; 0x1360 <main+0x75a>
+    1314:	2b 81       	ldd	r18, Y+3	; 0x03
+    1316:	3c 81       	ldd	r19, Y+4	; 0x04
+    1318:	8b a9       	ldd	r24, Y+51	; 0x33
+    131a:	9c a9       	ldd	r25, Y+52	; 0x34
+    131c:	28 17       	cp	r18, r24
+    131e:	39 07       	cpc	r19, r25
+    1320:	f9 f4       	brne	.+62     	; 0x1360 <main+0x75a>
+    1322:	2d 81       	ldd	r18, Y+5	; 0x05
+    1324:	3e 81       	ldd	r19, Y+6	; 0x06
+    1326:	8d a9       	ldd	r24, Y+53	; 0x35
+    1328:	9e a9       	ldd	r25, Y+54	; 0x36
+    132a:	28 17       	cp	r18, r24
+    132c:	39 07       	cpc	r19, r25
+    132e:	c1 f4       	brne	.+48     	; 0x1360 <main+0x75a>
+    1330:	2f 81       	ldd	r18, Y+7	; 0x07
+    1332:	38 85       	ldd	r19, Y+8	; 0x08
+    1334:	8f a9       	ldd	r24, Y+55	; 0x37
+    1336:	98 ad       	ldd	r25, Y+56	; 0x38
+    1338:	28 17       	cp	r18, r24
+    133a:	39 07       	cpc	r19, r25
+    133c:	89 f4       	brne	.+34     	; 0x1360 <main+0x75a>
+    133e:	29 85       	ldd	r18, Y+9	; 0x09
+    1340:	3a 85       	ldd	r19, Y+10	; 0x0a
+    1342:	89 ad       	ldd	r24, Y+57	; 0x39
+    1344:	9a ad       	ldd	r25, Y+58	; 0x3a
+    1346:	28 17       	cp	r18, r24
+    1348:	39 07       	cpc	r19, r25
+    134a:	51 f4       	brne	.+20     	; 0x1360 <main+0x75a>
+    134c:	00 e0       	ldi	r16, 0x00	; 0
+    134e:	2b 85       	ldd	r18, Y+11	; 0x0b
+    1350:	3c 85       	ldd	r19, Y+12	; 0x0c
+    1352:	8b ad       	ldd	r24, Y+59	; 0x3b
+    1354:	9c ad       	ldd	r25, Y+60	; 0x3c
+    1356:	28 17       	cp	r18, r24
+    1358:	39 07       	cpc	r19, r25
+    135a:	19 f4       	brne	.+6      	; 0x1362 <main+0x75c>
+    135c:	01 e0       	ldi	r16, 0x01	; 1
+    135e:	01 c0       	rjmp	.+2      	; 0x1362 <main+0x75c>
+    1360:	00 e0       	ldi	r16, 0x00	; 0
+			{
+				 data->yellowOn = 1;
+	  		}
+
+		// blue
+		if(stringState[0] == buttonStringPatterns[3][0] &&
+    1362:	8d ad       	ldd	r24, Y+61	; 0x3d
+    1364:	9e ad       	ldd	r25, Y+62	; 0x3e
+    1366:	48 17       	cp	r20, r24
+    1368:	59 07       	cpc	r21, r25
+    136a:	81 f5       	brne	.+96     	; 0x13cc <main+0x7c6>
+    136c:	2b 81       	ldd	r18, Y+3	; 0x03
+    136e:	3c 81       	ldd	r19, Y+4	; 0x04
+    1370:	21 96       	adiw	r28, 0x01	; 1
+    1372:	8e ad       	ldd	r24, Y+62	; 0x3e
+    1374:	9f ad       	ldd	r25, Y+63	; 0x3f
+    1376:	21 97       	sbiw	r28, 0x01	; 1
+    1378:	28 17       	cp	r18, r24
+    137a:	39 07       	cpc	r19, r25
+    137c:	39 f5       	brne	.+78     	; 0x13cc <main+0x7c6>
+    137e:	2d 81       	ldd	r18, Y+5	; 0x05
+    1380:	3e 81       	ldd	r19, Y+6	; 0x06
+    1382:	23 96       	adiw	r28, 0x03	; 3
+    1384:	8e ad       	ldd	r24, Y+62	; 0x3e
+    1386:	9f ad       	ldd	r25, Y+63	; 0x3f
+    1388:	23 97       	sbiw	r28, 0x03	; 3
+    138a:	28 17       	cp	r18, r24
+    138c:	39 07       	cpc	r19, r25
+    138e:	f1 f4       	brne	.+60     	; 0x13cc <main+0x7c6>
+    1390:	2f 81       	ldd	r18, Y+7	; 0x07
+    1392:	38 85       	ldd	r19, Y+8	; 0x08
+    1394:	25 96       	adiw	r28, 0x05	; 5
+    1396:	8e ad       	ldd	r24, Y+62	; 0x3e
+    1398:	9f ad       	ldd	r25, Y+63	; 0x3f
+    139a:	25 97       	sbiw	r28, 0x05	; 5
+    139c:	28 17       	cp	r18, r24
+    139e:	39 07       	cpc	r19, r25
+    13a0:	a9 f4       	brne	.+42     	; 0x13cc <main+0x7c6>
+    13a2:	29 85       	ldd	r18, Y+9	; 0x09
+    13a4:	3a 85       	ldd	r19, Y+10	; 0x0a
+    13a6:	27 96       	adiw	r28, 0x07	; 7
+    13a8:	8e ad       	ldd	r24, Y+62	; 0x3e
+    13aa:	9f ad       	ldd	r25, Y+63	; 0x3f
+    13ac:	27 97       	sbiw	r28, 0x07	; 7
+    13ae:	28 17       	cp	r18, r24
+    13b0:	39 07       	cpc	r19, r25
+    13b2:	61 f4       	brne	.+24     	; 0x13cc <main+0x7c6>
+    13b4:	60 e0       	ldi	r22, 0x00	; 0
+    13b6:	2b 85       	ldd	r18, Y+11	; 0x0b
+    13b8:	3c 85       	ldd	r19, Y+12	; 0x0c
+    13ba:	29 96       	adiw	r28, 0x09	; 9
+    13bc:	8e ad       	ldd	r24, Y+62	; 0x3e
+    13be:	9f ad       	ldd	r25, Y+63	; 0x3f
+    13c0:	29 97       	sbiw	r28, 0x09	; 9
+    13c2:	28 17       	cp	r18, r24
+    13c4:	39 07       	cpc	r19, r25
+    13c6:	19 f4       	brne	.+6      	; 0x13ce <main+0x7c8>
+    13c8:	61 e0       	ldi	r22, 0x01	; 1
+    13ca:	01 c0       	rjmp	.+2      	; 0x13ce <main+0x7c8>
+    13cc:	60 e0       	ldi	r22, 0x00	; 0
+			{
+				 data->blueOn = 1;
+	  		}
+
+		// orange
+		if(stringState[0] == buttonStringPatterns[4][0] &&
+    13ce:	2b 96       	adiw	r28, 0x0b	; 11
+    13d0:	8e ad       	ldd	r24, Y+62	; 0x3e
+    13d2:	9f ad       	ldd	r25, Y+63	; 0x3f
+    13d4:	2b 97       	sbiw	r28, 0x0b	; 11
+    13d6:	48 17       	cp	r20, r24
+    13d8:	59 07       	cpc	r21, r25
+    13da:	09 f0       	breq	.+2      	; 0x13de <main+0x7d8>
+    13dc:	d7 c1       	rjmp	.+942    	; 0x178c <main+0xb86>
+    13de:	2b 81       	ldd	r18, Y+3	; 0x03
+    13e0:	3c 81       	ldd	r19, Y+4	; 0x04
+    13e2:	2d 96       	adiw	r28, 0x0d	; 13
+    13e4:	8e ad       	ldd	r24, Y+62	; 0x3e
+    13e6:	9f ad       	ldd	r25, Y+63	; 0x3f
+    13e8:	2d 97       	sbiw	r28, 0x0d	; 13
+    13ea:	28 17       	cp	r18, r24
+    13ec:	39 07       	cpc	r19, r25
+    13ee:	09 f0       	breq	.+2      	; 0x13f2 <main+0x7ec>
+    13f0:	cd c1       	rjmp	.+922    	; 0x178c <main+0xb86>
+    13f2:	2d 81       	ldd	r18, Y+5	; 0x05
+    13f4:	3e 81       	ldd	r19, Y+6	; 0x06
+    13f6:	2f 96       	adiw	r28, 0x0f	; 15
+    13f8:	8e ad       	ldd	r24, Y+62	; 0x3e
+    13fa:	9f ad       	ldd	r25, Y+63	; 0x3f
+    13fc:	2f 97       	sbiw	r28, 0x0f	; 15
+    13fe:	28 17       	cp	r18, r24
+    1400:	39 07       	cpc	r19, r25
+    1402:	09 f0       	breq	.+2      	; 0x1406 <main+0x800>
+    1404:	c3 c1       	rjmp	.+902    	; 0x178c <main+0xb86>
+    1406:	2f 81       	ldd	r18, Y+7	; 0x07
+    1408:	38 85       	ldd	r19, Y+8	; 0x08
+    140a:	61 96       	adiw	r28, 0x11	; 17
+    140c:	8e ad       	ldd	r24, Y+62	; 0x3e
+    140e:	9f ad       	ldd	r25, Y+63	; 0x3f
+    1410:	61 97       	sbiw	r28, 0x11	; 17
+    1412:	28 17       	cp	r18, r24
+    1414:	39 07       	cpc	r19, r25
+    1416:	09 f0       	breq	.+2      	; 0x141a <main+0x814>
+    1418:	b9 c1       	rjmp	.+882    	; 0x178c <main+0xb86>
+    141a:	29 85       	ldd	r18, Y+9	; 0x09
+    141c:	3a 85       	ldd	r19, Y+10	; 0x0a
+    141e:	63 96       	adiw	r28, 0x13	; 19
+    1420:	8e ad       	ldd	r24, Y+62	; 0x3e
+    1422:	9f ad       	ldd	r25, Y+63	; 0x3f
+    1424:	63 97       	sbiw	r28, 0x13	; 19
+    1426:	28 17       	cp	r18, r24
+    1428:	39 07       	cpc	r19, r25
+    142a:	09 f0       	breq	.+2      	; 0x142e <main+0x828>
+    142c:	af c1       	rjmp	.+862    	; 0x178c <main+0xb86>
+    142e:	dd 24       	eor	r13, r13
+    1430:	2b 85       	ldd	r18, Y+11	; 0x0b
+    1432:	3c 85       	ldd	r19, Y+12	; 0x0c
+    1434:	65 96       	adiw	r28, 0x15	; 21
+    1436:	8e ad       	ldd	r24, Y+62	; 0x3e
+    1438:	9f ad       	ldd	r25, Y+63	; 0x3f
+    143a:	65 97       	sbiw	r28, 0x15	; 21
+    143c:	28 17       	cp	r18, r24
+    143e:	39 07       	cpc	r19, r25
+    1440:	09 f0       	breq	.+2      	; 0x1444 <main+0x83e>
+    1442:	48 c1       	rjmp	.+656    	; 0x16d4 <main+0xace>
+    1444:	45 c1       	rjmp	.+650    	; 0x16d0 <main+0xaca>
+			{
+				 data->orangeOn = 1;
+	  		}
+	}
+
+	else if (*controllerMode == NOTES) // We're playing with notes
+    1446:	a2 e0       	ldi	r26, 0x02	; 2
+    1448:	7a 16       	cp	r7, r26
+    144a:	09 f0       	breq	.+2      	; 0x144e <main+0x848>
+    144c:	99 c0       	rjmp	.+306    	; 0x1580 <main+0x97a>
+    144e:	66 96       	adiw	r28, 0x16	; 22
+    1450:	8f ad       	ldd	r24, Y+63	; 0x3f
+    1452:	66 97       	sbiw	r28, 0x16	; 22
+    1454:	67 96       	adiw	r28, 0x17	; 23
+    1456:	9f ad       	ldd	r25, Y+63	; 0x3f
+    1458:	67 97       	sbiw	r28, 0x17	; 23
+    145a:	7c 01       	movw	r14, r24
+    145c:	fe 01       	movw	r30, r28
+    145e:	79 96       	adiw	r30, 0x19	; 25
+    1460:	9d e3       	ldi	r25, 0x3D	; 61
+    1462:	89 2e       	mov	r8, r25
+    1464:	91 2c       	mov	r9, r1
+    1466:	8c 0e       	add	r8, r28
+    1468:	9d 1e       	adc	r9, r29
+    146a:	dd 24       	eor	r13, r13
+    146c:	60 e0       	ldi	r22, 0x00	; 0
+    146e:	00 e0       	ldi	r16, 0x00	; 0
+    1470:	cc 24       	eor	r12, r12
+    1472:	10 e0       	ldi	r17, 0x00	; 0
+    1474:	4f ef       	ldi	r20, 0xFF	; 255
+    1476:	70 e0       	ldi	r23, 0x00	; 0
+    1478:	50 e0       	ldi	r21, 0x00	; 0
+		char buttonPressed = 0;
+		char strumPressed  = 0;
+
+		for (int i = 0; i < 6; i++)
+		{
+			if (stringState[i] != 0) // Only look at strings that are being touched or strummed
+    147a:	d7 01       	movw	r26, r14
+    147c:	2d 91       	ld	r18, X+
+    147e:	3c 91       	ld	r19, X
+    1480:	21 15       	cp	r18, r1
+    1482:	31 05       	cpc	r19, r1
+    1484:	09 f4       	brne	.+2      	; 0x1488 <main+0x882>
+    1486:	63 c0       	rjmp	.+198    	; 0x154e <main+0x948>
+			{
+				// Check for open strings being strummed first
+				if (stringState[i] == 1) // This means we're strumming an open string
+    1488:	21 30       	cpi	r18, 0x01	; 1
+    148a:	31 05       	cpc	r19, r1
+    148c:	29 f5       	brne	.+74     	; 0x14d8 <main+0x8d2>
+				{
+					if (stringState[i] == buttonStringPatterns[0][i])
+    148e:	80 81       	ld	r24, Z
+    1490:	91 81       	ldd	r25, Z+1	; 0x01
+    1492:	01 97       	sbiw	r24, 0x01	; 1
+    1494:	11 f4       	brne	.+4      	; 0x149a <main+0x894>
+    1496:	45 2f       	mov	r20, r21
+    1498:	11 e0       	ldi	r17, 0x01	; 1
+					{
+						strumOn = i;
+						data->greenOn =  1;	
+					}
+					if (stringState[i] == buttonStringPatterns[1][i])
+    149a:	84 85       	ldd	r24, Z+12	; 0x0c
+    149c:	95 85       	ldd	r25, Z+13	; 0x0d
+    149e:	01 97       	sbiw	r24, 0x01	; 1
+    14a0:	19 f4       	brne	.+6      	; 0x14a8 <main+0x8a2>
+    14a2:	45 2f       	mov	r20, r21
+    14a4:	cc 24       	eor	r12, r12
+    14a6:	c3 94       	inc	r12
+					{
+						strumOn = i;
+						data->redOn =  1;	
+					}
+					if (stringState[i] == buttonStringPatterns[2][i])
+    14a8:	80 8d       	ldd	r24, Z+24	; 0x18
+    14aa:	91 8d       	ldd	r25, Z+25	; 0x19
+    14ac:	01 97       	sbiw	r24, 0x01	; 1
+    14ae:	11 f4       	brne	.+4      	; 0x14b4 <main+0x8ae>
+    14b0:	45 2f       	mov	r20, r21
+    14b2:	01 e0       	ldi	r16, 0x01	; 1
+					{
+						strumOn = i;
+						data->yellowOn =  1;
+					}				
+					if (stringState[i] == buttonStringPatterns[3][i])
+    14b4:	d4 01       	movw	r26, r8
+    14b6:	8d 91       	ld	r24, X+
+    14b8:	9c 91       	ld	r25, X
+    14ba:	01 97       	sbiw	r24, 0x01	; 1
+    14bc:	11 f4       	brne	.+4      	; 0x14c2 <main+0x8bc>
+    14be:	45 2f       	mov	r20, r21
+    14c0:	61 e0       	ldi	r22, 0x01	; 1
+					{
+						strumOn = i;
+						data->blueOn =  1;
+					}				
+					if (stringState[i] == buttonStringPatterns[4][i])
+    14c2:	d4 01       	movw	r26, r8
+    14c4:	1c 96       	adiw	r26, 0x0c	; 12
+    14c6:	8d 91       	ld	r24, X+
+    14c8:	9c 91       	ld	r25, X
+    14ca:	1d 97       	sbiw	r26, 0x0d	; 13
+    14cc:	01 97       	sbiw	r24, 0x01	; 1
+    14ce:	31 f4       	brne	.+12     	; 0x14dc <main+0x8d6>
+    14d0:	45 2f       	mov	r20, r21
+    14d2:	dd 24       	eor	r13, r13
+    14d4:	d3 94       	inc	r13
+    14d6:	02 c0       	rjmp	.+4      	; 0x14dc <main+0x8d6>
+				}
+				 // Now we have checked for strummed notes, we need to check for pressed notes
+				 //  so that we can display them for reference as well as use them when strummed
+				else
+					// First see if we're strumming or not
+					strumPressed = stringState[i] & 1;
+    14d8:	72 2f       	mov	r23, r18
+    14da:	71 70       	andi	r23, 0x01	; 1
+
+					// Now ensure the strum bit is zero
+					stringState[i] &= (~1);
+    14dc:	2e 7f       	andi	r18, 0xFE	; 254
+    14de:	d7 01       	movw	r26, r14
+    14e0:	2d 93       	st	X+, r18
+    14e2:	3c 93       	st	X, r19
+
+					// Take care of displaying closed notes
+					if (stringState[i] == buttonStringPatterns[0][i]&& 
+    14e4:	80 81       	ld	r24, Z
+    14e6:	91 81       	ldd	r25, Z+1	; 0x01
+    14e8:	28 17       	cp	r18, r24
+    14ea:	39 07       	cpc	r19, r25
+    14ec:	21 f4       	brne	.+8      	; 0x14f6 <main+0x8f0>
+    14ee:	21 15       	cp	r18, r1
+    14f0:	31 05       	cpc	r19, r1
+    14f2:	09 f0       	breq	.+2      	; 0x14f6 <main+0x8f0>
+    14f4:	11 e0       	ldi	r17, 0x01	; 1
+											buttonStringPatterns[0][i] != 0)
+					{
+						data->greenOn =  1;	
+						buttonPressed = 1;
+					}
+					if (stringState[i] == buttonStringPatterns[1][i] && 
+    14f6:	84 85       	ldd	r24, Z+12	; 0x0c
+    14f8:	95 85       	ldd	r25, Z+13	; 0x0d
+    14fa:	28 17       	cp	r18, r24
+    14fc:	39 07       	cpc	r19, r25
+    14fe:	29 f4       	brne	.+10     	; 0x150a <main+0x904>
+    1500:	21 15       	cp	r18, r1
+    1502:	31 05       	cpc	r19, r1
+    1504:	11 f0       	breq	.+4      	; 0x150a <main+0x904>
+    1506:	cc 24       	eor	r12, r12
+    1508:	c3 94       	inc	r12
+											buttonStringPatterns[1][i] != 0)
+					{
+						data->redOn =  1;	
+						buttonPressed = 1;
+					}
+					if (stringState[i] == buttonStringPatterns[2][i] && 
+    150a:	80 8d       	ldd	r24, Z+24	; 0x18
+    150c:	91 8d       	ldd	r25, Z+25	; 0x19
+    150e:	28 17       	cp	r18, r24
+    1510:	39 07       	cpc	r19, r25
+    1512:	21 f4       	brne	.+8      	; 0x151c <main+0x916>
+    1514:	21 15       	cp	r18, r1
+    1516:	31 05       	cpc	r19, r1
+    1518:	09 f0       	breq	.+2      	; 0x151c <main+0x916>
+    151a:	01 e0       	ldi	r16, 0x01	; 1
+											buttonStringPatterns[2][i] != 0)
+						{
+						data->yellowOn =  1;
+						buttonPressed = 1;
+					}
+					if (stringState[i] == buttonStringPatterns[3][i] && 
+    151c:	d4 01       	movw	r26, r8
+    151e:	8d 91       	ld	r24, X+
+    1520:	9c 91       	ld	r25, X
+    1522:	28 17       	cp	r18, r24
+    1524:	39 07       	cpc	r19, r25
+    1526:	21 f4       	brne	.+8      	; 0x1530 <main+0x92a>
+    1528:	21 15       	cp	r18, r1
+    152a:	31 05       	cpc	r19, r1
+    152c:	09 f0       	breq	.+2      	; 0x1530 <main+0x92a>
+    152e:	61 e0       	ldi	r22, 0x01	; 1
+											buttonStringPatterns[3][i] != 0)
+					{
+						data->blueOn =  1;
+						buttonPressed = 1;
+						}				
+					if (stringState[i] == buttonStringPatterns[4][i] && 
+    1530:	d4 01       	movw	r26, r8
+    1532:	1c 96       	adiw	r26, 0x0c	; 12
+    1534:	8d 91       	ld	r24, X+
+    1536:	9c 91       	ld	r25, X
+    1538:	1d 97       	sbiw	r26, 0x0d	; 13
+    153a:	28 17       	cp	r18, r24
+    153c:	39 07       	cpc	r19, r25
+    153e:	21 f4       	brne	.+8      	; 0x1548 <main+0x942>
+    1540:	23 2b       	or	r18, r19
+    1542:	11 f0       	breq	.+4      	; 0x1548 <main+0x942>
+    1544:	dd 24       	eor	r13, r13
+    1546:	d3 94       	inc	r13
+					{
+						data->orangeOn =  1;
+						buttonPressed = 1;									
+					}
+						// Now deal with strumming
+					if ((buttonPressed = 1) && (strumPressed == 1))
+    1548:	71 30       	cpi	r23, 0x01	; 1
+    154a:	09 f4       	brne	.+2      	; 0x154e <main+0x948>
+    154c:	45 2f       	mov	r20, r21
+    154e:	82 e0       	ldi	r24, 0x02	; 2
+    1550:	90 e0       	ldi	r25, 0x00	; 0
+    1552:	e8 0e       	add	r14, r24
+    1554:	f9 1e       	adc	r15, r25
+    1556:	5f 5f       	subi	r21, 0xFF	; 255
+    1558:	32 96       	adiw	r30, 0x02	; 2
+    155a:	88 0e       	add	r8, r24
+    155c:	99 1e       	adc	r9, r25
+		data->downOn = 0;
+		char strumOn = -1; // This holds which string the pick is strumming
+		char buttonPressed = 0;
+		char strumPressed  = 0;
+
+		for (int i = 0; i < 6; i++)
+    155e:	56 30       	cpi	r21, 0x06	; 6
+    1560:	09 f0       	breq	.+2      	; 0x1564 <main+0x95e>
+    1562:	8b cf       	rjmp	.-234    	; 0x147a <main+0x874>
+				}
+		}
+
+		//Now set the strum buttons properly
+
+		if ((strumOn >= 0) && (strumOn < 3))
+    1564:	43 30       	cpi	r20, 0x03	; 3
+    1566:	10 f4       	brcc	.+4      	; 0x156c <main+0x966>
+    1568:	71 e0       	ldi	r23, 0x01	; 1
+    156a:	08 c0       	rjmp	.+16     	; 0x157c <main+0x976>
+		{
+			data->downOn = 1;
+		}
+		else if ((strumOn >= 3) && (strumOn < 6 ) && (data->downOn != 1))
+    156c:	43 50       	subi	r20, 0x03	; 3
+    156e:	43 30       	cpi	r20, 0x03	; 3
+    1570:	20 f4       	brcc	.+8      	; 0x157a <main+0x974>
+    1572:	70 e0       	ldi	r23, 0x00	; 0
+    1574:	99 24       	eor	r9, r9
+    1576:	93 94       	inc	r9
+    1578:	ad c0       	rjmp	.+346    	; 0x16d4 <main+0xace>
+    157a:	70 e0       	ldi	r23, 0x00	; 0
+    157c:	99 24       	eor	r9, r9
+    157e:	aa c0       	rjmp	.+340    	; 0x16d4 <main+0xace>
+    1580:	66 96       	adiw	r28, 0x16	; 22
+    1582:	8f ad       	ldd	r24, Y+63	; 0x3f
+    1584:	66 97       	sbiw	r28, 0x16	; 22
+    1586:	67 96       	adiw	r28, 0x17	; 23
+    1588:	9f ad       	ldd	r25, Y+63	; 0x3f
+    158a:	67 97       	sbiw	r28, 0x17	; 23
+    158c:	7c 01       	movw	r14, r24
+    158e:	e8 e5       	ldi	r30, 0x58	; 88
+    1590:	f2 e0       	ldi	r31, 0x02	; 2
+    1592:	aa e4       	ldi	r26, 0x4A	; 74
+    1594:	b2 e0       	ldi	r27, 0x02	; 2
+    1596:	69 96       	adiw	r28, 0x19	; 25
+    1598:	bf af       	std	Y+63, r27	; 0x3f
+    159a:	ae af       	std	Y+62, r26	; 0x3e
+    159c:	69 97       	sbiw	r28, 0x19	; 25
+    159e:	dd 24       	eor	r13, r13
+    15a0:	60 e0       	ldi	r22, 0x00	; 0
+    15a2:	00 e0       	ldi	r16, 0x00	; 0
+    15a4:	cc 24       	eor	r12, r12
+    15a6:	10 e0       	ldi	r17, 0x00	; 0
+    15a8:	99 24       	eor	r9, r9
+    15aa:	70 e0       	ldi	r23, 0x00	; 0
+    15ac:	40 e0       	ldi	r20, 0x00	; 0
+    15ae:	50 e0       	ldi	r21, 0x00	; 0
+			{
+			    if (triedGreen[guitarString] == 0) // we didn't touch green last cycle
+			    {        
+					// so we start the counter and say we did touch it.
+			      greenTimers[guitarString] = TCNT1;
+			      triedGreen[guitarString] = 1;
+    15b0:	81 e0       	ldi	r24, 0x01	; 1
+    15b2:	48 2e       	mov	r4, r24
+    15b4:	51 2c       	mov	r5, r1
+		 */
+
+		for(int guitarString = 0; guitarString < 6; guitarString++)
+		{
+			// find the proper value by masking the stringState variable for each fret
+			char orange = (stringState[guitarString] & (1<<5));
+    15b6:	d7 01       	movw	r26, r14
+    15b8:	6c 90       	ld	r6, X
+			char blue   = (stringState[guitarString] & (1<<4));
+    15ba:	96 2d       	mov	r25, r6
+    15bc:	90 71       	andi	r25, 0x10	; 16
+			char yellow = (stringState[guitarString] & (1<<3));
+    15be:	26 2d       	mov	r18, r6
+    15c0:	28 70       	andi	r18, 0x08	; 8
+			char red    = (stringState[guitarString] & (1<<2));
+    15c2:	36 2d       	mov	r19, r6
+    15c4:	34 70       	andi	r19, 0x04	; 4
+			char green  = (stringState[guitarString] & (1<<1));
+    15c6:	b2 e0       	ldi	r27, 0x02	; 2
+    15c8:	8b 2e       	mov	r8, r27
+    15ca:	86 20       	and	r8, r6
+
+			if ((orange != 0) && (blue != 0) && (data->orangeOn == 0))
+    15cc:	65 fe       	sbrs	r6, 5
+    15ce:	09 c0       	rjmp	.+18     	; 0x15e2 <main+0x9dc>
+    15d0:	99 23       	and	r25, r25
+    15d2:	89 f0       	breq	.+34     	; 0x15f6 <main+0x9f0>
+    15d4:	dd 20       	and	r13, r13
+    15d6:	39 f4       	brne	.+14     	; 0x15e6 <main+0x9e0>
+			{    
+			    data->orangeOn = 1;
+			    triedGreen[guitarString] = 0;
+    15d8:	11 82       	std	Z+1, r1	; 0x01
+    15da:	10 82       	st	Z, r1
+    15dc:	dd 24       	eor	r13, r13
+    15de:	d3 94       	inc	r13
+    15e0:	48 c0       	rjmp	.+144    	; 0x1672 <main+0xa6c>
+			}
+			else if ((blue != 0) && (yellow != 0) && (data->blueOn == 0))
+    15e2:	99 23       	and	r25, r25
+    15e4:	41 f0       	breq	.+16     	; 0x15f6 <main+0x9f0>
+    15e6:	22 23       	and	r18, r18
+    15e8:	81 f0       	breq	.+32     	; 0x160a <main+0xa04>
+    15ea:	66 23       	and	r22, r22
+    15ec:	31 f4       	brne	.+12     	; 0x15fa <main+0x9f4>
+			{
+			    data->blueOn = 1;
+			    triedGreen[guitarString] = 0;
+    15ee:	11 82       	std	Z+1, r1	; 0x01
+    15f0:	10 82       	st	Z, r1
+    15f2:	61 e0       	ldi	r22, 0x01	; 1
+    15f4:	3e c0       	rjmp	.+124    	; 0x1672 <main+0xa6c>
+			}
+			else if ((yellow != 0) && (red != 0) && (data->yellowOn == 0))
+    15f6:	22 23       	and	r18, r18
+    15f8:	41 f0       	breq	.+16     	; 0x160a <main+0xa04>
+    15fa:	33 23       	and	r19, r19
+    15fc:	89 f0       	breq	.+34     	; 0x1620 <main+0xa1a>
+    15fe:	00 23       	and	r16, r16
+    1600:	31 f4       	brne	.+12     	; 0x160e <main+0xa08>
+			{
+			    data->yellowOn = 1;
+			    triedGreen[guitarString] = 0;
+    1602:	11 82       	std	Z+1, r1	; 0x01
+    1604:	10 82       	st	Z, r1
+    1606:	01 e0       	ldi	r16, 0x01	; 1
+    1608:	34 c0       	rjmp	.+104    	; 0x1672 <main+0xa6c>
+			}
+			else if ((red != 0) && (green != 0) && (data->redOn == 0))
+    160a:	33 23       	and	r19, r19
+    160c:	49 f0       	breq	.+18     	; 0x1620 <main+0xa1a>
+    160e:	88 20       	and	r8, r8
+    1610:	71 f1       	breq	.+92     	; 0x166e <main+0xa68>
+    1612:	cc 20       	and	r12, r12
+    1614:	39 f4       	brne	.+14     	; 0x1624 <main+0xa1e>
+			{
+			    data->redOn = 1;
+			    triedGreen[guitarString] = 0;
+    1616:	11 82       	std	Z+1, r1	; 0x01
+    1618:	10 82       	st	Z, r1
+    161a:	cc 24       	eor	r12, r12
+    161c:	c3 94       	inc	r12
+    161e:	29 c0       	rjmp	.+82     	; 0x1672 <main+0xa6c>
+			}
+			else if (green != 0)
+    1620:	88 20       	and	r8, r8
+    1622:	29 f1       	breq	.+74     	; 0x166e <main+0xa68>
+			{
+			    if (triedGreen[guitarString] == 0) // we didn't touch green last cycle
+    1624:	80 81       	ld	r24, Z
+    1626:	91 81       	ldd	r25, Z+1	; 0x01
+    1628:	89 2b       	or	r24, r25
+    162a:	69 f4       	brne	.+26     	; 0x1646 <main+0xa40>
+			    {        
+					// so we start the counter and say we did touch it.
+			      greenTimers[guitarString] = TCNT1;
+    162c:	80 91 84 00 	lds	r24, 0x0084
+    1630:	90 91 85 00 	lds	r25, 0x0085
+    1634:	69 96       	adiw	r28, 0x19	; 25
+    1636:	ae ad       	ldd	r26, Y+62	; 0x3e
+    1638:	bf ad       	ldd	r27, Y+63	; 0x3f
+    163a:	69 97       	sbiw	r28, 0x19	; 25
+    163c:	8d 93       	st	X+, r24
+    163e:	9c 93       	st	X, r25
+			      triedGreen[guitarString] = 1;
+    1640:	51 82       	std	Z+1, r5	; 0x01
+    1642:	40 82       	st	Z, r4
+    1644:	16 c0       	rjmp	.+44     	; 0x1672 <main+0xa6c>
+			    }
+			    else //triedGreen == true
+			    {
+					// now we test to see if the counter has counted high enough, and
+					// if it has, then we do record a green hit.
+					int test = TCNT1 - greenTimers[guitarString];
+    1646:	80 91 84 00 	lds	r24, 0x0084
+    164a:	90 91 85 00 	lds	r25, 0x0085
+    164e:	69 96       	adiw	r28, 0x19	; 25
+    1650:	ae ad       	ldd	r26, Y+62	; 0x3e
+    1652:	bf ad       	ldd	r27, Y+63	; 0x3f
+    1654:	69 97       	sbiw	r28, 0x19	; 25
+    1656:	2d 91       	ld	r18, X+
+    1658:	3c 91       	ld	r19, X
+			    	if (  (data->greenOn == 0) && (( test > GREEN_TIMER_WAIT) || (test <= 0)) )
+    165a:	11 23       	and	r17, r17
+    165c:	51 f4       	brne	.+20     	; 0x1672 <main+0xa6c>
+    165e:	01 97       	sbiw	r24, 0x01	; 1
+    1660:	82 1b       	sub	r24, r18
+    1662:	93 0b       	sbc	r25, r19
+    1664:	84 36       	cpi	r24, 0x64	; 100
+    1666:	91 05       	cpc	r25, r1
+    1668:	20 f0       	brcs	.+8      	; 0x1672 <main+0xa6c>
+    166a:	11 e0       	ldi	r17, 0x01	; 1
+    166c:	02 c0       	rjmp	.+4      	; 0x1672 <main+0xa6c>
+			    }
+			}
+ 
+		    else  //no buttons pressed
+		    {
+		        triedGreen[guitarString] = 0;
+    166e:	11 82       	std	Z+1, r1	; 0x01
+    1670:	10 82       	st	Z, r1
+			the strum has a direction, so if you strum the
+			top 3 strings, you strum down, and if you strum
+			the bottom 3 strings, you're strumming up.
+		*/
+			// Check for strumming
+			if (stringState[guitarString] & 1)
+    1672:	60 fe       	sbrs	r6, 0
+    1674:	09 c0       	rjmp	.+18     	; 0x1688 <main+0xa82>
+			{
+				if (guitarString < 3)
+    1676:	43 30       	cpi	r20, 0x03	; 3
+    1678:	51 05       	cpc	r21, r1
+    167a:	24 f0       	brlt	.+8      	; 0x1684 <main+0xa7e>
+    167c:	70 e0       	ldi	r23, 0x00	; 0
+    167e:	99 24       	eor	r9, r9
+    1680:	93 94       	inc	r9
+    1682:	02 c0       	rjmp	.+4      	; 0x1688 <main+0xa82>
+    1684:	71 e0       	ldi	r23, 0x01	; 1
+    1686:	99 24       	eor	r9, r9
+			timing on that one, so when you press just green, it starts counting
+			instead of turing greenOn on, so if the red fret is turned on before it
+			counts up to the GREEN_TIMER_WAIT, red gets activated and green doesn't.
+		 */
+
+		for(int guitarString = 0; guitarString < 6; guitarString++)
+    1688:	4f 5f       	subi	r20, 0xFF	; 255
+    168a:	5f 4f       	sbci	r21, 0xFF	; 255
+    168c:	82 e0       	ldi	r24, 0x02	; 2
+    168e:	90 e0       	ldi	r25, 0x00	; 0
+    1690:	e8 0e       	add	r14, r24
+    1692:	f9 1e       	adc	r15, r25
+    1694:	32 96       	adiw	r30, 0x02	; 2
+    1696:	69 96       	adiw	r28, 0x19	; 25
+    1698:	ae ad       	ldd	r26, Y+62	; 0x3e
+    169a:	bf ad       	ldd	r27, Y+63	; 0x3f
+    169c:	69 97       	sbiw	r28, 0x19	; 25
+    169e:	12 96       	adiw	r26, 0x02	; 2
+    16a0:	69 96       	adiw	r28, 0x19	; 25
+    16a2:	bf af       	std	Y+63, r27	; 0x3f
+    16a4:	ae af       	std	Y+62, r26	; 0x3e
+    16a6:	69 97       	sbiw	r28, 0x19	; 25
+    16a8:	46 30       	cpi	r20, 0x06	; 6
+    16aa:	51 05       	cpc	r21, r1
+    16ac:	09 f0       	breq	.+2      	; 0x16b0 <main+0xaaa>
+    16ae:	83 cf       	rjmp	.-250    	; 0x15b6 <main+0x9b0>
+			if (!(controllerMode % 2))
+				processStringState(&data, stringState, buttonStringPatterns, &controllerMode);
+
+			// Now, if we're in a transitional controller mode, we'll forget that data and substitue 
+			// visual cue data to show that we're changing to a specific mode
+			if (controllerMode == FRETS_TO_NOTES)
+    16b0:	b1 e0       	ldi	r27, 0x01	; 1
+    16b2:	7b 16       	cp	r7, r27
+    16b4:	19 f4       	brne	.+6      	; 0x16bc <main+0xab6>
+    16b6:	11 e0       	ldi	r17, 0x01	; 1
+    16b8:	01 e0       	ldi	r16, 0x01	; 1
+    16ba:	0c c0       	rjmp	.+24     	; 0x16d4 <main+0xace>
+			{
+				data.greenOn = 1;
+				data.yellowOn = 1;
+			}
+			else if (controllerMode == NOTES_TO_CHORDS)
+    16bc:	e3 e0       	ldi	r30, 0x03	; 3
+    16be:	7e 16       	cp	r7, r30
+    16c0:	19 f4       	brne	.+6      	; 0x16c8 <main+0xac2>
+    16c2:	11 e0       	ldi	r17, 0x01	; 1
+    16c4:	61 e0       	ldi	r22, 0x01	; 1
+    16c6:	06 c0       	rjmp	.+12     	; 0x16d4 <main+0xace>
+			{
+				data.greenOn = 1;
+				data.blueOn = 1;
+			}
+			else if (controllerMode == CHORDS_TO_FRETS)
+    16c8:	f5 e0       	ldi	r31, 0x05	; 5
+    16ca:	7f 16       	cp	r7, r31
+    16cc:	19 f4       	brne	.+6      	; 0x16d4 <main+0xace>
+    16ce:	11 e0       	ldi	r17, 0x01	; 1
+    16d0:	dd 24       	eor	r13, r13
+    16d2:	d3 94       	inc	r13
+
+inline void setButtons(dataForController data, char* controllerMode)
+// This function takes the 'color'On values set by readF and sets up the but_dat array accordingly
+{
+	//set the buttons in the button data array to all 1's
+	but_dat[4] = 0b11111111;
+    16d4:	8f ef       	ldi	r24, 0xFF	; 255
+    16d6:	80 93 68 02 	sts	0x0268, r24
+	but_dat[5] &= ~(data.blueOn << BLUE_BIT);
+	but_dat[5] &= ~(data.yellowOn << YELLOW_BIT);
+	but_dat[5] &= ~(data.redOn << RED_BIT);
+	but_dat[5] &= ~(data.greenOn << GREEN_BIT);
+
+	but_dat[5] &= ~(data.upOn << UP_BIT);
+    16da:	d7 94       	ror	r13
+    16dc:	dd 24       	eor	r13, r13
+    16de:	d7 94       	ror	r13
+    16e0:	62 95       	swap	r22
+    16e2:	66 0f       	add	r22, r22
+    16e4:	60 7e       	andi	r22, 0xE0	; 224
+    16e6:	6d 29       	or	r22, r13
+    16e8:	96 2a       	or	r9, r22
+    16ea:	00 0f       	add	r16, r16
+    16ec:	00 0f       	add	r16, r16
+    16ee:	00 0f       	add	r16, r16
+    16f0:	09 29       	or	r16, r9
+    16f2:	c2 94       	swap	r12
+    16f4:	cc 0c       	add	r12, r12
+    16f6:	cc 0c       	add	r12, r12
+    16f8:	a0 ec       	ldi	r26, 0xC0	; 192
+    16fa:	ca 22       	and	r12, r26
+    16fc:	c0 2a       	or	r12, r16
+    16fe:	12 95       	swap	r17
+    1700:	10 7f       	andi	r17, 0xF0	; 240
+    1702:	1c 29       	or	r17, r12
+    1704:	10 95       	com	r17
+    1706:	10 93 69 02 	sts	0x0269, r17
+	but_dat[4] &= ~(data.downOn << DOWN_BIT);
+
+	int i = misc_pin; // check for plus and minus
+    170a:	80 b1       	in	r24, 0x00	; 0
+    170c:	90 e0       	ldi	r25, 0x00	; 0
+	char plusOn = !(i & (1<<plus_pin)); //Plus and minus are held high normally, but pressing sets it low
+	char minusOn = !(i & (1<<minus_pin));
+
+	but_dat[4] &= ~(plusOn << PLUS_BIT);
+    170e:	9c 01       	movw	r18, r24
+    1710:	22 0f       	add	r18, r18
+    1712:	23 2f       	mov	r18, r19
+    1714:	22 1f       	adc	r18, r18
+    1716:	33 0b       	sbc	r19, r19
+    1718:	31 95       	neg	r19
+    171a:	41 e0       	ldi	r20, 0x01	; 1
+    171c:	50 e0       	ldi	r21, 0x00	; 0
+    171e:	24 27       	eor	r18, r20
+    1720:	35 27       	eor	r19, r21
+    1722:	22 0f       	add	r18, r18
+    1724:	33 1f       	adc	r19, r19
+    1726:	22 0f       	add	r18, r18
+    1728:	33 1f       	adc	r19, r19
+    172a:	72 95       	swap	r23
+    172c:	77 0f       	add	r23, r23
+    172e:	77 0f       	add	r23, r23
+    1730:	70 7c       	andi	r23, 0xC0	; 192
+    1732:	72 2b       	or	r23, r18
+	but_dat[4] &= ~(minusOn << MINUS_BIT);
+    1734:	66 e0       	ldi	r22, 0x06	; 6
+    1736:	96 95       	lsr	r25
+    1738:	87 95       	ror	r24
+    173a:	6a 95       	dec	r22
+    173c:	e1 f7       	brne	.-8      	; 0x1736 <main+0xb30>
+    173e:	84 27       	eor	r24, r20
+    1740:	95 27       	eor	r25, r21
+    1742:	81 70       	andi	r24, 0x01	; 1
+    1744:	90 70       	andi	r25, 0x00	; 0
+    1746:	44 e0       	ldi	r20, 0x04	; 4
+    1748:	88 0f       	add	r24, r24
+    174a:	99 1f       	adc	r25, r25
+    174c:	4a 95       	dec	r20
+    174e:	e1 f7       	brne	.-8      	; 0x1748 <main+0xb42>
+    1750:	78 2b       	or	r23, r24
+    1752:	70 95       	com	r23
+    1754:	70 93 68 02 	sts	0x0268, r23
+		    setButtons(data, &controllerMode);
+		}
+		
+    	// Finally, regardless of mode, we send that packet to the 
+		// TWI transfer register, handled by the wiimote.c library
+	    wm_newaction(but_dat);
+    1758:	84 e6       	ldi	r24, 0x64	; 100
+    175a:	92 e0       	ldi	r25, 0x02	; 2
+    175c:	0e 94 f1 0b 	call	0x17e2	; 0x17e2 <wm_newaction>
+    1760:	ce ca       	rjmp	.-2660   	; 0xcfe <main+0xf8>
+
+	} // End of while loop
+    1762:	33 24       	eor	r3, r3
+    1764:	aa 24       	eor	r10, r10
+    1766:	bb 24       	eor	r11, r11
+    1768:	7a cb       	rjmp	.-2316   	; 0xe5e <main+0x258>
+
+inline void configSetButtons(int* buttonToAssign, char* plusLock, int buttonStringPatterns[][6], 
+						int stringState[], char* controllerMode)
+{
+	//set the buttons in the button data array to all 1's
+	but_dat[4] = 0b11111111;
+    176a:	8f ef       	ldi	r24, 0xFF	; 255
+    176c:	80 93 68 02 	sts	0x0268, r24
+	but_dat[5] = 0b11111111;
+    1770:	80 93 69 02 	sts	0x0269, r24
+
+	// Since 'colorOn' is 1 when a fret is pressed, we invert, shift, invert, and & it to set the
+	// corresponding button bit to zero, which corresponds to a button press.
+	if (*buttonToAssign == 0)
+    1774:	a1 14       	cp	r10, r1
+    1776:	b1 04       	cpc	r11, r1
+    1778:	09 f4       	brne	.+2      	; 0x177c <main+0xb76>
+    177a:	91 cb       	rjmp	.-2270   	; 0xe9e <main+0x298>
+    177c:	92 cb       	rjmp	.-2268   	; 0xea2 <main+0x29c>
+    177e:	22 24       	eor	r2, r2
+    1780:	49 cc       	rjmp	.-1902   	; 0x1014 <main+0x40e>
+    1782:	aa 24       	eor	r10, r10
+    1784:	bb 24       	eor	r11, r11
+    1786:	22 24       	eor	r2, r2
+    1788:	23 94       	inc	r2
+    178a:	e6 cf       	rjmp	.-52     	; 0x1758 <main+0xb52>
+    178c:	dd 24       	eor	r13, r13
+    178e:	a2 cf       	rjmp	.-188    	; 0x16d4 <main+0xace>
+
+00001790 <twi_slave_init>:
+static volatile unsigned char twi_rw_len; // length of most recent operation
+
+void twi_slave_init(unsigned char addr)
+{
+        // initialize stuff
+        twi_reg_addr = 0;
+    1790:	10 92 47 02 	sts	0x0247, r1
+    1794:	10 92 46 02 	sts	0x0246, r1
+
+        // set slave address
+        TWAR = addr << 1;
+    1798:	88 0f       	add	r24, r24
+    179a:	80 93 ba 00 	sts	0x00BA, r24
+        
+        // enable twi module, acks, and twi interrupt
+        TWCR = _BV(TWEN) | _BV(TWIE) | _BV(TWEA);
+    179e:	85 e4       	ldi	r24, 0x45	; 69
+    17a0:	80 93 bc 00 	sts	0x00BC, r24
+
+        // enable interrupts
+        sei();
+    17a4:	78 94       	sei
+}
+    17a6:	08 95       	ret
+
+000017a8 <twi_clear_int>:
+
+void twi_clear_int(unsigned char ack)
+{
+        // get ready by clearing interrupt, with or without ack
+        if(ack != 0)
+    17a8:	88 23       	and	r24, r24
+    17aa:	11 f0       	breq	.+4      	; 0x17b0 <twi_clear_int+0x8>
+        {
+                TWCR = _BV(TWEN) | _BV(TWIE) | _BV(TWINT) | _BV(TWEA);
+    17ac:	85 ec       	ldi	r24, 0xC5	; 197
+    17ae:	01 c0       	rjmp	.+2      	; 0x17b2 <twi_clear_int+0xa>
+        }
+        else
+        {
+                TWCR = _BV(TWEN) | _BV(TWIE) | _BV(TWINT);
+    17b0:	85 e8       	ldi	r24, 0x85	; 133
+    17b2:	80 93 bc 00 	sts	0x00BC, r24
+    17b6:	08 95       	ret
+
+000017b8 <wm_ror8>:
+*/
+
+unsigned char wm_ror8(unsigned char a, unsigned char b)
+{
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+    17b8:	28 2f       	mov	r18, r24
+    17ba:	30 e0       	ldi	r19, 0x00	; 0
+    17bc:	70 e0       	ldi	r23, 0x00	; 0
+    17be:	88 e0       	ldi	r24, 0x08	; 8
+    17c0:	90 e0       	ldi	r25, 0x00	; 0
+    17c2:	86 1b       	sub	r24, r22
+    17c4:	97 0b       	sbc	r25, r23
+    17c6:	a9 01       	movw	r20, r18
+    17c8:	02 c0       	rjmp	.+4      	; 0x17ce <wm_ror8+0x16>
+    17ca:	44 0f       	add	r20, r20
+    17cc:	55 1f       	adc	r21, r21
+    17ce:	8a 95       	dec	r24
+    17d0:	e2 f7       	brpl	.-8      	; 0x17ca <wm_ror8+0x12>
+    17d2:	ca 01       	movw	r24, r20
+    17d4:	02 c0       	rjmp	.+4      	; 0x17da <wm_ror8+0x22>
+    17d6:	35 95       	asr	r19
+    17d8:	27 95       	ror	r18
+    17da:	6a 95       	dec	r22
+    17dc:	e2 f7       	brpl	.-8      	; 0x17d6 <wm_ror8+0x1e>
+}
+    17de:	82 2b       	or	r24, r18
+    17e0:	08 95       	ret
+
+000017e2 <wm_newaction>:
+}
+
+void wm_newaction(unsigned char * d)
+{
+        // load button data from user application
+        memcpy(twi_reg, d, 6);
+    17e2:	a6 e4       	ldi	r26, 0x46	; 70
+    17e4:	b1 e0       	ldi	r27, 0x01	; 1
+    17e6:	fc 01       	movw	r30, r24
+    17e8:	86 e0       	ldi	r24, 0x06	; 6
+    17ea:	01 90       	ld	r0, Z+
+    17ec:	0d 92       	st	X+, r0
+    17ee:	81 50       	subi	r24, 0x01	; 1
+    17f0:	e1 f7       	brne	.-8      	; 0x17ea <wm_newaction+0x8>
+}
+    17f2:	08 95       	ret
+
+000017f4 <wm_init>:
+
+void wm_init(unsigned char * id, unsigned char * t, unsigned char * cal_data, void (*function)(void))
+{
+    17f4:	0f 93       	push	r16
+    17f6:	1f 93       	push	r17
+    17f8:	18 2f       	mov	r17, r24
+    17fa:	09 2f       	mov	r16, r25
+}
+
+void wm_newaction(unsigned char * d)
+{
+        // load button data from user application
+        memcpy(twi_reg, d, 6);
+    17fc:	a6 e4       	ldi	r26, 0x46	; 70
+    17fe:	b1 e0       	ldi	r27, 0x01	; 1
+    1800:	fb 01       	movw	r30, r22
+    1802:	86 e0       	ldi	r24, 0x06	; 6
+    1804:	01 90       	ld	r0, Z+
+    1806:	0d 92       	st	X+, r0
+    1808:	81 50       	subi	r24, 0x01	; 1
+    180a:	e1 f7       	brne	.-8      	; 0x1804 <wm_init+0x10>
+        // link user function
+        // wm_sample_event = function;
+
+        // start state
+        wm_newaction(t);
+        twi_reg[0xF0] = 0; // disable encryption
+    180c:	10 92 36 02 	sts	0x0236, r1
+    1810:	81 2f       	mov	r24, r17
+    1812:	90 2f       	mov	r25, r16
+    1814:	9c 01       	movw	r18, r24
+    1816:	d9 01       	movw	r26, r18
+    1818:	2a ef       	ldi	r18, 0xFA	; 250
+    181a:	30 e0       	ldi	r19, 0x00	; 0
+
+        // set id
+        for(unsigned int i = 0, j = 0xFA; i < 6; i++, j++)
+        {
+                twi_reg[j] = id[i];
+    181c:	8d 91       	ld	r24, X+
+    181e:	f9 01       	movw	r30, r18
+    1820:	ea 5b       	subi	r30, 0xBA	; 186
+    1822:	fe 4f       	sbci	r31, 0xFE	; 254
+    1824:	80 83       	st	Z, r24
+        // start state
+        wm_newaction(t);
+        twi_reg[0xF0] = 0; // disable encryption
+
+        // set id
+        for(unsigned int i = 0, j = 0xFA; i < 6; i++, j++)
+    1826:	2f 5f       	subi	r18, 0xFF	; 255
+    1828:	3f 4f       	sbci	r19, 0xFF	; 255
+    182a:	81 e0       	ldi	r24, 0x01	; 1
+    182c:	20 30       	cpi	r18, 0x00	; 0
+    182e:	38 07       	cpc	r19, r24
+    1830:	a9 f7       	brne	.-22     	; 0x181c <wm_init+0x28>
+    1832:	da 01       	movw	r26, r20
+    1834:	20 e2       	ldi	r18, 0x20	; 32
+    1836:	30 e0       	ldi	r19, 0x00	; 0
+        }
+
+        // set calibration data
+        for(unsigned int i = 0, j = 0x20; i < 6; i++, j++)
+        {
+                twi_reg[j] = cal_data[i];
+    1838:	8d 91       	ld	r24, X+
+    183a:	f9 01       	movw	r30, r18
+    183c:	ea 5b       	subi	r30, 0xBA	; 186
+    183e:	fe 4f       	sbci	r31, 0xFE	; 254
+    1840:	80 83       	st	Z, r24
+        {
+                twi_reg[j] = id[i];
+        }
+
+        // set calibration data
+        for(unsigned int i = 0, j = 0x20; i < 6; i++, j++)
+    1842:	2f 5f       	subi	r18, 0xFF	; 255
+    1844:	3f 4f       	sbci	r19, 0xFF	; 255
+    1846:	26 32       	cpi	r18, 0x26	; 38
+    1848:	31 05       	cpc	r19, r1
+    184a:	b1 f7       	brne	.-20     	; 0x1838 <wm_init+0x44>
+        /*dev_detect_port &= 0xFF ^ _BV(dev_detect_pin);
+        dev_detect_ddr |= _BV(dev_detect_pin);
+        _delay_ms(50); // delay to simulate disconnect
+		*/
+        // ready twi bus, no pull-ups
+        twi_port &= 0xFF ^ _BV(twi_scl_pin);
+    184c:	40 98       	cbi	0x08, 0	; 8
+        twi_port &= 0xFF ^ _BV(twi_sda_pin);
+    184e:	41 98       	cbi	0x08, 1	; 8
+static volatile unsigned char twi_rw_len; // length of most recent operation
+
+void twi_slave_init(unsigned char addr)
+{
+        // initialize stuff
+        twi_reg_addr = 0;
+    1850:	10 92 47 02 	sts	0x0247, r1
+    1854:	10 92 46 02 	sts	0x0246, r1
+
+        // set slave address
+        TWAR = addr << 1;
+    1858:	84 ea       	ldi	r24, 0xA4	; 164
+    185a:	80 93 ba 00 	sts	0x00BA, r24
+        
+        // enable twi module, acks, and twi interrupt
+        TWCR = _BV(TWEN) | _BV(TWIE) | _BV(TWEA);
+    185e:	85 e4       	ldi	r24, 0x45	; 69
+    1860:	80 93 bc 00 	sts	0x00BC, r24
+
+        // enable interrupts
+        sei();
+    1864:	78 94       	sei
+        // start twi slave, link events
+        twi_slave_init(0x52);
+
+        // make the wiimote think something is connected
+        //dev_detect_port |= _BV(dev_detect_pin);
+}
+    1866:	1f 91       	pop	r17
+    1868:	0f 91       	pop	r16
+    186a:	08 95       	ret
+
+0000186c <wm_gentabs>:
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+}
+
+void wm_gentabs()
+{
+    186c:	2f 92       	push	r2
+    186e:	3f 92       	push	r3
+    1870:	4f 92       	push	r4
+    1872:	5f 92       	push	r5
+    1874:	6f 92       	push	r6
+    1876:	7f 92       	push	r7
+    1878:	8f 92       	push	r8
+    187a:	9f 92       	push	r9
+    187c:	af 92       	push	r10
+    187e:	bf 92       	push	r11
+    1880:	cf 92       	push	r12
+    1882:	df 92       	push	r13
+    1884:	ef 92       	push	r14
+    1886:	ff 92       	push	r15
+    1888:	0f 93       	push	r16
+    188a:	1f 93       	push	r17
+    188c:	df 93       	push	r29
+    188e:	cf 93       	push	r28
+    1890:	cd b7       	in	r28, 0x3d	; 61
+    1892:	de b7       	in	r29, 0x3e	; 62
+    1894:	68 97       	sbiw	r28, 0x18	; 24
+    1896:	0f b6       	in	r0, 0x3f	; 63
+    1898:	f8 94       	cli
+    189a:	de bf       	out	0x3e, r29	; 62
+    189c:	0f be       	out	0x3f, r0	; 63
+    189e:	cd bf       	out	0x3d, r28	; 61
+    18a0:	4c e7       	ldi	r20, 0x7C	; 124
+    18a2:	64 2e       	mov	r6, r20
+    18a4:	40 e0       	ldi	r20, 0x00	; 0
+    18a6:	74 2e       	mov	r7, r20
+    18a8:	88 24       	eor	r8, r8
+                // generate test key
+                unsigned char ans[6];
+                unsigned char tkey[6];
+                unsigned char t0[10];
+                
+                for(unsigned char i = 0; i < 6; i++)
+    18aa:	37 e0       	ldi	r19, 0x07	; 7
+    18ac:	23 2e       	mov	r2, r19
+    18ae:	31 2c       	mov	r3, r1
+    18b0:	2c 0e       	add	r2, r28
+    18b2:	3d 1e       	adc	r3, r29
+                for(unsigned char i = 0; i < 10; i++)
+                {
+                        t0[i] = pgm_read_byte(&(sboxes[0][wm_rand[i]]));
+                }
+        
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+    18b4:	28 e0       	ldi	r18, 0x08	; 8
+    18b6:	42 2e       	mov	r4, r18
+    18b8:	51 2c       	mov	r5, r1
+    18ba:	cb c0       	rjmp	.+406    	; 0x1a52 <wm_gentabs+0x1e6>
+                unsigned char tkey[6];
+                unsigned char t0[10];
+                
+                for(unsigned char i = 0; i < 6; i++)
+                {
+                        ans[i] = pgm_read_byte(&(ans_tbl[idx][i]));
+    18bc:	84 91       	lpm	r24, Z+
+    18be:	8d 93       	st	X+, r24
+    18c0:	31 96       	adiw	r30, 0x01	; 1
+                // generate test key
+                unsigned char ans[6];
+                unsigned char tkey[6];
+                unsigned char t0[10];
+                
+                for(unsigned char i = 0; i < 6; i++)
+    18c2:	a2 15       	cp	r26, r2
+    18c4:	b3 05       	cpc	r27, r3
+    18c6:	d1 f7       	brne	.-12     	; 0x18bc <wm_gentabs+0x50>
+    18c8:	80 e0       	ldi	r24, 0x00	; 0
+    18ca:	90 e0       	ldi	r25, 0x00	; 0
+                {
+                        ans[i] = pgm_read_byte(&(ans_tbl[idx][i]));
+                }       
+                for(unsigned char i = 0; i < 10; i++)
+                {
+                        t0[i] = pgm_read_byte(&(sboxes[0][wm_rand[i]]));
+    18cc:	fc 01       	movw	r30, r24
+    18ce:	ea 5d       	subi	r30, 0xDA	; 218
+    18d0:	fe 4f       	sbci	r31, 0xFE	; 254
+    18d2:	e0 81       	ld	r30, Z
+    18d4:	f0 e0       	ldi	r31, 0x00	; 0
+    18d6:	ea 55       	subi	r30, 0x5A	; 90
+    18d8:	ff 4f       	sbci	r31, 0xFF	; 255
+    18da:	e4 91       	lpm	r30, Z+
+    18dc:	ad e0       	ldi	r26, 0x0D	; 13
+    18de:	b0 e0       	ldi	r27, 0x00	; 0
+    18e0:	ac 0f       	add	r26, r28
+    18e2:	bd 1f       	adc	r27, r29
+    18e4:	a8 0f       	add	r26, r24
+    18e6:	b9 1f       	adc	r27, r25
+    18e8:	ec 93       	st	X, r30
+    18ea:	01 96       	adiw	r24, 0x01	; 1
+                
+                for(unsigned char i = 0; i < 6; i++)
+                {
+                        ans[i] = pgm_read_byte(&(ans_tbl[idx][i]));
+                }       
+                for(unsigned char i = 0; i < 10; i++)
+    18ec:	8a 30       	cpi	r24, 0x0A	; 10
+    18ee:	91 05       	cpc	r25, r1
+    18f0:	69 f7       	brne	.-38     	; 0x18cc <wm_gentabs+0x60>
+                {
+                        t0[i] = pgm_read_byte(&(sboxes[0][wm_rand[i]]));
+                }
+        
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+    18f2:	aa 88       	ldd	r10, Y+18	; 0x12
+    18f4:	cf 84       	ldd	r12, Y+15	; 0x0f
+*/
+
+unsigned char wm_ror8(unsigned char a, unsigned char b)
+{
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+    18f6:	29 81       	ldd	r18, Y+1	; 0x01
+    18f8:	2a 25       	eor	r18, r10
+    18fa:	30 e0       	ldi	r19, 0x00	; 0
+    18fc:	4c 2d       	mov	r20, r12
+    18fe:	47 70       	andi	r20, 0x07	; 7
+    1900:	50 e0       	ldi	r21, 0x00	; 0
+                for(unsigned char i = 0; i < 10; i++)
+                {
+                        t0[i] = pgm_read_byte(&(sboxes[0][wm_rand[i]]));
+                }
+        
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+    1902:	9e 88       	ldd	r9, Y+22	; 0x16
+    1904:	b9 88       	ldd	r11, Y+17	; 0x11
+    1906:	c2 01       	movw	r24, r4
+    1908:	84 1b       	sub	r24, r20
+    190a:	95 0b       	sbc	r25, r21
+    190c:	b9 01       	movw	r22, r18
+    190e:	02 c0       	rjmp	.+4      	; 0x1914 <wm_gentabs+0xa8>
+    1910:	66 0f       	add	r22, r22
+    1912:	77 1f       	adc	r23, r23
+    1914:	8a 95       	dec	r24
+    1916:	e2 f7       	brpl	.-8      	; 0x1910 <wm_gentabs+0xa4>
+    1918:	cb 01       	movw	r24, r22
+    191a:	02 c0       	rjmp	.+4      	; 0x1920 <wm_gentabs+0xb4>
+    191c:	35 95       	asr	r19
+    191e:	27 95       	ror	r18
+    1920:	4a 95       	dec	r20
+    1922:	e2 f7       	brpl	.-8      	; 0x191c <wm_gentabs+0xb0>
+    1924:	82 2b       	or	r24, r18
+    1926:	89 19       	sub	r24, r9
+    1928:	8b 25       	eor	r24, r11
+    192a:	8f 83       	std	Y+7, r24	; 0x07
+                tkey[1] = ((wm_ror8((ans[1] ^ t0[1]), (t0[0] % 8)) - t0[5]) ^ t0[7]);
+    192c:	ee 84       	ldd	r14, Y+14	; 0x0e
+    192e:	dd 84       	ldd	r13, Y+13	; 0x0d
+*/
+
+unsigned char wm_ror8(unsigned char a, unsigned char b)
+{
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+    1930:	2a 81       	ldd	r18, Y+2	; 0x02
+    1932:	2e 25       	eor	r18, r14
+    1934:	30 e0       	ldi	r19, 0x00	; 0
+    1936:	4d 2d       	mov	r20, r13
+    1938:	47 70       	andi	r20, 0x07	; 7
+    193a:	50 e0       	ldi	r21, 0x00	; 0
+                {
+                        t0[i] = pgm_read_byte(&(sboxes[0][wm_rand[i]]));
+                }
+        
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+                tkey[1] = ((wm_ror8((ans[1] ^ t0[1]), (t0[0] % 8)) - t0[5]) ^ t0[7]);
+    193c:	ac 89       	ldd	r26, Y+20	; 0x14
+    193e:	c2 01       	movw	r24, r4
+    1940:	84 1b       	sub	r24, r20
+    1942:	95 0b       	sbc	r25, r21
+    1944:	f9 01       	movw	r30, r18
+    1946:	02 c0       	rjmp	.+4      	; 0x194c <wm_gentabs+0xe0>
+    1948:	ee 0f       	add	r30, r30
+    194a:	ff 1f       	adc	r31, r31
+    194c:	8a 95       	dec	r24
+    194e:	e2 f7       	brpl	.-8      	; 0x1948 <wm_gentabs+0xdc>
+    1950:	cf 01       	movw	r24, r30
+    1952:	02 c0       	rjmp	.+4      	; 0x1958 <wm_gentabs+0xec>
+    1954:	35 95       	asr	r19
+    1956:	27 95       	ror	r18
+    1958:	4a 95       	dec	r20
+    195a:	e2 f7       	brpl	.-8      	; 0x1954 <wm_gentabs+0xe8>
+    195c:	82 2b       	or	r24, r18
+    195e:	8a 19       	sub	r24, r10
+    1960:	8a 27       	eor	r24, r26
+    1962:	88 87       	std	Y+8, r24	; 0x08
+                tkey[2] = ((wm_ror8((ans[2] ^ t0[6]), (t0[8] % 8)) - t0[2]) ^ t0[0]);
+    1964:	eb 89       	ldd	r30, Y+19	; 0x13
+*/
+
+unsigned char wm_ror8(unsigned char a, unsigned char b)
+{
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+    1966:	2b 81       	ldd	r18, Y+3	; 0x03
+    1968:	2e 27       	eor	r18, r30
+    196a:	30 e0       	ldi	r19, 0x00	; 0
+    196c:	0d 89       	ldd	r16, Y+21	; 0x15
+    196e:	07 70       	andi	r16, 0x07	; 7
+    1970:	10 e0       	ldi	r17, 0x00	; 0
+    1972:	b2 01       	movw	r22, r4
+    1974:	60 1b       	sub	r22, r16
+    1976:	71 0b       	sbc	r23, r17
+                        t0[i] = pgm_read_byte(&(sboxes[0][wm_rand[i]]));
+                }
+        
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+                tkey[1] = ((wm_ror8((ans[1] ^ t0[1]), (t0[0] % 8)) - t0[5]) ^ t0[7]);
+                tkey[2] = ((wm_ror8((ans[2] ^ t0[6]), (t0[8] % 8)) - t0[2]) ^ t0[0]);
+    1978:	c9 01       	movw	r24, r18
+    197a:	06 2e       	mov	r0, r22
+    197c:	02 c0       	rjmp	.+4      	; 0x1982 <wm_gentabs+0x116>
+    197e:	88 0f       	add	r24, r24
+    1980:	99 1f       	adc	r25, r25
+    1982:	0a 94       	dec	r0
+    1984:	e2 f7       	brpl	.-8      	; 0x197e <wm_gentabs+0x112>
+    1986:	00 2e       	mov	r0, r16
+    1988:	02 c0       	rjmp	.+4      	; 0x198e <wm_gentabs+0x122>
+    198a:	35 95       	asr	r19
+    198c:	27 95       	ror	r18
+    198e:	0a 94       	dec	r0
+    1990:	e2 f7       	brpl	.-8      	; 0x198a <wm_gentabs+0x11e>
+    1992:	82 2b       	or	r24, r18
+    1994:	8c 19       	sub	r24, r12
+    1996:	8d 25       	eor	r24, r13
+    1998:	89 87       	std	Y+9, r24	; 0x09
+*/
+
+unsigned char wm_ror8(unsigned char a, unsigned char b)
+{
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+    199a:	2c 81       	ldd	r18, Y+4	; 0x04
+    199c:	2b 25       	eor	r18, r11
+    199e:	30 e0       	ldi	r19, 0x00	; 0
+    19a0:	4a 2f       	mov	r20, r26
+    19a2:	47 70       	andi	r20, 0x07	; 7
+    19a4:	84 2f       	mov	r24, r20
+    19a6:	90 e0       	ldi	r25, 0x00	; 0
+    19a8:	98 8f       	std	Y+24, r25	; 0x18
+    19aa:	8f 8b       	std	Y+23, r24	; 0x17
+                }
+        
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+                tkey[1] = ((wm_ror8((ans[1] ^ t0[1]), (t0[0] % 8)) - t0[5]) ^ t0[7]);
+                tkey[2] = ((wm_ror8((ans[2] ^ t0[6]), (t0[8] % 8)) - t0[2]) ^ t0[0]);
+                tkey[3] = ((wm_ror8((ans[3] ^ t0[4]), (t0[7] % 8)) - t0[3]) ^ t0[2]);
+    19ac:	d8 88       	ldd	r13, Y+16	; 0x10
+    19ae:	c2 01       	movw	r24, r4
+    19b0:	4f 89       	ldd	r20, Y+23	; 0x17
+    19b2:	58 8d       	ldd	r21, Y+24	; 0x18
+    19b4:	84 1b       	sub	r24, r20
+    19b6:	95 0b       	sbc	r25, r21
+    19b8:	a9 01       	movw	r20, r18
+    19ba:	02 c0       	rjmp	.+4      	; 0x19c0 <wm_gentabs+0x154>
+    19bc:	44 0f       	add	r20, r20
+    19be:	55 1f       	adc	r21, r21
+    19c0:	8a 95       	dec	r24
+    19c2:	e2 f7       	brpl	.-8      	; 0x19bc <wm_gentabs+0x150>
+    19c4:	ca 01       	movw	r24, r20
+    19c6:	0f 88       	ldd	r0, Y+23	; 0x17
+    19c8:	02 c0       	rjmp	.+4      	; 0x19ce <wm_gentabs+0x162>
+    19ca:	35 95       	asr	r19
+    19cc:	27 95       	ror	r18
+    19ce:	0a 94       	dec	r0
+    19d0:	e2 f7       	brpl	.-8      	; 0x19ca <wm_gentabs+0x15e>
+    19d2:	82 2b       	or	r24, r18
+    19d4:	8d 19       	sub	r24, r13
+    19d6:	8c 25       	eor	r24, r12
+    19d8:	8a 87       	std	Y+10, r24	; 0x0a
+*/
+
+unsigned char wm_ror8(unsigned char a, unsigned char b)
+{
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+    19da:	8d 81       	ldd	r24, Y+5	; 0x05
+    19dc:	e8 26       	eor	r14, r24
+    19de:	ff 24       	eor	r15, r15
+    19e0:	e7 70       	andi	r30, 0x07	; 7
+    19e2:	f0 e0       	ldi	r31, 0x00	; 0
+        
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+                tkey[1] = ((wm_ror8((ans[1] ^ t0[1]), (t0[0] % 8)) - t0[5]) ^ t0[7]);
+                tkey[2] = ((wm_ror8((ans[2] ^ t0[6]), (t0[8] % 8)) - t0[2]) ^ t0[0]);
+                tkey[3] = ((wm_ror8((ans[3] ^ t0[4]), (t0[7] % 8)) - t0[3]) ^ t0[2]);
+                tkey[4] = ((wm_ror8((ans[4] ^ t0[1]), (t0[6] % 8)) - t0[3]) ^ t0[4]);
+    19e4:	c2 01       	movw	r24, r4
+    19e6:	8e 1b       	sub	r24, r30
+    19e8:	9f 0b       	sbc	r25, r31
+    19ea:	97 01       	movw	r18, r14
+    19ec:	02 c0       	rjmp	.+4      	; 0x19f2 <wm_gentabs+0x186>
+    19ee:	22 0f       	add	r18, r18
+    19f0:	33 1f       	adc	r19, r19
+    19f2:	8a 95       	dec	r24
+    19f4:	e2 f7       	brpl	.-8      	; 0x19ee <wm_gentabs+0x182>
+    19f6:	c9 01       	movw	r24, r18
+    19f8:	02 c0       	rjmp	.+4      	; 0x19fe <wm_gentabs+0x192>
+    19fa:	f5 94       	asr	r15
+    19fc:	e7 94       	ror	r14
+    19fe:	ea 95       	dec	r30
+    1a00:	e2 f7       	brpl	.-8      	; 0x19fa <wm_gentabs+0x18e>
+    1a02:	8e 29       	or	r24, r14
+    1a04:	8d 19       	sub	r24, r13
+    1a06:	8b 25       	eor	r24, r11
+    1a08:	8b 87       	std	Y+11, r24	; 0x0b
+*/
+
+unsigned char wm_ror8(unsigned char a, unsigned char b)
+{
+        // bit shift with roll-over
+        return (a >> b) | ((a << (8 - b)) & 0xFF);
+    1a0a:	8e 81       	ldd	r24, Y+6	; 0x06
+    1a0c:	a8 27       	eor	r26, r24
+    1a0e:	b0 e0       	ldi	r27, 0x00	; 0
+                tkey[0] = ((wm_ror8((ans[0] ^ t0[5]), (t0[2] % 8)) - t0[9]) ^ t0[4]);
+                tkey[1] = ((wm_ror8((ans[1] ^ t0[1]), (t0[0] % 8)) - t0[5]) ^ t0[7]);
+                tkey[2] = ((wm_ror8((ans[2] ^ t0[6]), (t0[8] % 8)) - t0[2]) ^ t0[0]);
+                tkey[3] = ((wm_ror8((ans[3] ^ t0[4]), (t0[7] % 8)) - t0[3]) ^ t0[2]);
+                tkey[4] = ((wm_ror8((ans[4] ^ t0[1]), (t0[6] % 8)) - t0[3]) ^ t0[4]);
+                tkey[5] = ((wm_ror8((ans[5] ^ t0[7]), (t0[8] % 8)) - t0[5]) ^ t0[9]);
+    1a10:	ad 01       	movw	r20, r26
+    1a12:	02 c0       	rjmp	.+4      	; 0x1a18 <wm_gentabs+0x1ac>
+    1a14:	44 0f       	add	r20, r20
+    1a16:	55 1f       	adc	r21, r21
+    1a18:	6a 95       	dec	r22
+    1a1a:	e2 f7       	brpl	.-8      	; 0x1a14 <wm_gentabs+0x1a8>
+    1a1c:	ba 01       	movw	r22, r20
+    1a1e:	02 c0       	rjmp	.+4      	; 0x1a24 <wm_gentabs+0x1b8>
+    1a20:	b5 95       	asr	r27
+    1a22:	a7 95       	ror	r26
+    1a24:	0a 95       	dec	r16
+    1a26:	e2 f7       	brpl	.-8      	; 0x1a20 <wm_gentabs+0x1b4>
+    1a28:	6a 2b       	or	r22, r26
+    1a2a:	6a 19       	sub	r22, r10
+    1a2c:	69 25       	eor	r22, r9
+    1a2e:	6c 87       	std	Y+12, r22	; 0x0c
+
+                // compare with actual key
+                if(memcmp(tkey, wm_key, 6) == 0) break; // if match, then use this idx
+    1a30:	c1 01       	movw	r24, r2
+    1a32:	60 e3       	ldi	r22, 0x30	; 48
+    1a34:	71 e0       	ldi	r23, 0x01	; 1
+    1a36:	46 e0       	ldi	r20, 0x06	; 6
+    1a38:	50 e0       	ldi	r21, 0x00	; 0
+    1a3a:	0e 94 c6 0f 	call	0x1f8c	; 0x1f8c <memcmp>
+    1a3e:	00 97       	sbiw	r24, 0x00	; 0
+    1a40:	61 f0       	breq	.+24     	; 0x1a5a <wm_gentabs+0x1ee>
+void wm_gentabs()
+{
+        unsigned char idx;
+
+        // check all idx
+        for(idx = 0; idx < 7; idx++)
+    1a42:	83 94       	inc	r8
+    1a44:	66 e0       	ldi	r22, 0x06	; 6
+    1a46:	70 e0       	ldi	r23, 0x00	; 0
+    1a48:	66 0e       	add	r6, r22
+    1a4a:	77 1e       	adc	r7, r23
+    1a4c:	77 e0       	ldi	r23, 0x07	; 7
+    1a4e:	87 16       	cp	r8, r23
+    1a50:	21 f0       	breq	.+8      	; 0x1a5a <wm_gentabs+0x1ee>
+    1a52:	de 01       	movw	r26, r28
+    1a54:	11 96       	adiw	r26, 0x01	; 1
+    1a56:	f3 01       	movw	r30, r6
+    1a58:	31 cf       	rjmp	.-414    	; 0x18bc <wm_gentabs+0x50>
+                // compare with actual key
+                if(memcmp(tkey, wm_key, 6) == 0) break; // if match, then use this idx
+        }
+
+        // generate encryption from idx key and rand
+        wm_ft[0] = pgm_read_byte(&(sboxes[idx + 1][wm_key[4]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[3]]));
+    1a5a:	28 2d       	mov	r18, r8
+    1a5c:	30 e0       	ldi	r19, 0x00	; 0
+    1a5e:	2f 5f       	subi	r18, 0xFF	; 255
+    1a60:	3f 4f       	sbci	r19, 0xFF	; 255
+    1a62:	52 2f       	mov	r21, r18
+    1a64:	44 27       	eor	r20, r20
+    1a66:	80 91 34 01 	lds	r24, 0x0134
+    1a6a:	fa 01       	movw	r30, r20
+    1a6c:	e8 0f       	add	r30, r24
+    1a6e:	f1 1d       	adc	r31, r1
+    1a70:	ea 55       	subi	r30, 0x5A	; 90
+    1a72:	ff 4f       	sbci	r31, 0xFF	; 255
+    1a74:	94 91       	lpm	r25, Z+
+    1a76:	2f 5f       	subi	r18, 0xFF	; 255
+    1a78:	3f 4f       	sbci	r19, 0xFF	; 255
+    1a7a:	32 2f       	mov	r19, r18
+    1a7c:	22 27       	eor	r18, r18
+    1a7e:	80 91 29 01 	lds	r24, 0x0129
+    1a82:	f9 01       	movw	r30, r18
+    1a84:	e8 0f       	add	r30, r24
+    1a86:	f1 1d       	adc	r31, r1
+    1a88:	ea 55       	subi	r30, 0x5A	; 90
+    1a8a:	ff 4f       	sbci	r31, 0xFF	; 255
+    1a8c:	e4 91       	lpm	r30, Z+
+    1a8e:	e9 27       	eor	r30, r25
+    1a90:	e0 93 36 01 	sts	0x0136, r30
+        wm_ft[1] = pgm_read_byte(&(sboxes[idx + 1][wm_key[2]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[5]]));
+    1a94:	80 91 32 01 	lds	r24, 0x0132
+    1a98:	fa 01       	movw	r30, r20
+    1a9a:	e8 0f       	add	r30, r24
+    1a9c:	f1 1d       	adc	r31, r1
+    1a9e:	ea 55       	subi	r30, 0x5A	; 90
+    1aa0:	ff 4f       	sbci	r31, 0xFF	; 255
+    1aa2:	94 91       	lpm	r25, Z+
+    1aa4:	80 91 2b 01 	lds	r24, 0x012B
+    1aa8:	f9 01       	movw	r30, r18
+    1aaa:	e8 0f       	add	r30, r24
+    1aac:	f1 1d       	adc	r31, r1
+    1aae:	ea 55       	subi	r30, 0x5A	; 90
+    1ab0:	ff 4f       	sbci	r31, 0xFF	; 255
+    1ab2:	e4 91       	lpm	r30, Z+
+    1ab4:	e9 27       	eor	r30, r25
+    1ab6:	e0 93 37 01 	sts	0x0137, r30
+        wm_ft[2] = pgm_read_byte(&(sboxes[idx + 1][wm_key[5]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[7]]));
+    1aba:	80 91 35 01 	lds	r24, 0x0135
+    1abe:	fa 01       	movw	r30, r20
+    1ac0:	e8 0f       	add	r30, r24
+    1ac2:	f1 1d       	adc	r31, r1
+    1ac4:	ea 55       	subi	r30, 0x5A	; 90
+    1ac6:	ff 4f       	sbci	r31, 0xFF	; 255
+    1ac8:	94 91       	lpm	r25, Z+
+    1aca:	80 91 2d 01 	lds	r24, 0x012D
+    1ace:	f9 01       	movw	r30, r18
+    1ad0:	e8 0f       	add	r30, r24
+    1ad2:	f1 1d       	adc	r31, r1
+    1ad4:	ea 55       	subi	r30, 0x5A	; 90
+    1ad6:	ff 4f       	sbci	r31, 0xFF	; 255
+    1ad8:	e4 91       	lpm	r30, Z+
+    1ada:	e9 27       	eor	r30, r25
+    1adc:	e0 93 38 01 	sts	0x0138, r30
+        wm_ft[3] = pgm_read_byte(&(sboxes[idx + 1][wm_key[0]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[2]]));
+    1ae0:	80 91 30 01 	lds	r24, 0x0130
+    1ae4:	fa 01       	movw	r30, r20
+    1ae6:	e8 0f       	add	r30, r24
+    1ae8:	f1 1d       	adc	r31, r1
+    1aea:	ea 55       	subi	r30, 0x5A	; 90
+    1aec:	ff 4f       	sbci	r31, 0xFF	; 255
+    1aee:	94 91       	lpm	r25, Z+
+    1af0:	80 91 28 01 	lds	r24, 0x0128
+    1af4:	f9 01       	movw	r30, r18
+    1af6:	e8 0f       	add	r30, r24
+    1af8:	f1 1d       	adc	r31, r1
+    1afa:	ea 55       	subi	r30, 0x5A	; 90
+    1afc:	ff 4f       	sbci	r31, 0xFF	; 255
+    1afe:	e4 91       	lpm	r30, Z+
+    1b00:	e9 27       	eor	r30, r25
+    1b02:	e0 93 39 01 	sts	0x0139, r30
+        wm_ft[4] = pgm_read_byte(&(sboxes[idx + 1][wm_key[1]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[4]]));
+    1b06:	80 91 31 01 	lds	r24, 0x0131
+    1b0a:	fa 01       	movw	r30, r20
+    1b0c:	e8 0f       	add	r30, r24
+    1b0e:	f1 1d       	adc	r31, r1
+    1b10:	ea 55       	subi	r30, 0x5A	; 90
+    1b12:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b14:	94 91       	lpm	r25, Z+
+    1b16:	80 91 2a 01 	lds	r24, 0x012A
+    1b1a:	f9 01       	movw	r30, r18
+    1b1c:	e8 0f       	add	r30, r24
+    1b1e:	f1 1d       	adc	r31, r1
+    1b20:	ea 55       	subi	r30, 0x5A	; 90
+    1b22:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b24:	e4 91       	lpm	r30, Z+
+    1b26:	e9 27       	eor	r30, r25
+    1b28:	e0 93 3a 01 	sts	0x013A, r30
+        wm_ft[5] = pgm_read_byte(&(sboxes[idx + 1][wm_key[3]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[9]]));
+    1b2c:	80 91 33 01 	lds	r24, 0x0133
+    1b30:	fa 01       	movw	r30, r20
+    1b32:	e8 0f       	add	r30, r24
+    1b34:	f1 1d       	adc	r31, r1
+    1b36:	ea 55       	subi	r30, 0x5A	; 90
+    1b38:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b3a:	94 91       	lpm	r25, Z+
+    1b3c:	80 91 2f 01 	lds	r24, 0x012F
+    1b40:	f9 01       	movw	r30, r18
+    1b42:	e8 0f       	add	r30, r24
+    1b44:	f1 1d       	adc	r31, r1
+    1b46:	ea 55       	subi	r30, 0x5A	; 90
+    1b48:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b4a:	e4 91       	lpm	r30, Z+
+    1b4c:	e9 27       	eor	r30, r25
+    1b4e:	e0 93 3b 01 	sts	0x013B, r30
+        wm_ft[6] = pgm_read_byte(&(sboxes[idx + 1][wm_rand[0]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[6]]));
+    1b52:	80 91 26 01 	lds	r24, 0x0126
+    1b56:	fa 01       	movw	r30, r20
+    1b58:	e8 0f       	add	r30, r24
+    1b5a:	f1 1d       	adc	r31, r1
+    1b5c:	ea 55       	subi	r30, 0x5A	; 90
+    1b5e:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b60:	94 91       	lpm	r25, Z+
+    1b62:	80 91 2c 01 	lds	r24, 0x012C
+    1b66:	f9 01       	movw	r30, r18
+    1b68:	e8 0f       	add	r30, r24
+    1b6a:	f1 1d       	adc	r31, r1
+    1b6c:	ea 55       	subi	r30, 0x5A	; 90
+    1b6e:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b70:	e4 91       	lpm	r30, Z+
+    1b72:	e9 27       	eor	r30, r25
+    1b74:	e0 93 3c 01 	sts	0x013C, r30
+        wm_ft[7] = pgm_read_byte(&(sboxes[idx + 1][wm_rand[1]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[8]]));
+    1b78:	80 91 27 01 	lds	r24, 0x0127
+    1b7c:	fa 01       	movw	r30, r20
+    1b7e:	e8 0f       	add	r30, r24
+    1b80:	f1 1d       	adc	r31, r1
+    1b82:	ea 55       	subi	r30, 0x5A	; 90
+    1b84:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b86:	94 91       	lpm	r25, Z+
+    1b88:	80 91 2e 01 	lds	r24, 0x012E
+    1b8c:	f9 01       	movw	r30, r18
+    1b8e:	e8 0f       	add	r30, r24
+    1b90:	f1 1d       	adc	r31, r1
+    1b92:	ea 55       	subi	r30, 0x5A	; 90
+    1b94:	ff 4f       	sbci	r31, 0xFF	; 255
+    1b96:	e4 91       	lpm	r30, Z+
+    1b98:	e9 27       	eor	r30, r25
+    1b9a:	e0 93 3d 01 	sts	0x013D, r30
+        
+        wm_sb[0] = pgm_read_byte(&(sboxes[idx + 1][wm_key[0]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[1]]));
+    1b9e:	80 91 30 01 	lds	r24, 0x0130
+    1ba2:	fa 01       	movw	r30, r20
+    1ba4:	e8 0f       	add	r30, r24
+    1ba6:	f1 1d       	adc	r31, r1
+    1ba8:	ea 55       	subi	r30, 0x5A	; 90
+    1baa:	ff 4f       	sbci	r31, 0xFF	; 255
+    1bac:	94 91       	lpm	r25, Z+
+    1bae:	80 91 27 01 	lds	r24, 0x0127
+    1bb2:	f9 01       	movw	r30, r18
+    1bb4:	e8 0f       	add	r30, r24
+    1bb6:	f1 1d       	adc	r31, r1
+    1bb8:	ea 55       	subi	r30, 0x5A	; 90
+    1bba:	ff 4f       	sbci	r31, 0xFF	; 255
+    1bbc:	e4 91       	lpm	r30, Z+
+    1bbe:	e9 27       	eor	r30, r25
+    1bc0:	e0 93 3e 01 	sts	0x013E, r30
+        wm_sb[1] = pgm_read_byte(&(sboxes[idx + 1][wm_key[5]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[4]]));
+    1bc4:	80 91 35 01 	lds	r24, 0x0135
+    1bc8:	fa 01       	movw	r30, r20
+    1bca:	e8 0f       	add	r30, r24
+    1bcc:	f1 1d       	adc	r31, r1
+    1bce:	ea 55       	subi	r30, 0x5A	; 90
+    1bd0:	ff 4f       	sbci	r31, 0xFF	; 255
+    1bd2:	94 91       	lpm	r25, Z+
+    1bd4:	80 91 2a 01 	lds	r24, 0x012A
+    1bd8:	f9 01       	movw	r30, r18
+    1bda:	e8 0f       	add	r30, r24
+    1bdc:	f1 1d       	adc	r31, r1
+    1bde:	ea 55       	subi	r30, 0x5A	; 90
+    1be0:	ff 4f       	sbci	r31, 0xFF	; 255
+    1be2:	e4 91       	lpm	r30, Z+
+    1be4:	e9 27       	eor	r30, r25
+    1be6:	e0 93 3f 01 	sts	0x013F, r30
+        wm_sb[2] = pgm_read_byte(&(sboxes[idx + 1][wm_key[3]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[0]]));
+    1bea:	80 91 33 01 	lds	r24, 0x0133
+    1bee:	fa 01       	movw	r30, r20
+    1bf0:	e8 0f       	add	r30, r24
+    1bf2:	f1 1d       	adc	r31, r1
+    1bf4:	ea 55       	subi	r30, 0x5A	; 90
+    1bf6:	ff 4f       	sbci	r31, 0xFF	; 255
+    1bf8:	94 91       	lpm	r25, Z+
+    1bfa:	80 91 26 01 	lds	r24, 0x0126
+    1bfe:	f9 01       	movw	r30, r18
+    1c00:	e8 0f       	add	r30, r24
+    1c02:	f1 1d       	adc	r31, r1
+    1c04:	ea 55       	subi	r30, 0x5A	; 90
+    1c06:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c08:	e4 91       	lpm	r30, Z+
+    1c0a:	e9 27       	eor	r30, r25
+    1c0c:	e0 93 40 01 	sts	0x0140, r30
+        wm_sb[3] = pgm_read_byte(&(sboxes[idx + 1][wm_key[2]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[9]]));
+    1c10:	80 91 32 01 	lds	r24, 0x0132
+    1c14:	fa 01       	movw	r30, r20
+    1c16:	e8 0f       	add	r30, r24
+    1c18:	f1 1d       	adc	r31, r1
+    1c1a:	ea 55       	subi	r30, 0x5A	; 90
+    1c1c:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c1e:	94 91       	lpm	r25, Z+
+    1c20:	80 91 2f 01 	lds	r24, 0x012F
+    1c24:	f9 01       	movw	r30, r18
+    1c26:	e8 0f       	add	r30, r24
+    1c28:	f1 1d       	adc	r31, r1
+    1c2a:	ea 55       	subi	r30, 0x5A	; 90
+    1c2c:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c2e:	e4 91       	lpm	r30, Z+
+    1c30:	e9 27       	eor	r30, r25
+    1c32:	e0 93 41 01 	sts	0x0141, r30
+        wm_sb[4] = pgm_read_byte(&(sboxes[idx + 1][wm_key[4]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[7]]));
+    1c36:	80 91 34 01 	lds	r24, 0x0134
+    1c3a:	fa 01       	movw	r30, r20
+    1c3c:	e8 0f       	add	r30, r24
+    1c3e:	f1 1d       	adc	r31, r1
+    1c40:	ea 55       	subi	r30, 0x5A	; 90
+    1c42:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c44:	94 91       	lpm	r25, Z+
+    1c46:	80 91 2d 01 	lds	r24, 0x012D
+    1c4a:	f9 01       	movw	r30, r18
+    1c4c:	e8 0f       	add	r30, r24
+    1c4e:	f1 1d       	adc	r31, r1
+    1c50:	ea 55       	subi	r30, 0x5A	; 90
+    1c52:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c54:	e4 91       	lpm	r30, Z+
+    1c56:	e9 27       	eor	r30, r25
+    1c58:	e0 93 42 01 	sts	0x0142, r30
+        wm_sb[5] = pgm_read_byte(&(sboxes[idx + 1][wm_key[1]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[8]]));
+    1c5c:	80 91 31 01 	lds	r24, 0x0131
+    1c60:	fa 01       	movw	r30, r20
+    1c62:	e8 0f       	add	r30, r24
+    1c64:	f1 1d       	adc	r31, r1
+    1c66:	ea 55       	subi	r30, 0x5A	; 90
+    1c68:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c6a:	94 91       	lpm	r25, Z+
+    1c6c:	80 91 2e 01 	lds	r24, 0x012E
+    1c70:	f9 01       	movw	r30, r18
+    1c72:	e8 0f       	add	r30, r24
+    1c74:	f1 1d       	adc	r31, r1
+    1c76:	ea 55       	subi	r30, 0x5A	; 90
+    1c78:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c7a:	e4 91       	lpm	r30, Z+
+    1c7c:	e9 27       	eor	r30, r25
+    1c7e:	e0 93 43 01 	sts	0x0143, r30
+        wm_sb[6] = pgm_read_byte(&(sboxes[idx + 1][wm_rand[3]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[5]]));
+    1c82:	80 91 29 01 	lds	r24, 0x0129
+    1c86:	fa 01       	movw	r30, r20
+    1c88:	e8 0f       	add	r30, r24
+    1c8a:	f1 1d       	adc	r31, r1
+    1c8c:	ea 55       	subi	r30, 0x5A	; 90
+    1c8e:	ff 4f       	sbci	r31, 0xFF	; 255
+    1c90:	94 91       	lpm	r25, Z+
+    1c92:	80 91 2b 01 	lds	r24, 0x012B
+    1c96:	f9 01       	movw	r30, r18
+    1c98:	e8 0f       	add	r30, r24
+    1c9a:	f1 1d       	adc	r31, r1
+    1c9c:	ea 55       	subi	r30, 0x5A	; 90
+    1c9e:	ff 4f       	sbci	r31, 0xFF	; 255
+    1ca0:	e4 91       	lpm	r30, Z+
+    1ca2:	e9 27       	eor	r30, r25
+    1ca4:	e0 93 44 01 	sts	0x0144, r30
+        wm_sb[7] = pgm_read_byte(&(sboxes[idx + 1][wm_rand[2]])) ^ pgm_read_byte(&(sboxes[idx + 2][wm_rand[6]]));
+    1ca8:	80 91 28 01 	lds	r24, 0x0128
+    1cac:	48 0f       	add	r20, r24
+    1cae:	51 1d       	adc	r21, r1
+    1cb0:	4a 55       	subi	r20, 0x5A	; 90
+    1cb2:	5f 4f       	sbci	r21, 0xFF	; 255
+    1cb4:	fa 01       	movw	r30, r20
+    1cb6:	94 91       	lpm	r25, Z+
+    1cb8:	80 91 2c 01 	lds	r24, 0x012C
+    1cbc:	28 0f       	add	r18, r24
+    1cbe:	31 1d       	adc	r19, r1
+    1cc0:	2a 55       	subi	r18, 0x5A	; 90
+    1cc2:	3f 4f       	sbci	r19, 0xFF	; 255
+    1cc4:	f9 01       	movw	r30, r18
+    1cc6:	84 91       	lpm	r24, Z+
+    1cc8:	89 27       	eor	r24, r25
+    1cca:	80 93 45 01 	sts	0x0145, r24
+}
+    1cce:	68 96       	adiw	r28, 0x18	; 24
+    1cd0:	0f b6       	in	r0, 0x3f	; 63
+    1cd2:	f8 94       	cli
+    1cd4:	de bf       	out	0x3e, r29	; 62
+    1cd6:	0f be       	out	0x3f, r0	; 63
+    1cd8:	cd bf       	out	0x3d, r28	; 61
+    1cda:	cf 91       	pop	r28
+    1cdc:	df 91       	pop	r29
+    1cde:	1f 91       	pop	r17
+    1ce0:	0f 91       	pop	r16
+    1ce2:	ff 90       	pop	r15
+    1ce4:	ef 90       	pop	r14
+    1ce6:	df 90       	pop	r13
+    1ce8:	cf 90       	pop	r12
+    1cea:	bf 90       	pop	r11
+    1cec:	af 90       	pop	r10
+    1cee:	9f 90       	pop	r9
+    1cf0:	8f 90       	pop	r8
+    1cf2:	7f 90       	pop	r7
+    1cf4:	6f 90       	pop	r6
+    1cf6:	5f 90       	pop	r5
+    1cf8:	4f 90       	pop	r4
+    1cfa:	3f 90       	pop	r3
+    1cfc:	2f 90       	pop	r2
+    1cfe:	08 95       	ret
+
+00001d00 <wm_slaveRx>:
+                wm_sample_event();
+        }
+}*/
+
+void wm_slaveRx(unsigned char addr, unsigned char l)
+{
+    1d00:	98 2f       	mov	r25, r24
+        // if encryption data is sent, store them accordingly
+        if(addr >= 0x40 && addr < 0x46)
+    1d02:	80 54       	subi	r24, 0x40	; 64
+    1d04:	86 30       	cpi	r24, 0x06	; 6
+    1d06:	a0 f4       	brcc	.+40     	; 0x1d30 <wm_slaveRx+0x30>
+    1d08:	20 e4       	ldi	r18, 0x40	; 64
+    1d0a:	30 e0       	ldi	r19, 0x00	; 0
+    1d0c:	49 e4       	ldi	r20, 0x49	; 73
+    1d0e:	50 e0       	ldi	r21, 0x00	; 0
+    1d10:	fa 01       	movw	r30, r20
+    1d12:	e2 1b       	sub	r30, r18
+    1d14:	f3 0b       	sbc	r31, r19
+        {
+                for(unsigned int i = 0; i < 6; i++)
+                {
+                        wm_rand[9 - i] = twi_reg[0x40 + i];
+    1d16:	d9 01       	movw	r26, r18
+    1d18:	aa 5b       	subi	r26, 0xBA	; 186
+    1d1a:	be 4f       	sbci	r27, 0xFE	; 254
+    1d1c:	8c 91       	ld	r24, X
+    1d1e:	ea 5d       	subi	r30, 0xDA	; 218
+    1d20:	fe 4f       	sbci	r31, 0xFE	; 254
+    1d22:	80 83       	st	Z, r24
+    1d24:	2f 5f       	subi	r18, 0xFF	; 255
+    1d26:	3f 4f       	sbci	r19, 0xFF	; 255
+void wm_slaveRx(unsigned char addr, unsigned char l)
+{
+        // if encryption data is sent, store them accordingly
+        if(addr >= 0x40 && addr < 0x46)
+        {
+                for(unsigned int i = 0; i < 6; i++)
+    1d28:	26 34       	cpi	r18, 0x46	; 70
+    1d2a:	31 05       	cpc	r19, r1
+    1d2c:	89 f7       	brne	.-30     	; 0x1d10 <wm_slaveRx+0x10>
+    1d2e:	08 95       	ret
+                {
+                        wm_rand[9 - i] = twi_reg[0x40 + i];
+                }
+        }
+        else if(addr >= 0x46 && addr < 0x4C)
+    1d30:	89 2f       	mov	r24, r25
+    1d32:	86 54       	subi	r24, 0x46	; 70
+    1d34:	86 30       	cpi	r24, 0x06	; 6
+    1d36:	c8 f4       	brcc	.+50     	; 0x1d6a <wm_slaveRx+0x6a>
+        {
+                for(unsigned int i = 6; i < 10; i++)
+                {
+                        wm_rand[9 - i] = twi_reg[0x40 + i];
+    1d38:	80 91 8c 01 	lds	r24, 0x018C
+    1d3c:	80 93 29 01 	sts	0x0129, r24
+    1d40:	80 91 8d 01 	lds	r24, 0x018D
+    1d44:	80 93 28 01 	sts	0x0128, r24
+    1d48:	80 91 8e 01 	lds	r24, 0x018E
+    1d4c:	80 93 27 01 	sts	0x0127, r24
+    1d50:	80 91 8f 01 	lds	r24, 0x018F
+    1d54:	80 93 26 01 	sts	0x0126, r24
+                }
+                for(unsigned int i = 0; i < 2; i++)
+                {
+                        wm_key[5 - i] = twi_reg[0x40 + 10 + i];
+    1d58:	80 91 90 01 	lds	r24, 0x0190
+    1d5c:	80 93 35 01 	sts	0x0135, r24
+    1d60:	80 91 91 01 	lds	r24, 0x0191
+    1d64:	80 93 34 01 	sts	0x0134, r24
+    1d68:	08 95       	ret
+                }
+        }
+        else if(addr >= 0x4C && addr < 0x50)
+    1d6a:	89 2f       	mov	r24, r25
+    1d6c:	8c 54       	subi	r24, 0x4C	; 76
+    1d6e:	84 30       	cpi	r24, 0x04	; 4
+    1d70:	c8 f4       	brcc	.+50     	; 0x1da4 <wm_slaveRx+0xa4>
+        {
+                for(unsigned int i = 2; i < 6; i++)
+                {
+                        wm_key[5 - i] = twi_reg[0x40 + 10 + i];
+    1d72:	80 91 92 01 	lds	r24, 0x0192
+    1d76:	80 93 33 01 	sts	0x0133, r24
+    1d7a:	80 91 93 01 	lds	r24, 0x0193
+    1d7e:	80 93 32 01 	sts	0x0132, r24
+    1d82:	80 91 94 01 	lds	r24, 0x0194
+    1d86:	80 93 31 01 	sts	0x0131, r24
+    1d8a:	80 91 95 01 	lds	r24, 0x0195
+    1d8e:	80 93 30 01 	sts	0x0130, r24
+                }
+                if(addr + l == 0x50)
+    1d92:	89 2f       	mov	r24, r25
+    1d94:	90 e0       	ldi	r25, 0x00	; 0
+    1d96:	86 0f       	add	r24, r22
+    1d98:	91 1d       	adc	r25, r1
+    1d9a:	80 35       	cpi	r24, 0x50	; 80
+    1d9c:	91 05       	cpc	r25, r1
+    1d9e:	11 f4       	brne	.+4      	; 0x1da4 <wm_slaveRx+0xa4>
+                {
+                        // generate decryption once all data is loaded
+                        wm_gentabs();
+    1da0:	0e 94 36 0c 	call	0x186c	; 0x186c <wm_gentabs>
+    1da4:	08 95       	ret
+
+00001da6 <__vector_26>:
+        // make the wiimote think something is connected
+        //dev_detect_port |= _BV(dev_detect_pin);
+}
+
+ISR(TWI_vect)
+{
+    1da6:	1f 92       	push	r1
+    1da8:	0f 92       	push	r0
+    1daa:	0f b6       	in	r0, 0x3f	; 63
+    1dac:	0f 92       	push	r0
+    1dae:	11 24       	eor	r1, r1
+    1db0:	2f 93       	push	r18
+    1db2:	3f 93       	push	r19
+    1db4:	4f 93       	push	r20
+    1db6:	5f 93       	push	r21
+    1db8:	6f 93       	push	r22
+    1dba:	7f 93       	push	r23
+    1dbc:	8f 93       	push	r24
+    1dbe:	9f 93       	push	r25
+    1dc0:	af 93       	push	r26
+    1dc2:	bf 93       	push	r27
+    1dc4:	ef 93       	push	r30
+    1dc6:	ff 93       	push	r31
+        switch(TW_STATUS)
+    1dc8:	80 91 b9 00 	lds	r24, 0x00B9
+    1dcc:	90 e0       	ldi	r25, 0x00	; 0
+    1dce:	88 7f       	andi	r24, 0xF8	; 248
+    1dd0:	90 70       	andi	r25, 0x00	; 0
+    1dd2:	80 39       	cpi	r24, 0x90	; 144
+    1dd4:	91 05       	cpc	r25, r1
+    1dd6:	e9 f1       	breq	.+122    	; 0x1e52 <__vector_26+0xac>
+    1dd8:	81 39       	cpi	r24, 0x91	; 145
+    1dda:	91 05       	cpc	r25, r1
+    1ddc:	d4 f4       	brge	.+52     	; 0x1e12 <__vector_26+0x6c>
+    1dde:	80 37       	cpi	r24, 0x70	; 112
+    1de0:	91 05       	cpc	r25, r1
+    1de2:	a1 f1       	breq	.+104    	; 0x1e4c <__vector_26+0xa6>
+    1de4:	81 37       	cpi	r24, 0x71	; 113
+    1de6:	91 05       	cpc	r25, r1
+    1de8:	44 f4       	brge	.+16     	; 0x1dfa <__vector_26+0x54>
+    1dea:	80 36       	cpi	r24, 0x60	; 96
+    1dec:	91 05       	cpc	r25, r1
+    1dee:	71 f1       	breq	.+92     	; 0x1e4c <__vector_26+0xa6>
+    1df0:	88 36       	cpi	r24, 0x68	; 104
+    1df2:	91 05       	cpc	r25, r1
+    1df4:	09 f0       	breq	.+2      	; 0x1df8 <__vector_26+0x52>
+    1df6:	b6 c0       	rjmp	.+364    	; 0x1f64 <__vector_26+0x1be>
+    1df8:	29 c0       	rjmp	.+82     	; 0x1e4c <__vector_26+0xa6>
+    1dfa:	80 38       	cpi	r24, 0x80	; 128
+    1dfc:	91 05       	cpc	r25, r1
+    1dfe:	49 f1       	breq	.+82     	; 0x1e52 <__vector_26+0xac>
+    1e00:	88 38       	cpi	r24, 0x88	; 136
+    1e02:	91 05       	cpc	r25, r1
+    1e04:	09 f4       	brne	.+2      	; 0x1e08 <__vector_26+0x62>
+    1e06:	ae c0       	rjmp	.+348    	; 0x1f64 <__vector_26+0x1be>
+    1e08:	88 37       	cpi	r24, 0x78	; 120
+    1e0a:	91 05       	cpc	r25, r1
+    1e0c:	09 f0       	breq	.+2      	; 0x1e10 <__vector_26+0x6a>
+    1e0e:	aa c0       	rjmp	.+340    	; 0x1f64 <__vector_26+0x1be>
+    1e10:	1d c0       	rjmp	.+58     	; 0x1e4c <__vector_26+0xa6>
+    1e12:	80 3b       	cpi	r24, 0xB0	; 176
+    1e14:	91 05       	cpc	r25, r1
+    1e16:	09 f4       	brne	.+2      	; 0x1e1a <__vector_26+0x74>
+    1e18:	6a c0       	rjmp	.+212    	; 0x1eee <__vector_26+0x148>
+    1e1a:	81 3b       	cpi	r24, 0xB1	; 177
+    1e1c:	91 05       	cpc	r25, r1
+    1e1e:	4c f4       	brge	.+18     	; 0x1e32 <__vector_26+0x8c>
+    1e20:	80 3a       	cpi	r24, 0xA0	; 160
+    1e22:	91 05       	cpc	r25, r1
+    1e24:	09 f4       	brne	.+2      	; 0x1e28 <__vector_26+0x82>
+    1e26:	57 c0       	rjmp	.+174    	; 0x1ed6 <__vector_26+0x130>
+    1e28:	88 3a       	cpi	r24, 0xA8	; 168
+    1e2a:	91 05       	cpc	r25, r1
+    1e2c:	09 f0       	breq	.+2      	; 0x1e30 <__vector_26+0x8a>
+    1e2e:	9a c0       	rjmp	.+308    	; 0x1f64 <__vector_26+0x1be>
+    1e30:	5e c0       	rjmp	.+188    	; 0x1eee <__vector_26+0x148>
+    1e32:	80 3c       	cpi	r24, 0xC0	; 192
+    1e34:	91 05       	cpc	r25, r1
+    1e36:	09 f4       	brne	.+2      	; 0x1e3a <__vector_26+0x94>
+    1e38:	93 c0       	rjmp	.+294    	; 0x1f60 <__vector_26+0x1ba>
+    1e3a:	88 3c       	cpi	r24, 0xC8	; 200
+    1e3c:	91 05       	cpc	r25, r1
+    1e3e:	09 f4       	brne	.+2      	; 0x1e42 <__vector_26+0x9c>
+    1e40:	8f c0       	rjmp	.+286    	; 0x1f60 <__vector_26+0x1ba>
+    1e42:	88 3b       	cpi	r24, 0xB8	; 184
+    1e44:	91 05       	cpc	r25, r1
+    1e46:	09 f0       	breq	.+2      	; 0x1e4a <__vector_26+0xa4>
+    1e48:	8d c0       	rjmp	.+282    	; 0x1f64 <__vector_26+0x1be>
+    1e4a:	53 c0       	rjmp	.+166    	; 0x1ef2 <__vector_26+0x14c>
+                case TW_SR_SLA_ACK: // addressed, returned ack
+                case TW_SR_GCALL_ACK: // addressed generally, returned ack
+                case TW_SR_ARB_LOST_SLA_ACK: // lost arbitration, returned ack
+                case TW_SR_ARB_LOST_GCALL_ACK: // lost arbitration generally, returned ack
+                        // get ready to receive pointer
+                        twi_first_addr_flag = 0;
+    1e4c:	10 92 48 02 	sts	0x0248, r1
+    1e50:	87 c0       	rjmp	.+270    	; 0x1f60 <__vector_26+0x1ba>
+                        // ack
+                        twi_clear_int(1);
+                        break;
+                case TW_SR_DATA_ACK: // data received, returned ack
+                case TW_SR_GCALL_DATA_ACK: // data received generally, returned ack
+                if(twi_first_addr_flag != 0)
+    1e52:	80 91 48 02 	lds	r24, 0x0248
+    1e56:	88 23       	and	r24, r24
+    1e58:	89 f1       	breq	.+98     	; 0x1ebc <__vector_26+0x116>
+                {
+                        // put byte in register
+                        unsigned char t = TWDR;
+    1e5a:	20 91 bb 00 	lds	r18, 0x00BB
+                        if(twi_reg[0xF0] == 0xAA && twi_reg_addr != 0xF0) // if encryption is on
+    1e5e:	80 91 36 02 	lds	r24, 0x0236
+    1e62:	8a 3a       	cpi	r24, 0xAA	; 170
+    1e64:	19 f5       	brne	.+70     	; 0x1eac <__vector_26+0x106>
+    1e66:	80 91 46 02 	lds	r24, 0x0246
+    1e6a:	90 91 47 02 	lds	r25, 0x0247
+    1e6e:	80 3f       	cpi	r24, 0xF0	; 240
+    1e70:	91 05       	cpc	r25, r1
+    1e72:	e1 f0       	breq	.+56     	; 0x1eac <__vector_26+0x106>
+                        {
+                                // decrypt
+                                twi_reg[twi_reg_addr] = (t ^ wm_sb[twi_reg_addr % 8]) + wm_ft[twi_reg_addr % 8];
+    1e74:	a0 91 46 02 	lds	r26, 0x0246
+    1e78:	b0 91 47 02 	lds	r27, 0x0247
+    1e7c:	e0 91 46 02 	lds	r30, 0x0246
+    1e80:	f0 91 47 02 	lds	r31, 0x0247
+    1e84:	e7 70       	andi	r30, 0x07	; 7
+    1e86:	f0 70       	andi	r31, 0x00	; 0
+    1e88:	e2 5c       	subi	r30, 0xC2	; 194
+    1e8a:	fe 4f       	sbci	r31, 0xFE	; 254
+    1e8c:	80 81       	ld	r24, Z
+    1e8e:	e0 91 46 02 	lds	r30, 0x0246
+    1e92:	f0 91 47 02 	lds	r31, 0x0247
+    1e96:	e7 70       	andi	r30, 0x07	; 7
+    1e98:	f0 70       	andi	r31, 0x00	; 0
+    1e9a:	ea 5c       	subi	r30, 0xCA	; 202
+    1e9c:	fe 4f       	sbci	r31, 0xFE	; 254
+    1e9e:	90 81       	ld	r25, Z
+    1ea0:	82 27       	eor	r24, r18
+    1ea2:	89 0f       	add	r24, r25
+    1ea4:	aa 5b       	subi	r26, 0xBA	; 186
+    1ea6:	be 4f       	sbci	r27, 0xFE	; 254
+    1ea8:	8c 93       	st	X, r24
+    1eaa:	4c c0       	rjmp	.+152    	; 0x1f44 <__vector_26+0x19e>
+                        }
+                        else
+                        {
+                                twi_reg[twi_reg_addr] = t;
+    1eac:	e0 91 46 02 	lds	r30, 0x0246
+    1eb0:	f0 91 47 02 	lds	r31, 0x0247
+    1eb4:	ea 5b       	subi	r30, 0xBA	; 186
+    1eb6:	fe 4f       	sbci	r31, 0xFE	; 254
+    1eb8:	20 83       	st	Z, r18
+    1eba:	44 c0       	rjmp	.+136    	; 0x1f44 <__vector_26+0x19e>
+                        twi_rw_len++;
+                }
+                else
+                {
+                        // set address
+                        twi_reg_addr = TWDR;
+    1ebc:	80 91 bb 00 	lds	r24, 0x00BB
+    1ec0:	90 e0       	ldi	r25, 0x00	; 0
+    1ec2:	90 93 47 02 	sts	0x0247, r25
+    1ec6:	80 93 46 02 	sts	0x0246, r24
+                        twi_first_addr_flag = 1;
+    1eca:	81 e0       	ldi	r24, 0x01	; 1
+    1ecc:	80 93 48 02 	sts	0x0248, r24
+                        twi_rw_len = 0;
+    1ed0:	10 92 49 02 	sts	0x0249, r1
+    1ed4:	45 c0       	rjmp	.+138    	; 0x1f60 <__vector_26+0x1ba>
+                }
+                twi_clear_int(1); // ack
+                        break;
+                case TW_SR_STOP: // stop or repeated start condition received
+                        // run user defined function
+                        wm_slaveRx(twi_reg_addr - twi_rw_len, twi_rw_len);
+    1ed6:	80 91 46 02 	lds	r24, 0x0246
+    1eda:	90 91 47 02 	lds	r25, 0x0247
+    1ede:	20 91 49 02 	lds	r18, 0x0249
+    1ee2:	60 91 49 02 	lds	r22, 0x0249
+    1ee6:	82 1b       	sub	r24, r18
+    1ee8:	0e 94 80 0e 	call	0x1d00	; 0x1d00 <wm_slaveRx>
+    1eec:	39 c0       	rjmp	.+114    	; 0x1f60 <__vector_26+0x1ba>
+                // Slave Tx
+                case TW_ST_SLA_ACK:     // addressed, returned ack
+                case TW_ST_ARB_LOST_SLA_ACK: // arbitration lost, returned ack
+                        // run user defined function (not anymore)
+                        //wm_slaveTxStart(twi_reg_addr);
+                        twi_rw_len = 0;
+    1eee:	10 92 49 02 	sts	0x0249, r1
+                case TW_ST_DATA_ACK: // byte sent, ack returned
+                        // ready output byte
+                        if(twi_reg[0xF0] == 0xAA) // encryption is on
+    1ef2:	80 91 36 02 	lds	r24, 0x0236
+    1ef6:	8a 3a       	cpi	r24, 0xAA	; 170
+    1ef8:	e1 f4       	brne	.+56     	; 0x1f32 <__vector_26+0x18c>
+                        {
+                                // encrypt
+                                TWDR = (twi_reg[twi_reg_addr] - wm_ft[twi_reg_addr % 8]) ^ wm_sb[twi_reg_addr % 8];
+    1efa:	e0 91 46 02 	lds	r30, 0x0246
+    1efe:	f0 91 47 02 	lds	r31, 0x0247
+    1f02:	ea 5b       	subi	r30, 0xBA	; 186
+    1f04:	fe 4f       	sbci	r31, 0xFE	; 254
+    1f06:	80 81       	ld	r24, Z
+    1f08:	e0 91 46 02 	lds	r30, 0x0246
+    1f0c:	f0 91 47 02 	lds	r31, 0x0247
+    1f10:	e7 70       	andi	r30, 0x07	; 7
+    1f12:	f0 70       	andi	r31, 0x00	; 0
+    1f14:	ea 5c       	subi	r30, 0xCA	; 202
+    1f16:	fe 4f       	sbci	r31, 0xFE	; 254
+    1f18:	20 81       	ld	r18, Z
+    1f1a:	e0 91 46 02 	lds	r30, 0x0246
+    1f1e:	f0 91 47 02 	lds	r31, 0x0247
+    1f22:	e7 70       	andi	r30, 0x07	; 7
+    1f24:	f0 70       	andi	r31, 0x00	; 0
+    1f26:	e2 5c       	subi	r30, 0xC2	; 194
+    1f28:	fe 4f       	sbci	r31, 0xFE	; 254
+    1f2a:	90 81       	ld	r25, Z
+    1f2c:	82 1b       	sub	r24, r18
+    1f2e:	89 27       	eor	r24, r25
+    1f30:	07 c0       	rjmp	.+14     	; 0x1f40 <__vector_26+0x19a>
+                        }
+                        else
+                        {
+                                TWDR = twi_reg[twi_reg_addr];
+    1f32:	e0 91 46 02 	lds	r30, 0x0246
+    1f36:	f0 91 47 02 	lds	r31, 0x0247
+    1f3a:	ea 5b       	subi	r30, 0xBA	; 186
+    1f3c:	fe 4f       	sbci	r31, 0xFE	; 254
+    1f3e:	80 81       	ld	r24, Z
+    1f40:	80 93 bb 00 	sts	0x00BB, r24
+                        }
+                        twi_reg_addr++;
+    1f44:	80 91 46 02 	lds	r24, 0x0246
+    1f48:	90 91 47 02 	lds	r25, 0x0247
+    1f4c:	01 96       	adiw	r24, 0x01	; 1
+    1f4e:	90 93 47 02 	sts	0x0247, r25
+    1f52:	80 93 46 02 	sts	0x0246, r24
+                        twi_rw_len++;
+    1f56:	80 91 49 02 	lds	r24, 0x0249
+    1f5a:	8f 5f       	subi	r24, 0xFF	; 255
+    1f5c:	80 93 49 02 	sts	0x0249, r24
+void twi_clear_int(unsigned char ack)
+{
+        // get ready by clearing interrupt, with or without ack
+        if(ack != 0)
+        {
+                TWCR = _BV(TWEN) | _BV(TWIE) | _BV(TWINT) | _BV(TWEA);
+    1f60:	85 ec       	ldi	r24, 0xC5	; 197
+    1f62:	01 c0       	rjmp	.+2      	; 0x1f66 <__vector_26+0x1c0>
+        }
+        else
+        {
+                TWCR = _BV(TWEN) | _BV(TWIE) | _BV(TWINT);
+    1f64:	85 e8       	ldi	r24, 0x85	; 133
+    1f66:	80 93 bc 00 	sts	0x00BC, r24
+                        break;
+                default:
+                        twi_clear_int(0);
+                        break;
+        }
+}
+    1f6a:	ff 91       	pop	r31
+    1f6c:	ef 91       	pop	r30
+    1f6e:	bf 91       	pop	r27
+    1f70:	af 91       	pop	r26
+    1f72:	9f 91       	pop	r25
+    1f74:	8f 91       	pop	r24
+    1f76:	7f 91       	pop	r23
+    1f78:	6f 91       	pop	r22
+    1f7a:	5f 91       	pop	r21
+    1f7c:	4f 91       	pop	r20
+    1f7e:	3f 91       	pop	r19
+    1f80:	2f 91       	pop	r18
+    1f82:	0f 90       	pop	r0
+    1f84:	0f be       	out	0x3f, r0	; 63
+    1f86:	0f 90       	pop	r0
+    1f88:	1f 90       	pop	r1
+    1f8a:	18 95       	reti
+
+00001f8c <memcmp>:
+    1f8c:	fb 01       	movw	r30, r22
+    1f8e:	dc 01       	movw	r26, r24
+    1f90:	04 c0       	rjmp	.+8      	; 0x1f9a <memcmp+0xe>
+    1f92:	8d 91       	ld	r24, X+
+    1f94:	01 90       	ld	r0, Z+
+    1f96:	80 19       	sub	r24, r0
+    1f98:	21 f4       	brne	.+8      	; 0x1fa2 <memcmp+0x16>
+    1f9a:	41 50       	subi	r20, 0x01	; 1
+    1f9c:	50 40       	sbci	r21, 0x00	; 0
+    1f9e:	c8 f7       	brcc	.-14     	; 0x1f92 <memcmp+0x6>
+    1fa0:	88 1b       	sub	r24, r24
+    1fa2:	99 0b       	sbc	r25, r25
+    1fa4:	08 95       	ret
+
+00001fa6 <_exit>:
+    1fa6:	f8 94       	cli
+
+00001fa8 <__stop_program>:
+    1fa8:	ff cf       	rjmp	.-2      	; 0x1fa8 <__stop_program>

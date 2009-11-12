@@ -1,0 +1,4861 @@
+
+V1_USB.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  00001b36  00001bea  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00001b36  00000000  00000000  000000b4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000003f  00800102  00800102  00001bec  2**0
+                  ALLOC
+  3 .eeprom       00000168  00810000  00810000  00001bec  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .debug_aranges 000000a0  00000000  00000000  00001d54  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_pubnames 00000323  00000000  00000000  00001df4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001923  00000000  00000000  00002117  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000008bf  00000000  00000000  00003a3a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00001580  00000000  00000000  000042f9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000170  00000000  00000000  0000587c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    000007ca  00000000  00000000  000059ec  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000a72  00000000  00000000  000061b6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000100  00000000  00000000  00006c28  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 8d 00 	jmp	0x11a	; 0x11a <__ctors_end>
+       4:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+       8:	0c 94 2b 05 	jmp	0xa56	; 0xa56 <__vector_2>
+       c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      10:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      14:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      18:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      1c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      20:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      24:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      28:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      2c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      30:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      34:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      38:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      3c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      40:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      44:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      48:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      4c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      50:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      54:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      58:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      5c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      60:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+      64:	0c 94 aa 00 	jmp	0x154	; 0x154 <__bad_interrupt>
+
+00000068 <usbDescriptorHidReport>:
+      68:	05 01 09 05 a1 01 15 00 25 01 35 00 45 01 75 01     ........%.5.E.u.
+      78:	95 0d 05 09 19 01 29 0d 81 02 95 03 81 01 05 01     ......).........
+      88:	25 07 46 3b 01 75 04 95 01 65 14 09 39 81 42 65     %.F;.u...e..9.Be
+      98:	00 95 01 81 01 26 ff 00 46 ff 00 09 30 09 31 09     .....&..F...0.1.
+      a8:	32 09 35 75 08 95 04 81 02 c0                       2.5u......
+
+000000b2 <usbDescriptorString0>:
+      b2:	04 03 09 04                                         ....
+
+000000b6 <usbDescriptorStringVendor>:
+      b6:	1c 03 4f 00 70 00 65 00 6e 00 43 00 68 00 6f 00     ..O.p.e.n.C.h.o.
+      c6:	72 00 64 00 2e 00 6f 00 72 00 67 00                 r.d...o.r.g.
+
+000000d2 <usbDescriptorStringDevice>:
+      d2:	14 03 56 00 31 00 20 00 47 00 75 00 69 00 74 00     ..V.1. .G.u.i.t.
+      e2:	61 00 72 00                                         a.r.
+
+000000e6 <usbDescriptorDevice>:
+      e6:	12 01 10 01 00 00 00 08 ba 12 e8 03 00 01 01 02     ................
+      f6:	00 01                                               ..
+
+000000f8 <usbDescriptorConfiguration>:
+      f8:	09 02 22 00 01 01 00 80 0a 09 04 00 00 01 03 00     ..".............
+     108:	00 00 09 21 01 01 00 01 22 4a 00 07 05 81 03 08     ...!...."J......
+     118:	00 64                                               .d
+
+0000011a <__ctors_end>:
+     11a:	11 24       	eor	r1, r1
+     11c:	1f be       	out	0x3f, r1	; 63
+     11e:	cf ef       	ldi	r28, 0xFF	; 255
+     120:	d4 e0       	ldi	r29, 0x04	; 4
+     122:	de bf       	out	0x3e, r29	; 62
+     124:	cd bf       	out	0x3d, r28	; 61
+
+00000126 <__do_copy_data>:
+     126:	11 e0       	ldi	r17, 0x01	; 1
+     128:	a0 e0       	ldi	r26, 0x00	; 0
+     12a:	b1 e0       	ldi	r27, 0x01	; 1
+     12c:	e6 e3       	ldi	r30, 0x36	; 54
+     12e:	fb e1       	ldi	r31, 0x1B	; 27
+     130:	02 c0       	rjmp	.+4      	; 0x136 <.do_copy_data_start>
+
+00000132 <.do_copy_data_loop>:
+     132:	05 90       	lpm	r0, Z+
+     134:	0d 92       	st	X+, r0
+
+00000136 <.do_copy_data_start>:
+     136:	a2 30       	cpi	r26, 0x02	; 2
+     138:	b1 07       	cpc	r27, r17
+     13a:	d9 f7       	brne	.-10     	; 0x132 <.do_copy_data_loop>
+
+0000013c <__do_clear_bss>:
+     13c:	11 e0       	ldi	r17, 0x01	; 1
+     13e:	a2 e0       	ldi	r26, 0x02	; 2
+     140:	b1 e0       	ldi	r27, 0x01	; 1
+     142:	01 c0       	rjmp	.+2      	; 0x146 <.do_clear_bss_start>
+
+00000144 <.do_clear_bss_loop>:
+     144:	1d 92       	st	X+, r1
+
+00000146 <.do_clear_bss_start>:
+     146:	a1 34       	cpi	r26, 0x41	; 65
+     148:	b1 07       	cpc	r27, r17
+     14a:	e1 f7       	brne	.-8      	; 0x144 <.do_clear_bss_loop>
+     14c:	0e 94 1d 01 	call	0x23a	; 0x23a <main>
+     150:	0c 94 99 0d 	jmp	0x1b32	; 0x1b32 <_exit>
+
+00000154 <__bad_interrupt>:
+     154:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000158 <eeprom_read_byte>:
+
+/** \ingroup avr_eeprom
+    Read one byte from EEPROM address \a __p.
+ */
+__ATTR_PURE__ static __inline__ uint8_t eeprom_read_byte (const uint8_t *__p)
+{
+     158:	9c 01       	movw	r18, r24
+    do {} while (!eeprom_is_ready ());
+     15a:	f9 99       	sbic	0x1f, 1	; 31
+     15c:	fe cf       	rjmp	.-4      	; 0x15a <eeprom_read_byte+0x2>
+#if E2END <= 0xFF
+    EEARL = (size_t)__p;
+#else
+    EEAR = (size_t)__p;
+     15e:	32 bd       	out	0x22, r19	; 34
+     160:	21 bd       	out	0x21, r18	; 33
+    /* Use inline assembly below as some AVRs have problems with accessing
+    EECR with STS instructions. For example, see errata for ATmega64. 
+    The code below also assumes that EECR and EEDR are in the I/O space.
+    */
+    uint8_t __result;
+    __asm__ __volatile__
+     162:	f8 9a       	sbi	0x1f, 0	; 31
+     164:	80 b5       	in	r24, 0x20	; 32
+        : "i" (_SFR_IO_ADDR(EECR)),
+          "i" (EERE),
+          "i" (_SFR_IO_ADDR(EEDR))
+    );
+    return __result;
+}
+     166:	08 95       	ret
+
+00000168 <eeprom_write_byte>:
+
+/** \ingroup avr_eeprom
+    Write a byte \a __value to EEPROM address \a __p.
+ */
+static __inline__ void eeprom_write_byte (uint8_t *__p, uint8_t __value)
+{
+     168:	9c 01       	movw	r18, r24
+    do {} while (!eeprom_is_ready ());
+     16a:	f9 99       	sbic	0x1f, 1	; 31
+     16c:	fe cf       	rjmp	.-4      	; 0x16a <eeprom_write_byte+0x2>
+
+#if	defined(EEPM0) && defined(EEPM1)
+    EECR = 0;		/* Set programming mode: erase and write.	*/
+     16e:	1f ba       	out	0x1f, r1	; 31
+#endif
+
+#if	E2END <= 0xFF
+    EEARL = (size_t)__p;
+#else
+    EEAR = (size_t)__p;
+     170:	32 bd       	out	0x22, r19	; 34
+     172:	21 bd       	out	0x21, r18	; 33
+#endif
+    EEDR = __value;
+     174:	60 bd       	out	0x20, r22	; 32
+
+    __asm__ __volatile__ (
+     176:	0f b6       	in	r0, 0x3f	; 63
+     178:	f8 94       	cli
+     17a:	fa 9a       	sbi	0x1f, 2	; 31
+     17c:	f9 9a       	sbi	0x1f, 1	; 31
+     17e:	0f be       	out	0x3f, r0	; 63
+          [__sreg]  "i" (_SFR_IO_ADDR(SREG)),
+          [__eemwe] "i" (EEMWE),
+          [__eewe]  "i" (EEWE)
+        : "r0"
+    );
+}
+     180:	08 95       	ret
+
+00000182 <readFrets>:
+};
+
+//readF reads the frets for a single string, and returns an int acting as a boolean array
+//  telling which frets are being touched by the string.
+int readFrets(int guitarString)
+{
+     182:	1f 93       	push	r17
+     184:	cf 93       	push	r28
+     186:	df 93       	push	r29
+  	string_port &= ~(1<<guitarString);  // Set the string LOW
+     188:	98 b1       	in	r25, 0x08	; 8
+     18a:	21 e0       	ldi	r18, 0x01	; 1
+     18c:	30 e0       	ldi	r19, 0x00	; 0
+     18e:	02 c0       	rjmp	.+4      	; 0x194 <readFrets+0x12>
+     190:	22 0f       	add	r18, r18
+     192:	33 1f       	adc	r19, r19
+     194:	8a 95       	dec	r24
+     196:	e2 f7       	brpl	.-8      	; 0x190 <readFrets+0xe>
+     198:	12 2f       	mov	r17, r18
+     19a:	82 2f       	mov	r24, r18
+     19c:	80 95       	com	r24
+     19e:	89 23       	and	r24, r25
+     1a0:	88 b9       	out	0x08, r24	; 8
+     1a2:	84 e1       	ldi	r24, 0x14	; 20
+     1a4:	90 e0       	ldi	r25, 0x00	; 0
+	// Macro to as many NOPs as we want
+	inline void doXnops(int x)
+	{
+		while (x >= 0)
+		{
+			nop();
+     1a6:	00 00       	nop
+			x--;
+     1a8:	01 97       	sbiw	r24, 0x01	; 1
+	#define nop() asm volatile("nop")
+
+	// Macro to as many NOPs as we want
+	inline void doXnops(int x)
+	{
+		while (x >= 0)
+     1aa:	2f ef       	ldi	r18, 0xFF	; 255
+     1ac:	8f 3f       	cpi	r24, 0xFF	; 255
+     1ae:	92 07       	cpc	r25, r18
+     1b0:	d1 f7       	brne	.-12     	; 0x1a6 <readFrets+0x24>
+
+	// Then we have to delay for a while, since right after the switch, the pin values
+	// jump around a bit
+	doXnops(20);	
+	// Read the values on the frets
+  	int i = fret_pin;               
+     1b2:	83 b1       	in	r24, 0x03	; 3
+	i = fret_pin;
+     1b4:	83 b1       	in	r24, 0x03	; 3
+	i = fret_pin;		// More delay funcitonality... without these delays, there is some bouncing
+     1b6:	83 b1       	in	r24, 0x03	; 3
+	i = fret_pin;		// on the pins, so the read screws up.
+     1b8:	83 b1       	in	r24, 0x03	; 3
+	// Next, since the fret pin is zero if the a fret is grounded, we do a mask to isolate each pin from 
+	//  the port, which will return a zero if pressed and non-zero if unpressed. So we ! that to get a 1 if
+	//  the string touches that fret and a zero if it doesn't touch, which we then load into our storage 
+	//  integer.
+
+ 	stringState |= ( (!(i & (1<<green_pin))) << 1); //green fret
+     1ba:	81 fd       	sbrc	r24, 1
+     1bc:	03 c0       	rjmp	.+6      	; 0x1c4 <readFrets+0x42>
+     1be:	c2 e0       	ldi	r28, 0x02	; 2
+     1c0:	d0 e0       	ldi	r29, 0x00	; 0
+     1c2:	02 c0       	rjmp	.+4      	; 0x1c8 <readFrets+0x46>
+     1c4:	c0 e0       	ldi	r28, 0x00	; 0
+     1c6:	d0 e0       	ldi	r29, 0x00	; 0
+ 	stringState |= ( (!(i & (1<<red_pin))) << 2); //red fret
+     1c8:	82 fd       	sbrc	r24, 2
+     1ca:	03 c0       	rjmp	.+6      	; 0x1d2 <readFrets+0x50>
+     1cc:	a4 e0       	ldi	r26, 0x04	; 4
+     1ce:	b0 e0       	ldi	r27, 0x00	; 0
+     1d0:	02 c0       	rjmp	.+4      	; 0x1d6 <readFrets+0x54>
+     1d2:	a0 e0       	ldi	r26, 0x00	; 0
+     1d4:	b0 e0       	ldi	r27, 0x00	; 0
+ 	stringState |= ( (!(i & (1<<yellow_pin))) << 3); //yellow fret
+     1d6:	83 fd       	sbrc	r24, 3
+     1d8:	03 c0       	rjmp	.+6      	; 0x1e0 <readFrets+0x5e>
+     1da:	e8 e0       	ldi	r30, 0x08	; 8
+     1dc:	f0 e0       	ldi	r31, 0x00	; 0
+     1de:	02 c0       	rjmp	.+4      	; 0x1e4 <readFrets+0x62>
+     1e0:	e0 e0       	ldi	r30, 0x00	; 0
+     1e2:	f0 e0       	ldi	r31, 0x00	; 0
+ 	stringState |= ( (!(i & (1<<blue_pin))) << 4); //blue fret
+     1e4:	84 fd       	sbrc	r24, 4
+     1e6:	03 c0       	rjmp	.+6      	; 0x1ee <readFrets+0x6c>
+     1e8:	60 e1       	ldi	r22, 0x10	; 16
+     1ea:	70 e0       	ldi	r23, 0x00	; 0
+     1ec:	02 c0       	rjmp	.+4      	; 0x1f2 <readFrets+0x70>
+     1ee:	60 e0       	ldi	r22, 0x00	; 0
+     1f0:	70 e0       	ldi	r23, 0x00	; 0
+ 	stringState |= ( (!(i & (1<<orange_pin))) << 5); //orange fret
+     1f2:	85 fd       	sbrc	r24, 5
+     1f4:	03 c0       	rjmp	.+6      	; 0x1fc <readFrets+0x7a>
+     1f6:	40 e2       	ldi	r20, 0x20	; 32
+     1f8:	50 e0       	ldi	r21, 0x00	; 0
+     1fa:	02 c0       	rjmp	.+4      	; 0x200 <readFrets+0x7e>
+     1fc:	40 e0       	ldi	r20, 0x00	; 0
+     1fe:	50 e0       	ldi	r21, 0x00	; 0
+
+	// Also, if we strummed a string, hold that in the 'zeroth' fret
+	i = pick_pin;
+     200:	29 b1       	in	r18, 0x09	; 9
+	//  the port, which will return a zero if pressed and non-zero if unpressed. So we ! that to get a 1 if
+	//  the string touches that fret and a zero if it doesn't touch, which we then load into our storage 
+	//  integer.
+
+ 	stringState |= ( (!(i & (1<<green_pin))) << 1); //green fret
+ 	stringState |= ( (!(i & (1<<red_pin))) << 2); //red fret
+     202:	30 e0       	ldi	r19, 0x00	; 0
+     204:	85 e0       	ldi	r24, 0x05	; 5
+     206:	36 95       	lsr	r19
+     208:	27 95       	ror	r18
+     20a:	8a 95       	dec	r24
+     20c:	e1 f7       	brne	.-8      	; 0x206 <readFrets+0x84>
+     20e:	20 95       	com	r18
+     210:	30 95       	com	r19
+     212:	21 70       	andi	r18, 0x01	; 1
+     214:	30 70       	andi	r19, 0x00	; 0
+     216:	2c 2b       	or	r18, r28
+     218:	3d 2b       	or	r19, r29
+ 	stringState |= ( (!(i & (1<<yellow_pin))) << 3); //yellow fret
+     21a:	2a 2b       	or	r18, r26
+     21c:	3b 2b       	or	r19, r27
+ 	stringState |= ( (!(i & (1<<blue_pin))) << 4); //blue fret
+     21e:	2e 2b       	or	r18, r30
+     220:	3f 2b       	or	r19, r31
+ 	stringState |= ( (!(i & (1<<orange_pin))) << 5); //orange fret
+     222:	26 2b       	or	r18, r22
+     224:	37 2b       	or	r19, r23
+	// Also, if we strummed a string, hold that in the 'zeroth' fret
+	i = pick_pin;
+ 	stringState |= ( (!(i & (1<<strum_pin))) << 0); //pick touching the string
+
+	//Turn the string back HIGH and return
+	string_port |= (1<<guitarString); 
+     226:	88 b1       	in	r24, 0x08	; 8
+     228:	18 2b       	or	r17, r24
+     22a:	18 b9       	out	0x08, r17	; 8
+     22c:	24 2b       	or	r18, r20
+     22e:	35 2b       	or	r19, r21
+	return stringState;
+}
+     230:	c9 01       	movw	r24, r18
+     232:	df 91       	pop	r29
+     234:	cf 91       	pop	r28
+     236:	1f 91       	pop	r17
+     238:	08 95       	ret
+
+0000023a <main>:
+	 -Under config mode, the loop reads in the values of the strings and frets, assigns that current
+	  string-fret combination to correspond to a button press, then locks that combination in when 
+	  'Plus' is pressed and moves on to changing the next button.  It also sets the button data structure
+	  to display the current controller button being programmed, and then sends that data to the controller.
+*/ 
+{
+     23a:	2f 92       	push	r2
+     23c:	3f 92       	push	r3
+     23e:	4f 92       	push	r4
+     240:	5f 92       	push	r5
+     242:	6f 92       	push	r6
+     244:	7f 92       	push	r7
+     246:	8f 92       	push	r8
+     248:	9f 92       	push	r9
+     24a:	af 92       	push	r10
+     24c:	bf 92       	push	r11
+     24e:	cf 92       	push	r12
+     250:	df 92       	push	r13
+     252:	ef 92       	push	r14
+     254:	ff 92       	push	r15
+     256:	0f 93       	push	r16
+     258:	1f 93       	push	r17
+     25a:	df 93       	push	r29
+     25c:	cf 93       	push	r28
+     25e:	cd b7       	in	r28, 0x3d	; 61
+     260:	de b7       	in	r29, 0x3e	; 62
+     262:	c3 52       	subi	r28, 0x23	; 35
+     264:	d1 40       	sbci	r29, 0x01	; 1
+     266:	0f b6       	in	r0, 0x3f	; 63
+     268:	f8 94       	cli
+     26a:	de bf       	out	0x3e, r29	; 62
+     26c:	0f be       	out	0x3f, r0	; 63
+     26e:	cd bf       	out	0x3d, r28	; 61
+	//Debug stuff - turn on a light on pin 0, port b
+	DDRB |= 1;
+     270:	20 9a       	sbi	0x04, 0	; 4
+	PORTB |= 1;
+     272:	28 9a       	sbi	0x05, 0	; 5
+
+	// First, set up the guitar stuff - These functions are stored in guitarInitFunctions.h/.c
+	setPins();
+     274:	0e 94 85 07 	call	0xf0a	; 0xf0a <setPins>
+	setTimer();	
+     278:	0e 94 a2 07 	call	0xf44	; 0xf44 <setTimer>
+
+    // Declaration of variables used in Main()
+	int greenTimers[NUMBER_OF_STRINGS] = {0,0,0,0,0,0}; //These give timing to properly read green buttons on each string.
+     27c:	8c e0       	ldi	r24, 0x0C	; 12
+     27e:	fe 01       	movw	r30, r28
+     280:	70 96       	adiw	r30, 0x10	; 16
+     282:	df 01       	movw	r26, r30
+     284:	98 2f       	mov	r25, r24
+     286:	1d 92       	st	X+, r1
+     288:	9a 95       	dec	r25
+     28a:	e9 f7       	brne	.-6      	; 0x286 <main+0x4c>
+	int triedGreen[NUMBER_OF_STRINGS] = {0,0,0,0,0,0};  // Also used for the green button timing thing
+     28c:	fe 01       	movw	r30, r28
+     28e:	7c 96       	adiw	r30, 0x1c	; 28
+     290:	df 01       	movw	r26, r30
+     292:	98 2f       	mov	r25, r24
+     294:	1d 92       	st	X+, r1
+     296:	9a 95       	dec	r25
+     298:	e9 f7       	brne	.-6      	; 0x294 <main+0x5a>
+	int stringState[6] = {0,0,0,0,0,0}; // This stores an int for each string,
+     29a:	fe 01       	movw	r30, r28
+     29c:	b8 96       	adiw	r30, 0x28	; 40
+     29e:	df 01       	movw	r26, r30
+     2a0:	1d 92       	st	X+, r1
+     2a2:	8a 95       	dec	r24
+     2a4:	e9 f7       	brne	.-6      	; 0x2a0 <main+0x66>
+																	 // controller compares the string presses
+																	 // to in order to judge if a button is being
+																	 // pressed. It's the size of all the chord combinations,
+																	 // but in Note Mode, only the first 5 blocks get looked at. 
+	char configMode = 0; // Start in normal mode
+	int buttonToAssign = 0; // declare some variables
+     2a6:	1c 82       	std	Y+4, r1	; 0x04
+     2a8:	1b 82       	std	Y+3, r1	; 0x03
+	char plusLock = 0;
+     2aa:	19 82       	std	Y+1, r1	; 0x01
+	char previousPlusOn = 0; // This is used as a lock so we don't program all the buttons at once
+     2ac:	1a 82       	std	Y+2, r1	; 0x02
+	int debounceTimer = 0; // This is used as a global timer for debouncing buttons
+     2ae:	1e 82       	std	Y+6, r1	; 0x06
+     2b0:	1d 82       	std	Y+5, r1	; 0x05
+		char minusOn;
+	} dataForController;
+
+	inline void clearData(dataForController* data)
+	{
+		data->orangeOn = 0;
+     2b2:	1b 86       	std	Y+11, r1	; 0x0b
+		data->blueOn   = 0;
+     2b4:	1a 86       	std	Y+10, r1	; 0x0a
+		data->yellowOn = 0;
+     2b6:	19 86       	std	Y+9, r1	; 0x09
+		data->redOn    = 0;
+     2b8:	18 86       	std	Y+8, r1	; 0x08
+		data->greenOn  = 0;
+     2ba:	1f 82       	std	Y+7, r1	; 0x07
+		data->upOn     = 0;
+     2bc:	1c 86       	std	Y+12, r1	; 0x0c
+		data->downOn   = 0;
+     2be:	1d 86       	std	Y+13, r1	; 0x0d
+		data->plusOn   = 0;
+     2c0:	1e 86       	std	Y+14, r1	; 0x0e
+		data->minusOn  = 0;
+     2c2:	1f 86       	std	Y+15, r1	; 0x0f
+	dataForController data;
+	clearData(&data); //This function is contained in V1Typedefs.h
+
+  // Now set up all the communication stuff - initialization routines
+  //  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
+  startCommunication();
+     2c4:	0e 94 dd 04 	call	0x9ba	; 0x9ba <startCommunication>
+     2c8:	66 24       	eor	r6, r6
+     2ca:	77 24       	eor	r7, r7
+	// array as something big enough for all 21 chord mode combinations, but we
+	// only write the first 5 patterns when we write these ones to EEPROM
+	int buttonStringPatterns[NUM_CHORDS_BUTTONS][NUMBER_OF_STRINGS];
+
+    buttonStringPatterns[0][0] = 0b0000000; // [0][0] through [0][5] - green button
+    buttonStringPatterns[0][0] = 0x0000000; // [0][0] through [0][5] - green button
+     2cc:	6c ea       	ldi	r22, 0xAC	; 172
+     2ce:	86 2e       	mov	r8, r22
+     2d0:	91 2c       	mov	r9, r1
+     2d2:	8c 0e       	add	r8, r28
+     2d4:	9d 1e       	adc	r9, r29
+	buttonStringPatterns[2][2] = 0;	buttonStringPatterns[2][3] = 0;
+	buttonStringPatterns[2][4] = 0;	buttonStringPatterns[2][5] = 0;
+	buttonStringPatterns[3][0] = 0;	buttonStringPatterns[3][1] = 0;
+	buttonStringPatterns[3][2] = 0;	buttonStringPatterns[3][3] = 0;
+	buttonStringPatterns[3][4] = 0;	buttonStringPatterns[3][5] = 0;
+	buttonStringPatterns[4][0] = 0;	buttonStringPatterns[4][1] = 0;
+     2d6:	54 e6       	ldi	r21, 0x64	; 100
+     2d8:	25 2e       	mov	r2, r21
+     2da:	31 2c       	mov	r3, r1
+     2dc:	2c 0e       	add	r2, r28
+     2de:	3d 1e       	adc	r3, r29
+
+    while(1){  
+	              /* main event loop */
+        // We first read all the strings for button hits and store them into
+		//  our stringState array.  Strum processing is also handled here for now.
+        stringState[0] = readFrets(first_string);
+     2e0:	85 e0       	ldi	r24, 0x05	; 5
+     2e2:	90 e0       	ldi	r25, 0x00	; 0
+     2e4:	0e 94 c1 00 	call	0x182	; 0x182 <readFrets>
+     2e8:	99 a7       	std	Y+41, r25	; 0x29
+     2ea:	88 a7       	std	Y+40, r24	; 0x28
+		stringState[1] = readFrets(second_string);
+     2ec:	84 e0       	ldi	r24, 0x04	; 4
+     2ee:	90 e0       	ldi	r25, 0x00	; 0
+     2f0:	0e 94 c1 00 	call	0x182	; 0x182 <readFrets>
+     2f4:	9b a7       	std	Y+43, r25	; 0x2b
+     2f6:	8a a7       	std	Y+42, r24	; 0x2a
+		stringState[2] = readFrets(third_string);
+     2f8:	83 e0       	ldi	r24, 0x03	; 3
+     2fa:	90 e0       	ldi	r25, 0x00	; 0
+     2fc:	0e 94 c1 00 	call	0x182	; 0x182 <readFrets>
+     300:	9d a7       	std	Y+45, r25	; 0x2d
+     302:	8c a7       	std	Y+44, r24	; 0x2c
+		stringState[3] = readFrets(fourth_string);
+     304:	82 e0       	ldi	r24, 0x02	; 2
+     306:	90 e0       	ldi	r25, 0x00	; 0
+     308:	0e 94 c1 00 	call	0x182	; 0x182 <readFrets>
+     30c:	9f a7       	std	Y+47, r25	; 0x2f
+     30e:	8e a7       	std	Y+46, r24	; 0x2e
+		stringState[4] = readFrets(fifth_string);
+     310:	81 e0       	ldi	r24, 0x01	; 1
+     312:	90 e0       	ldi	r25, 0x00	; 0
+     314:	0e 94 c1 00 	call	0x182	; 0x182 <readFrets>
+     318:	99 ab       	std	Y+49, r25	; 0x31
+     31a:	88 ab       	std	Y+48, r24	; 0x30
+		stringState[5] = readFrets(sixth_string);
+     31c:	80 e0       	ldi	r24, 0x00	; 0
+     31e:	90 e0       	ldi	r25, 0x00	; 0
+     320:	0e 94 c1 00 	call	0x182	; 0x182 <readFrets>
+     324:	9c 01       	movw	r18, r24
+     326:	9b ab       	std	Y+51, r25	; 0x33
+     328:	8a ab       	std	Y+50, r24	; 0x32
+		char minusOn;
+	} dataForController;
+
+	inline void clearData(dataForController* data)
+	{
+		data->orangeOn = 0;
+     32a:	1b 86       	std	Y+11, r1	; 0x0b
+		data->blueOn   = 0;
+     32c:	1a 86       	std	Y+10, r1	; 0x0a
+		data->yellowOn = 0;
+     32e:	19 86       	std	Y+9, r1	; 0x09
+		data->redOn    = 0;
+     330:	18 86       	std	Y+8, r1	; 0x08
+		data->greenOn  = 0;
+     332:	1f 82       	std	Y+7, r1	; 0x07
+		data->upOn     = 0;
+     334:	1c 86       	std	Y+12, r1	; 0x0c
+		data->downOn   = 0;
+     336:	1d 86       	std	Y+13, r1	; 0x0d
+		data->plusOn   = 0;
+     338:	1e 86       	std	Y+14, r1	; 0x0e
+		data->minusOn  = 0;
+     33a:	1f 86       	std	Y+15, r1	; 0x0f
+		return 0;
+}
+
+inline int testForResetButtonPatterns(int stringState[])
+{
+	if ((stringState[0] == 0b00000010) &&
+     33c:	88 a5       	ldd	r24, Y+40	; 0x28
+     33e:	99 a5       	ldd	r25, Y+41	; 0x29
+     340:	02 97       	sbiw	r24, 0x02	; 2
+     342:	09 f0       	breq	.+2      	; 0x346 <main+0x10c>
+     344:	e7 c0       	rjmp	.+462    	; 0x514 <__stack+0x15>
+     346:	8a a5       	ldd	r24, Y+42	; 0x2a
+     348:	9b a5       	ldd	r25, Y+43	; 0x2b
+     34a:	0c 97       	sbiw	r24, 0x0c	; 12
+     34c:	09 f0       	breq	.+2      	; 0x350 <main+0x116>
+     34e:	e2 c0       	rjmp	.+452    	; 0x514 <__stack+0x15>
+     350:	8c a5       	ldd	r24, Y+44	; 0x2c
+     352:	9d a5       	ldd	r25, Y+45	; 0x2d
+     354:	02 97       	sbiw	r24, 0x02	; 2
+     356:	09 f0       	breq	.+2      	; 0x35a <main+0x120>
+     358:	dd c0       	rjmp	.+442    	; 0x514 <__stack+0x15>
+     35a:	8e a5       	ldd	r24, Y+46	; 0x2e
+     35c:	9f a5       	ldd	r25, Y+47	; 0x2f
+     35e:	0c 97       	sbiw	r24, 0x0c	; 12
+     360:	09 f0       	breq	.+2      	; 0x364 <main+0x12a>
+     362:	d8 c0       	rjmp	.+432    	; 0x514 <__stack+0x15>
+     364:	48 a9       	ldd	r20, Y+48	; 0x30
+     366:	59 a9       	ldd	r21, Y+49	; 0x31
+     368:	42 30       	cpi	r20, 0x02	; 2
+     36a:	51 05       	cpc	r21, r1
+     36c:	09 f0       	breq	.+2      	; 0x370 <main+0x136>
+     36e:	d2 c0       	rjmp	.+420    	; 0x514 <__stack+0x15>
+     370:	2c 30       	cpi	r18, 0x0C	; 12
+     372:	31 05       	cpc	r19, r1
+     374:	09 f0       	breq	.+2      	; 0x378 <main+0x13e>
+     376:	ce c0       	rjmp	.+412    	; 0x514 <__stack+0x15>
+     378:	f4 01       	movw	r30, r8
+     37a:	11 82       	std	Z+1, r1	; 0x01
+     37c:	10 82       	st	Z, r1
+	buttonStringPatterns[0][1] = 0b0001100; 
+     37e:	33 83       	std	Z+3, r19	; 0x03
+     380:	22 83       	std	Z+2, r18	; 0x02
+	buttonStringPatterns[0][2] = 0b0000000;	
+     382:	15 82       	std	Z+5, r1	; 0x05
+     384:	14 82       	std	Z+4, r1	; 0x04
+	buttonStringPatterns[0][3] = 0b0000110;
+     386:	06 e0       	ldi	r16, 0x06	; 6
+     388:	10 e0       	ldi	r17, 0x00	; 0
+     38a:	17 83       	std	Z+7, r17	; 0x07
+     38c:	06 83       	std	Z+6, r16	; 0x06
+	buttonStringPatterns[0][4] = 0b0000000;
+     38e:	11 86       	std	Z+9, r1	; 0x09
+     390:	10 86       	std	Z+8, r1	; 0x08
+	buttonStringPatterns[0][5] = 0b0000010;
+     392:	53 87       	std	Z+11, r21	; 0x0b
+     394:	42 87       	std	Z+10, r20	; 0x0a
+
+	buttonStringPatterns[1][0] = 0b0000010; // [1][0] through [1][5] - red button
+     396:	55 87       	std	Z+13, r21	; 0x0d
+     398:	44 87       	std	Z+12, r20	; 0x0c
+	buttonStringPatterns[1][1] = 0b0000000; 
+     39a:	17 86       	std	Z+15, r1	; 0x0f
+     39c:	16 86       	std	Z+14, r1	; 0x0e
+	buttonStringPatterns[1][2] = 0b0000001;
+     39e:	81 e0       	ldi	r24, 0x01	; 1
+     3a0:	90 e0       	ldi	r25, 0x00	; 0
+     3a2:	91 8b       	std	Z+17, r25	; 0x11
+     3a4:	80 8b       	std	Z+16, r24	; 0x10
+	buttonStringPatterns[1][3] = 0b0000000;
+     3a6:	13 8a       	std	Z+19, r1	; 0x13
+     3a8:	12 8a       	std	Z+18, r1	; 0x12
+	buttonStringPatterns[1][4] = 0b0000001;
+     3aa:	95 8b       	std	Z+21, r25	; 0x15
+     3ac:	84 8b       	std	Z+20, r24	; 0x14
+	buttonStringPatterns[1][5] = 0b0001100;
+     3ae:	37 8b       	std	Z+23, r19	; 0x17
+     3b0:	26 8b       	std	Z+22, r18	; 0x16
+
+	buttonStringPatterns[2][0] = 0b0001100; // [2][0] through [2][5] - yellow button
+     3b2:	31 8f       	std	Z+25, r19	; 0x19
+     3b4:	20 8f       	std	Z+24, r18	; 0x18
+	buttonStringPatterns[2][1] = 0b0000000; // This is an A chord.
+     3b6:	13 8e       	std	Z+27, r1	; 0x1b
+     3b8:	12 8e       	std	Z+26, r1	; 0x1a
+	buttonStringPatterns[2][2] = 0b0000110;
+     3ba:	15 8f       	std	Z+29, r17	; 0x1d
+     3bc:	04 8f       	std	Z+28, r16	; 0x1c
+	buttonStringPatterns[2][3] = 0b0000000;
+     3be:	17 8e       	std	Z+31, r1	; 0x1f
+     3c0:	16 8e       	std	Z+30, r1	; 0x1e
+	buttonStringPatterns[2][4] = 0b0000010;
+     3c2:	51 a3       	std	Z+33, r21	; 0x21
+     3c4:	40 a3       	std	Z+32, r20	; 0x20
+	buttonStringPatterns[2][5] = 0b0000000;
+     3c6:	13 a2       	std	Z+35, r1	; 0x23
+     3c8:	12 a2       	std	Z+34, r1	; 0x22
+							  
+	buttonStringPatterns[3][0] = 0b0000000; // [3][0] through [3][5] - blue button
+     3ca:	15 a2       	std	Z+37, r1	; 0x25
+     3cc:	14 a2       	std	Z+36, r1	; 0x24
+	buttonStringPatterns[3][1] = 0b0000001; 
+     3ce:	97 a3       	std	Z+39, r25	; 0x27
+     3d0:	86 a3       	std	Z+38, r24	; 0x26
+	buttonStringPatterns[3][2] = 0b0001100;
+     3d2:	31 a7       	std	Z+41, r19	; 0x29
+     3d4:	20 a7       	std	Z+40, r18	; 0x28
+	buttonStringPatterns[3][3] = 0b0000000;
+     3d6:	13 a6       	std	Z+43, r1	; 0x2b
+     3d8:	12 a6       	std	Z+42, r1	; 0x2a
+	buttonStringPatterns[3][4] = 0b0001100;
+     3da:	35 a7       	std	Z+45, r19	; 0x2d
+     3dc:	24 a7       	std	Z+44, r18	; 0x2c
+	buttonStringPatterns[3][5] = 0b0000000;
+     3de:	17 a6       	std	Z+47, r1	; 0x2f
+     3e0:	16 a6       	std	Z+46, r1	; 0x2e
+
+	buttonStringPatterns[4][0] = 0b0000000; // [4][0] through [4][5] - orange button
+     3e2:	11 aa       	std	Z+49, r1	; 0x31
+     3e4:	10 aa       	std	Z+48, r1	; 0x30
+	buttonStringPatterns[4][1] = 0b0000110; 
+     3e6:	13 ab       	std	Z+51, r17	; 0x33
+     3e8:	02 ab       	std	Z+50, r16	; 0x32
+	buttonStringPatterns[4][2] = 0b0000000;
+     3ea:	15 aa       	std	Z+53, r1	; 0x35
+     3ec:	14 aa       	std	Z+52, r1	; 0x34
+	buttonStringPatterns[4][3] = 0b0000001;
+     3ee:	97 ab       	std	Z+55, r25	; 0x37
+     3f0:	86 ab       	std	Z+54, r24	; 0x36
+	buttonStringPatterns[4][4] = 0b0000000;
+     3f2:	11 ae       	std	Z+57, r1	; 0x39
+     3f4:	10 ae       	std	Z+56, r1	; 0x38
+	buttonStringPatterns[4][5] = 0b0000001;
+     3f6:	93 af       	std	Z+59, r25	; 0x3b
+     3f8:	82 af       	std	Z+58, r24	; 0x3a
+ */
+static __inline__ void
+eeprom_write_block (const void *__src, void *__dst, size_t __n)
+{
+#if (! (defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)) )
+    __eewr_block (__dst, __src, __n, eeprom_write_byte);
+     3fa:	80 e0       	ldi	r24, 0x00	; 0
+     3fc:	90 e0       	ldi	r25, 0x00	; 0
+     3fe:	b4 01       	movw	r22, r8
+     400:	4c e3       	ldi	r20, 0x3C	; 60
+     402:	50 e0       	ldi	r21, 0x00	; 0
+     404:	24 eb       	ldi	r18, 0xB4	; 180
+     406:	30 e0       	ldi	r19, 0x00	; 0
+     408:	0e 94 46 0d 	call	0x1a8c	; 0x1a8c <__eewr_block>
+
+	eeprom_write_block( (void*)&buttonStringPatterns, notesAddress, EEPROM_NOTES_BLOCK_SIZE);
+
+
+	// Now write the default chord mapping
+	buttonStringPatterns[0][0] = 0b0001110; // [0][0] through [0][5] - green button
+     40c:	8e e0       	ldi	r24, 0x0E	; 14
+     40e:	90 e0       	ldi	r25, 0x00	; 0
+     410:	d4 01       	movw	r26, r8
+     412:	11 96       	adiw	r26, 0x01	; 1
+     414:	9c 93       	st	X, r25
+     416:	8e 93       	st	-X, r24
+	buttonStringPatterns[0][1] = 0b0001110; // This is a G Chord
+     418:	13 96       	adiw	r26, 0x03	; 3
+     41a:	9c 93       	st	X, r25
+     41c:	8e 93       	st	-X, r24
+     41e:	12 97       	sbiw	r26, 0x02	; 2
+	buttonStringPatterns[0][2] = 0b0000000;	
+     420:	15 96       	adiw	r26, 0x05	; 5
+     422:	1c 92       	st	X, r1
+     424:	1e 92       	st	-X, r1
+     426:	14 97       	sbiw	r26, 0x04	; 4
+	buttonStringPatterns[0][3] = 0b0000000;
+     428:	17 96       	adiw	r26, 0x07	; 7
+     42a:	1c 92       	st	X, r1
+     42c:	1e 92       	st	-X, r1
+     42e:	16 97       	sbiw	r26, 0x06	; 6
+	buttonStringPatterns[0][4] = 0b0000000;
+     430:	19 96       	adiw	r26, 0x09	; 9
+     432:	1c 92       	st	X, r1
+     434:	1e 92       	st	-X, r1
+     436:	18 97       	sbiw	r26, 0x08	; 8
+	buttonStringPatterns[0][5] = 0b0001110;
+     438:	1b 96       	adiw	r26, 0x0b	; 11
+     43a:	9c 93       	st	X, r25
+     43c:	8e 93       	st	-X, r24
+     43e:	1a 97       	sbiw	r26, 0x0a	; 10
+
+	buttonStringPatterns[1][0] = 0b0000000; // [1][0] through [1][5] - red button
+     440:	1d 96       	adiw	r26, 0x0d	; 13
+     442:	1c 92       	st	X, r1
+     444:	1e 92       	st	-X, r1
+     446:	1c 97       	sbiw	r26, 0x0c	; 12
+	buttonStringPatterns[1][1] = 0b0001110; // This is a C chord
+     448:	1f 96       	adiw	r26, 0x0f	; 15
+     44a:	9c 93       	st	X, r25
+     44c:	8e 93       	st	-X, r24
+     44e:	1e 97       	sbiw	r26, 0x0e	; 14
+	buttonStringPatterns[1][2] = 0b0001110;
+     450:	51 96       	adiw	r26, 0x11	; 17
+     452:	9c 93       	st	X, r25
+     454:	8e 93       	st	-X, r24
+     456:	50 97       	sbiw	r26, 0x10	; 16
+	buttonStringPatterns[1][3] = 0b0000000;
+     458:	53 96       	adiw	r26, 0x13	; 19
+     45a:	1c 92       	st	X, r1
+     45c:	1e 92       	st	-X, r1
+     45e:	52 97       	sbiw	r26, 0x12	; 18
+	buttonStringPatterns[1][4] = 0b0001110;
+     460:	55 96       	adiw	r26, 0x15	; 21
+     462:	9c 93       	st	X, r25
+     464:	8e 93       	st	-X, r24
+     466:	54 97       	sbiw	r26, 0x14	; 20
+	buttonStringPatterns[1][5] = 0b0000000;
+     468:	57 96       	adiw	r26, 0x17	; 23
+     46a:	1c 92       	st	X, r1
+     46c:	1e 92       	st	-X, r1
+     46e:	56 97       	sbiw	r26, 0x16	; 22
+
+	buttonStringPatterns[2][0] = 0b0000000; // [2][0] through [2][5] - yellow button
+     470:	59 96       	adiw	r26, 0x19	; 25
+     472:	1c 92       	st	X, r1
+     474:	1e 92       	st	-X, r1
+     476:	58 97       	sbiw	r26, 0x18	; 24
+	buttonStringPatterns[2][1] = 0b0000110; // This is an E chord.
+     478:	5b 96       	adiw	r26, 0x1b	; 27
+     47a:	1c 93       	st	X, r17
+     47c:	0e 93       	st	-X, r16
+     47e:	5a 97       	sbiw	r26, 0x1a	; 26
+	buttonStringPatterns[2][2] = 0b0000110;
+     480:	5d 96       	adiw	r26, 0x1d	; 29
+     482:	1c 93       	st	X, r17
+     484:	0e 93       	st	-X, r16
+     486:	5c 97       	sbiw	r26, 0x1c	; 28
+	buttonStringPatterns[2][3] = 0b0000110;
+     488:	5f 96       	adiw	r26, 0x1f	; 31
+     48a:	1c 93       	st	X, r17
+     48c:	0e 93       	st	-X, r16
+     48e:	5e 97       	sbiw	r26, 0x1e	; 30
+	buttonStringPatterns[2][4] = 0b0000000;
+     490:	91 96       	adiw	r26, 0x21	; 33
+     492:	1c 92       	st	X, r1
+     494:	1e 92       	st	-X, r1
+     496:	90 97       	sbiw	r26, 0x20	; 32
+	buttonStringPatterns[2][5] = 0b0000000;
+     498:	93 96       	adiw	r26, 0x23	; 35
+     49a:	1c 92       	st	X, r1
+     49c:	1e 92       	st	-X, r1
+     49e:	92 97       	sbiw	r26, 0x22	; 34
+									  
+	buttonStringPatterns[3][0] = 0b0000000; // [3][0] through [3][5] - blue button
+     4a0:	95 96       	adiw	r26, 0x25	; 37
+     4a2:	1c 92       	st	X, r1
+     4a4:	1e 92       	st	-X, r1
+     4a6:	94 97       	sbiw	r26, 0x24	; 36
+	buttonStringPatterns[3][1] = 0b0000000; // This an A chord
+     4a8:	97 96       	adiw	r26, 0x27	; 39
+     4aa:	1c 92       	st	X, r1
+     4ac:	1e 92       	st	-X, r1
+     4ae:	96 97       	sbiw	r26, 0x26	; 38
+	buttonStringPatterns[3][2] = 0b0000110;
+     4b0:	99 96       	adiw	r26, 0x29	; 41
+     4b2:	1c 93       	st	X, r17
+     4b4:	0e 93       	st	-X, r16
+     4b6:	98 97       	sbiw	r26, 0x28	; 40
+	buttonStringPatterns[3][3] = 0b0000110;
+     4b8:	9b 96       	adiw	r26, 0x2b	; 43
+     4ba:	1c 93       	st	X, r17
+     4bc:	0e 93       	st	-X, r16
+     4be:	9a 97       	sbiw	r26, 0x2a	; 42
+	buttonStringPatterns[3][4] = 0b0000110;
+     4c0:	9d 96       	adiw	r26, 0x2d	; 45
+     4c2:	1c 93       	st	X, r17
+     4c4:	0e 93       	st	-X, r16
+     4c6:	9c 97       	sbiw	r26, 0x2c	; 44
+	buttonStringPatterns[3][5] = 0b0000000;
+     4c8:	9f 96       	adiw	r26, 0x2f	; 47
+     4ca:	1c 92       	st	X, r1
+     4cc:	1e 92       	st	-X, r1
+     4ce:	9e 97       	sbiw	r26, 0x2e	; 46
+
+	buttonStringPatterns[4][0] = 0b0000000; // [4][0] through [4][5] - blue button
+     4d0:	d1 96       	adiw	r26, 0x31	; 49
+     4d2:	1c 92       	st	X, r1
+     4d4:	1e 92       	st	-X, r1
+     4d6:	d0 97       	sbiw	r26, 0x30	; 48
+	buttonStringPatterns[4][1] = 0b0000000;	// This is a D chord 
+     4d8:	d3 96       	adiw	r26, 0x33	; 51
+     4da:	1c 92       	st	X, r1
+     4dc:	1e 92       	st	-X, r1
+     4de:	d2 97       	sbiw	r26, 0x32	; 50
+	buttonStringPatterns[4][2] = 0b0000000;
+     4e0:	d5 96       	adiw	r26, 0x35	; 53
+     4e2:	1c 92       	st	X, r1
+     4e4:	1e 92       	st	-X, r1
+     4e6:	d4 97       	sbiw	r26, 0x34	; 52
+	buttonStringPatterns[4][3] = 0b0001110;
+     4e8:	d7 96       	adiw	r26, 0x37	; 55
+     4ea:	9c 93       	st	X, r25
+     4ec:	8e 93       	st	-X, r24
+     4ee:	d6 97       	sbiw	r26, 0x36	; 54
+	buttonStringPatterns[4][4] = 0b0001110;
+     4f0:	d9 96       	adiw	r26, 0x39	; 57
+     4f2:	9c 93       	st	X, r25
+     4f4:	8e 93       	st	-X, r24
+     4f6:	d8 97       	sbiw	r26, 0x38	; 56
+	buttonStringPatterns[4][5] = 0b0001110;
+     4f8:	db 96       	adiw	r26, 0x3b	; 59
+     4fa:	9c 93       	st	X, r25
+     4fc:	8e 93       	st	-X, r24
+     4fe:	da 97       	sbiw	r26, 0x3a	; 58
+     500:	88 e7       	ldi	r24, 0x78	; 120
+     502:	90 e0       	ldi	r25, 0x00	; 0
+     504:	b4 01       	movw	r22, r8
+     506:	48 e7       	ldi	r20, 0x78	; 120
+     508:	50 e0       	ldi	r21, 0x00	; 0
+     50a:	24 eb       	ldi	r18, 0xB4	; 180
+     50c:	30 e0       	ldi	r19, 0x00	; 0
+     50e:	0e 94 46 0d 	call	0x1a8c	; 0x1a8c <__eewr_block>
+     512:	77 24       	eor	r7, r7
+
+// This function just reads our plus and minus buttons and sets the data struct accordingly
+inline void readOtherButtons(dataForController* data)
+{
+	// read our plus and minus buttons
+	int i = misc_pin; // check for plus and minus
+     514:	89 b1       	in	r24, 0x09	; 9
+     516:	90 e0       	ldi	r25, 0x00	; 0
+	data->plusOn = !(i & (1<<plus_pin)); //Plus and minus are held high normally, but pressing it drops it low
+     518:	9c 01       	movw	r18, r24
+     51a:	22 0f       	add	r18, r18
+     51c:	23 2f       	mov	r18, r19
+     51e:	22 1f       	adc	r18, r18
+     520:	33 0b       	sbc	r19, r19
+     522:	31 95       	neg	r19
+     524:	41 e0       	ldi	r20, 0x01	; 1
+     526:	50 e0       	ldi	r21, 0x00	; 0
+     528:	24 27       	eor	r18, r20
+     52a:	35 27       	eor	r19, r21
+     52c:	21 70       	andi	r18, 0x01	; 1
+     52e:	2e 87       	std	Y+14, r18	; 0x0e
+	data->minusOn = !(i & (1<<minus_pin));
+     530:	26 e0       	ldi	r18, 0x06	; 6
+     532:	96 95       	lsr	r25
+     534:	87 95       	ror	r24
+     536:	2a 95       	dec	r18
+     538:	e1 f7       	brne	.-8      	; 0x532 <__stack+0x33>
+     53a:	84 27       	eor	r24, r20
+     53c:	95 27       	eor	r25, r21
+     53e:	81 70       	andi	r24, 0x01	; 1
+     540:	8f 87       	std	Y+15, r24	; 0x0f
+		return 0;
+}
+
+inline int testForMinusChord(int stringState[])
+{
+	if ((stringState[0] == 0b00011110) &&
+     542:	28 a5       	ldd	r18, Y+40	; 0x28
+     544:	39 a5       	ldd	r19, Y+41	; 0x29
+     546:	2e 31       	cpi	r18, 0x1E	; 30
+     548:	31 05       	cpc	r19, r1
+     54a:	b1 f4       	brne	.+44     	; 0x578 <__stack+0x79>
+     54c:	8a a5       	ldd	r24, Y+42	; 0x2a
+     54e:	9b a5       	ldd	r25, Y+43	; 0x2b
+     550:	4e 97       	sbiw	r24, 0x1e	; 30
+     552:	91 f4       	brne	.+36     	; 0x578 <__stack+0x79>
+     554:	8c a5       	ldd	r24, Y+44	; 0x2c
+     556:	9d a5       	ldd	r25, Y+45	; 0x2d
+     558:	4e 97       	sbiw	r24, 0x1e	; 30
+     55a:	71 f4       	brne	.+28     	; 0x578 <__stack+0x79>
+     55c:	8e a5       	ldd	r24, Y+46	; 0x2e
+     55e:	9f a5       	ldd	r25, Y+47	; 0x2f
+     560:	4e 97       	sbiw	r24, 0x1e	; 30
+     562:	51 f4       	brne	.+20     	; 0x578 <__stack+0x79>
+     564:	88 a9       	ldd	r24, Y+48	; 0x30
+     566:	99 a9       	ldd	r25, Y+49	; 0x31
+     568:	4e 97       	sbiw	r24, 0x1e	; 30
+     56a:	31 f4       	brne	.+12     	; 0x578 <__stack+0x79>
+     56c:	8a a9       	ldd	r24, Y+50	; 0x32
+     56e:	9b a9       	ldd	r25, Y+51	; 0x33
+     570:	4e 97       	sbiw	r24, 0x1e	; 30
+     572:	11 f4       	brne	.+4      	; 0x578 <__stack+0x79>
+		// Now read our other buttons, like plus and minus
+		readOtherButtons(&data);
+
+		//Test if Minus is being played by the chord instead of the button
+		if(testForMinusChord(stringState))
+			data.minusOn = 1;
+     574:	81 e0       	ldi	r24, 0x01	; 1
+     576:	8f 87       	std	Y+15, r24	; 0x0f
+		
+		if ((controllerMode == NOTES) || (controllerMode == CHORDS))
+     578:	b2 e0       	ldi	r27, 0x02	; 2
+     57a:	7b 16       	cp	r7, r27
+     57c:	21 f0       	breq	.+8      	; 0x586 <__stack+0x87>
+     57e:	e4 e0       	ldi	r30, 0x04	; 4
+     580:	7e 16       	cp	r7, r30
+     582:	09 f0       	breq	.+2      	; 0x586 <__stack+0x87>
+     584:	eb c0       	rjmp	.+470    	; 0x75c <__stack+0x25d>
+		{
+			// Check to see if we're trying to enter Config Mode; disabled if we're playing with frets
+			if (configMode == 0)
+     586:	66 20       	and	r6, r6
+     588:	09 f0       	breq	.+2      	; 0x58c <__stack+0x8d>
+     58a:	91 c0       	rjmp	.+290    	; 0x6ae <__stack+0x1af>
+
+// This function tests to see if you're pressing the top 4 strings on the orange fret,
+//  thereby activating config mode. Works with both chords and scales.
+inline char testForConfigMode(int stringState[])
+{
+	if ((stringState[0] == 0b00000000) &&
+     58c:	21 15       	cp	r18, r1
+     58e:	31 05       	cpc	r19, r1
+     590:	09 f0       	breq	.+2      	; 0x594 <__stack+0x95>
+     592:	8a c0       	rjmp	.+276    	; 0x6a8 <__stack+0x1a9>
+     594:	8a a5       	ldd	r24, Y+42	; 0x2a
+     596:	9b a5       	ldd	r25, Y+43	; 0x2b
+     598:	89 2b       	or	r24, r25
+     59a:	09 f0       	breq	.+2      	; 0x59e <__stack+0x9f>
+     59c:	85 c0       	rjmp	.+266    	; 0x6a8 <__stack+0x1a9>
+     59e:	8c a5       	ldd	r24, Y+44	; 0x2c
+     5a0:	9d a5       	ldd	r25, Y+45	; 0x2d
+     5a2:	89 2b       	or	r24, r25
+     5a4:	09 f0       	breq	.+2      	; 0x5a8 <__stack+0xa9>
+     5a6:	80 c0       	rjmp	.+256    	; 0x6a8 <__stack+0x1a9>
+     5a8:	8e a5       	ldd	r24, Y+46	; 0x2e
+     5aa:	9f a5       	ldd	r25, Y+47	; 0x2f
+     5ac:	48 97       	sbiw	r24, 0x18	; 24
+     5ae:	09 f0       	breq	.+2      	; 0x5b2 <__stack+0xb3>
+     5b0:	7b c0       	rjmp	.+246    	; 0x6a8 <__stack+0x1a9>
+     5b2:	88 a9       	ldd	r24, Y+48	; 0x30
+     5b4:	99 a9       	ldd	r25, Y+49	; 0x31
+     5b6:	48 97       	sbiw	r24, 0x18	; 24
+     5b8:	09 f0       	breq	.+2      	; 0x5bc <__stack+0xbd>
+     5ba:	76 c0       	rjmp	.+236    	; 0x6a8 <__stack+0x1a9>
+     5bc:	8a a9       	ldd	r24, Y+50	; 0x32
+     5be:	9b a9       	ldd	r25, Y+51	; 0x33
+     5c0:	48 97       	sbiw	r24, 0x18	; 24
+     5c2:	09 f0       	breq	.+2      	; 0x5c6 <__stack+0xc7>
+     5c4:	71 c0       	rjmp	.+226    	; 0x6a8 <__stack+0x1a9>
+			{
+				configMode = testForConfigMode(stringState);
+				
+				// If we're playing with notes, when we enter config mode, we need to clear the 
+				//  button string patterns once so we can rebuild them.
+				if (configMode == 1 && controllerMode == NOTES)
+     5c6:	f2 e0       	ldi	r31, 0x02	; 2
+     5c8:	7f 16       	cp	r7, r31
+     5ca:	09 f0       	breq	.+2      	; 0x5ce <__stack+0xcf>
+     5cc:	6b c0       	rjmp	.+214    	; 0x6a4 <__stack+0x1a5>
+	return stringState;
+}
+
+inline void clearButtonStringPatterns(int buttonStringPatterns[][NUMBER_OF_STRINGS])
+{
+	buttonStringPatterns[0][0] = 0;	buttonStringPatterns[0][1] = 0;
+     5ce:	1d aa       	std	Y+53, r1	; 0x35
+     5d0:	1c aa       	std	Y+52, r1	; 0x34
+     5d2:	1f aa       	std	Y+55, r1	; 0x37
+     5d4:	1e aa       	std	Y+54, r1	; 0x36
+	buttonStringPatterns[0][2] = 0;	buttonStringPatterns[0][3] = 0;
+     5d6:	19 ae       	std	Y+57, r1	; 0x39
+     5d8:	18 ae       	std	Y+56, r1	; 0x38
+     5da:	1b ae       	std	Y+59, r1	; 0x3b
+     5dc:	1a ae       	std	Y+58, r1	; 0x3a
+	buttonStringPatterns[0][4] = 0;	buttonStringPatterns[0][5] = 0;
+     5de:	1d ae       	std	Y+61, r1	; 0x3d
+     5e0:	1c ae       	std	Y+60, r1	; 0x3c
+     5e2:	1f ae       	std	Y+63, r1	; 0x3f
+     5e4:	1e ae       	std	Y+62, r1	; 0x3e
+	buttonStringPatterns[1][0] = 0;	buttonStringPatterns[1][1] = 0;
+     5e6:	22 96       	adiw	r28, 0x02	; 2
+     5e8:	1f ae       	std	Y+63, r1	; 0x3f
+     5ea:	1e ae       	std	Y+62, r1	; 0x3e
+     5ec:	22 97       	sbiw	r28, 0x02	; 2
+     5ee:	24 96       	adiw	r28, 0x04	; 4
+     5f0:	1f ae       	std	Y+63, r1	; 0x3f
+     5f2:	1e ae       	std	Y+62, r1	; 0x3e
+     5f4:	24 97       	sbiw	r28, 0x04	; 4
+	buttonStringPatterns[1][2] = 0;	buttonStringPatterns[1][3] = 0;
+     5f6:	26 96       	adiw	r28, 0x06	; 6
+     5f8:	1f ae       	std	Y+63, r1	; 0x3f
+     5fa:	1e ae       	std	Y+62, r1	; 0x3e
+     5fc:	26 97       	sbiw	r28, 0x06	; 6
+     5fe:	28 96       	adiw	r28, 0x08	; 8
+     600:	1f ae       	std	Y+63, r1	; 0x3f
+     602:	1e ae       	std	Y+62, r1	; 0x3e
+     604:	28 97       	sbiw	r28, 0x08	; 8
+	buttonStringPatterns[1][4] = 0;	buttonStringPatterns[1][5] = 0;
+     606:	2a 96       	adiw	r28, 0x0a	; 10
+     608:	1f ae       	std	Y+63, r1	; 0x3f
+     60a:	1e ae       	std	Y+62, r1	; 0x3e
+     60c:	2a 97       	sbiw	r28, 0x0a	; 10
+     60e:	2c 96       	adiw	r28, 0x0c	; 12
+     610:	1f ae       	std	Y+63, r1	; 0x3f
+     612:	1e ae       	std	Y+62, r1	; 0x3e
+     614:	2c 97       	sbiw	r28, 0x0c	; 12
+	buttonStringPatterns[2][0] = 0;	buttonStringPatterns[2][1] = 0;
+     616:	2e 96       	adiw	r28, 0x0e	; 14
+     618:	1f ae       	std	Y+63, r1	; 0x3f
+     61a:	1e ae       	std	Y+62, r1	; 0x3e
+     61c:	2e 97       	sbiw	r28, 0x0e	; 14
+     61e:	60 96       	adiw	r28, 0x10	; 16
+     620:	1f ae       	std	Y+63, r1	; 0x3f
+     622:	1e ae       	std	Y+62, r1	; 0x3e
+     624:	60 97       	sbiw	r28, 0x10	; 16
+	buttonStringPatterns[2][2] = 0;	buttonStringPatterns[2][3] = 0;
+     626:	62 96       	adiw	r28, 0x12	; 18
+     628:	1f ae       	std	Y+63, r1	; 0x3f
+     62a:	1e ae       	std	Y+62, r1	; 0x3e
+     62c:	62 97       	sbiw	r28, 0x12	; 18
+     62e:	64 96       	adiw	r28, 0x14	; 20
+     630:	1f ae       	std	Y+63, r1	; 0x3f
+     632:	1e ae       	std	Y+62, r1	; 0x3e
+     634:	64 97       	sbiw	r28, 0x14	; 20
+	buttonStringPatterns[2][4] = 0;	buttonStringPatterns[2][5] = 0;
+     636:	66 96       	adiw	r28, 0x16	; 22
+     638:	1f ae       	std	Y+63, r1	; 0x3f
+     63a:	1e ae       	std	Y+62, r1	; 0x3e
+     63c:	66 97       	sbiw	r28, 0x16	; 22
+     63e:	68 96       	adiw	r28, 0x18	; 24
+     640:	1f ae       	std	Y+63, r1	; 0x3f
+     642:	1e ae       	std	Y+62, r1	; 0x3e
+     644:	68 97       	sbiw	r28, 0x18	; 24
+	buttonStringPatterns[3][0] = 0;	buttonStringPatterns[3][1] = 0;
+     646:	6a 96       	adiw	r28, 0x1a	; 26
+     648:	1f ae       	std	Y+63, r1	; 0x3f
+     64a:	1e ae       	std	Y+62, r1	; 0x3e
+     64c:	6a 97       	sbiw	r28, 0x1a	; 26
+     64e:	6c 96       	adiw	r28, 0x1c	; 28
+     650:	1f ae       	std	Y+63, r1	; 0x3f
+     652:	1e ae       	std	Y+62, r1	; 0x3e
+     654:	6c 97       	sbiw	r28, 0x1c	; 28
+	buttonStringPatterns[3][2] = 0;	buttonStringPatterns[3][3] = 0;
+     656:	6e 96       	adiw	r28, 0x1e	; 30
+     658:	1f ae       	std	Y+63, r1	; 0x3f
+     65a:	1e ae       	std	Y+62, r1	; 0x3e
+     65c:	6e 97       	sbiw	r28, 0x1e	; 30
+     65e:	a0 96       	adiw	r28, 0x20	; 32
+     660:	1f ae       	std	Y+63, r1	; 0x3f
+     662:	1e ae       	std	Y+62, r1	; 0x3e
+     664:	a0 97       	sbiw	r28, 0x20	; 32
+	buttonStringPatterns[3][4] = 0;	buttonStringPatterns[3][5] = 0;
+     666:	a2 96       	adiw	r28, 0x22	; 34
+     668:	1f ae       	std	Y+63, r1	; 0x3f
+     66a:	1e ae       	std	Y+62, r1	; 0x3e
+     66c:	a2 97       	sbiw	r28, 0x22	; 34
+     66e:	a4 96       	adiw	r28, 0x24	; 36
+     670:	1f ae       	std	Y+63, r1	; 0x3f
+     672:	1e ae       	std	Y+62, r1	; 0x3e
+     674:	a4 97       	sbiw	r28, 0x24	; 36
+	buttonStringPatterns[4][0] = 0;	buttonStringPatterns[4][1] = 0;
+     676:	d1 01       	movw	r26, r2
+     678:	1d 92       	st	X+, r1
+     67a:	1c 92       	st	X, r1
+     67c:	a8 96       	adiw	r28, 0x28	; 40
+     67e:	1f ae       	std	Y+63, r1	; 0x3f
+     680:	1e ae       	std	Y+62, r1	; 0x3e
+     682:	a8 97       	sbiw	r28, 0x28	; 40
+	buttonStringPatterns[4][2] = 0;	buttonStringPatterns[4][3] = 0;
+     684:	aa 96       	adiw	r28, 0x2a	; 42
+     686:	1f ae       	std	Y+63, r1	; 0x3f
+     688:	1e ae       	std	Y+62, r1	; 0x3e
+     68a:	aa 97       	sbiw	r28, 0x2a	; 42
+     68c:	ac 96       	adiw	r28, 0x2c	; 44
+     68e:	1f ae       	std	Y+63, r1	; 0x3f
+     690:	1e ae       	std	Y+62, r1	; 0x3e
+     692:	ac 97       	sbiw	r28, 0x2c	; 44
+	buttonStringPatterns[4][4] = 0;	buttonStringPatterns[4][5] = 0;
+     694:	ae 96       	adiw	r28, 0x2e	; 46
+     696:	1f ae       	std	Y+63, r1	; 0x3f
+     698:	1e ae       	std	Y+62, r1	; 0x3e
+     69a:	ae 97       	sbiw	r28, 0x2e	; 46
+     69c:	e0 96       	adiw	r28, 0x30	; 48
+     69e:	1f ae       	std	Y+63, r1	; 0x3f
+     6a0:	1e ae       	std	Y+62, r1	; 0x3e
+     6a2:	e0 97       	sbiw	r28, 0x30	; 48
+     6a4:	66 24       	eor	r6, r6
+     6a6:	63 94       	inc	r6
+				//  button string patterns once so we can rebuild them.
+				if (configMode == 1 && controllerMode == NOTES)
+				{
+					clearButtonStringPatterns(buttonStringPatterns);
+				}
+				buttonToAssign = 0; // This variable keeps track of which button we're assigning
+     6a8:	1c 82       	std	Y+4, r1	; 0x04
+     6aa:	1b 82       	std	Y+3, r1	; 0x03
+				plusLock = 0; // This is a tool to let us test that in the prior cycle, plus was or wasn't on
+     6ac:	19 82       	std	Y+1, r1	; 0x01
+			}
+
+			// Config Mode operation
+			if (configMode == 1) 
+     6ae:	b1 e0       	ldi	r27, 0x01	; 1
+     6b0:	6b 16       	cp	r6, r27
+     6b2:	09 f0       	breq	.+2      	; 0x6b6 <__stack+0x1b7>
+     6b4:	53 c0       	rjmp	.+166    	; 0x75c <__stack+0x25d>
+}
+
+//This function tests to see if we're pressing the correct string combination to end config mode
+inline char testForEndConfigMode(int stringState[])
+{
+	if ((stringState[0] == 0b00000000) &&
+     6b6:	23 2b       	or	r18, r19
+     6b8:	09 f0       	breq	.+2      	; 0x6bc <__stack+0x1bd>
+     6ba:	d0 c0       	rjmp	.+416    	; 0x85c <__stack+0x35d>
+     6bc:	8a a5       	ldd	r24, Y+42	; 0x2a
+     6be:	9b a5       	ldd	r25, Y+43	; 0x2b
+     6c0:	89 2b       	or	r24, r25
+     6c2:	09 f0       	breq	.+2      	; 0x6c6 <__stack+0x1c7>
+     6c4:	cb c0       	rjmp	.+406    	; 0x85c <__stack+0x35d>
+     6c6:	8c a5       	ldd	r24, Y+44	; 0x2c
+     6c8:	9d a5       	ldd	r25, Y+45	; 0x2d
+     6ca:	48 97       	sbiw	r24, 0x18	; 24
+     6cc:	09 f0       	breq	.+2      	; 0x6d0 <__stack+0x1d1>
+     6ce:	c6 c0       	rjmp	.+396    	; 0x85c <__stack+0x35d>
+     6d0:	8e a5       	ldd	r24, Y+46	; 0x2e
+     6d2:	9f a5       	ldd	r25, Y+47	; 0x2f
+     6d4:	48 97       	sbiw	r24, 0x18	; 24
+     6d6:	09 f0       	breq	.+2      	; 0x6da <__stack+0x1db>
+     6d8:	c1 c0       	rjmp	.+386    	; 0x85c <__stack+0x35d>
+     6da:	88 a9       	ldd	r24, Y+48	; 0x30
+     6dc:	99 a9       	ldd	r25, Y+49	; 0x31
+     6de:	48 97       	sbiw	r24, 0x18	; 24
+     6e0:	09 f0       	breq	.+2      	; 0x6e4 <__stack+0x1e5>
+     6e2:	bc c0       	rjmp	.+376    	; 0x85c <__stack+0x35d>
+     6e4:	8a a9       	ldd	r24, Y+50	; 0x32
+     6e6:	9b a9       	ldd	r25, Y+51	; 0x33
+     6e8:	89 2b       	or	r24, r25
+     6ea:	09 f0       	breq	.+2      	; 0x6ee <__stack+0x1ef>
+     6ec:	b7 c0       	rjmp	.+366    	; 0x85c <__stack+0x35d>
+				if (testForEndConfigMode(stringState))
+					{
+						// Now save this new button mapping to the EEPROM 
+						// Since we're already passing in buttonsStringPatterns
+						// as a pointer, we don't use the '&' operator
+						if (controllerMode == NOTES)
+     6ee:	e2 e0       	ldi	r30, 0x02	; 2
+     6f0:	7e 16       	cp	r7, r30
+     6f2:	41 f4       	brne	.+16     	; 0x704 <__stack+0x205>
+     6f4:	80 e0       	ldi	r24, 0x00	; 0
+     6f6:	90 e0       	ldi	r25, 0x00	; 0
+     6f8:	be 01       	movw	r22, r28
+     6fa:	6c 5c       	subi	r22, 0xCC	; 204
+     6fc:	7f 4f       	sbci	r23, 0xFF	; 255
+     6fe:	4c e3       	ldi	r20, 0x3C	; 60
+     700:	50 e0       	ldi	r21, 0x00	; 0
+     702:	27 c0       	rjmp	.+78     	; 0x752 <__stack+0x253>
+							eeprom_write_block( (void*)buttonStringPatterns, (void*)&notesModeButtonPatterns, EEPROM_NOTES_BLOCK_SIZE);
+						else if (controllerMode == CHORDS)
+     704:	f4 e0       	ldi	r31, 0x04	; 4
+     706:	7f 16       	cp	r7, r31
+     708:	61 f5       	brne	.+88     	; 0x762 <__stack+0x263>
+     70a:	88 e7       	ldi	r24, 0x78	; 120
+     70c:	90 e0       	ldi	r25, 0x00	; 0
+     70e:	be 01       	movw	r22, r28
+     710:	6c 5c       	subi	r22, 0xCC	; 204
+     712:	7f 4f       	sbci	r23, 0xFF	; 255
+     714:	1c c0       	rjmp	.+56     	; 0x74e <__stack+0x24f>
+					//  The function itself can be found in processStringState.h/.c
+					configSetButtonData(&data, &buttonToAssign, buttonStringPatterns, stringState, controllerMode,
+											&plusLock, &previousPlusOn, &debounceTimer);
+
+					// If we've assigned allcolors in Notes mode, cycle back to programming Green 
+					if (controllerMode == NOTES && buttonToAssign >= NUM_NOTES_BUTTONS && plusLock == 0 )
+     716:	8b 81       	ldd	r24, Y+3	; 0x03
+     718:	9c 81       	ldd	r25, Y+4	; 0x04
+     71a:	05 97       	sbiw	r24, 0x05	; 5
+     71c:	0c f4       	brge	.+2      	; 0x720 <__stack+0x221>
+     71e:	92 c0       	rjmp	.+292    	; 0x844 <__stack+0x345>
+     720:	89 81       	ldd	r24, Y+1	; 0x01
+     722:	88 23       	and	r24, r24
+     724:	09 f0       	breq	.+2      	; 0x728 <__stack+0x229>
+     726:	8e c0       	rjmp	.+284    	; 0x844 <__stack+0x345>
+					{
+						buttonToAssign = 0;
+     728:	1c 82       	std	Y+4, r1	; 0x04
+     72a:	1b 82       	std	Y+3, r1	; 0x03
+     72c:	8b c0       	rjmp	.+278    	; 0x844 <__stack+0x345>
+					}
+					
+					// Or if we've programmed all 10 notes in Chord mode, exit programming mode
+					if (controllerMode == CHORDS && buttonToAssign >= NUM_CHORDS_BUTTONS && plusLock == 0 )
+     72e:	84 e0       	ldi	r24, 0x04	; 4
+     730:	78 16       	cp	r7, r24
+     732:	09 f0       	breq	.+2      	; 0x736 <__stack+0x237>
+     734:	87 c0       	rjmp	.+270    	; 0x844 <__stack+0x345>
+     736:	8b 81       	ldd	r24, Y+3	; 0x03
+     738:	9c 81       	ldd	r25, Y+4	; 0x04
+     73a:	0a 97       	sbiw	r24, 0x0a	; 10
+     73c:	0c f4       	brge	.+2      	; 0x740 <__stack+0x241>
+     73e:	82 c0       	rjmp	.+260    	; 0x844 <__stack+0x345>
+     740:	89 81       	ldd	r24, Y+1	; 0x01
+     742:	88 23       	and	r24, r24
+     744:	09 f0       	breq	.+2      	; 0x748 <__stack+0x249>
+     746:	7e c0       	rjmp	.+252    	; 0x844 <__stack+0x345>
+     748:	88 e7       	ldi	r24, 0x78	; 120
+     74a:	90 e0       	ldi	r25, 0x00	; 0
+     74c:	b2 01       	movw	r22, r4
+     74e:	48 e7       	ldi	r20, 0x78	; 120
+     750:	50 e0       	ldi	r21, 0x00	; 0
+     752:	24 eb       	ldi	r18, 0xB4	; 180
+     754:	30 e0       	ldi	r19, 0x00	; 0
+     756:	0e 94 46 0d 	call	0x1a8c	; 0x1a8c <__eewr_block>
+     75a:	03 c0       	rjmp	.+6      	; 0x762 <__stack+0x263>
+						configMode = 0;
+					}
+		}	}	}	 // End of Config Mode code
+
+		// Normal operation
+		if (configMode == 0)
+     75c:	66 20       	and	r6, r6
+     75e:	09 f0       	breq	.+2      	; 0x762 <__stack+0x263>
+     760:	71 c0       	rjmp	.+226    	; 0x844 <__stack+0x345>
+}
+
+inline int testForSwitchModes(int stringState[])
+{
+	// Test for the right keypress to start the mode
+	if ((stringState[0] == 0b00000000) &&
+     762:	88 a5       	ldd	r24, Y+40	; 0x28
+     764:	99 a5       	ldd	r25, Y+41	; 0x29
+     766:	89 2b       	or	r24, r25
+     768:	09 f0       	breq	.+2      	; 0x76c <__stack+0x26d>
+     76a:	51 c0       	rjmp	.+162    	; 0x80e <__stack+0x30f>
+     76c:	8a a5       	ldd	r24, Y+42	; 0x2a
+     76e:	9b a5       	ldd	r25, Y+43	; 0x2b
+     770:	88 31       	cpi	r24, 0x18	; 24
+     772:	91 05       	cpc	r25, r1
+     774:	b1 f4       	brne	.+44     	; 0x7a2 <__stack+0x2a3>
+     776:	8c a5       	ldd	r24, Y+44	; 0x2c
+     778:	9d a5       	ldd	r25, Y+45	; 0x2d
+     77a:	48 97       	sbiw	r24, 0x18	; 24
+     77c:	09 f0       	breq	.+2      	; 0x780 <__stack+0x281>
+     77e:	47 c0       	rjmp	.+142    	; 0x80e <__stack+0x30f>
+     780:	8e a5       	ldd	r24, Y+46	; 0x2e
+     782:	9f a5       	ldd	r25, Y+47	; 0x2f
+     784:	48 97       	sbiw	r24, 0x18	; 24
+     786:	09 f0       	breq	.+2      	; 0x78a <__stack+0x28b>
+     788:	42 c0       	rjmp	.+132    	; 0x80e <__stack+0x30f>
+     78a:	88 a9       	ldd	r24, Y+48	; 0x30
+     78c:	99 a9       	ldd	r25, Y+49	; 0x31
+     78e:	89 2b       	or	r24, r25
+     790:	f1 f5       	brne	.+124    	; 0x80e <__stack+0x30f>
+     792:	8a a9       	ldd	r24, Y+50	; 0x32
+     794:	9b a9       	ldd	r25, Y+51	; 0x33
+     796:	89 2b       	or	r24, r25
+     798:	d1 f5       	brne	.+116    	; 0x80e <__stack+0x30f>
+static inline void switchPlayModes(int stringState[], int buttonStringPatterns[][6], char* controllerMode)
+{
+	// Test for the right keypress to start the mode
+	if (testForSwitchModes(stringState))
+	{
+		if (*controllerMode % 2 == 0) // This means that the mode is a full mode
+     79a:	70 fc       	sbrc	r7, 0
+     79c:	38 c0       	rjmp	.+112    	; 0x80e <__stack+0x30f>
+			{++*controllerMode;}  //This puts it into a transitional mode
+     79e:	73 94       	inc	r7
+     7a0:	36 c0       	rjmp	.+108    	; 0x80e <__stack+0x30f>
+		return 0;
+}
+
+inline int testForNoStringsPressed(int stringState[])
+{
+	if ((stringState[0] == 0b00000000) &&
+     7a2:	89 2b       	or	r24, r25
+     7a4:	a1 f5       	brne	.+104    	; 0x80e <__stack+0x30f>
+     7a6:	8c a5       	ldd	r24, Y+44	; 0x2c
+     7a8:	9d a5       	ldd	r25, Y+45	; 0x2d
+     7aa:	89 2b       	or	r24, r25
+     7ac:	81 f5       	brne	.+96     	; 0x80e <__stack+0x30f>
+     7ae:	8e a5       	ldd	r24, Y+46	; 0x2e
+     7b0:	9f a5       	ldd	r25, Y+47	; 0x2f
+     7b2:	89 2b       	or	r24, r25
+     7b4:	61 f5       	brne	.+88     	; 0x80e <__stack+0x30f>
+     7b6:	88 a9       	ldd	r24, Y+48	; 0x30
+     7b8:	99 a9       	ldd	r25, Y+49	; 0x31
+     7ba:	89 2b       	or	r24, r25
+     7bc:	41 f5       	brne	.+80     	; 0x80e <__stack+0x30f>
+     7be:	8a a9       	ldd	r24, Y+50	; 0x32
+     7c0:	9b a9       	ldd	r25, Y+51	; 0x33
+     7c2:	89 2b       	or	r24, r25
+     7c4:	21 f5       	brne	.+72     	; 0x80e <__stack+0x30f>
+	}
+	// And if we're not pressing that anymore, switch from the transitional mode to the regular mode,
+	//  resetting the button patterns as necessary
+	else if(testForNoStringsPressed(stringState)) 
+	{
+		if (*controllerMode == CHORDS_TO_FRETS) // since these modes are just numbers, we need to wrap around
+     7c6:	95 e0       	ldi	r25, 0x05	; 5
+     7c8:	79 16       	cp	r7, r25
+     7ca:	11 f4       	brne	.+4      	; 0x7d0 <__stack+0x2d1>
+     7cc:	77 24       	eor	r7, r7
+     7ce:	1f c0       	rjmp	.+62     	; 0x80e <__stack+0x30f>
+			{*controllerMode = FRETS;}
+
+		// Now, reset the buttonStringPattern array to be appropriate for the mode
+		// For this, we'll read it from the EEPROM memory.
+		else if (*controllerMode  == FRETS_TO_NOTES)
+     7d0:	a1 e0       	ldi	r26, 0x01	; 1
+     7d2:	7a 16       	cp	r7, r26
+     7d4:	69 f4       	brne	.+26     	; 0x7f0 <__stack+0x2f1>
+ */
+static __inline__ void
+eeprom_read_block (void *__dst, const void *__src, size_t __n)
+{
+#if (! (defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__)) )
+    __eerd_block (__dst, __src, __n, eeprom_read_byte);
+     7d6:	ce 01       	movw	r24, r28
+     7d8:	c4 96       	adiw	r24, 0x34	; 52
+     7da:	60 e0       	ldi	r22, 0x00	; 0
+     7dc:	70 e0       	ldi	r23, 0x00	; 0
+     7de:	4c e3       	ldi	r20, 0x3C	; 60
+     7e0:	50 e0       	ldi	r21, 0x00	; 0
+     7e2:	2c ea       	ldi	r18, 0xAC	; 172
+     7e4:	30 e0       	ldi	r19, 0x00	; 0
+     7e6:	0e 94 2a 0d 	call	0x1a54	; 0x1a54 <__eerd_block>
+     7ea:	02 e0       	ldi	r16, 0x02	; 2
+     7ec:	70 2e       	mov	r7, r16
+     7ee:	0f c0       	rjmp	.+30     	; 0x80e <__stack+0x30f>
+		{
+			// Notice, we're already passing in buttonStringPatterns as an address, so the EEPROM read looks a bit strange
+			eeprom_read_block( (void*)buttonStringPatterns, (void*)&notesModeButtonPatterns, EEPROM_NOTES_BLOCK_SIZE);
+			*controllerMode = NOTES;
+		}
+		else if (*controllerMode  == NOTES_TO_CHORDS)
+     7f0:	b3 e0       	ldi	r27, 0x03	; 3
+     7f2:	7b 16       	cp	r7, r27
+     7f4:	61 f4       	brne	.+24     	; 0x80e <__stack+0x30f>
+     7f6:	ce 01       	movw	r24, r28
+     7f8:	c4 96       	adiw	r24, 0x34	; 52
+     7fa:	68 e7       	ldi	r22, 0x78	; 120
+     7fc:	70 e0       	ldi	r23, 0x00	; 0
+     7fe:	48 e7       	ldi	r20, 0x78	; 120
+     800:	50 e0       	ldi	r21, 0x00	; 0
+     802:	2c ea       	ldi	r18, 0xAC	; 172
+     804:	30 e0       	ldi	r19, 0x00	; 0
+     806:	0e 94 2a 0d 	call	0x1a54	; 0x1a54 <__eerd_block>
+     80a:	14 e0       	ldi	r17, 0x04	; 4
+     80c:	71 2e       	mov	r7, r17
+			switchPlayModes(stringState, buttonStringPatterns, &controllerMode);
+
+			// Next, using our strumState array, we process that data to figure out what sort
+			//  of buttons on the controller we want to emulate pressing.
+			// find out if we're in a transitional controller mode or not
+			if (!(controllerMode % 2)) // Not a transitional mode
+     80e:	67 2d       	mov	r22, r7
+     810:	ce 01       	movw	r24, r28
+     812:	07 96       	adiw	r24, 0x07	; 7
+     814:	70 fc       	sbrc	r7, 0
+     816:	12 c0       	rjmp	.+36     	; 0x83c <__stack+0x33d>
+			{	//  This function can be found in processStringState.h/.c
+				processStringState(&data, stringState, buttonStringPatterns, controllerMode, greenTimers, triedGreen);
+     818:	be 01       	movw	r22, r28
+     81a:	68 5d       	subi	r22, 0xD8	; 216
+     81c:	7f 4f       	sbci	r23, 0xFF	; 255
+     81e:	ae 01       	movw	r20, r28
+     820:	4c 5c       	subi	r20, 0xCC	; 204
+     822:	5f 4f       	sbci	r21, 0xFF	; 255
+     824:	27 2d       	mov	r18, r7
+     826:	8e 01       	movw	r16, r28
+     828:	00 5f       	subi	r16, 0xF0	; 240
+     82a:	1f 4f       	sbci	r17, 0xFF	; 255
+     82c:	bc e1       	ldi	r27, 0x1C	; 28
+     82e:	eb 2e       	mov	r14, r27
+     830:	f1 2c       	mov	r15, r1
+     832:	ec 0e       	add	r14, r28
+     834:	fd 1e       	adc	r15, r29
+     836:	0e 94 87 0b 	call	0x170e	; 0x170e <processStringState>
+     83a:	03 c0       	rjmp	.+6      	; 0x842 <__stack+0x343>
+			}
+			else
+			{   // Now, if we're in a transitional controller mode, we'll forget that data and substitue 
+				// visual cue data to show that we're changing to a specific mode
+				//  The function itself can be found in processStringState.h/.c
+				displayTransitionState(&data, controllerMode);
+     83c:	70 e0       	ldi	r23, 0x00	; 0
+     83e:	0e 94 9e 0b 	call	0x173c	; 0x173c <displayTransitionState>
+     842:	66 24       	eor	r6, r6
+		}
+	    
+		// Now our processing is complete, so using those button presses, we set up the 
+		// button data packet. This function depends on the console and is 
+		// set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
+		sendData(data);
+     844:	0f 81       	ldd	r16, Y+7	; 0x07
+     846:	18 85       	ldd	r17, Y+8	; 0x08
+     848:	29 85       	ldd	r18, Y+9	; 0x09
+     84a:	3a 85       	ldd	r19, Y+10	; 0x0a
+     84c:	4b 85       	ldd	r20, Y+11	; 0x0b
+     84e:	5c 85       	ldd	r21, Y+12	; 0x0c
+     850:	6d 85       	ldd	r22, Y+13	; 0x0d
+     852:	7e 85       	ldd	r23, Y+14	; 0x0e
+     854:	8f 85       	ldd	r24, Y+15	; 0x0f
+     856:	0e 94 75 04 	call	0x8ea	; 0x8ea <sendData>
+     85a:	42 cd       	rjmp	.-1404   	; 0x2e0 <main+0xa6>
+				else
+				{
+					// Now set up the data packet to the Wii to say we're pressing whatever button we're currently
+					// assigning, and if we're pressing 'plus', go ahead and lock that string combination in
+					//  The function itself can be found in processStringState.h/.c
+					configSetButtonData(&data, &buttonToAssign, buttonStringPatterns, stringState, controllerMode,
+     85c:	a4 e3       	ldi	r26, 0x34	; 52
+     85e:	4a 2e       	mov	r4, r26
+     860:	51 2c       	mov	r5, r1
+     862:	4c 0e       	add	r4, r28
+     864:	5d 1e       	adc	r5, r29
+     866:	ce 01       	movw	r24, r28
+     868:	07 96       	adiw	r24, 0x07	; 7
+     86a:	be 01       	movw	r22, r28
+     86c:	6d 5f       	subi	r22, 0xFD	; 253
+     86e:	7f 4f       	sbci	r23, 0xFF	; 255
+     870:	a2 01       	movw	r20, r4
+     872:	9e 01       	movw	r18, r28
+     874:	28 5d       	subi	r18, 0xD8	; 216
+     876:	3f 4f       	sbci	r19, 0xFF	; 255
+     878:	07 2d       	mov	r16, r7
+     87a:	7e 01       	movw	r14, r28
+     87c:	08 94       	sec
+     87e:	e1 1c       	adc	r14, r1
+     880:	f1 1c       	adc	r15, r1
+     882:	f2 e0       	ldi	r31, 0x02	; 2
+     884:	cf 2e       	mov	r12, r31
+     886:	d1 2c       	mov	r13, r1
+     888:	cc 0e       	add	r12, r28
+     88a:	dd 1e       	adc	r13, r29
+     88c:	e5 e0       	ldi	r30, 0x05	; 5
+     88e:	ae 2e       	mov	r10, r30
+     890:	b1 2c       	mov	r11, r1
+     892:	ac 0e       	add	r10, r28
+     894:	bd 1e       	adc	r11, r29
+     896:	0e 94 b4 0b 	call	0x1768	; 0x1768 <configSetButtonData>
+											&plusLock, &previousPlusOn, &debounceTimer);
+
+					// If we've assigned allcolors in Notes mode, cycle back to programming Green 
+					if (controllerMode == NOTES && buttonToAssign >= NUM_NOTES_BUTTONS && plusLock == 0 )
+     89a:	e2 e0       	ldi	r30, 0x02	; 2
+     89c:	7e 16       	cp	r7, r30
+     89e:	09 f0       	breq	.+2      	; 0x8a2 <__stack+0x3a3>
+     8a0:	46 cf       	rjmp	.-372    	; 0x72e <__stack+0x22f>
+     8a2:	39 cf       	rjmp	.-398    	; 0x716 <__stack+0x217>
+
+000008a4 <usbFunctionSetup>:
+
+/* ------------------------------------------------------------------------- */
+
+usbMsgLen_t usbFunctionSetup(uchar data[8])
+{
+usbRequest_t    *rq = (void *)data;
+     8a4:	fc 01       	movw	r30, r24
+
+    /* The following requests are never used. But since they are required by
+     * the specification, we implement them in this example.
+     */
+    if((rq->bmRequestType & USBRQ_TYPE_MASK) == USBRQ_TYPE_CLASS){    /* class request type */
+     8a6:	80 81       	ld	r24, Z
+     8a8:	80 76       	andi	r24, 0x60	; 96
+     8aa:	80 32       	cpi	r24, 0x20	; 32
+     8ac:	e1 f4       	brne	.+56     	; 0x8e6 <usbFunctionSetup+0x42>
+        //DBG1(0x50, &rq->bRequest, 1);   /* debug output: print our request */
+        if(rq->bRequest == USBRQ_HID_GET_REPORT){  /* wValue: ReportType (highbyte), ReportID (lowbyte) */
+     8ae:	81 81       	ldd	r24, Z+1	; 0x01
+     8b0:	81 30       	cpi	r24, 0x01	; 1
+     8b2:	41 f4       	brne	.+16     	; 0x8c4 <usbFunctionSetup+0x20>
+            /* we only have one report type, so don't look at wValue */
+            usbMsgPtr = (void *)&reportBuffer;
+     8b4:	84 e0       	ldi	r24, 0x04	; 4
+     8b6:	91 e0       	ldi	r25, 0x01	; 1
+     8b8:	90 93 26 01 	sts	0x0126, r25
+     8bc:	80 93 25 01 	sts	0x0125, r24
+     8c0:	87 e0       	ldi	r24, 0x07	; 7
+     8c2:	08 95       	ret
+            return sizeof(reportBuffer);
+        }else if(rq->bRequest == USBRQ_HID_GET_IDLE){
+     8c4:	82 30       	cpi	r24, 0x02	; 2
+     8c6:	41 f4       	brne	.+16     	; 0x8d8 <usbFunctionSetup+0x34>
+            usbMsgPtr = &idleRate;
+     8c8:	82 e0       	ldi	r24, 0x02	; 2
+     8ca:	91 e0       	ldi	r25, 0x01	; 1
+     8cc:	90 93 26 01 	sts	0x0126, r25
+     8d0:	80 93 25 01 	sts	0x0125, r24
+     8d4:	81 e0       	ldi	r24, 0x01	; 1
+     8d6:	08 95       	ret
+            return 1;
+        }else if(rq->bRequest == USBRQ_HID_SET_IDLE){
+     8d8:	8a 30       	cpi	r24, 0x0A	; 10
+     8da:	29 f4       	brne	.+10     	; 0x8e6 <usbFunctionSetup+0x42>
+            idleRate = rq->wValue.bytes[1];
+     8dc:	83 81       	ldd	r24, Z+3	; 0x03
+     8de:	80 93 02 01 	sts	0x0102, r24
+     8e2:	80 e0       	ldi	r24, 0x00	; 0
+     8e4:	08 95       	ret
+     8e6:	80 e0       	ldi	r24, 0x00	; 0
+        }
+    }else{
+        /* no vendor specific requests implemented */
+    }
+    return 0;   /* default for not implemented requests: return no data back to host */
+}
+     8e8:	08 95       	ret
+
+000008ea <sendData>:
+    sei();
+}
+
+
+void sendData(dataForController data)
+{
+     8ea:	0f 93       	push	r16
+     8ec:	1f 93       	push	r17
+     8ee:	df 93       	push	r29
+     8f0:	cf 93       	push	r28
+     8f2:	cd b7       	in	r28, 0x3d	; 61
+     8f4:	de b7       	in	r29, 0x3e	; 62
+     8f6:	29 97       	sbiw	r28, 0x09	; 9
+     8f8:	0f b6       	in	r0, 0x3f	; 63
+     8fa:	f8 94       	cli
+     8fc:	de bf       	out	0x3e, r29	; 62
+     8fe:	0f be       	out	0x3f, r0	; 63
+     900:	cd bf       	out	0x3d, r28	; 61
+     902:	90 2f       	mov	r25, r16
+     904:	09 83       	std	Y+1, r16	; 0x01
+     906:	f1 2f       	mov	r31, r17
+     908:	1a 83       	std	Y+2, r17	; 0x02
+     90a:	e2 2f       	mov	r30, r18
+     90c:	2b 83       	std	Y+3, r18	; 0x03
+     90e:	a3 2f       	mov	r26, r19
+     910:	3c 83       	std	Y+4, r19	; 0x04
+     912:	34 2f       	mov	r19, r20
+     914:	4d 83       	std	Y+5, r20	; 0x05
+     916:	b5 2f       	mov	r27, r21
+     918:	5e 83       	std	Y+6, r21	; 0x06
+     91a:	46 2f       	mov	r20, r22
+     91c:	6f 83       	std	Y+7, r22	; 0x07
+     91e:	27 2f       	mov	r18, r23
+     920:	78 87       	std	Y+8, r23	; 0x08
+     922:	89 87       	std	Y+9, r24	; 0x09
+     924:	58 2f       	mov	r21, r24
+
+       //set the buttons to all at default positions
+        reportBuffer[0] = 0b00000000;
+        reportBuffer[1] = 0b00000000;
+     926:	10 92 05 01 	sts	0x0105, r1
+        reportBuffer[2] = 0b00001000;
+     92a:	88 e0       	ldi	r24, 0x08	; 8
+     92c:	80 93 06 01 	sts	0x0106, r24
+        reportBuffer[3] = 0b10000000;
+     930:	80 e8       	ldi	r24, 0x80	; 128
+     932:	80 93 07 01 	sts	0x0107, r24
+        reportBuffer[4] = 0b10000000;
+     936:	80 93 08 01 	sts	0x0108, r24
+        reportBuffer[5] = 0b10000000;
+     93a:	80 93 09 01 	sts	0x0109, r24
+        reportBuffer[6] = 0b00000000;
+     93e:	10 92 0a 01 	sts	0x010A, r1
+
+
+        // Since 'colorOn' is 1 when a fret is pressed, we shift it to the proper place and | it to set the
+        // corresponding button bit to one, which corresponds to a button press.
+        reportBuffer[0] |= (data.orangeOn << ORANGE_BIT);
+        reportBuffer[0] |= (data.blueOn << BLUE_BIT);
+     942:	32 95       	swap	r19
+     944:	30 7f       	andi	r19, 0xF0	; 240
+     946:	3a 2b       	or	r19, r26
+        reportBuffer[0] |= (data.yellowOn << YELLOW_BIT);
+        reportBuffer[0] |= (data.redOn << RED_BIT);
+        reportBuffer[0] |= (data.greenOn << GREEN_BIT);
+     948:	ff 0f       	add	r31, r31
+     94a:	ff 0f       	add	r31, r31
+     94c:	ee 0f       	add	r30, r30
+     94e:	ee 0f       	add	r30, r30
+     950:	ee 0f       	add	r30, r30
+     952:	ef 2b       	or	r30, r31
+     954:	99 0f       	add	r25, r25
+     956:	9e 2b       	or	r25, r30
+     958:	93 2b       	or	r25, r19
+     95a:	90 93 04 01 	sts	0x0104, r25
+
+        // On the PS3, the strumming shows up as a hat switch, so we have to use conditionals for this..
+        if (data.upOn)
+     95e:	bb 23       	and	r27, r27
+     960:	11 f0       	breq	.+4      	; 0x966 <sendData+0x7c>
+                reportBuffer[2] = 0b00000000;
+     962:	10 92 06 01 	sts	0x0106, r1
+        if (data.downOn)
+     966:	44 23       	and	r20, r20
+     968:	19 f0       	breq	.+6      	; 0x970 <sendData+0x86>
+                reportBuffer[2] = 0b00000100;
+     96a:	84 e0       	ldi	r24, 0x04	; 4
+     96c:	80 93 06 01 	sts	0x0106, r24
+
+        reportBuffer[1] |= (data.plusOn << PLUS_BIT);
+     970:	22 0f       	add	r18, r18
+     972:	80 91 05 01 	lds	r24, 0x0105
+     976:	82 2b       	or	r24, r18
+     978:	80 93 05 01 	sts	0x0105, r24
+        reportBuffer[0] |= (data.minusOn << MINUS_BIT);
+     97c:	52 95       	swap	r21
+     97e:	55 0f       	add	r21, r21
+     980:	50 7e       	andi	r21, 0xE0	; 224
+     982:	80 91 04 01 	lds	r24, 0x0104
+     986:	85 2b       	or	r24, r21
+     988:	80 93 04 01 	sts	0x0104, r24
+
+        //Then we finish off some USB stuff.
+        wdt_reset();
+     98c:	a8 95       	wdr
+        usbPoll();
+     98e:	0e 94 59 06 	call	0xcb2	; 0xcb2 <usbPoll>
+
+        // Now, regardless of mode, we have to send the data to the 
+        // USB controlling library from the buffer we've been building
+        if(usbInterruptIsReady())
+     992:	80 91 16 01 	lds	r24, 0x0116
+     996:	84 ff       	sbrs	r24, 4
+     998:	05 c0       	rjmp	.+10     	; 0x9a4 <sendData+0xba>
+        {
+            /* called after every poll of the interrupt endpoint */
+            usbSetInterrupt((void *)&reportBuffer, sizeof(reportBuffer));
+     99a:	84 e0       	ldi	r24, 0x04	; 4
+     99c:	91 e0       	ldi	r25, 0x01	; 1
+     99e:	67 e0       	ldi	r22, 0x07	; 7
+     9a0:	0e 94 63 07 	call	0xec6	; 0xec6 <usbSetInterrupt>
+        }
+                
+
+}
+     9a4:	29 96       	adiw	r28, 0x09	; 9
+     9a6:	0f b6       	in	r0, 0x3f	; 63
+     9a8:	f8 94       	cli
+     9aa:	de bf       	out	0x3e, r29	; 62
+     9ac:	0f be       	out	0x3f, r0	; 63
+     9ae:	cd bf       	out	0x3d, r28	; 61
+     9b0:	cf 91       	pop	r28
+     9b2:	df 91       	pop	r29
+     9b4:	1f 91       	pop	r17
+     9b6:	0f 91       	pop	r16
+     9b8:	08 95       	ret
+
+000009ba <startCommunication>:
+	byte5 - z axis (Whammy Bar)
+	byte6 - rzaxis (Choose solo style)
+*/
+
+	//set the buttons to all at default positions
+	reportBuffer[0] = 0b00000000;
+     9ba:	10 92 04 01 	sts	0x0104, r1
+	reportBuffer[1] = 0b00000000;
+     9be:	10 92 05 01 	sts	0x0105, r1
+	reportBuffer[2] = 0b00001000;
+     9c2:	88 e0       	ldi	r24, 0x08	; 8
+     9c4:	80 93 06 01 	sts	0x0106, r24
+	reportBuffer[3] = 0b10000000;
+     9c8:	80 e8       	ldi	r24, 0x80	; 128
+     9ca:	80 93 07 01 	sts	0x0107, r24
+	reportBuffer[4] = 0b10000000;
+     9ce:	80 93 08 01 	sts	0x0108, r24
+	reportBuffer[5] = 0b10000000;
+     9d2:	80 93 09 01 	sts	0x0109, r24
+	reportBuffer[6] = 0b00000000;
+     9d6:	10 92 0a 01 	sts	0x010A, r1
+
+
+    // First, set up all the USB communication stuff
+    uchar   i;
+    wdt_enable(WDTO_1S);
+     9da:	2e e0       	ldi	r18, 0x0E	; 14
+     9dc:	88 e1       	ldi	r24, 0x18	; 24
+     9de:	90 e0       	ldi	r25, 0x00	; 0
+     9e0:	0f b6       	in	r0, 0x3f	; 63
+     9e2:	f8 94       	cli
+     9e4:	a8 95       	wdr
+     9e6:	80 93 60 00 	sts	0x0060, r24
+     9ea:	0f be       	out	0x3f, r0	; 63
+     9ec:	20 93 60 00 	sts	0x0060, r18
+     * RESET status: all port bits are inputs without pull-up.
+     * That's the way we need D+ and D-. Therefore we don't need any
+     * additional hardware initialization.
+     */
+
+    usbInit();
+     9f0:	0e 94 4c 06 	call	0xc98	; 0xc98 <usbInit>
+    usbDeviceDisconnect();  /* enforce re-enumeration, do this while interrupts are disabled! */
+     9f4:	54 9a       	sbi	0x0a, 4	; 10
+     9f6:	20 e0       	ldi	r18, 0x00	; 0
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+     9f8:	40 ea       	ldi	r20, 0xA0	; 160
+     9fa:	5f e0       	ldi	r21, 0x0F	; 15
+     9fc:	04 c0       	rjmp	.+8      	; 0xa06 <startCommunication+0x4c>
+    i = 0;
+    while(--i){             /* fake USB disconnect for > 250 ms */
+        wdt_reset();
+     9fe:	a8 95       	wdr
+     a00:	ca 01       	movw	r24, r20
+     a02:	01 97       	sbiw	r24, 0x01	; 1
+     a04:	f1 f7       	brne	.-4      	; 0xa02 <startCommunication+0x48>
+     */
+
+    usbInit();
+    usbDeviceDisconnect();  /* enforce re-enumeration, do this while interrupts are disabled! */
+    i = 0;
+    while(--i){             /* fake USB disconnect for > 250 ms */
+     a06:	21 50       	subi	r18, 0x01	; 1
+     a08:	d1 f7       	brne	.-12     	; 0x9fe <startCommunication+0x44>
+     a0a:	05 c0       	rjmp	.+10     	; 0xa16 <startCommunication+0x5c>
+        wdt_reset();
+        _delay_ms(1);
+    }
+    i = 0;
+    while(--i){             /* fake USB disconnect for > 250 ms */
+        wdt_reset();
+     a0c:	a8 95       	wdr
+     a0e:	ca 01       	movw	r24, r20
+     a10:	01 97       	sbiw	r24, 0x01	; 1
+     a12:	f1 f7       	brne	.-4      	; 0xa10 <startCommunication+0x56>
+     a14:	02 c0       	rjmp	.+4      	; 0xa1a <startCommunication+0x60>
+     a16:	40 ea       	ldi	r20, 0xA0	; 160
+     a18:	5f e0       	ldi	r21, 0x0F	; 15
+    while(--i){             /* fake USB disconnect for > 250 ms */
+        wdt_reset();
+        _delay_ms(1);
+    }
+    i = 0;
+    while(--i){             /* fake USB disconnect for > 250 ms */
+     a1a:	21 50       	subi	r18, 0x01	; 1
+     a1c:	b9 f7       	brne	.-18     	; 0xa0c <startCommunication+0x52>
+        wdt_reset();
+        _delay_ms(1);
+    }
+ 
+    usbDeviceConnect();
+     a1e:	54 98       	cbi	0x0a, 4	; 10
+    sei();
+     a20:	78 94       	sei
+}
+     a22:	08 95       	ret
+
+00000a24 <usbCrc16>:
+     a24:	a8 2f       	mov	r26, r24
+     a26:	b9 2f       	mov	r27, r25
+     a28:	80 e0       	ldi	r24, 0x00	; 0
+     a2a:	90 e0       	ldi	r25, 0x00	; 0
+     a2c:	41 e0       	ldi	r20, 0x01	; 1
+     a2e:	50 ea       	ldi	r21, 0xA0	; 160
+     a30:	60 95       	com	r22
+
+00000a32 <crcByteLoop>:
+     a32:	6f 5f       	subi	r22, 0xFF	; 255
+     a34:	58 f4       	brcc	.+22     	; 0xa4c <crcReady>
+     a36:	2d 91       	ld	r18, X+
+     a38:	38 ef       	ldi	r19, 0xF8	; 248
+     a3a:	82 27       	eor	r24, r18
+
+00000a3c <crcBitLoop>:
+     a3c:	97 95       	ror	r25
+     a3e:	87 95       	ror	r24
+     a40:	10 f0       	brcs	.+4      	; 0xa46 <crcNoXor>
+     a42:	84 27       	eor	r24, r20
+     a44:	95 27       	eor	r25, r21
+
+00000a46 <crcNoXor>:
+     a46:	3f 5f       	subi	r19, 0xFF	; 255
+     a48:	c8 f3       	brcs	.-14     	; 0xa3c <crcBitLoop>
+     a4a:	f3 cf       	rjmp	.-26     	; 0xa32 <crcByteLoop>
+
+00000a4c <crcReady>:
+     a4c:	08 95       	ret
+
+00000a4e <usbCrc16Append>:
+     a4e:	ea df       	rcall	.-44     	; 0xa24 <usbCrc16>
+     a50:	8d 93       	st	X+, r24
+     a52:	9d 93       	st	X+, r25
+     a54:	08 95       	ret
+
+00000a56 <__vector_2>:
+     a56:	cf 93       	push	r28
+     a58:	cf b7       	in	r28, 0x3f	; 63
+     a5a:	cf 93       	push	r28
+     a5c:	df 93       	push	r29
+
+00000a5e <waitForJ>:
+     a5e:	c3 95       	inc	r28
+     a60:	4c 9b       	sbis	0x09, 4	; 9
+     a62:	e9 f7       	brne	.-6      	; 0xa5e <waitForJ>
+
+00000a64 <waitForK>:
+     a64:	4c 9b       	sbis	0x09, 4	; 9
+     a66:	0b c0       	rjmp	.+22     	; 0xa7e <foundK>
+     a68:	4c 9b       	sbis	0x09, 4	; 9
+     a6a:	09 c0       	rjmp	.+18     	; 0xa7e <foundK>
+     a6c:	4c 9b       	sbis	0x09, 4	; 9
+     a6e:	07 c0       	rjmp	.+14     	; 0xa7e <foundK>
+     a70:	4c 9b       	sbis	0x09, 4	; 9
+     a72:	05 c0       	rjmp	.+10     	; 0xa7e <foundK>
+     a74:	4c 9b       	sbis	0x09, 4	; 9
+     a76:	03 c0       	rjmp	.+6      	; 0xa7e <foundK>
+     a78:	4c 9b       	sbis	0x09, 4	; 9
+     a7a:	01 c0       	rjmp	.+2      	; 0xa7e <foundK>
+     a7c:	8b c0       	rjmp	.+278    	; 0xb94 <sofError>
+
+00000a7e <foundK>:
+     a7e:	6f 93       	push	r22
+     a80:	c0 91 24 01 	lds	r28, 0x0124
+     a84:	dd 27       	eor	r29, r29
+     a86:	c5 5d       	subi	r28, 0xD5	; 213
+     a88:	de 4f       	sbci	r29, 0xFE	; 254
+     a8a:	2f 93       	push	r18
+     a8c:	65 e5       	ldi	r22, 0x55	; 85
+     a8e:	4c 9b       	sbis	0x09, 4	; 9
+     a90:	03 c0       	rjmp	.+6      	; 0xa98 <haveTwoBitsK>
+     a92:	2f 91       	pop	r18
+     a94:	6f 91       	pop	r22
+     a96:	e6 cf       	rjmp	.-52     	; 0xa64 <waitForK>
+
+00000a98 <haveTwoBitsK>:
+     a98:	0f 93       	push	r16
+     a9a:	1f 93       	push	r17
+     a9c:	4f 93       	push	r20
+     a9e:	20 e0       	ldi	r18, 0x00	; 0
+     aa0:	40 e1       	ldi	r20, 0x10	; 16
+     aa2:	5f 93       	push	r21
+     aa4:	09 b1       	in	r16, 0x09	; 9
+     aa6:	08 71       	andi	r16, 0x18	; 24
+     aa8:	04 fb       	bst	r16, 4
+     aaa:	27 f9       	bld	r18, 7
+     aac:	3f 93       	push	r19
+     aae:	50 e0       	ldi	r21, 0x00	; 0
+     ab0:	3b e0       	ldi	r19, 0x0B	; 11
+     ab2:	39 c0       	rjmp	.+114    	; 0xb26 <rxbit1>
+
+00000ab4 <unstuff6>:
+     ab4:	18 71       	andi	r17, 0x18	; 24
+     ab6:	40 64       	ori	r20, 0x40	; 64
+     ab8:	2f 77       	andi	r18, 0x7F	; 127
+     aba:	01 2f       	mov	r16, r17
+     abc:	5f 5f       	subi	r21, 0xFF	; 255
+     abe:	1e c0       	rjmp	.+60     	; 0xafc <didUnstuff6>
+
+00000ac0 <unstuff7>:
+     ac0:	40 68       	ori	r20, 0x80	; 128
+     ac2:	19 b1       	in	r17, 0x09	; 9
+     ac4:	18 71       	andi	r17, 0x18	; 24
+     ac6:	2f 77       	andi	r18, 0x7F	; 127
+     ac8:	52 50       	subi	r21, 0x02	; 2
+     aca:	1f c0       	rjmp	.+62     	; 0xb0a <didUnstuff7>
+
+00000acc <unstuffEven>:
+     acc:	40 64       	ori	r20, 0x40	; 64
+     ace:	09 b1       	in	r16, 0x09	; 9
+     ad0:	2f 77       	andi	r18, 0x7F	; 127
+     ad2:	08 71       	andi	r16, 0x18	; 24
+     ad4:	d1 f1       	breq	.+116    	; 0xb4a <se0>
+     ad6:	5f 5f       	subi	r21, 0xFF	; 255
+     ad8:	00 c0       	rjmp	.+0      	; 0xada <unstuffEven+0xe>
+     ada:	23 c0       	rjmp	.+70     	; 0xb22 <didUnstuffE>
+
+00000adc <unstuffOdd>:
+     adc:	40 62       	ori	r20, 0x20	; 32
+     ade:	19 b1       	in	r17, 0x09	; 9
+     ae0:	2f 77       	andi	r18, 0x7F	; 127
+     ae2:	18 71       	andi	r17, 0x18	; 24
+     ae4:	91 f1       	breq	.+100    	; 0xb4a <se0>
+     ae6:	5f 5f       	subi	r21, 0xFF	; 255
+     ae8:	00 c0       	rjmp	.+0      	; 0xaea <unstuffOdd+0xe>
+     aea:	25 c0       	rjmp	.+74     	; 0xb36 <didUnstuffO>
+
+00000aec <rxByteLoop>:
+     aec:	08 71       	andi	r16, 0x18	; 24
+     aee:	10 27       	eor	r17, r16
+     af0:	51 50       	subi	r21, 0x01	; 1
+     af2:	12 f4       	brpl	.+4      	; 0xaf8 <skipLeap>
+     af4:	5d 5f       	subi	r21, 0xFD	; 253
+	...
+
+00000af8 <skipLeap>:
+     af8:	11 50       	subi	r17, 0x01	; 1
+     afa:	27 95       	ror	r18
+
+00000afc <didUnstuff6>:
+     afc:	2c 3f       	cpi	r18, 0xFC	; 252
+     afe:	19 b1       	in	r17, 0x09	; 9
+     b00:	c8 f6       	brcc	.-78     	; 0xab4 <unstuff6>
+     b02:	18 71       	andi	r17, 0x18	; 24
+     b04:	01 27       	eor	r16, r17
+     b06:	01 50       	subi	r16, 0x01	; 1
+     b08:	27 95       	ror	r18
+
+00000b0a <didUnstuff7>:
+     b0a:	2c 3f       	cpi	r18, 0xFC	; 252
+     b0c:	c8 f6       	brcc	.-78     	; 0xac0 <unstuff7>
+     b0e:	42 27       	eor	r20, r18
+     b10:	49 93       	st	Y+, r20
+
+00000b12 <rxBitLoop>:
+     b12:	09 b1       	in	r16, 0x09	; 9
+     b14:	08 71       	andi	r16, 0x18	; 24
+     b16:	10 27       	eor	r17, r16
+     b18:	4f 73       	andi	r20, 0x3F	; 63
+     b1a:	11 50       	subi	r17, 0x01	; 1
+     b1c:	27 95       	ror	r18
+     b1e:	2c 3f       	cpi	r18, 0xFC	; 252
+     b20:	a8 f6       	brcc	.-86     	; 0xacc <unstuffEven>
+
+00000b22 <didUnstuffE>:
+     b22:	46 95       	lsr	r20
+     b24:	46 95       	lsr	r20
+
+00000b26 <rxbit1>:
+     b26:	19 b1       	in	r17, 0x09	; 9
+     b28:	18 71       	andi	r17, 0x18	; 24
+     b2a:	79 f0       	breq	.+30     	; 0xb4a <se0>
+     b2c:	01 27       	eor	r16, r17
+     b2e:	01 50       	subi	r16, 0x01	; 1
+     b30:	27 95       	ror	r18
+     b32:	2c 3f       	cpi	r18, 0xFC	; 252
+     b34:	98 f6       	brcc	.-90     	; 0xadc <unstuffOdd>
+
+00000b36 <didUnstuffO>:
+     b36:	6b 5a       	subi	r22, 0xAB	; 171
+     b38:	60 f3       	brcs	.-40     	; 0xb12 <rxBitLoop>
+     b3a:	31 50       	subi	r19, 0x01	; 1
+     b3c:	09 b1       	in	r16, 0x09	; 9
+     b3e:	b0 f6       	brcc	.-84     	; 0xaec <rxByteLoop>
+     b40:	00 c0       	rjmp	.+0      	; 0xb42 <overflow>
+
+00000b42 <overflow>:
+     b42:	12 e0       	ldi	r17, 0x02	; 2
+     b44:	1c bb       	out	0x1c, r17	; 28
+
+00000b46 <ignorePacket>:
+     b46:	00 27       	eor	r16, r16
+     b48:	19 c0       	rjmp	.+50     	; 0xb7c <handleSetupOrOut>
+
+00000b4a <se0>:
+     b4a:	3b 50       	subi	r19, 0x0B	; 11
+     b4c:	31 95       	neg	r19
+     b4e:	c3 1b       	sub	r28, r19
+     b50:	d0 40       	sbci	r29, 0x00	; 0
+     b52:	12 e0       	ldi	r17, 0x02	; 2
+     b54:	1c bb       	out	0x1c, r17	; 28
+     b56:	08 81       	ld	r16, Y
+     b58:	03 3c       	cpi	r16, 0xC3	; 195
+     b5a:	09 f1       	breq	.+66     	; 0xb9e <handleData>
+     b5c:	0b 34       	cpi	r16, 0x4B	; 75
+     b5e:	f9 f0       	breq	.+62     	; 0xb9e <handleData>
+     b60:	20 91 22 01 	lds	r18, 0x0122
+     b64:	19 81       	ldd	r17, Y+1	; 0x01
+     b66:	11 0f       	add	r17, r17
+     b68:	12 13       	cpse	r17, r18
+     b6a:	ed cf       	rjmp	.-38     	; 0xb46 <ignorePacket>
+     b6c:	4a 81       	ldd	r20, Y+2	; 0x02
+     b6e:	44 1f       	adc	r20, r20
+     b70:	09 36       	cpi	r16, 0x69	; 105
+     b72:	51 f1       	breq	.+84     	; 0xbc8 <handleIn>
+     b74:	0d 32       	cpi	r16, 0x2D	; 45
+     b76:	11 f0       	breq	.+4      	; 0xb7c <handleSetupOrOut>
+     b78:	01 3e       	cpi	r16, 0xE1	; 225
+     b7a:	29 f7       	brne	.-54     	; 0xb46 <ignorePacket>
+
+00000b7c <handleSetupOrOut>:
+     b7c:	00 93 29 01 	sts	0x0129, r16
+
+00000b80 <doReturn>:
+     b80:	3f 91       	pop	r19
+     b82:	5f 91       	pop	r21
+     b84:	4f 91       	pop	r20
+     b86:	1f 91       	pop	r17
+     b88:	0f 91       	pop	r16
+     b8a:	2f 91       	pop	r18
+     b8c:	6f 91       	pop	r22
+     b8e:	cc b3       	in	r28, 0x1c	; 28
+     b90:	c1 fd       	sbrc	r28, 1
+     b92:	65 cf       	rjmp	.-310    	; 0xa5e <waitForJ>
+
+00000b94 <sofError>:
+     b94:	df 91       	pop	r29
+     b96:	cf 91       	pop	r28
+     b98:	cf bf       	out	0x3f, r28	; 63
+     b9a:	cf 91       	pop	r28
+     b9c:	18 95       	reti
+
+00000b9e <handleData>:
+     b9e:	20 91 29 01 	lds	r18, 0x0129
+     ba2:	22 23       	and	r18, r18
+     ba4:	69 f3       	breq	.-38     	; 0xb80 <doReturn>
+     ba6:	10 91 27 01 	lds	r17, 0x0127
+     baa:	11 23       	and	r17, r17
+     bac:	91 f5       	brne	.+100    	; 0xc12 <sendNakAndReti>
+     bae:	34 30       	cpi	r19, 0x04	; 4
+     bb0:	92 f1       	brmi	.+100    	; 0xc16 <sendAckAndReti>
+     bb2:	30 93 27 01 	sts	0x0127, r19
+     bb6:	20 93 23 01 	sts	0x0123, r18
+     bba:	10 91 24 01 	lds	r17, 0x0124
+     bbe:	3b e0       	ldi	r19, 0x0B	; 11
+     bc0:	31 1b       	sub	r19, r17
+     bc2:	30 93 24 01 	sts	0x0124, r19
+     bc6:	27 c0       	rjmp	.+78     	; 0xc16 <sendAckAndReti>
+
+00000bc8 <handleIn>:
+     bc8:	00 91 27 01 	lds	r16, 0x0127
+     bcc:	01 30       	cpi	r16, 0x01	; 1
+     bce:	0c f5       	brge	.+66     	; 0xc12 <sendNakAndReti>
+     bd0:	0a e5       	ldi	r16, 0x5A	; 90
+     bd2:	4f 70       	andi	r20, 0x0F	; 15
+     bd4:	49 f4       	brne	.+18     	; 0xbe8 <handleIn1>
+     bd6:	30 91 00 01 	lds	r19, 0x0100
+     bda:	34 fd       	sbrc	r19, 4
+     bdc:	1d c0       	rjmp	.+58     	; 0xc18 <sendCntAndReti>
+     bde:	00 93 00 01 	sts	0x0100, r16
+     be2:	cb e0       	ldi	r28, 0x0B	; 11
+     be4:	d1 e0       	ldi	r29, 0x01	; 1
+     be6:	1c c0       	rjmp	.+56     	; 0xc20 <usbSendAndReti>
+
+00000be8 <handleIn1>:
+     be8:	30 91 16 01 	lds	r19, 0x0116
+     bec:	34 fd       	sbrc	r19, 4
+     bee:	14 c0       	rjmp	.+40     	; 0xc18 <sendCntAndReti>
+     bf0:	00 93 16 01 	sts	0x0116, r16
+     bf4:	c7 e1       	ldi	r28, 0x17	; 23
+     bf6:	d1 e0       	ldi	r29, 0x01	; 1
+     bf8:	13 c0       	rjmp	.+38     	; 0xc20 <usbSendAndReti>
+
+00000bfa <bitstuffN>:
+     bfa:	05 27       	eor	r16, r21
+     bfc:	10 e0       	ldi	r17, 0x00	; 0
+     bfe:	00 c0       	rjmp	.+0      	; 0xc00 <bitstuffN+0x6>
+     c00:	00 00       	nop
+     c02:	0b b9       	out	0x0b, r16	; 11
+     c04:	1a c0       	rjmp	.+52     	; 0xc3a <didStuffN>
+
+00000c06 <bitstuff6>:
+     c06:	05 27       	eor	r16, r21
+     c08:	10 e0       	ldi	r17, 0x00	; 0
+     c0a:	22 1f       	adc	r18, r18
+     c0c:	1d c0       	rjmp	.+58     	; 0xc48 <didStuff6>
+
+00000c0e <bitstuff7>:
+     c0e:	10 e0       	ldi	r17, 0x00	; 0
+     c10:	21 c0       	rjmp	.+66     	; 0xc54 <didStuff7>
+
+00000c12 <sendNakAndReti>:
+     c12:	4a e5       	ldi	r20, 0x5A	; 90
+     c14:	02 c0       	rjmp	.+4      	; 0xc1a <sendX3AndReti>
+
+00000c16 <sendAckAndReti>:
+     c16:	32 ed       	ldi	r19, 0xD2	; 210
+
+00000c18 <sendCntAndReti>:
+     c18:	43 2f       	mov	r20, r19
+
+00000c1a <sendX3AndReti>:
+     c1a:	c4 e1       	ldi	r28, 0x14	; 20
+     c1c:	d0 e0       	ldi	r29, 0x00	; 0
+     c1e:	32 e0       	ldi	r19, 0x02	; 2
+
+00000c20 <usbSendAndReti>:
+     c20:	1a b1       	in	r17, 0x0a	; 10
+     c22:	18 61       	ori	r17, 0x18	; 24
+     c24:	5c 9a       	sbi	0x0b, 4	; 11
+     c26:	0b b1       	in	r16, 0x0b	; 11
+     c28:	1a b9       	out	0x0a, r17	; 10
+     c2a:	58 e1       	ldi	r21, 0x18	; 24
+     c2c:	20 e8       	ldi	r18, 0x80	; 128
+
+00000c2e <txByteLoop>:
+     c2e:	65 e3       	ldi	r22, 0x35	; 53
+
+00000c30 <txBitLoop>:
+     c30:	20 ff       	sbrs	r18, 0
+     c32:	05 27       	eor	r16, r21
+     c34:	0b b9       	out	0x0b, r16	; 11
+     c36:	27 95       	ror	r18
+     c38:	17 95       	ror	r17
+
+00000c3a <didStuffN>:
+     c3a:	1c 3f       	cpi	r17, 0xFC	; 252
+     c3c:	f0 f6       	brcc	.-68     	; 0xbfa <bitstuffN>
+     c3e:	66 95       	lsr	r22
+     c40:	b8 f7       	brcc	.-18     	; 0xc30 <txBitLoop>
+     c42:	b1 f7       	brne	.-20     	; 0xc30 <txBitLoop>
+     c44:	20 ff       	sbrs	r18, 0
+     c46:	05 27       	eor	r16, r21
+
+00000c48 <didStuff6>:
+     c48:	0b b9       	out	0x0b, r16	; 11
+     c4a:	27 95       	ror	r18
+     c4c:	17 95       	ror	r17
+     c4e:	1c 3f       	cpi	r17, 0xFC	; 252
+     c50:	d0 f6       	brcc	.-76     	; 0xc06 <bitstuff6>
+     c52:	27 95       	ror	r18
+
+00000c54 <didStuff7>:
+     c54:	17 95       	ror	r17
+     c56:	17 ff       	sbrs	r17, 7
+     c58:	05 27       	eor	r16, r21
+     c5a:	00 00       	nop
+     c5c:	1c 3f       	cpi	r17, 0xFC	; 252
+     c5e:	0b b9       	out	0x0b, r16	; 11
+     c60:	b0 f6       	brcc	.-84     	; 0xc0e <bitstuff7>
+     c62:	29 91       	ld	r18, Y+
+     c64:	3a 95       	dec	r19
+     c66:	19 f7       	brne	.-58     	; 0xc2e <txByteLoop>
+     c68:	07 7e       	andi	r16, 0xE7	; 231
+     c6a:	10 91 28 01 	lds	r17, 0x0128
+     c6e:	11 0f       	add	r17, r17
+     c70:	c6 51       	subi	r28, 0x16	; 22
+     c72:	d0 40       	sbci	r29, 0x00	; 0
+     c74:	0b b9       	out	0x0b, r16	; 11
+     c76:	11 f0       	breq	.+4      	; 0xc7c <skipAddrAssign>
+     c78:	10 93 22 01 	sts	0x0122, r17
+
+00000c7c <skipAddrAssign>:
+     c7c:	12 e0       	ldi	r17, 0x02	; 2
+     c7e:	1c bb       	out	0x1c, r17	; 28
+     c80:	00 61       	ori	r16, 0x10	; 16
+     c82:	1a b1       	in	r17, 0x0a	; 10
+     c84:	17 7e       	andi	r17, 0xE7	; 231
+     c86:	40 2f       	mov	r20, r16
+     c88:	47 7e       	andi	r20, 0xE7	; 231
+     c8a:	54 e0       	ldi	r21, 0x04	; 4
+
+00000c8c <se0Delay>:
+     c8c:	5a 95       	dec	r21
+     c8e:	f1 f7       	brne	.-4      	; 0xc8c <se0Delay>
+     c90:	0b b9       	out	0x0b, r16	; 11
+     c92:	1a b9       	out	0x0a, r17	; 10
+     c94:	4b b9       	out	0x0b, r20	; 11
+     c96:	74 cf       	rjmp	.-280    	; 0xb80 <doReturn>
+
+00000c98 <usbInit>:
+/* ------------------------------------------------------------------------- */
+
+USB_PUBLIC void usbInit(void)
+{
+#if USB_INTR_CFG_SET != 0
+    USB_INTR_CFG |= USB_INTR_CFG_SET;
+     c98:	e9 e6       	ldi	r30, 0x69	; 105
+     c9a:	f0 e0       	ldi	r31, 0x00	; 0
+     c9c:	80 81       	ld	r24, Z
+     c9e:	82 60       	ori	r24, 0x02	; 2
+     ca0:	80 83       	st	Z, r24
+#endif
+#if USB_INTR_CFG_CLR != 0
+    USB_INTR_CFG &= ~(USB_INTR_CFG_CLR);
+#endif
+    USB_INTR_ENABLE |= (1 << USB_INTR_ENABLE_BIT);
+     ca2:	e9 9a       	sbi	0x1d, 1	; 29
+/* ------------------------------------------------------------------------- */
+
+static inline void  usbResetDataToggling(void)
+{
+#if USB_CFG_HAVE_INTRIN_ENDPOINT && !USB_CFG_SUPPRESS_INTR_CODE
+    USB_SET_DATATOKEN1(USB_INITIAL_DATATOKEN);  /* reset data toggling for interrupt endpoint */
+     ca4:	8b e4       	ldi	r24, 0x4B	; 75
+     ca6:	80 93 17 01 	sts	0x0117, r24
+    USB_INTR_CFG &= ~(USB_INTR_CFG_CLR);
+#endif
+    USB_INTR_ENABLE |= (1 << USB_INTR_ENABLE_BIT);
+    usbResetDataToggling();
+#if USB_CFG_HAVE_INTRIN_ENDPOINT && !USB_CFG_SUPPRESS_INTR_CODE
+    usbTxLen1 = USBPID_NAK;
+     caa:	8a e5       	ldi	r24, 0x5A	; 90
+     cac:	80 93 16 01 	sts	0x0116, r24
+#if USB_CFG_HAVE_INTRIN_ENDPOINT3
+    usbTxLen3 = USBPID_NAK;
+#endif
+#endif
+}
+     cb0:	08 95       	ret
+
+00000cb2 <usbPoll>:
+}
+
+/* ------------------------------------------------------------------------- */
+
+USB_PUBLIC void usbPoll(void)
+{
+     cb2:	1f 93       	push	r17
+     cb4:	cf 93       	push	r28
+     cb6:	df 93       	push	r29
+schar   len;
+uchar   i;
+
+    len = usbRxLen - 3;
+     cb8:	90 91 27 01 	lds	r25, 0x0127
+     cbc:	93 50       	subi	r25, 0x03	; 3
+    if(len >= 0){
+     cbe:	97 fd       	sbrc	r25, 7
+     cc0:	a6 c0       	rjmp	.+332    	; 0xe0e <usbPoll+0x15c>
+ * need data integrity checks with this driver, check the CRC in your app
+ * code and report errors back to the host. Since the ACK was already sent,
+ * retries must be handled on application level.
+ * unsigned crc = usbCrc16(buffer + 1, usbRxLen - 3);
+ */
+        usbProcessRx(usbRxBuf + USB_BUFSIZE + 1 - usbInputBufOffset, len);
+     cc2:	20 91 24 01 	lds	r18, 0x0124
+    if(usbRxToken < 0x10){  /* OUT to endpoint != 0: endpoint number in usbRxToken */
+        usbFunctionWriteOut(data, len);
+        return;
+    }
+#endif
+    if(usbRxToken == (uchar)USBPID_SETUP){
+     cc6:	80 91 23 01 	lds	r24, 0x0123
+     cca:	8d 32       	cpi	r24, 0x2D	; 45
+     ccc:	09 f0       	breq	.+2      	; 0xcd0 <usbPoll+0x1e>
+     cce:	9d c0       	rjmp	.+314    	; 0xe0a <usbPoll+0x158>
+        if(len != 8)    /* Setup size must be always 8 bytes. Ignore otherwise. */
+     cd0:	98 30       	cpi	r25, 0x08	; 8
+     cd2:	09 f0       	breq	.+2      	; 0xcd6 <usbPoll+0x24>
+     cd4:	9a c0       	rjmp	.+308    	; 0xe0a <usbPoll+0x158>
+ * need data integrity checks with this driver, check the CRC in your app
+ * code and report errors back to the host. Since the ACK was already sent,
+ * retries must be handled on application level.
+ * unsigned crc = usbCrc16(buffer + 1, usbRxLen - 3);
+ */
+        usbProcessRx(usbRxBuf + USB_BUFSIZE + 1 - usbInputBufOffset, len);
+     cd6:	cc e0       	ldi	r28, 0x0C	; 12
+     cd8:	d0 e0       	ldi	r29, 0x00	; 0
+     cda:	c2 1b       	sub	r28, r18
+     cdc:	d1 09       	sbc	r29, r1
+     cde:	c5 5d       	subi	r28, 0xD5	; 213
+     ce0:	de 4f       	sbci	r29, 0xFE	; 254
+#endif
+    if(usbRxToken == (uchar)USBPID_SETUP){
+        if(len != 8)    /* Setup size must be always 8 bytes. Ignore otherwise. */
+            return;
+        usbMsgLen_t replyLen;
+        usbTxBuf[0] = USBPID_DATA0;         /* initialize data toggling */
+     ce2:	83 ec       	ldi	r24, 0xC3	; 195
+     ce4:	80 93 0b 01 	sts	0x010B, r24
+        usbTxLen = USBPID_NAK;              /* abort pending transmit */
+     ce8:	8a e5       	ldi	r24, 0x5A	; 90
+     cea:	80 93 00 01 	sts	0x0100, r24
+        usbMsgFlags = 0;
+     cee:	10 92 03 01 	sts	0x0103, r1
+        uchar type = rq->bmRequestType & USBRQ_TYPE_MASK;
+        if(type != USBRQ_TYPE_STANDARD){    /* standard requests are handled by driver */
+     cf2:	88 81       	ld	r24, Y
+     cf4:	80 76       	andi	r24, 0x60	; 96
+     cf6:	29 f0       	breq	.+10     	; 0xd02 <usbPoll+0x50>
+            replyLen = usbFunctionSetup(data);
+     cf8:	ce 01       	movw	r24, r28
+     cfa:	0e 94 52 04 	call	0x8a4	; 0x8a4 <usbFunctionSetup>
+     cfe:	28 2f       	mov	r18, r24
+     d00:	7b c0       	rjmp	.+246    	; 0xdf8 <usbPoll+0x146>
+ * standard requests instead of class and custom requests.
+ */
+static inline usbMsgLen_t usbDriverSetup(usbRequest_t *rq)
+{
+uchar   len  = 0, *dataPtr = usbTxBuf + 9;  /* there are 2 bytes free space at the end of the buffer */
+uchar   value = rq->wValue.bytes[0];
+     d02:	9a 81       	ldd	r25, Y+2	; 0x02
+#if USB_CFG_IMPLEMENT_HALT
+uchar   index = rq->wIndex.bytes[0];
+#endif
+
+    dataPtr[0] = 0; /* default reply common to USBRQ_GET_STATUS and USBRQ_GET_INTERFACE */
+     d04:	10 92 14 01 	sts	0x0114, r1
+    SWITCH_START(rq->bRequest)
+     d08:	89 81       	ldd	r24, Y+1	; 0x01
+    SWITCH_CASE(USBRQ_GET_STATUS)           /* 0 */
+     d0a:	88 23       	and	r24, r24
+     d0c:	21 f4       	brne	.+8      	; 0xd16 <usbPoll+0x64>
+            dataPtr[0] =  USB_CFG_IS_SELF_POWERED;
+#if USB_CFG_IMPLEMENT_HALT
+        if(recipient == USBRQ_RCPT_ENDPOINT && index == 0x81)   /* request status for endpoint 1 */
+            dataPtr[0] = usbTxLen1 == USBPID_STALL;
+#endif
+        dataPtr[1] = 0;
+     d0e:	10 92 15 01 	sts	0x0115, r1
+     d12:	22 e0       	ldi	r18, 0x02	; 2
+     d14:	6b c0       	rjmp	.+214    	; 0xdec <usbPoll+0x13a>
+        if(value == 0 && index == 0x81){    /* feature 0 == HALT for endpoint == 1 */
+            usbTxLen1 = rq->bRequest == USBRQ_CLEAR_FEATURE ? USBPID_NAK : USBPID_STALL;
+            usbResetDataToggling();
+        }
+#endif
+    SWITCH_CASE(USBRQ_SET_ADDRESS)          /* 5 */
+     d16:	85 30       	cpi	r24, 0x05	; 5
+     d18:	19 f4       	brne	.+6      	; 0xd20 <usbPoll+0x6e>
+        usbNewDeviceAddr = value;
+     d1a:	90 93 28 01 	sts	0x0128, r25
+     d1e:	65 c0       	rjmp	.+202    	; 0xdea <usbPoll+0x138>
+        USB_SET_ADDRESS_HOOK();
+    SWITCH_CASE(USBRQ_GET_DESCRIPTOR)       /* 6 */
+     d20:	86 30       	cpi	r24, 0x06	; 6
+     d22:	09 f0       	breq	.+2      	; 0xd26 <usbPoll+0x74>
+     d24:	4e c0       	rjmp	.+156    	; 0xdc2 <usbPoll+0x110>
+static inline usbMsgLen_t usbDriverDescriptor(usbRequest_t *rq)
+{
+usbMsgLen_t len = 0;
+uchar       flags = USB_FLG_MSGPTR_IS_ROM;
+
+    SWITCH_START(rq->wValue.bytes[1])
+     d26:	8b 81       	ldd	r24, Y+3	; 0x03
+    SWITCH_CASE(USBDESCR_DEVICE)    /* 1 */
+     d28:	81 30       	cpi	r24, 0x01	; 1
+     d2a:	41 f4       	brne	.+16     	; 0xd3c <usbPoll+0x8a>
+        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_DEVICE, usbDescriptorDevice)
+     d2c:	86 ee       	ldi	r24, 0xE6	; 230
+     d2e:	90 e0       	ldi	r25, 0x00	; 0
+     d30:	90 93 26 01 	sts	0x0126, r25
+     d34:	80 93 25 01 	sts	0x0125, r24
+     d38:	22 e1       	ldi	r18, 0x12	; 18
+     d3a:	3f c0       	rjmp	.+126    	; 0xdba <usbPoll+0x108>
+    SWITCH_CASE(USBDESCR_CONFIG)    /* 2 */
+     d3c:	82 30       	cpi	r24, 0x02	; 2
+     d3e:	41 f4       	brne	.+16     	; 0xd50 <usbPoll+0x9e>
+        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_CONFIGURATION, usbDescriptorConfiguration)
+     d40:	88 ef       	ldi	r24, 0xF8	; 248
+     d42:	90 e0       	ldi	r25, 0x00	; 0
+     d44:	90 93 26 01 	sts	0x0126, r25
+     d48:	80 93 25 01 	sts	0x0125, r24
+     d4c:	22 e2       	ldi	r18, 0x22	; 34
+     d4e:	35 c0       	rjmp	.+106    	; 0xdba <usbPoll+0x108>
+    SWITCH_CASE(USBDESCR_STRING)    /* 3 */
+     d50:	83 30       	cpi	r24, 0x03	; 3
+     d52:	f1 f4       	brne	.+60     	; 0xd90 <usbPoll+0xde>
+        if(USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_RAM)
+            flags = 0;
+        len = usbFunctionDescriptor(rq);
+#else   /* USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_DYNAMIC */
+        SWITCH_START(rq->wValue.bytes[0])
+        SWITCH_CASE(0)
+     d54:	99 23       	and	r25, r25
+     d56:	41 f4       	brne	.+16     	; 0xd68 <usbPoll+0xb6>
+            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_0, usbDescriptorString0)
+     d58:	82 eb       	ldi	r24, 0xB2	; 178
+     d5a:	90 e0       	ldi	r25, 0x00	; 0
+     d5c:	90 93 26 01 	sts	0x0126, r25
+     d60:	80 93 25 01 	sts	0x0125, r24
+     d64:	24 e0       	ldi	r18, 0x04	; 4
+     d66:	29 c0       	rjmp	.+82     	; 0xdba <usbPoll+0x108>
+        SWITCH_CASE(1)
+     d68:	91 30       	cpi	r25, 0x01	; 1
+     d6a:	41 f4       	brne	.+16     	; 0xd7c <usbPoll+0xca>
+            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_VENDOR, usbDescriptorStringVendor)
+     d6c:	86 eb       	ldi	r24, 0xB6	; 182
+     d6e:	90 e0       	ldi	r25, 0x00	; 0
+     d70:	90 93 26 01 	sts	0x0126, r25
+     d74:	80 93 25 01 	sts	0x0125, r24
+     d78:	2c e1       	ldi	r18, 0x1C	; 28
+     d7a:	1f c0       	rjmp	.+62     	; 0xdba <usbPoll+0x108>
+        SWITCH_CASE(2)
+     d7c:	92 30       	cpi	r25, 0x02	; 2
+     d7e:	e1 f4       	brne	.+56     	; 0xdb8 <usbPoll+0x106>
+            GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_STRING_PRODUCT, usbDescriptorStringDevice)
+     d80:	82 ed       	ldi	r24, 0xD2	; 210
+     d82:	90 e0       	ldi	r25, 0x00	; 0
+     d84:	90 93 26 01 	sts	0x0126, r25
+     d88:	80 93 25 01 	sts	0x0125, r24
+     d8c:	24 e1       	ldi	r18, 0x14	; 20
+     d8e:	15 c0       	rjmp	.+42     	; 0xdba <usbPoll+0x108>
+                len = usbFunctionDescriptor(rq);
+            }
+        SWITCH_END
+#endif  /* USB_CFG_DESCR_PROPS_STRINGS & USB_PROP_IS_DYNAMIC */
+#if USB_CFG_DESCR_PROPS_HID_REPORT  /* only support HID descriptors if enabled */
+    SWITCH_CASE(USBDESCR_HID)       /* 0x21 */
+     d90:	81 32       	cpi	r24, 0x21	; 33
+     d92:	41 f4       	brne	.+16     	; 0xda4 <usbPoll+0xf2>
+        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_HID, usbDescriptorConfiguration + 18)
+     d94:	8a e0       	ldi	r24, 0x0A	; 10
+     d96:	91 e0       	ldi	r25, 0x01	; 1
+     d98:	90 93 26 01 	sts	0x0126, r25
+     d9c:	80 93 25 01 	sts	0x0125, r24
+     da0:	29 e0       	ldi	r18, 0x09	; 9
+     da2:	0b c0       	rjmp	.+22     	; 0xdba <usbPoll+0x108>
+    SWITCH_CASE(USBDESCR_HID_REPORT)/* 0x22 */
+     da4:	82 32       	cpi	r24, 0x22	; 34
+     da6:	41 f4       	brne	.+16     	; 0xdb8 <usbPoll+0x106>
+        GET_DESCRIPTOR(USB_CFG_DESCR_PROPS_HID_REPORT, usbDescriptorHidReport)
+     da8:	88 e6       	ldi	r24, 0x68	; 104
+     daa:	90 e0       	ldi	r25, 0x00	; 0
+     dac:	90 93 26 01 	sts	0x0126, r25
+     db0:	80 93 25 01 	sts	0x0125, r24
+     db4:	2a e4       	ldi	r18, 0x4A	; 74
+     db6:	01 c0       	rjmp	.+2      	; 0xdba <usbPoll+0x108>
+     db8:	20 e0       	ldi	r18, 0x00	; 0
+    SWITCH_DEFAULT
+        if(USB_CFG_DESCR_PROPS_UNKNOWN & USB_PROP_IS_DYNAMIC){
+            len = usbFunctionDescriptor(rq);
+        }
+    SWITCH_END
+    usbMsgFlags = flags;
+     dba:	80 e4       	ldi	r24, 0x40	; 64
+     dbc:	80 93 03 01 	sts	0x0103, r24
+     dc0:	1b c0       	rjmp	.+54     	; 0xdf8 <usbPoll+0x146>
+        usbNewDeviceAddr = value;
+        USB_SET_ADDRESS_HOOK();
+    SWITCH_CASE(USBRQ_GET_DESCRIPTOR)       /* 6 */
+        len = usbDriverDescriptor(rq);
+        goto skipMsgPtrAssignment;
+    SWITCH_CASE(USBRQ_GET_CONFIGURATION)    /* 8 */
+     dc2:	88 30       	cpi	r24, 0x08	; 8
+     dc4:	21 f4       	brne	.+8      	; 0xdce <usbPoll+0x11c>
+     dc6:	21 e0       	ldi	r18, 0x01	; 1
+     dc8:	8a e2       	ldi	r24, 0x2A	; 42
+     dca:	91 e0       	ldi	r25, 0x01	; 1
+     dcc:	11 c0       	rjmp	.+34     	; 0xdf0 <usbPoll+0x13e>
+        dataPtr = &usbConfiguration;  /* send current configuration value */
+        len = 1;
+    SWITCH_CASE(USBRQ_SET_CONFIGURATION)    /* 9 */
+     dce:	89 30       	cpi	r24, 0x09	; 9
+     dd0:	19 f4       	brne	.+6      	; 0xdd8 <usbPoll+0x126>
+        usbConfiguration = value;
+     dd2:	90 93 2a 01 	sts	0x012A, r25
+     dd6:	09 c0       	rjmp	.+18     	; 0xdea <usbPoll+0x138>
+        usbResetStall();
+    SWITCH_CASE(USBRQ_GET_INTERFACE)        /* 10 */
+     dd8:	8a 30       	cpi	r24, 0x0A	; 10
+     dda:	11 f4       	brne	.+4      	; 0xde0 <usbPoll+0x12e>
+     ddc:	21 e0       	ldi	r18, 0x01	; 1
+     dde:	06 c0       	rjmp	.+12     	; 0xdec <usbPoll+0x13a>
+        len = 1;
+#if USB_CFG_HAVE_INTRIN_ENDPOINT && !USB_CFG_SUPPRESS_INTR_CODE
+    SWITCH_CASE(USBRQ_SET_INTERFACE)        /* 11 */
+     de0:	8b 30       	cpi	r24, 0x0B	; 11
+     de2:	19 f4       	brne	.+6      	; 0xdea <usbPoll+0x138>
+/* ------------------------------------------------------------------------- */
+
+static inline void  usbResetDataToggling(void)
+{
+#if USB_CFG_HAVE_INTRIN_ENDPOINT && !USB_CFG_SUPPRESS_INTR_CODE
+    USB_SET_DATATOKEN1(USB_INITIAL_DATATOKEN);  /* reset data toggling for interrupt endpoint */
+     de4:	8b e4       	ldi	r24, 0x4B	; 75
+     de6:	80 93 17 01 	sts	0x0117, r24
+     dea:	20 e0       	ldi	r18, 0x00	; 0
+     dec:	84 e1       	ldi	r24, 0x14	; 20
+     dee:	91 e0       	ldi	r25, 0x01	; 1
+        usbResetStall();
+#endif
+    SWITCH_DEFAULT                          /* 7=SET_DESCRIPTOR, 12=SYNC_FRAME */
+        /* Should we add an optional hook here? */
+    SWITCH_END
+    usbMsgPtr = dataPtr;
+     df0:	90 93 26 01 	sts	0x0126, r25
+     df4:	80 93 25 01 	sts	0x0125, r24
+            }
+            usbMsgFlags = USB_FLG_USE_USER_RW;
+        }else   /* The 'else' prevents that we limit a replyLen of USB_NO_MSG to the maximum transfer len. */
+#endif
+        if(sizeof(replyLen) < sizeof(rq->wLength.word)){ /* help compiler with optimizing */
+            if(!rq->wLength.bytes[1] && replyLen > rq->wLength.bytes[0])    /* limit length to max */
+     df8:	8f 81       	ldd	r24, Y+7	; 0x07
+     dfa:	88 23       	and	r24, r24
+     dfc:	21 f4       	brne	.+8      	; 0xe06 <usbPoll+0x154>
+     dfe:	8e 81       	ldd	r24, Y+6	; 0x06
+     e00:	82 17       	cp	r24, r18
+     e02:	08 f4       	brcc	.+2      	; 0xe06 <usbPoll+0x154>
+     e04:	28 2f       	mov	r18, r24
+                replyLen = rq->wLength.bytes[0];
+        }else{
+            if(replyLen > rq->wLength.word)     /* limit length to max */
+                replyLen = rq->wLength.word;
+        }
+        usbMsgLen = replyLen;
+     e06:	20 93 01 01 	sts	0x0101, r18
+        usbProcessRx(usbRxBuf + USB_BUFSIZE + 1 - usbInputBufOffset, len);
+#if USB_CFG_HAVE_FLOWCONTROL
+        if(usbRxLen > 0)    /* only mark as available if not inactivated */
+            usbRxLen = 0;
+#else
+        usbRxLen = 0;       /* mark rx buffer as available */
+     e0a:	10 92 27 01 	sts	0x0127, r1
+#endif
+    }
+    if(usbTxLen & 0x10){    /* transmit system idle */
+     e0e:	80 91 00 01 	lds	r24, 0x0100
+     e12:	84 ff       	sbrs	r24, 4
+     e14:	4a c0       	rjmp	.+148    	; 0xeaa <usbPoll+0x1f8>
+        if(usbMsgLen != USB_NO_MSG){    /* transmit data pending? */
+     e16:	80 91 01 01 	lds	r24, 0x0101
+     e1a:	8f 3f       	cpi	r24, 0xFF	; 255
+     e1c:	09 f4       	brne	.+2      	; 0xe20 <usbPoll+0x16e>
+     e1e:	45 c0       	rjmp	.+138    	; 0xeaa <usbPoll+0x1f8>
+     e20:	18 2f       	mov	r17, r24
+     e22:	89 30       	cpi	r24, 0x09	; 9
+     e24:	08 f0       	brcs	.+2      	; 0xe28 <usbPoll+0x176>
+     e26:	18 e0       	ldi	r17, 0x08	; 8
+uchar       len;
+
+    wantLen = usbMsgLen;
+    if(wantLen > 8)
+        wantLen = 8;
+    usbMsgLen -= wantLen;
+     e28:	81 1b       	sub	r24, r17
+     e2a:	80 93 01 01 	sts	0x0101, r24
+    usbTxBuf[0] ^= USBPID_DATA0 ^ USBPID_DATA1; /* DATA toggling */
+     e2e:	80 91 0b 01 	lds	r24, 0x010B
+     e32:	98 e8       	ldi	r25, 0x88	; 136
+     e34:	89 27       	eor	r24, r25
+     e36:	80 93 0b 01 	sts	0x010B, r24
+/* This function is similar to usbFunctionRead(), but it's also called for
+ * data handled automatically by the driver (e.g. descriptor reads).
+ */
+static uchar usbDeviceRead(uchar *data, uchar len)
+{
+    if(len > 0){    /* don't bother app with 0 sized reads */
+     e3a:	11 23       	and	r17, r17
+     e3c:	41 f1       	breq	.+80     	; 0xe8e <usbPoll+0x1dc>
+        if(usbMsgFlags & USB_FLG_USE_USER_RW){
+            len = usbFunctionRead(data, len);
+        }else
+#endif
+        {
+            uchar i = len, *r = usbMsgPtr;
+     e3e:	20 91 25 01 	lds	r18, 0x0125
+     e42:	30 91 26 01 	lds	r19, 0x0126
+            if(usbMsgFlags & USB_FLG_MSGPTR_IS_ROM){    /* ROM data */
+     e46:	80 91 03 01 	lds	r24, 0x0103
+     e4a:	86 ff       	sbrs	r24, 6
+     e4c:	0d c0       	rjmp	.+26     	; 0xe68 <usbPoll+0x1b6>
+     e4e:	ac e0       	ldi	r26, 0x0C	; 12
+     e50:	b1 e0       	ldi	r27, 0x01	; 1
+     e52:	80 e0       	ldi	r24, 0x00	; 0
+     e54:	90 e0       	ldi	r25, 0x00	; 0
+                do{
+                    uchar c = USB_READ_FLASH(r);    /* assign to char size variable to enforce byte ops */
+     e56:	f9 01       	movw	r30, r18
+     e58:	e8 0f       	add	r30, r24
+     e5a:	f9 1f       	adc	r31, r25
+     e5c:	e4 91       	lpm	r30, Z+
+                    *data++ = c;
+     e5e:	ed 93       	st	X+, r30
+     e60:	01 96       	adiw	r24, 0x01	; 1
+                    r++;
+                }while(--i);
+     e62:	18 17       	cp	r17, r24
+     e64:	c1 f7       	brne	.-16     	; 0xe56 <usbPoll+0x1a4>
+     e66:	08 c0       	rjmp	.+16     	; 0xe78 <usbPoll+0x1c6>
+     e68:	91 2f       	mov	r25, r17
+     e6a:	d9 01       	movw	r26, r18
+     e6c:	ec e0       	ldi	r30, 0x0C	; 12
+     e6e:	f1 e0       	ldi	r31, 0x01	; 1
+            }else{  /* RAM data */
+                do{
+                    *data++ = *r++;
+     e70:	8d 91       	ld	r24, X+
+     e72:	81 93       	st	Z+, r24
+                }while(--i);
+     e74:	91 50       	subi	r25, 0x01	; 1
+     e76:	e1 f7       	brne	.-8      	; 0xe70 <usbPoll+0x1be>
+     e78:	11 50       	subi	r17, 0x01	; 1
+     e7a:	81 2f       	mov	r24, r17
+     e7c:	90 e0       	ldi	r25, 0x00	; 0
+     e7e:	1f 5f       	subi	r17, 0xFF	; 255
+     e80:	01 96       	adiw	r24, 0x01	; 1
+     e82:	82 0f       	add	r24, r18
+     e84:	93 1f       	adc	r25, r19
+            }
+            usbMsgPtr = r;
+     e86:	90 93 26 01 	sts	0x0126, r25
+     e8a:	80 93 25 01 	sts	0x0125, r24
+        wantLen = 8;
+    usbMsgLen -= wantLen;
+    usbTxBuf[0] ^= USBPID_DATA0 ^ USBPID_DATA1; /* DATA toggling */
+    len = usbDeviceRead(usbTxBuf + 1, wantLen);
+    if(len <= 8){           /* valid data packet */
+        usbCrc16Append(&usbTxBuf[1], len);
+     e8e:	8c e0       	ldi	r24, 0x0C	; 12
+     e90:	91 e0       	ldi	r25, 0x01	; 1
+     e92:	61 2f       	mov	r22, r17
+     e94:	0e 94 27 05 	call	0xa4e	; 0xa4e <usbCrc16Append>
+        len += 4;           /* length including sync byte */
+     e98:	61 2f       	mov	r22, r17
+     e9a:	6c 5f       	subi	r22, 0xFC	; 252
+        if(len < 12)        /* a partial package identifies end of message */
+     e9c:	6c 30       	cpi	r22, 0x0C	; 12
+     e9e:	19 f0       	breq	.+6      	; 0xea6 <usbPoll+0x1f4>
+            usbMsgLen = USB_NO_MSG;
+     ea0:	8f ef       	ldi	r24, 0xFF	; 255
+     ea2:	80 93 01 01 	sts	0x0101, r24
+    }else{
+        len = USBPID_STALL;   /* stall the endpoint */
+        usbMsgLen = USB_NO_MSG;
+    }
+    usbTxLen = len;
+     ea6:	60 93 00 01 	sts	0x0100, r22
+     eaa:	94 e1       	ldi	r25, 0x14	; 20
+        if(usbMsgLen != USB_NO_MSG){    /* transmit data pending? */
+            usbBuildTxBlock();
+        }
+    }
+    for(i = 20; i > 0; i--){
+        uchar usbLineStatus = USBIN & USBMASK;
+     eac:	89 b1       	in	r24, 0x09	; 9
+        if(usbLineStatus != 0)  /* SE0 has ended */
+     eae:	88 71       	andi	r24, 0x18	; 24
+     eb0:	31 f4       	brne	.+12     	; 0xebe <usbPoll+0x20c>
+    if(usbTxLen & 0x10){    /* transmit system idle */
+        if(usbMsgLen != USB_NO_MSG){    /* transmit data pending? */
+            usbBuildTxBlock();
+        }
+    }
+    for(i = 20; i > 0; i--){
+     eb2:	91 50       	subi	r25, 0x01	; 1
+     eb4:	d9 f7       	brne	.-10     	; 0xeac <usbPoll+0x1fa>
+        uchar usbLineStatus = USBIN & USBMASK;
+        if(usbLineStatus != 0)  /* SE0 has ended */
+            goto isNotReset;
+    }
+    /* RESET condition, called multiple times during reset */
+    usbNewDeviceAddr = 0;
+     eb6:	10 92 28 01 	sts	0x0128, r1
+    usbDeviceAddr = 0;
+     eba:	10 92 22 01 	sts	0x0122, r1
+    usbResetStall();
+    DBG1(0xff, 0, 0);
+isNotReset:
+    usbHandleResetHook(i);
+}
+     ebe:	df 91       	pop	r29
+     ec0:	cf 91       	pop	r28
+     ec2:	1f 91       	pop	r17
+     ec4:	08 95       	ret
+
+00000ec6 <usbSetInterrupt>:
+    txStatus->len = len + 4;    /* len must be given including sync byte */
+    DBG2(0x21 + (((int)txStatus >> 3) & 3), txStatus->buffer, len + 3);
+}
+
+USB_PUBLIC void usbSetInterrupt(uchar *data, uchar len)
+{
+     ec6:	1f 93       	push	r17
+     ec8:	dc 01       	movw	r26, r24
+     eca:	16 2f       	mov	r17, r22
+
+#if USB_CFG_IMPLEMENT_HALT
+    if(usbTxLen1 == USBPID_STALL)
+        return;
+#endif
+    if(txStatus->len & 0x10){   /* packet buffer was empty */
+     ecc:	80 91 16 01 	lds	r24, 0x0116
+     ed0:	84 ff       	sbrs	r24, 4
+     ed2:	07 c0       	rjmp	.+14     	; 0xee2 <usbSetInterrupt+0x1c>
+        txStatus->buffer[0] ^= USBPID_DATA0 ^ USBPID_DATA1; /* toggle token */
+     ed4:	80 91 17 01 	lds	r24, 0x0117
+     ed8:	98 e8       	ldi	r25, 0x88	; 136
+     eda:	89 27       	eor	r24, r25
+     edc:	80 93 17 01 	sts	0x0117, r24
+     ee0:	03 c0       	rjmp	.+6      	; 0xee8 <usbSetInterrupt+0x22>
+    }else{
+        txStatus->len = USBPID_NAK; /* avoid sending outdated (overwritten) interrupt data */
+     ee2:	8a e5       	ldi	r24, 0x5A	; 90
+     ee4:	80 93 16 01 	sts	0x0116, r24
+     ee8:	91 2f       	mov	r25, r17
+     eea:	e8 e1       	ldi	r30, 0x18	; 24
+     eec:	f1 e0       	ldi	r31, 0x01	; 1
+    }
+    p = txStatus->buffer + 1;
+    i = len;
+    do{                         /* if len == 0, we still copy 1 byte, but that's no problem */
+        *p++ = *data++;
+     eee:	8d 91       	ld	r24, X+
+     ef0:	81 93       	st	Z+, r24
+    }while(--i > 0);            /* loop control at the end is 2 bytes shorter than at beginning */
+     ef2:	91 50       	subi	r25, 0x01	; 1
+     ef4:	e1 f7       	brne	.-8      	; 0xeee <usbSetInterrupt+0x28>
+    usbCrc16Append(&txStatus->buffer[1], len);
+     ef6:	88 e1       	ldi	r24, 0x18	; 24
+     ef8:	91 e0       	ldi	r25, 0x01	; 1
+     efa:	61 2f       	mov	r22, r17
+     efc:	0e 94 27 05 	call	0xa4e	; 0xa4e <usbCrc16Append>
+    txStatus->len = len + 4;    /* len must be given including sync byte */
+     f00:	1c 5f       	subi	r17, 0xFC	; 252
+     f02:	10 93 16 01 	sts	0x0116, r17
+}
+
+USB_PUBLIC void usbSetInterrupt(uchar *data, uchar len)
+{
+    usbGenericSetInterrupt(data, len, &usbTxStatus1);
+}
+     f06:	1f 91       	pop	r17
+     f08:	08 95       	ret
+
+00000f0a <setPins>:
+#include "guitarInitFunctions.h"
+
+void setPins(void)
+{
+	// Set the fret pins as input pins, with internal resistor
+	fret_ddr &= ~(1<<green_pin);        // input
+     f0a:	21 98       	cbi	0x04, 1	; 4
+	fret_port |= (1<<green_pin);		//pull-up enabled	
+     f0c:	29 9a       	sbi	0x05, 1	; 5
+	fret_ddr &= ~(1<<red_pin);
+     f0e:	22 98       	cbi	0x04, 2	; 4
+	fret_port |= (1<<red_pin);
+     f10:	2a 9a       	sbi	0x05, 2	; 5
+	fret_ddr &= ~(1<<yellow_pin);
+     f12:	23 98       	cbi	0x04, 3	; 4
+	fret_port |= (1<<yellow_pin);
+     f14:	2b 9a       	sbi	0x05, 3	; 5
+	fret_ddr &= ~(1<<blue_pin);
+     f16:	24 98       	cbi	0x04, 4	; 4
+	fret_port |= (1<<blue_pin);
+     f18:	2c 9a       	sbi	0x05, 4	; 5
+	fret_ddr &= ~(1<<orange_pin);
+     f1a:	25 98       	cbi	0x04, 5	; 4
+	fret_port |= (1<<orange_pin);
+     f1c:	2d 9a       	sbi	0x05, 5	; 5
+
+	// Set the pins on strumming and plus as inputs, with internal resistor
+	misc_ddr &= ~(1<<plus_pin);
+     f1e:	57 98       	cbi	0x0a, 7	; 10
+	misc_port |= (1<<plus_pin);
+     f20:	5f 9a       	sbi	0x0b, 7	; 11
+	misc_ddr &= ~(1<<minus_pin);
+     f22:	56 98       	cbi	0x0a, 6	; 10
+	misc_port |= (1<<minus_pin);
+     f24:	5e 9a       	sbi	0x0b, 6	; 11
+
+	pick_ddr &= ~(1<<strum_pin);
+     f26:	55 98       	cbi	0x0a, 5	; 10
+	pick_port |= (1<<strum_pin);
+     f28:	5d 9a       	sbi	0x0b, 5	; 11
+
+	// Set the string pins as output pins, outputting HIGH
+	/* MAKE SURE YOU HAVE DIODES OPPOSING THIS CURRENT OUTFLOW! */
+	string_ddr |= (1<<first_string);  //output
+     f2a:	3d 9a       	sbi	0x07, 5	; 7
+	string_port |= (1<<first_string); // set high
+     f2c:	45 9a       	sbi	0x08, 5	; 8
+	string_ddr |= (1<<second_string);  
+     f2e:	3c 9a       	sbi	0x07, 4	; 7
+	string_port |= (1<<second_string);
+     f30:	44 9a       	sbi	0x08, 4	; 8
+	string_ddr |= (1<<third_string);  
+     f32:	3b 9a       	sbi	0x07, 3	; 7
+	string_port |= (1<<third_string);
+     f34:	43 9a       	sbi	0x08, 3	; 8
+	string_ddr |= (1<<fourth_string);  
+     f36:	3a 9a       	sbi	0x07, 2	; 7
+	string_port |= (1<<fourth_string);
+     f38:	42 9a       	sbi	0x08, 2	; 8
+	string_ddr |= (1<<fifth_string);  
+     f3a:	39 9a       	sbi	0x07, 1	; 7
+	string_port |= (1<<fifth_string);
+     f3c:	41 9a       	sbi	0x08, 1	; 8
+	string_ddr |= (1<<sixth_string);  
+     f3e:	38 9a       	sbi	0x07, 0	; 7
+	string_port |= (1<<sixth_string);
+     f40:	40 9a       	sbi	0x08, 0	; 8
+}
+     f42:	08 95       	ret
+
+00000f44 <setTimer>:
+
+void setTimer(void) //This sets up a timer to handle the green button thing
+{
+	PRR &= ~(1<<PRTIM1);	// ensure power to Timer/Counter1
+     f44:	e4 e6       	ldi	r30, 0x64	; 100
+     f46:	f0 e0       	ldi	r31, 0x00	; 0
+     f48:	80 81       	ld	r24, Z
+     f4a:	87 7f       	andi	r24, 0xF7	; 247
+     f4c:	80 83       	st	Z, r24
+
+	TCCR1A &= ~(1<<COM1A1);  // This prevents OC2A pin from doing anything
+     f4e:	e0 e8       	ldi	r30, 0x80	; 128
+     f50:	f0 e0       	ldi	r31, 0x00	; 0
+     f52:	80 81       	ld	r24, Z
+     f54:	8f 77       	andi	r24, 0x7F	; 127
+     f56:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<COM1A0);  //  to the pins on the chip. Otherwise, we might
+     f58:	80 81       	ld	r24, Z
+     f5a:	8f 7b       	andi	r24, 0xBF	; 191
+     f5c:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<COM1B1);  //  get signals coming out of some of the pins we might use
+     f5e:	80 81       	ld	r24, Z
+     f60:	8f 7d       	andi	r24, 0xDF	; 223
+     f62:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<COM1B0);
+     f64:	80 81       	ld	r24, Z
+     f66:	8f 7e       	andi	r24, 0xEF	; 239
+     f68:	80 83       	st	Z, r24
+
+	TCCR1A &= ~(1<<WGM11);  // These bits set up normal mode on the Waveform Generation
+     f6a:	80 81       	ld	r24, Z
+     f6c:	8d 7f       	andi	r24, 0xFD	; 253
+     f6e:	80 83       	st	Z, r24
+	TCCR1A &= ~(1<<WGM10);  // This means that the counter acts like a normal timer,
+     f70:	80 81       	ld	r24, Z
+     f72:	8e 7f       	andi	r24, 0xFE	; 254
+     f74:	80 83       	st	Z, r24
+	TCCR1B &= ~(1<<WGM12);  // not some sort of fancy digital-analog converter or anything
+     f76:	e1 e8       	ldi	r30, 0x81	; 129
+     f78:	f0 e0       	ldi	r31, 0x00	; 0
+     f7a:	80 81       	ld	r24, Z
+     f7c:	87 7f       	andi	r24, 0xF7	; 247
+     f7e:	80 83       	st	Z, r24
+	TCCR1B &= ~(1<<WGM13);  // It counts up to 65536 and overflows to zero
+     f80:	80 81       	ld	r24, Z
+     f82:	8f 7e       	andi	r24, 0xEF	; 239
+     f84:	80 83       	st	Z, r24
+
+	TCCR1B |= (1<<CS12);   // These set the clock to CPU (8MHz) / 1024 
+     f86:	80 81       	ld	r24, Z
+     f88:	84 60       	ori	r24, 0x04	; 4
+     f8a:	80 83       	st	Z, r24
+	TCCR1B &= ~(1<<CS11);  // or roughly 8 kHz (7.8125 kHz)
+     f8c:	80 81       	ld	r24, Z
+     f8e:	8d 7f       	andi	r24, 0xFD	; 253
+     f90:	80 83       	st	Z, r24
+	TCCR1B |= (1<<CS10);   // When counting from zero to 0xFFFF, it takes about 8 seconds
+     f92:	80 81       	ld	r24, Z
+     f94:	81 60       	ori	r24, 0x01	; 1
+     f96:	80 83       	st	Z, r24
+
+	// The counter's value is stored in TCNT1
+}
+     f98:	08 95       	ret
+
+00000f9a <processChords>:
+*/
+#include "processStringState.h"
+
+void processChords(dataForController* data, int stringState[NUMBER_OF_STRINGS],
+									int buttonStringPatterns[][NUMBER_OF_STRINGS])
+{
+     f9a:	0f 93       	push	r16
+     f9c:	1f 93       	push	r17
+     f9e:	cf 93       	push	r28
+     fa0:	df 93       	push	r29
+     fa2:	8c 01       	movw	r16, r24
+     fa4:	fb 01       	movw	r30, r22
+     fa6:	ea 01       	movw	r28, r20
+     fa8:	20 e0       	ldi	r18, 0x00	; 0
+     faa:	30 e0       	ldi	r19, 0x00	; 0
+				data->downOn = 1;
+				data->upOn   = 0;
+			}
+			else
+			{
+				data->upOn   = 1;
+     fac:	41 e0       	ldi	r20, 0x01	; 1
+									int buttonStringPatterns[][NUMBER_OF_STRINGS])
+{
+	// First take care of registering strumming
+	for (int guitarString = 0; guitarString < 6; guitarString++)
+	{
+		if (stringState[guitarString] & 1)
+     fae:	db 01       	movw	r26, r22
+     fb0:	8d 91       	ld	r24, X+
+     fb2:	9c 91       	ld	r25, X
+     fb4:	11 97       	sbiw	r26, 0x01	; 1
+     fb6:	80 ff       	sbrs	r24, 0
+     fb8:	13 c0       	rjmp	.+38     	; 0xfe0 <processChords+0x46>
+		{
+			stringState[guitarString] &= ~1; //Set the last bit to zero
+     fba:	8e 7f       	andi	r24, 0xFE	; 254
+     fbc:	8d 93       	st	X+, r24
+     fbe:	9c 93       	st	X, r25
+			if (guitarString < 3)
+     fc0:	23 30       	cpi	r18, 0x03	; 3
+     fc2:	31 05       	cpc	r19, r1
+     fc4:	3c f4       	brge	.+14     	; 0xfd4 <processChords+0x3a>
+			{
+				data->downOn = 1;
+     fc6:	d8 01       	movw	r26, r16
+     fc8:	16 96       	adiw	r26, 0x06	; 6
+     fca:	4c 93       	st	X, r20
+     fcc:	16 97       	sbiw	r26, 0x06	; 6
+				data->upOn   = 0;
+     fce:	15 96       	adiw	r26, 0x05	; 5
+     fd0:	1c 92       	st	X, r1
+     fd2:	06 c0       	rjmp	.+12     	; 0xfe0 <processChords+0x46>
+			}
+			else
+			{
+				data->upOn   = 1;
+     fd4:	d8 01       	movw	r26, r16
+     fd6:	15 96       	adiw	r26, 0x05	; 5
+     fd8:	4c 93       	st	X, r20
+     fda:	15 97       	sbiw	r26, 0x05	; 5
+				data->downOn = 0;
+     fdc:	16 96       	adiw	r26, 0x06	; 6
+     fde:	1c 92       	st	X, r1
+
+void processChords(dataForController* data, int stringState[NUMBER_OF_STRINGS],
+									int buttonStringPatterns[][NUMBER_OF_STRINGS])
+{
+	// First take care of registering strumming
+	for (int guitarString = 0; guitarString < 6; guitarString++)
+     fe0:	2f 5f       	subi	r18, 0xFF	; 255
+     fe2:	3f 4f       	sbci	r19, 0xFF	; 255
+     fe4:	6e 5f       	subi	r22, 0xFE	; 254
+     fe6:	7f 4f       	sbci	r23, 0xFF	; 255
+     fe8:	26 30       	cpi	r18, 0x06	; 6
+     fea:	31 05       	cpc	r19, r1
+     fec:	01 f7       	brne	.-64     	; 0xfae <processChords+0x14>
+			}
+		}
+	}
+
+	// First, save us some trouble and see if we're not pressing anything at all..
+	if ((stringState[0] == 0b00000000) &&
+     fee:	40 81       	ld	r20, Z
+     ff0:	51 81       	ldd	r21, Z+1	; 0x01
+     ff2:	41 15       	cp	r20, r1
+     ff4:	51 05       	cpc	r21, r1
+     ff6:	a9 f4       	brne	.+42     	; 0x1022 <processChords+0x88>
+     ff8:	82 81       	ldd	r24, Z+2	; 0x02
+     ffa:	93 81       	ldd	r25, Z+3	; 0x03
+     ffc:	89 2b       	or	r24, r25
+     ffe:	89 f4       	brne	.+34     	; 0x1022 <processChords+0x88>
+    1000:	84 81       	ldd	r24, Z+4	; 0x04
+    1002:	95 81       	ldd	r25, Z+5	; 0x05
+    1004:	89 2b       	or	r24, r25
+    1006:	69 f4       	brne	.+26     	; 0x1022 <processChords+0x88>
+    1008:	86 81       	ldd	r24, Z+6	; 0x06
+    100a:	97 81       	ldd	r25, Z+7	; 0x07
+    100c:	89 2b       	or	r24, r25
+    100e:	49 f4       	brne	.+18     	; 0x1022 <processChords+0x88>
+    1010:	80 85       	ldd	r24, Z+8	; 0x08
+    1012:	91 85       	ldd	r25, Z+9	; 0x09
+    1014:	89 2b       	or	r24, r25
+    1016:	29 f4       	brne	.+10     	; 0x1022 <processChords+0x88>
+    1018:	82 85       	ldd	r24, Z+10	; 0x0a
+    101a:	93 85       	ldd	r25, Z+11	; 0x0b
+    101c:	89 2b       	or	r24, r25
+    101e:	09 f4       	brne	.+2      	; 0x1022 <processChords+0x88>
+    1020:	31 c2       	rjmp	.+1122   	; 0x1484 <processChords+0x4ea>
+		return;
+
+	// Now see if what's being played on the fretboard matches any of the button patterns in
+	//  buttonStringPatterns
+	// green
+	if(stringState[0] == buttonStringPatterns[0][0] &&
+    1022:	88 81       	ld	r24, Y
+    1024:	99 81       	ldd	r25, Y+1	; 0x01
+    1026:	48 17       	cp	r20, r24
+    1028:	59 07       	cpc	r21, r25
+    102a:	39 f5       	brne	.+78     	; 0x107a <processChords+0xe0>
+    102c:	22 81       	ldd	r18, Z+2	; 0x02
+    102e:	33 81       	ldd	r19, Z+3	; 0x03
+    1030:	8a 81       	ldd	r24, Y+2	; 0x02
+    1032:	9b 81       	ldd	r25, Y+3	; 0x03
+    1034:	28 17       	cp	r18, r24
+    1036:	39 07       	cpc	r19, r25
+    1038:	01 f5       	brne	.+64     	; 0x107a <processChords+0xe0>
+    103a:	24 81       	ldd	r18, Z+4	; 0x04
+    103c:	35 81       	ldd	r19, Z+5	; 0x05
+    103e:	8c 81       	ldd	r24, Y+4	; 0x04
+    1040:	9d 81       	ldd	r25, Y+5	; 0x05
+    1042:	28 17       	cp	r18, r24
+    1044:	39 07       	cpc	r19, r25
+    1046:	c9 f4       	brne	.+50     	; 0x107a <processChords+0xe0>
+    1048:	26 81       	ldd	r18, Z+6	; 0x06
+    104a:	37 81       	ldd	r19, Z+7	; 0x07
+    104c:	8e 81       	ldd	r24, Y+6	; 0x06
+    104e:	9f 81       	ldd	r25, Y+7	; 0x07
+    1050:	28 17       	cp	r18, r24
+    1052:	39 07       	cpc	r19, r25
+    1054:	91 f4       	brne	.+36     	; 0x107a <processChords+0xe0>
+    1056:	20 85       	ldd	r18, Z+8	; 0x08
+    1058:	31 85       	ldd	r19, Z+9	; 0x09
+    105a:	88 85       	ldd	r24, Y+8	; 0x08
+    105c:	99 85       	ldd	r25, Y+9	; 0x09
+    105e:	28 17       	cp	r18, r24
+    1060:	39 07       	cpc	r19, r25
+    1062:	59 f4       	brne	.+22     	; 0x107a <processChords+0xe0>
+    1064:	22 85       	ldd	r18, Z+10	; 0x0a
+    1066:	33 85       	ldd	r19, Z+11	; 0x0b
+    1068:	8a 85       	ldd	r24, Y+10	; 0x0a
+    106a:	9b 85       	ldd	r25, Y+11	; 0x0b
+    106c:	28 17       	cp	r18, r24
+    106e:	39 07       	cpc	r19, r25
+    1070:	21 f4       	brne	.+8      	; 0x107a <processChords+0xe0>
+	   stringState[2] == buttonStringPatterns[0][2] &&
+	   stringState[3] == buttonStringPatterns[0][3] &&
+	   stringState[4] == buttonStringPatterns[0][4] &&
+	   stringState[5] == buttonStringPatterns[0][5]  ) 
+		{
+			data->greenOn = 1;
+    1072:	81 e0       	ldi	r24, 0x01	; 1
+    1074:	f8 01       	movw	r30, r16
+    1076:	80 83       	st	Z, r24
+    1078:	05 c2       	rjmp	.+1034   	; 0x1484 <processChords+0x4ea>
+  		}
+	// red
+	else if(stringState[0] == buttonStringPatterns[1][0] &&
+    107a:	de 01       	movw	r26, r28
+    107c:	1c 96       	adiw	r26, 0x0c	; 12
+    107e:	8c 85       	ldd	r24, Y+12	; 0x0c
+    1080:	9d 85       	ldd	r25, Y+13	; 0x0d
+    1082:	48 17       	cp	r20, r24
+    1084:	59 07       	cpc	r21, r25
+    1086:	81 f5       	brne	.+96     	; 0x10e8 <processChords+0x14e>
+    1088:	22 81       	ldd	r18, Z+2	; 0x02
+    108a:	33 81       	ldd	r19, Z+3	; 0x03
+    108c:	12 96       	adiw	r26, 0x02	; 2
+    108e:	8d 91       	ld	r24, X+
+    1090:	9c 91       	ld	r25, X
+    1092:	13 97       	sbiw	r26, 0x03	; 3
+    1094:	28 17       	cp	r18, r24
+    1096:	39 07       	cpc	r19, r25
+    1098:	39 f5       	brne	.+78     	; 0x10e8 <processChords+0x14e>
+    109a:	24 81       	ldd	r18, Z+4	; 0x04
+    109c:	35 81       	ldd	r19, Z+5	; 0x05
+    109e:	14 96       	adiw	r26, 0x04	; 4
+    10a0:	8d 91       	ld	r24, X+
+    10a2:	9c 91       	ld	r25, X
+    10a4:	15 97       	sbiw	r26, 0x05	; 5
+    10a6:	28 17       	cp	r18, r24
+    10a8:	39 07       	cpc	r19, r25
+    10aa:	f1 f4       	brne	.+60     	; 0x10e8 <processChords+0x14e>
+    10ac:	26 81       	ldd	r18, Z+6	; 0x06
+    10ae:	37 81       	ldd	r19, Z+7	; 0x07
+    10b0:	16 96       	adiw	r26, 0x06	; 6
+    10b2:	8d 91       	ld	r24, X+
+    10b4:	9c 91       	ld	r25, X
+    10b6:	17 97       	sbiw	r26, 0x07	; 7
+    10b8:	28 17       	cp	r18, r24
+    10ba:	39 07       	cpc	r19, r25
+    10bc:	a9 f4       	brne	.+42     	; 0x10e8 <processChords+0x14e>
+    10be:	20 85       	ldd	r18, Z+8	; 0x08
+    10c0:	31 85       	ldd	r19, Z+9	; 0x09
+    10c2:	18 96       	adiw	r26, 0x08	; 8
+    10c4:	8d 91       	ld	r24, X+
+    10c6:	9c 91       	ld	r25, X
+    10c8:	19 97       	sbiw	r26, 0x09	; 9
+    10ca:	28 17       	cp	r18, r24
+    10cc:	39 07       	cpc	r19, r25
+    10ce:	61 f4       	brne	.+24     	; 0x10e8 <processChords+0x14e>
+    10d0:	22 85       	ldd	r18, Z+10	; 0x0a
+    10d2:	33 85       	ldd	r19, Z+11	; 0x0b
+    10d4:	1a 96       	adiw	r26, 0x0a	; 10
+    10d6:	8d 91       	ld	r24, X+
+    10d8:	9c 91       	ld	r25, X
+    10da:	1b 97       	sbiw	r26, 0x0b	; 11
+    10dc:	28 17       	cp	r18, r24
+    10de:	39 07       	cpc	r19, r25
+    10e0:	19 f4       	brne	.+6      	; 0x10e8 <processChords+0x14e>
+	   stringState[2] == buttonStringPatterns[1][2] &&
+	   stringState[3] == buttonStringPatterns[1][3] &&
+	   stringState[4] == buttonStringPatterns[1][4] &&
+	   stringState[5] == buttonStringPatterns[1][5]  ) 
+		{
+			data->redOn = 1;
+    10e2:	81 e0       	ldi	r24, 0x01	; 1
+    10e4:	d8 01       	movw	r26, r16
+    10e6:	dd c0       	rjmp	.+442    	; 0x12a2 <processChords+0x308>
+  		}
+
+	// yellow
+	else if(stringState[0] == buttonStringPatterns[2][0] &&
+    10e8:	de 01       	movw	r26, r28
+    10ea:	58 96       	adiw	r26, 0x18	; 24
+    10ec:	88 8d       	ldd	r24, Y+24	; 0x18
+    10ee:	99 8d       	ldd	r25, Y+25	; 0x19
+    10f0:	48 17       	cp	r20, r24
+    10f2:	59 07       	cpc	r21, r25
+    10f4:	81 f5       	brne	.+96     	; 0x1156 <processChords+0x1bc>
+    10f6:	22 81       	ldd	r18, Z+2	; 0x02
+    10f8:	33 81       	ldd	r19, Z+3	; 0x03
+    10fa:	12 96       	adiw	r26, 0x02	; 2
+    10fc:	8d 91       	ld	r24, X+
+    10fe:	9c 91       	ld	r25, X
+    1100:	13 97       	sbiw	r26, 0x03	; 3
+    1102:	28 17       	cp	r18, r24
+    1104:	39 07       	cpc	r19, r25
+    1106:	39 f5       	brne	.+78     	; 0x1156 <processChords+0x1bc>
+    1108:	24 81       	ldd	r18, Z+4	; 0x04
+    110a:	35 81       	ldd	r19, Z+5	; 0x05
+    110c:	14 96       	adiw	r26, 0x04	; 4
+    110e:	8d 91       	ld	r24, X+
+    1110:	9c 91       	ld	r25, X
+    1112:	15 97       	sbiw	r26, 0x05	; 5
+    1114:	28 17       	cp	r18, r24
+    1116:	39 07       	cpc	r19, r25
+    1118:	f1 f4       	brne	.+60     	; 0x1156 <processChords+0x1bc>
+    111a:	26 81       	ldd	r18, Z+6	; 0x06
+    111c:	37 81       	ldd	r19, Z+7	; 0x07
+    111e:	16 96       	adiw	r26, 0x06	; 6
+    1120:	8d 91       	ld	r24, X+
+    1122:	9c 91       	ld	r25, X
+    1124:	17 97       	sbiw	r26, 0x07	; 7
+    1126:	28 17       	cp	r18, r24
+    1128:	39 07       	cpc	r19, r25
+    112a:	a9 f4       	brne	.+42     	; 0x1156 <processChords+0x1bc>
+    112c:	20 85       	ldd	r18, Z+8	; 0x08
+    112e:	31 85       	ldd	r19, Z+9	; 0x09
+    1130:	18 96       	adiw	r26, 0x08	; 8
+    1132:	8d 91       	ld	r24, X+
+    1134:	9c 91       	ld	r25, X
+    1136:	19 97       	sbiw	r26, 0x09	; 9
+    1138:	28 17       	cp	r18, r24
+    113a:	39 07       	cpc	r19, r25
+    113c:	61 f4       	brne	.+24     	; 0x1156 <processChords+0x1bc>
+    113e:	22 85       	ldd	r18, Z+10	; 0x0a
+    1140:	33 85       	ldd	r19, Z+11	; 0x0b
+    1142:	1a 96       	adiw	r26, 0x0a	; 10
+    1144:	8d 91       	ld	r24, X+
+    1146:	9c 91       	ld	r25, X
+    1148:	1b 97       	sbiw	r26, 0x0b	; 11
+    114a:	28 17       	cp	r18, r24
+    114c:	39 07       	cpc	r19, r25
+    114e:	19 f4       	brne	.+6      	; 0x1156 <processChords+0x1bc>
+	   stringState[2] == buttonStringPatterns[2][2] &&
+	   stringState[3] == buttonStringPatterns[2][3] &&
+	   stringState[4] == buttonStringPatterns[2][4] &&
+	   stringState[5] == buttonStringPatterns[2][5]  ) 
+		{
+			 data->yellowOn = 1;
+    1150:	81 e0       	ldi	r24, 0x01	; 1
+    1152:	f8 01       	movw	r30, r16
+    1154:	58 c1       	rjmp	.+688    	; 0x1406 <processChords+0x46c>
+  		}
+	// blue
+	else if(stringState[0] == buttonStringPatterns[3][0] &&
+    1156:	de 01       	movw	r26, r28
+    1158:	94 96       	adiw	r26, 0x24	; 36
+    115a:	8c a1       	ldd	r24, Y+36	; 0x24
+    115c:	9d a1       	ldd	r25, Y+37	; 0x25
+    115e:	48 17       	cp	r20, r24
+    1160:	59 07       	cpc	r21, r25
+    1162:	81 f5       	brne	.+96     	; 0x11c4 <processChords+0x22a>
+    1164:	22 81       	ldd	r18, Z+2	; 0x02
+    1166:	33 81       	ldd	r19, Z+3	; 0x03
+    1168:	12 96       	adiw	r26, 0x02	; 2
+    116a:	8d 91       	ld	r24, X+
+    116c:	9c 91       	ld	r25, X
+    116e:	13 97       	sbiw	r26, 0x03	; 3
+    1170:	28 17       	cp	r18, r24
+    1172:	39 07       	cpc	r19, r25
+    1174:	39 f5       	brne	.+78     	; 0x11c4 <processChords+0x22a>
+    1176:	24 81       	ldd	r18, Z+4	; 0x04
+    1178:	35 81       	ldd	r19, Z+5	; 0x05
+    117a:	14 96       	adiw	r26, 0x04	; 4
+    117c:	8d 91       	ld	r24, X+
+    117e:	9c 91       	ld	r25, X
+    1180:	15 97       	sbiw	r26, 0x05	; 5
+    1182:	28 17       	cp	r18, r24
+    1184:	39 07       	cpc	r19, r25
+    1186:	f1 f4       	brne	.+60     	; 0x11c4 <processChords+0x22a>
+    1188:	26 81       	ldd	r18, Z+6	; 0x06
+    118a:	37 81       	ldd	r19, Z+7	; 0x07
+    118c:	16 96       	adiw	r26, 0x06	; 6
+    118e:	8d 91       	ld	r24, X+
+    1190:	9c 91       	ld	r25, X
+    1192:	17 97       	sbiw	r26, 0x07	; 7
+    1194:	28 17       	cp	r18, r24
+    1196:	39 07       	cpc	r19, r25
+    1198:	a9 f4       	brne	.+42     	; 0x11c4 <processChords+0x22a>
+    119a:	20 85       	ldd	r18, Z+8	; 0x08
+    119c:	31 85       	ldd	r19, Z+9	; 0x09
+    119e:	18 96       	adiw	r26, 0x08	; 8
+    11a0:	8d 91       	ld	r24, X+
+    11a2:	9c 91       	ld	r25, X
+    11a4:	19 97       	sbiw	r26, 0x09	; 9
+    11a6:	28 17       	cp	r18, r24
+    11a8:	39 07       	cpc	r19, r25
+    11aa:	61 f4       	brne	.+24     	; 0x11c4 <processChords+0x22a>
+    11ac:	22 85       	ldd	r18, Z+10	; 0x0a
+    11ae:	33 85       	ldd	r19, Z+11	; 0x0b
+    11b0:	1a 96       	adiw	r26, 0x0a	; 10
+    11b2:	8d 91       	ld	r24, X+
+    11b4:	9c 91       	ld	r25, X
+    11b6:	1b 97       	sbiw	r26, 0x0b	; 11
+    11b8:	28 17       	cp	r18, r24
+    11ba:	39 07       	cpc	r19, r25
+    11bc:	19 f4       	brne	.+6      	; 0x11c4 <processChords+0x22a>
+	   stringState[2] == buttonStringPatterns[3][2] &&
+	   stringState[3] == buttonStringPatterns[3][3] &&
+	   stringState[4] == buttonStringPatterns[3][4] &&
+	   stringState[5] == buttonStringPatterns[3][5]  ) 
+		{
+			 data->blueOn = 1;
+    11be:	81 e0       	ldi	r24, 0x01	; 1
+    11c0:	d8 01       	movw	r26, r16
+    11c2:	5e c1       	rjmp	.+700    	; 0x1480 <processChords+0x4e6>
+  		}
+	// orange
+	else if(stringState[0] == buttonStringPatterns[4][0] &&
+    11c4:	de 01       	movw	r26, r28
+    11c6:	d0 96       	adiw	r26, 0x30	; 48
+    11c8:	88 a9       	ldd	r24, Y+48	; 0x30
+    11ca:	99 a9       	ldd	r25, Y+49	; 0x31
+    11cc:	48 17       	cp	r20, r24
+    11ce:	59 07       	cpc	r21, r25
+    11d0:	89 f5       	brne	.+98     	; 0x1234 <processChords+0x29a>
+    11d2:	22 81       	ldd	r18, Z+2	; 0x02
+    11d4:	33 81       	ldd	r19, Z+3	; 0x03
+    11d6:	12 96       	adiw	r26, 0x02	; 2
+    11d8:	8d 91       	ld	r24, X+
+    11da:	9c 91       	ld	r25, X
+    11dc:	13 97       	sbiw	r26, 0x03	; 3
+    11de:	28 17       	cp	r18, r24
+    11e0:	39 07       	cpc	r19, r25
+    11e2:	41 f5       	brne	.+80     	; 0x1234 <processChords+0x29a>
+    11e4:	24 81       	ldd	r18, Z+4	; 0x04
+    11e6:	35 81       	ldd	r19, Z+5	; 0x05
+    11e8:	14 96       	adiw	r26, 0x04	; 4
+    11ea:	8d 91       	ld	r24, X+
+    11ec:	9c 91       	ld	r25, X
+    11ee:	15 97       	sbiw	r26, 0x05	; 5
+    11f0:	28 17       	cp	r18, r24
+    11f2:	39 07       	cpc	r19, r25
+    11f4:	f9 f4       	brne	.+62     	; 0x1234 <processChords+0x29a>
+    11f6:	26 81       	ldd	r18, Z+6	; 0x06
+    11f8:	37 81       	ldd	r19, Z+7	; 0x07
+    11fa:	16 96       	adiw	r26, 0x06	; 6
+    11fc:	8d 91       	ld	r24, X+
+    11fe:	9c 91       	ld	r25, X
+    1200:	17 97       	sbiw	r26, 0x07	; 7
+    1202:	28 17       	cp	r18, r24
+    1204:	39 07       	cpc	r19, r25
+    1206:	b1 f4       	brne	.+44     	; 0x1234 <processChords+0x29a>
+    1208:	20 85       	ldd	r18, Z+8	; 0x08
+    120a:	31 85       	ldd	r19, Z+9	; 0x09
+    120c:	18 96       	adiw	r26, 0x08	; 8
+    120e:	8d 91       	ld	r24, X+
+    1210:	9c 91       	ld	r25, X
+    1212:	19 97       	sbiw	r26, 0x09	; 9
+    1214:	28 17       	cp	r18, r24
+    1216:	39 07       	cpc	r19, r25
+    1218:	69 f4       	brne	.+26     	; 0x1234 <processChords+0x29a>
+    121a:	22 85       	ldd	r18, Z+10	; 0x0a
+    121c:	33 85       	ldd	r19, Z+11	; 0x0b
+    121e:	1a 96       	adiw	r26, 0x0a	; 10
+    1220:	8d 91       	ld	r24, X+
+    1222:	9c 91       	ld	r25, X
+    1224:	1b 97       	sbiw	r26, 0x0b	; 11
+    1226:	28 17       	cp	r18, r24
+    1228:	39 07       	cpc	r19, r25
+    122a:	21 f4       	brne	.+8      	; 0x1234 <processChords+0x29a>
+	   stringState[2] == buttonStringPatterns[4][2] &&
+	   stringState[3] == buttonStringPatterns[4][3] &&
+	   stringState[4] == buttonStringPatterns[4][4] &&
+	   stringState[5] == buttonStringPatterns[4][5]  ) 
+		{
+			 data->orangeOn = 1;
+    122c:	81 e0       	ldi	r24, 0x01	; 1
+    122e:	f8 01       	movw	r30, r16
+    1230:	84 83       	std	Z+4, r24	; 0x04
+    1232:	28 c1       	rjmp	.+592    	; 0x1484 <processChords+0x4ea>
+  		}
+	//Green and Red
+	else if(stringState[0] == buttonStringPatterns[5][0] &&
+    1234:	de 01       	movw	r26, r28
+    1236:	dc 96       	adiw	r26, 0x3c	; 60
+    1238:	8c ad       	ldd	r24, Y+60	; 0x3c
+    123a:	9d ad       	ldd	r25, Y+61	; 0x3d
+    123c:	48 17       	cp	r20, r24
+    123e:	59 07       	cpc	r21, r25
+    1240:	99 f5       	brne	.+102    	; 0x12a8 <processChords+0x30e>
+    1242:	22 81       	ldd	r18, Z+2	; 0x02
+    1244:	33 81       	ldd	r19, Z+3	; 0x03
+    1246:	12 96       	adiw	r26, 0x02	; 2
+    1248:	8d 91       	ld	r24, X+
+    124a:	9c 91       	ld	r25, X
+    124c:	13 97       	sbiw	r26, 0x03	; 3
+    124e:	28 17       	cp	r18, r24
+    1250:	39 07       	cpc	r19, r25
+    1252:	51 f5       	brne	.+84     	; 0x12a8 <processChords+0x30e>
+    1254:	24 81       	ldd	r18, Z+4	; 0x04
+    1256:	35 81       	ldd	r19, Z+5	; 0x05
+    1258:	14 96       	adiw	r26, 0x04	; 4
+    125a:	8d 91       	ld	r24, X+
+    125c:	9c 91       	ld	r25, X
+    125e:	15 97       	sbiw	r26, 0x05	; 5
+    1260:	28 17       	cp	r18, r24
+    1262:	39 07       	cpc	r19, r25
+    1264:	09 f5       	brne	.+66     	; 0x12a8 <processChords+0x30e>
+    1266:	26 81       	ldd	r18, Z+6	; 0x06
+    1268:	37 81       	ldd	r19, Z+7	; 0x07
+    126a:	16 96       	adiw	r26, 0x06	; 6
+    126c:	8d 91       	ld	r24, X+
+    126e:	9c 91       	ld	r25, X
+    1270:	17 97       	sbiw	r26, 0x07	; 7
+    1272:	28 17       	cp	r18, r24
+    1274:	39 07       	cpc	r19, r25
+    1276:	c1 f4       	brne	.+48     	; 0x12a8 <processChords+0x30e>
+    1278:	20 85       	ldd	r18, Z+8	; 0x08
+    127a:	31 85       	ldd	r19, Z+9	; 0x09
+    127c:	18 96       	adiw	r26, 0x08	; 8
+    127e:	8d 91       	ld	r24, X+
+    1280:	9c 91       	ld	r25, X
+    1282:	19 97       	sbiw	r26, 0x09	; 9
+    1284:	28 17       	cp	r18, r24
+    1286:	39 07       	cpc	r19, r25
+    1288:	79 f4       	brne	.+30     	; 0x12a8 <processChords+0x30e>
+    128a:	22 85       	ldd	r18, Z+10	; 0x0a
+    128c:	33 85       	ldd	r19, Z+11	; 0x0b
+    128e:	1a 96       	adiw	r26, 0x0a	; 10
+    1290:	8d 91       	ld	r24, X+
+    1292:	9c 91       	ld	r25, X
+    1294:	1b 97       	sbiw	r26, 0x0b	; 11
+    1296:	28 17       	cp	r18, r24
+    1298:	39 07       	cpc	r19, r25
+    129a:	31 f4       	brne	.+12     	; 0x12a8 <processChords+0x30e>
+	   stringState[2] == buttonStringPatterns[5][2] &&
+	   stringState[3] == buttonStringPatterns[5][3] &&
+	   stringState[4] == buttonStringPatterns[5][4] &&
+	   stringState[5] == buttonStringPatterns[5][5]  ) 
+		{
+			data->greenOn = 1;
+    129c:	81 e0       	ldi	r24, 0x01	; 1
+    129e:	d8 01       	movw	r26, r16
+    12a0:	8c 93       	st	X, r24
+			data->redOn = 1;
+    12a2:	11 96       	adiw	r26, 0x01	; 1
+    12a4:	8c 93       	st	X, r24
+    12a6:	ee c0       	rjmp	.+476    	; 0x1484 <processChords+0x4ea>
+  		}
+	//Red and Yellow
+	else if(stringState[0] == buttonStringPatterns[6][0] &&
+    12a8:	de 01       	movw	r26, r28
+    12aa:	a8 5b       	subi	r26, 0xB8	; 184
+    12ac:	bf 4f       	sbci	r27, 0xFF	; 255
+    12ae:	8d 91       	ld	r24, X+
+    12b0:	9c 91       	ld	r25, X
+    12b2:	11 97       	sbiw	r26, 0x01	; 1
+    12b4:	48 17       	cp	r20, r24
+    12b6:	59 07       	cpc	r21, r25
+    12b8:	89 f5       	brne	.+98     	; 0x131c <processChords+0x382>
+    12ba:	22 81       	ldd	r18, Z+2	; 0x02
+    12bc:	33 81       	ldd	r19, Z+3	; 0x03
+    12be:	12 96       	adiw	r26, 0x02	; 2
+    12c0:	8d 91       	ld	r24, X+
+    12c2:	9c 91       	ld	r25, X
+    12c4:	13 97       	sbiw	r26, 0x03	; 3
+    12c6:	28 17       	cp	r18, r24
+    12c8:	39 07       	cpc	r19, r25
+    12ca:	41 f5       	brne	.+80     	; 0x131c <processChords+0x382>
+    12cc:	24 81       	ldd	r18, Z+4	; 0x04
+    12ce:	35 81       	ldd	r19, Z+5	; 0x05
+    12d0:	14 96       	adiw	r26, 0x04	; 4
+    12d2:	8d 91       	ld	r24, X+
+    12d4:	9c 91       	ld	r25, X
+    12d6:	15 97       	sbiw	r26, 0x05	; 5
+    12d8:	28 17       	cp	r18, r24
+    12da:	39 07       	cpc	r19, r25
+    12dc:	f9 f4       	brne	.+62     	; 0x131c <processChords+0x382>
+    12de:	26 81       	ldd	r18, Z+6	; 0x06
+    12e0:	37 81       	ldd	r19, Z+7	; 0x07
+    12e2:	16 96       	adiw	r26, 0x06	; 6
+    12e4:	8d 91       	ld	r24, X+
+    12e6:	9c 91       	ld	r25, X
+    12e8:	17 97       	sbiw	r26, 0x07	; 7
+    12ea:	28 17       	cp	r18, r24
+    12ec:	39 07       	cpc	r19, r25
+    12ee:	b1 f4       	brne	.+44     	; 0x131c <processChords+0x382>
+    12f0:	20 85       	ldd	r18, Z+8	; 0x08
+    12f2:	31 85       	ldd	r19, Z+9	; 0x09
+    12f4:	18 96       	adiw	r26, 0x08	; 8
+    12f6:	8d 91       	ld	r24, X+
+    12f8:	9c 91       	ld	r25, X
+    12fa:	19 97       	sbiw	r26, 0x09	; 9
+    12fc:	28 17       	cp	r18, r24
+    12fe:	39 07       	cpc	r19, r25
+    1300:	69 f4       	brne	.+26     	; 0x131c <processChords+0x382>
+    1302:	22 85       	ldd	r18, Z+10	; 0x0a
+    1304:	33 85       	ldd	r19, Z+11	; 0x0b
+    1306:	1a 96       	adiw	r26, 0x0a	; 10
+    1308:	8d 91       	ld	r24, X+
+    130a:	9c 91       	ld	r25, X
+    130c:	1b 97       	sbiw	r26, 0x0b	; 11
+    130e:	28 17       	cp	r18, r24
+    1310:	39 07       	cpc	r19, r25
+    1312:	21 f4       	brne	.+8      	; 0x131c <processChords+0x382>
+	   stringState[2] == buttonStringPatterns[6][2] &&
+	   stringState[3] == buttonStringPatterns[6][3] &&
+	   stringState[4] == buttonStringPatterns[6][4] &&
+	   stringState[5] == buttonStringPatterns[6][5]  ) 
+		{
+			data->redOn = 1;
+    1314:	81 e0       	ldi	r24, 0x01	; 1
+    1316:	f8 01       	movw	r30, r16
+    1318:	81 83       	std	Z+1, r24	; 0x01
+    131a:	75 c0       	rjmp	.+234    	; 0x1406 <processChords+0x46c>
+			data->yellowOn = 1;
+  		}
+	// Yellow and Blue
+	else if(stringState[0] == buttonStringPatterns[7][0] &&
+    131c:	de 01       	movw	r26, r28
+    131e:	ac 5a       	subi	r26, 0xAC	; 172
+    1320:	bf 4f       	sbci	r27, 0xFF	; 255
+    1322:	8d 91       	ld	r24, X+
+    1324:	9c 91       	ld	r25, X
+    1326:	11 97       	sbiw	r26, 0x01	; 1
+    1328:	48 17       	cp	r20, r24
+    132a:	59 07       	cpc	r21, r25
+    132c:	99 f5       	brne	.+102    	; 0x1394 <processChords+0x3fa>
+    132e:	22 81       	ldd	r18, Z+2	; 0x02
+    1330:	33 81       	ldd	r19, Z+3	; 0x03
+    1332:	12 96       	adiw	r26, 0x02	; 2
+    1334:	8d 91       	ld	r24, X+
+    1336:	9c 91       	ld	r25, X
+    1338:	13 97       	sbiw	r26, 0x03	; 3
+    133a:	28 17       	cp	r18, r24
+    133c:	39 07       	cpc	r19, r25
+    133e:	51 f5       	brne	.+84     	; 0x1394 <processChords+0x3fa>
+    1340:	24 81       	ldd	r18, Z+4	; 0x04
+    1342:	35 81       	ldd	r19, Z+5	; 0x05
+    1344:	14 96       	adiw	r26, 0x04	; 4
+    1346:	8d 91       	ld	r24, X+
+    1348:	9c 91       	ld	r25, X
+    134a:	15 97       	sbiw	r26, 0x05	; 5
+    134c:	28 17       	cp	r18, r24
+    134e:	39 07       	cpc	r19, r25
+    1350:	09 f5       	brne	.+66     	; 0x1394 <processChords+0x3fa>
+    1352:	26 81       	ldd	r18, Z+6	; 0x06
+    1354:	37 81       	ldd	r19, Z+7	; 0x07
+    1356:	16 96       	adiw	r26, 0x06	; 6
+    1358:	8d 91       	ld	r24, X+
+    135a:	9c 91       	ld	r25, X
+    135c:	17 97       	sbiw	r26, 0x07	; 7
+    135e:	28 17       	cp	r18, r24
+    1360:	39 07       	cpc	r19, r25
+    1362:	c1 f4       	brne	.+48     	; 0x1394 <processChords+0x3fa>
+    1364:	20 85       	ldd	r18, Z+8	; 0x08
+    1366:	31 85       	ldd	r19, Z+9	; 0x09
+    1368:	18 96       	adiw	r26, 0x08	; 8
+    136a:	8d 91       	ld	r24, X+
+    136c:	9c 91       	ld	r25, X
+    136e:	19 97       	sbiw	r26, 0x09	; 9
+    1370:	28 17       	cp	r18, r24
+    1372:	39 07       	cpc	r19, r25
+    1374:	79 f4       	brne	.+30     	; 0x1394 <processChords+0x3fa>
+    1376:	22 85       	ldd	r18, Z+10	; 0x0a
+    1378:	33 85       	ldd	r19, Z+11	; 0x0b
+    137a:	1a 96       	adiw	r26, 0x0a	; 10
+    137c:	8d 91       	ld	r24, X+
+    137e:	9c 91       	ld	r25, X
+    1380:	1b 97       	sbiw	r26, 0x0b	; 11
+    1382:	28 17       	cp	r18, r24
+    1384:	39 07       	cpc	r19, r25
+    1386:	31 f4       	brne	.+12     	; 0x1394 <processChords+0x3fa>
+	   stringState[2] == buttonStringPatterns[7][2] &&
+	   stringState[3] == buttonStringPatterns[7][3] &&
+	   stringState[4] == buttonStringPatterns[7][4] &&
+	   stringState[5] == buttonStringPatterns[7][5]  ) 
+		{
+			 data->yellowOn = 1;
+    1388:	81 e0       	ldi	r24, 0x01	; 1
+    138a:	d8 01       	movw	r26, r16
+    138c:	12 96       	adiw	r26, 0x02	; 2
+    138e:	8c 93       	st	X, r24
+    1390:	12 97       	sbiw	r26, 0x02	; 2
+    1392:	76 c0       	rjmp	.+236    	; 0x1480 <processChords+0x4e6>
+			 data->blueOn = 1;
+  		}
+	// Green and Yellow
+	else if(stringState[0] == buttonStringPatterns[8][0] &&
+    1394:	de 01       	movw	r26, r28
+    1396:	a0 5a       	subi	r26, 0xA0	; 160
+    1398:	bf 4f       	sbci	r27, 0xFF	; 255
+    139a:	8d 91       	ld	r24, X+
+    139c:	9c 91       	ld	r25, X
+    139e:	11 97       	sbiw	r26, 0x01	; 1
+    13a0:	48 17       	cp	r20, r24
+    13a2:	59 07       	cpc	r21, r25
+    13a4:	91 f5       	brne	.+100    	; 0x140a <processChords+0x470>
+    13a6:	22 81       	ldd	r18, Z+2	; 0x02
+    13a8:	33 81       	ldd	r19, Z+3	; 0x03
+    13aa:	12 96       	adiw	r26, 0x02	; 2
+    13ac:	8d 91       	ld	r24, X+
+    13ae:	9c 91       	ld	r25, X
+    13b0:	13 97       	sbiw	r26, 0x03	; 3
+    13b2:	28 17       	cp	r18, r24
+    13b4:	39 07       	cpc	r19, r25
+    13b6:	49 f5       	brne	.+82     	; 0x140a <processChords+0x470>
+    13b8:	24 81       	ldd	r18, Z+4	; 0x04
+    13ba:	35 81       	ldd	r19, Z+5	; 0x05
+    13bc:	14 96       	adiw	r26, 0x04	; 4
+    13be:	8d 91       	ld	r24, X+
+    13c0:	9c 91       	ld	r25, X
+    13c2:	15 97       	sbiw	r26, 0x05	; 5
+    13c4:	28 17       	cp	r18, r24
+    13c6:	39 07       	cpc	r19, r25
+    13c8:	01 f5       	brne	.+64     	; 0x140a <processChords+0x470>
+    13ca:	26 81       	ldd	r18, Z+6	; 0x06
+    13cc:	37 81       	ldd	r19, Z+7	; 0x07
+    13ce:	16 96       	adiw	r26, 0x06	; 6
+    13d0:	8d 91       	ld	r24, X+
+    13d2:	9c 91       	ld	r25, X
+    13d4:	17 97       	sbiw	r26, 0x07	; 7
+    13d6:	28 17       	cp	r18, r24
+    13d8:	39 07       	cpc	r19, r25
+    13da:	b9 f4       	brne	.+46     	; 0x140a <processChords+0x470>
+    13dc:	20 85       	ldd	r18, Z+8	; 0x08
+    13de:	31 85       	ldd	r19, Z+9	; 0x09
+    13e0:	18 96       	adiw	r26, 0x08	; 8
+    13e2:	8d 91       	ld	r24, X+
+    13e4:	9c 91       	ld	r25, X
+    13e6:	19 97       	sbiw	r26, 0x09	; 9
+    13e8:	28 17       	cp	r18, r24
+    13ea:	39 07       	cpc	r19, r25
+    13ec:	71 f4       	brne	.+28     	; 0x140a <processChords+0x470>
+    13ee:	22 85       	ldd	r18, Z+10	; 0x0a
+    13f0:	33 85       	ldd	r19, Z+11	; 0x0b
+    13f2:	1a 96       	adiw	r26, 0x0a	; 10
+    13f4:	8d 91       	ld	r24, X+
+    13f6:	9c 91       	ld	r25, X
+    13f8:	1b 97       	sbiw	r26, 0x0b	; 11
+    13fa:	28 17       	cp	r18, r24
+    13fc:	39 07       	cpc	r19, r25
+    13fe:	29 f4       	brne	.+10     	; 0x140a <processChords+0x470>
+	   stringState[2] == buttonStringPatterns[8][2] &&
+	   stringState[3] == buttonStringPatterns[8][3] &&
+	   stringState[4] == buttonStringPatterns[8][4] &&
+	   stringState[5] == buttonStringPatterns[8][5]  ) 
+		{
+			 data->greenOn = 1;
+    1400:	81 e0       	ldi	r24, 0x01	; 1
+    1402:	f8 01       	movw	r30, r16
+    1404:	80 83       	st	Z, r24
+			 data->yellowOn = 1;
+    1406:	82 83       	std	Z+2, r24	; 0x02
+    1408:	3d c0       	rjmp	.+122    	; 0x1484 <processChords+0x4ea>
+  		}
+	// Red and Blue
+	else if(stringState[0] == buttonStringPatterns[9][0] &&
+    140a:	de 01       	movw	r26, r28
+    140c:	a4 59       	subi	r26, 0x94	; 148
+    140e:	bf 4f       	sbci	r27, 0xFF	; 255
+    1410:	8d 91       	ld	r24, X+
+    1412:	9c 91       	ld	r25, X
+    1414:	11 97       	sbiw	r26, 0x01	; 1
+    1416:	48 17       	cp	r20, r24
+    1418:	59 07       	cpc	r21, r25
+    141a:	a1 f5       	brne	.+104    	; 0x1484 <processChords+0x4ea>
+    141c:	22 81       	ldd	r18, Z+2	; 0x02
+    141e:	33 81       	ldd	r19, Z+3	; 0x03
+    1420:	12 96       	adiw	r26, 0x02	; 2
+    1422:	8d 91       	ld	r24, X+
+    1424:	9c 91       	ld	r25, X
+    1426:	13 97       	sbiw	r26, 0x03	; 3
+    1428:	28 17       	cp	r18, r24
+    142a:	39 07       	cpc	r19, r25
+    142c:	59 f5       	brne	.+86     	; 0x1484 <processChords+0x4ea>
+    142e:	24 81       	ldd	r18, Z+4	; 0x04
+    1430:	35 81       	ldd	r19, Z+5	; 0x05
+    1432:	14 96       	adiw	r26, 0x04	; 4
+    1434:	8d 91       	ld	r24, X+
+    1436:	9c 91       	ld	r25, X
+    1438:	15 97       	sbiw	r26, 0x05	; 5
+    143a:	28 17       	cp	r18, r24
+    143c:	39 07       	cpc	r19, r25
+    143e:	11 f5       	brne	.+68     	; 0x1484 <processChords+0x4ea>
+    1440:	26 81       	ldd	r18, Z+6	; 0x06
+    1442:	37 81       	ldd	r19, Z+7	; 0x07
+    1444:	16 96       	adiw	r26, 0x06	; 6
+    1446:	8d 91       	ld	r24, X+
+    1448:	9c 91       	ld	r25, X
+    144a:	17 97       	sbiw	r26, 0x07	; 7
+    144c:	28 17       	cp	r18, r24
+    144e:	39 07       	cpc	r19, r25
+    1450:	c9 f4       	brne	.+50     	; 0x1484 <processChords+0x4ea>
+    1452:	20 85       	ldd	r18, Z+8	; 0x08
+    1454:	31 85       	ldd	r19, Z+9	; 0x09
+    1456:	18 96       	adiw	r26, 0x08	; 8
+    1458:	8d 91       	ld	r24, X+
+    145a:	9c 91       	ld	r25, X
+    145c:	19 97       	sbiw	r26, 0x09	; 9
+    145e:	28 17       	cp	r18, r24
+    1460:	39 07       	cpc	r19, r25
+    1462:	81 f4       	brne	.+32     	; 0x1484 <processChords+0x4ea>
+    1464:	22 85       	ldd	r18, Z+10	; 0x0a
+    1466:	33 85       	ldd	r19, Z+11	; 0x0b
+    1468:	1a 96       	adiw	r26, 0x0a	; 10
+    146a:	8d 91       	ld	r24, X+
+    146c:	9c 91       	ld	r25, X
+    146e:	1b 97       	sbiw	r26, 0x0b	; 11
+    1470:	28 17       	cp	r18, r24
+    1472:	39 07       	cpc	r19, r25
+    1474:	39 f4       	brne	.+14     	; 0x1484 <processChords+0x4ea>
+	   stringState[2] == buttonStringPatterns[9][2] &&
+	   stringState[3] == buttonStringPatterns[9][3] &&
+	   stringState[4] == buttonStringPatterns[9][4] &&
+	   stringState[5] == buttonStringPatterns[9][5]  ) 
+		{
+			 data->redOn = 1;
+    1476:	81 e0       	ldi	r24, 0x01	; 1
+    1478:	d8 01       	movw	r26, r16
+    147a:	11 96       	adiw	r26, 0x01	; 1
+    147c:	8c 93       	st	X, r24
+    147e:	11 97       	sbiw	r26, 0x01	; 1
+			 data->blueOn = 1;
+    1480:	13 96       	adiw	r26, 0x03	; 3
+    1482:	8c 93       	st	X, r24
+  		}
+
+
+
+	return;
+}
+    1484:	df 91       	pop	r29
+    1486:	cf 91       	pop	r28
+    1488:	1f 91       	pop	r17
+    148a:	0f 91       	pop	r16
+    148c:	08 95       	ret
+
+0000148e <processNotes>:
+
+void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
+									int buttonStringPatterns[][NUMBER_OF_STRINGS])
+{
+    148e:	ef 92       	push	r14
+    1490:	ff 92       	push	r15
+    1492:	0f 93       	push	r16
+    1494:	1f 93       	push	r17
+    1496:	cf 93       	push	r28
+    1498:	df 93       	push	r29
+    149a:	fc 01       	movw	r30, r24
+	/* If we're playing with notes on a scale, then we have to figure out if the proper note is being
+	   played, and also if we strummed the correct string.
+	 */
+	// First thing, we need to reset the strumming code, since we need to check and see if we 
+	//  strummed on the correct string or not
+	data->upOn = 0;
+    149c:	15 82       	std	Z+5, r1	; 0x05
+	data->downOn = 0;
+    149e:	16 82       	std	Z+6, r1	; 0x06
+    14a0:	db 01       	movw	r26, r22
+    14a2:	7a 01       	movw	r14, r20
+    14a4:	ba 01       	movw	r22, r20
+    14a6:	6c 5d       	subi	r22, 0xDC	; 220
+    14a8:	7f 4f       	sbci	r23, 0xFF	; 255
+    14aa:	4f ef       	ldi	r20, 0xFF	; 255
+    14ac:	00 e0       	ldi	r16, 0x00	; 0
+    14ae:	50 e0       	ldi	r21, 0x00	; 0
+					buttonPressed = 1;
+					}				
+				if (stringState[i] == buttonStringPatterns[4][i] && 
+										buttonStringPatterns[4][i] != 0)
+				{
+					data->orangeOn =  1;
+    14b0:	11 e0       	ldi	r17, 0x01	; 1
+	char strumOn = -1; // This holds which string the pick is strumming
+	char buttonPressed = 0;
+	char strumPressed  = 0;
+	for (int i = 0; i < 6; i++)
+	{
+		if (stringState[i] != 0) // Only look at strings that are being touched or strummed
+    14b2:	8d 91       	ld	r24, X+
+    14b4:	9c 91       	ld	r25, X
+    14b6:	11 97       	sbiw	r26, 0x01	; 1
+    14b8:	00 97       	sbiw	r24, 0x00	; 0
+    14ba:	09 f4       	brne	.+2      	; 0x14be <processNotes+0x30>
+    14bc:	7c c0       	rjmp	.+248    	; 0x15b6 <processNotes+0x128>
+		{
+			// Check for open strings being strummed first
+			if (stringState[i] == 1) // This means we're strumming an open string
+    14be:	81 30       	cpi	r24, 0x01	; 1
+    14c0:	91 05       	cpc	r25, r1
+    14c2:	a1 f5       	brne	.+104    	; 0x152c <processNotes+0x9e>
+			{
+				if (stringState[i] == buttonStringPatterns[0][i])
+    14c4:	e7 01       	movw	r28, r14
+    14c6:	88 81       	ld	r24, Y
+    14c8:	99 81       	ldd	r25, Y+1	; 0x01
+    14ca:	01 97       	sbiw	r24, 0x01	; 1
+    14cc:	11 f4       	brne	.+4      	; 0x14d2 <processNotes+0x44>
+				{
+					strumOn = i;
+					data->greenOn =  1;	
+    14ce:	10 83       	st	Z, r17
+    14d0:	45 2f       	mov	r20, r21
+				}
+				if (stringState[i] == buttonStringPatterns[1][i])
+    14d2:	2d 91       	ld	r18, X+
+    14d4:	3c 91       	ld	r19, X
+    14d6:	11 97       	sbiw	r26, 0x01	; 1
+    14d8:	e7 01       	movw	r28, r14
+    14da:	8c 85       	ldd	r24, Y+12	; 0x0c
+    14dc:	9d 85       	ldd	r25, Y+13	; 0x0d
+    14de:	28 17       	cp	r18, r24
+    14e0:	39 07       	cpc	r19, r25
+    14e2:	11 f4       	brne	.+4      	; 0x14e8 <processNotes+0x5a>
+				{
+					strumOn = i;
+					data->redOn =  1;	
+    14e4:	11 83       	std	Z+1, r17	; 0x01
+    14e6:	45 2f       	mov	r20, r21
+				}
+				if (stringState[i] == buttonStringPatterns[2][i])
+    14e8:	2d 91       	ld	r18, X+
+    14ea:	3c 91       	ld	r19, X
+    14ec:	11 97       	sbiw	r26, 0x01	; 1
+    14ee:	e7 01       	movw	r28, r14
+    14f0:	88 8d       	ldd	r24, Y+24	; 0x18
+    14f2:	99 8d       	ldd	r25, Y+25	; 0x19
+    14f4:	28 17       	cp	r18, r24
+    14f6:	39 07       	cpc	r19, r25
+    14f8:	11 f4       	brne	.+4      	; 0x14fe <processNotes+0x70>
+				{
+					strumOn = i;
+					data->yellowOn =  1;
+    14fa:	12 83       	std	Z+2, r17	; 0x02
+    14fc:	45 2f       	mov	r20, r21
+				}				
+				if (stringState[i] == buttonStringPatterns[3][i])
+    14fe:	2d 91       	ld	r18, X+
+    1500:	3c 91       	ld	r19, X
+    1502:	11 97       	sbiw	r26, 0x01	; 1
+    1504:	eb 01       	movw	r28, r22
+    1506:	88 81       	ld	r24, Y
+    1508:	99 81       	ldd	r25, Y+1	; 0x01
+    150a:	28 17       	cp	r18, r24
+    150c:	39 07       	cpc	r19, r25
+    150e:	11 f4       	brne	.+4      	; 0x1514 <processNotes+0x86>
+				{
+					strumOn = i;
+					data->blueOn =  1;
+    1510:	13 83       	std	Z+3, r17	; 0x03
+    1512:	45 2f       	mov	r20, r21
+				}				
+				if (stringState[i] == buttonStringPatterns[4][i])
+    1514:	2d 91       	ld	r18, X+
+    1516:	3c 91       	ld	r19, X
+    1518:	11 97       	sbiw	r26, 0x01	; 1
+    151a:	eb 01       	movw	r28, r22
+    151c:	8c 85       	ldd	r24, Y+12	; 0x0c
+    151e:	9d 85       	ldd	r25, Y+13	; 0x0d
+    1520:	28 17       	cp	r18, r24
+    1522:	39 07       	cpc	r19, r25
+    1524:	29 f4       	brne	.+10     	; 0x1530 <processNotes+0xa2>
+				{
+					strumOn = i;
+					data->orangeOn =  1;				
+    1526:	14 83       	std	Z+4, r17	; 0x04
+    1528:	45 2f       	mov	r20, r21
+    152a:	02 c0       	rjmp	.+4      	; 0x1530 <processNotes+0xa2>
+			}
+			 // Now we have checked for strummed notes, we need to check for pressed notes
+			 //  so that we can display them for reference as well as use them when strummed
+			else
+				// First see if we're strumming or not
+				strumPressed = stringState[i] & 1;
+    152c:	08 2f       	mov	r16, r24
+    152e:	01 70       	andi	r16, 0x01	; 1
+				// Now ensure the strum bit is zero
+				stringState[i] &= (~1);
+    1530:	2d 91       	ld	r18, X+
+    1532:	3c 91       	ld	r19, X
+    1534:	11 97       	sbiw	r26, 0x01	; 1
+    1536:	2e 7f       	andi	r18, 0xFE	; 254
+    1538:	11 96       	adiw	r26, 0x01	; 1
+    153a:	3c 93       	st	X, r19
+    153c:	2e 93       	st	-X, r18
+				// Take care of displaying closed notes
+				if (stringState[i] == buttonStringPatterns[0][i]&& 
+    153e:	e7 01       	movw	r28, r14
+    1540:	88 81       	ld	r24, Y
+    1542:	99 81       	ldd	r25, Y+1	; 0x01
+    1544:	28 17       	cp	r18, r24
+    1546:	39 07       	cpc	r19, r25
+    1548:	19 f4       	brne	.+6      	; 0x1550 <processNotes+0xc2>
+    154a:	23 2b       	or	r18, r19
+    154c:	09 f0       	breq	.+2      	; 0x1550 <processNotes+0xc2>
+										buttonStringPatterns[0][i] != 0)
+				{
+					data->greenOn =  1;	
+    154e:	10 83       	st	Z, r17
+					buttonPressed = 1;
+				}
+				if (stringState[i] == buttonStringPatterns[1][i] && 
+    1550:	2d 91       	ld	r18, X+
+    1552:	3c 91       	ld	r19, X
+    1554:	11 97       	sbiw	r26, 0x01	; 1
+    1556:	e7 01       	movw	r28, r14
+    1558:	8c 85       	ldd	r24, Y+12	; 0x0c
+    155a:	9d 85       	ldd	r25, Y+13	; 0x0d
+    155c:	28 17       	cp	r18, r24
+    155e:	39 07       	cpc	r19, r25
+    1560:	19 f4       	brne	.+6      	; 0x1568 <processNotes+0xda>
+    1562:	23 2b       	or	r18, r19
+    1564:	09 f0       	breq	.+2      	; 0x1568 <processNotes+0xda>
+										buttonStringPatterns[1][i] != 0)
+				{
+					data->redOn =  1;	
+    1566:	11 83       	std	Z+1, r17	; 0x01
+					buttonPressed = 1;
+				}
+				if (stringState[i] == buttonStringPatterns[2][i] && 
+    1568:	2d 91       	ld	r18, X+
+    156a:	3c 91       	ld	r19, X
+    156c:	11 97       	sbiw	r26, 0x01	; 1
+    156e:	e7 01       	movw	r28, r14
+    1570:	88 8d       	ldd	r24, Y+24	; 0x18
+    1572:	99 8d       	ldd	r25, Y+25	; 0x19
+    1574:	28 17       	cp	r18, r24
+    1576:	39 07       	cpc	r19, r25
+    1578:	19 f4       	brne	.+6      	; 0x1580 <processNotes+0xf2>
+    157a:	23 2b       	or	r18, r19
+    157c:	09 f0       	breq	.+2      	; 0x1580 <processNotes+0xf2>
+										buttonStringPatterns[2][i] != 0)
+					{
+					data->yellowOn =  1;
+    157e:	12 83       	std	Z+2, r17	; 0x02
+					buttonPressed = 1;
+				}
+				if (stringState[i] == buttonStringPatterns[3][i] && 
+    1580:	2d 91       	ld	r18, X+
+    1582:	3c 91       	ld	r19, X
+    1584:	11 97       	sbiw	r26, 0x01	; 1
+    1586:	eb 01       	movw	r28, r22
+    1588:	88 81       	ld	r24, Y
+    158a:	99 81       	ldd	r25, Y+1	; 0x01
+    158c:	28 17       	cp	r18, r24
+    158e:	39 07       	cpc	r19, r25
+    1590:	19 f4       	brne	.+6      	; 0x1598 <processNotes+0x10a>
+    1592:	23 2b       	or	r18, r19
+    1594:	09 f0       	breq	.+2      	; 0x1598 <processNotes+0x10a>
+										buttonStringPatterns[3][i] != 0)
+				{
+					data->blueOn =  1;
+    1596:	13 83       	std	Z+3, r17	; 0x03
+					buttonPressed = 1;
+					}				
+				if (stringState[i] == buttonStringPatterns[4][i] && 
+    1598:	2d 91       	ld	r18, X+
+    159a:	3c 91       	ld	r19, X
+    159c:	11 97       	sbiw	r26, 0x01	; 1
+    159e:	eb 01       	movw	r28, r22
+    15a0:	8c 85       	ldd	r24, Y+12	; 0x0c
+    15a2:	9d 85       	ldd	r25, Y+13	; 0x0d
+    15a4:	28 17       	cp	r18, r24
+    15a6:	39 07       	cpc	r19, r25
+    15a8:	19 f4       	brne	.+6      	; 0x15b0 <processNotes+0x122>
+    15aa:	23 2b       	or	r18, r19
+    15ac:	09 f0       	breq	.+2      	; 0x15b0 <processNotes+0x122>
+										buttonStringPatterns[4][i] != 0)
+				{
+					data->orangeOn =  1;
+    15ae:	14 83       	std	Z+4, r17	; 0x04
+					buttonPressed = 1;									
+				}
+					// Now deal with strumming
+				if ((buttonPressed = 1) && (strumPressed == 1))
+    15b0:	01 30       	cpi	r16, 0x01	; 1
+    15b2:	09 f4       	brne	.+2      	; 0x15b6 <processNotes+0x128>
+    15b4:	45 2f       	mov	r20, r21
+    15b6:	12 96       	adiw	r26, 0x02	; 2
+    15b8:	5f 5f       	subi	r21, 0xFF	; 255
+    15ba:	82 e0       	ldi	r24, 0x02	; 2
+    15bc:	90 e0       	ldi	r25, 0x00	; 0
+    15be:	e8 0e       	add	r14, r24
+    15c0:	f9 1e       	adc	r15, r25
+    15c2:	6e 5f       	subi	r22, 0xFE	; 254
+    15c4:	7f 4f       	sbci	r23, 0xFF	; 255
+	data->upOn = 0;
+	data->downOn = 0;
+	char strumOn = -1; // This holds which string the pick is strumming
+	char buttonPressed = 0;
+	char strumPressed  = 0;
+	for (int i = 0; i < 6; i++)
+    15c6:	56 30       	cpi	r21, 0x06	; 6
+    15c8:	09 f0       	breq	.+2      	; 0x15cc <processNotes+0x13e>
+    15ca:	73 cf       	rjmp	.-282    	; 0x14b2 <processNotes+0x24>
+				}
+			}
+	}
+
+	//Now set the strum buttons properly, so we can have both up and down if we're in this mode
+	if ((strumOn >= 0) && (strumOn < 3))
+    15cc:	43 30       	cpi	r20, 0x03	; 3
+    15ce:	18 f4       	brcc	.+6      	; 0x15d6 <processNotes+0x148>
+	{
+		data->downOn = 1;
+    15d0:	81 e0       	ldi	r24, 0x01	; 1
+    15d2:	86 83       	std	Z+6, r24	; 0x06
+    15d4:	08 c0       	rjmp	.+16     	; 0x15e6 <processNotes+0x158>
+	}
+	else if ((strumOn >= 3) && (strumOn < 6 ) && (data->downOn != 1))
+    15d6:	43 50       	subi	r20, 0x03	; 3
+    15d8:	43 30       	cpi	r20, 0x03	; 3
+    15da:	28 f4       	brcc	.+10     	; 0x15e6 <processNotes+0x158>
+    15dc:	86 81       	ldd	r24, Z+6	; 0x06
+    15de:	81 30       	cpi	r24, 0x01	; 1
+    15e0:	11 f0       	breq	.+4      	; 0x15e6 <processNotes+0x158>
+	{
+		data->upOn = 1;
+    15e2:	81 e0       	ldi	r24, 0x01	; 1
+    15e4:	85 83       	std	Z+5, r24	; 0x05
+	}
+	return;
+}
+    15e6:	df 91       	pop	r29
+    15e8:	cf 91       	pop	r28
+    15ea:	1f 91       	pop	r17
+    15ec:	0f 91       	pop	r16
+    15ee:	ff 90       	pop	r15
+    15f0:	ef 90       	pop	r14
+    15f2:	08 95       	ret
+
+000015f4 <processFrets>:
+
+void processFrets(dataForController* data, int stringState[NUMBER_OF_STRINGS],
+									int buttonStringPatterns[][NUMBER_OF_STRINGS], 
+									int greenTimers[NUMBER_OF_STRINGS], int triedGreen[NUMBER_OF_STRINGS])
+{
+    15f4:	af 92       	push	r10
+    15f6:	bf 92       	push	r11
+    15f8:	cf 92       	push	r12
+    15fa:	df 92       	push	r13
+    15fc:	ff 92       	push	r15
+    15fe:	0f 93       	push	r16
+    1600:	1f 93       	push	r17
+    1602:	cf 93       	push	r28
+    1604:	df 93       	push	r29
+    1606:	fc 01       	movw	r30, r24
+    1608:	5b 01       	movw	r10, r22
+    160a:	d8 01       	movw	r26, r16
+    160c:	89 01       	movw	r16, r18
+    160e:	60 e0       	ldi	r22, 0x00	; 0
+    1610:	70 e0       	ldi	r23, 0x00	; 0
+				// now we test to see if the counter has counted high enough, and
+				// if it has, then we do record a green hit.
+				int test = TCNT1 - greenTimers[guitarString];
+		    	if (  (data->greenOn == 0) && (( test > GREEN_TIMER_WAIT) || (test <= 0)) )
+		    	{
+		        	data->greenOn = 1;
+    1612:	ff 24       	eor	r15, r15
+    1614:	f3 94       	inc	r15
+		{
+		    if (triedGreen[guitarString] == 0) // we didn't touch green last cycle
+		    {        
+				// so we start the counter and say we did touch it.
+		      greenTimers[guitarString] = TCNT1;
+		      triedGreen[guitarString] = 1;
+    1616:	81 e0       	ldi	r24, 0x01	; 1
+    1618:	c8 2e       	mov	r12, r24
+    161a:	d1 2c       	mov	r13, r1
+		counts up to the GREEN_TIMER_WAIT, red gets activated and green doesn't.
+	 */
+	for(int guitarString = 0; guitarString < 6; guitarString++)
+	{
+		// find the proper value by masking the stringState variable for each fret
+		char orange = (stringState[guitarString] & (1<<5));
+    161c:	e5 01       	movw	r28, r10
+    161e:	88 81       	ld	r24, Y
+		char blue   = (stringState[guitarString] & (1<<4));
+    1620:	98 2f       	mov	r25, r24
+    1622:	90 71       	andi	r25, 0x10	; 16
+		char yellow = (stringState[guitarString] & (1<<3));
+    1624:	28 2f       	mov	r18, r24
+    1626:	28 70       	andi	r18, 0x08	; 8
+		char red    = (stringState[guitarString] & (1<<2));
+    1628:	38 2f       	mov	r19, r24
+    162a:	34 70       	andi	r19, 0x04	; 4
+		char green  = (stringState[guitarString] & (1<<1));
+    162c:	48 2f       	mov	r20, r24
+    162e:	42 70       	andi	r20, 0x02	; 2
+		if ((orange != 0) && (blue != 0) && (data->orangeOn == 0))
+    1630:	85 ff       	sbrs	r24, 5
+    1632:	07 c0       	rjmp	.+14     	; 0x1642 <processFrets+0x4e>
+    1634:	99 23       	and	r25, r25
+    1636:	71 f0       	breq	.+28     	; 0x1654 <processFrets+0x60>
+    1638:	84 81       	ldd	r24, Z+4	; 0x04
+    163a:	88 23       	and	r24, r24
+    163c:	21 f4       	brne	.+8      	; 0x1646 <processFrets+0x52>
+		{    
+		    data->orangeOn = 1;
+    163e:	f4 82       	std	Z+4, r15	; 0x04
+    1640:	40 c0       	rjmp	.+128    	; 0x16c2 <processFrets+0xce>
+		    triedGreen[guitarString] = 0;
+		}
+		else if ((blue != 0) && (yellow != 0) && (data->blueOn == 0))
+    1642:	99 23       	and	r25, r25
+    1644:	39 f0       	breq	.+14     	; 0x1654 <processFrets+0x60>
+    1646:	22 23       	and	r18, r18
+    1648:	71 f0       	breq	.+28     	; 0x1666 <processFrets+0x72>
+    164a:	83 81       	ldd	r24, Z+3	; 0x03
+    164c:	88 23       	and	r24, r24
+    164e:	21 f4       	brne	.+8      	; 0x1658 <processFrets+0x64>
+		{
+		    data->blueOn = 1;
+    1650:	f3 82       	std	Z+3, r15	; 0x03
+    1652:	37 c0       	rjmp	.+110    	; 0x16c2 <processFrets+0xce>
+		    triedGreen[guitarString] = 0;
+		}
+		else if ((yellow != 0) && (red != 0) && (data->yellowOn == 0))
+    1654:	22 23       	and	r18, r18
+    1656:	39 f0       	breq	.+14     	; 0x1666 <processFrets+0x72>
+    1658:	33 23       	and	r19, r19
+    165a:	71 f0       	breq	.+28     	; 0x1678 <processFrets+0x84>
+    165c:	82 81       	ldd	r24, Z+2	; 0x02
+    165e:	88 23       	and	r24, r24
+    1660:	21 f4       	brne	.+8      	; 0x166a <processFrets+0x76>
+		{
+		    data->yellowOn = 1;
+    1662:	f2 82       	std	Z+2, r15	; 0x02
+    1664:	2e c0       	rjmp	.+92     	; 0x16c2 <processFrets+0xce>
+		    triedGreen[guitarString] = 0;
+		}
+		else if ((red != 0) && (green != 0) && (data->redOn == 0))
+    1666:	33 23       	and	r19, r19
+    1668:	39 f0       	breq	.+14     	; 0x1678 <processFrets+0x84>
+    166a:	44 23       	and	r20, r20
+    166c:	51 f1       	breq	.+84     	; 0x16c2 <processFrets+0xce>
+    166e:	81 81       	ldd	r24, Z+1	; 0x01
+    1670:	88 23       	and	r24, r24
+    1672:	21 f4       	brne	.+8      	; 0x167c <processFrets+0x88>
+		{
+		    data->redOn = 1;
+    1674:	f1 82       	std	Z+1, r15	; 0x01
+    1676:	25 c0       	rjmp	.+74     	; 0x16c2 <processFrets+0xce>
+		    triedGreen[guitarString] = 0;
+		}
+		else if (green != 0)
+    1678:	44 23       	and	r20, r20
+    167a:	19 f1       	breq	.+70     	; 0x16c2 <processFrets+0xce>
+		{
+		    if (triedGreen[guitarString] == 0) // we didn't touch green last cycle
+    167c:	8d 91       	ld	r24, X+
+    167e:	9c 91       	ld	r25, X
+    1680:	11 97       	sbiw	r26, 0x01	; 1
+    1682:	89 2b       	or	r24, r25
+    1684:	59 f4       	brne	.+22     	; 0x169c <processFrets+0xa8>
+		    {        
+				// so we start the counter and say we did touch it.
+		      greenTimers[guitarString] = TCNT1;
+    1686:	80 91 84 00 	lds	r24, 0x0084
+    168a:	90 91 85 00 	lds	r25, 0x0085
+    168e:	e8 01       	movw	r28, r16
+    1690:	99 83       	std	Y+1, r25	; 0x01
+    1692:	88 83       	st	Y, r24
+		      triedGreen[guitarString] = 1;
+    1694:	11 96       	adiw	r26, 0x01	; 1
+    1696:	dc 92       	st	X, r13
+    1698:	ce 92       	st	-X, r12
+    169a:	16 c0       	rjmp	.+44     	; 0x16c8 <processFrets+0xd4>
+		    }
+		    else //triedGreen == true
+		    {
+				// now we test to see if the counter has counted high enough, and
+				// if it has, then we do record a green hit.
+				int test = TCNT1 - greenTimers[guitarString];
+    169c:	20 91 84 00 	lds	r18, 0x0084
+    16a0:	30 91 85 00 	lds	r19, 0x0085
+    16a4:	e8 01       	movw	r28, r16
+    16a6:	48 81       	ld	r20, Y
+    16a8:	59 81       	ldd	r21, Y+1	; 0x01
+		    	if (  (data->greenOn == 0) && (( test > GREEN_TIMER_WAIT) || (test <= 0)) )
+    16aa:	80 81       	ld	r24, Z
+    16ac:	88 23       	and	r24, r24
+    16ae:	61 f4       	brne	.+24     	; 0x16c8 <processFrets+0xd4>
+    16b0:	21 50       	subi	r18, 0x01	; 1
+    16b2:	30 40       	sbci	r19, 0x00	; 0
+    16b4:	24 1b       	sub	r18, r20
+    16b6:	35 0b       	sbc	r19, r21
+    16b8:	24 36       	cpi	r18, 0x64	; 100
+    16ba:	31 05       	cpc	r19, r1
+    16bc:	28 f0       	brcs	.+10     	; 0x16c8 <processFrets+0xd4>
+		    	{
+		        	data->greenOn = 1;
+    16be:	f0 82       	st	Z, r15
+    16c0:	03 c0       	rjmp	.+6      	; 0x16c8 <processFrets+0xd4>
+		    	}
+		    }
+		}
+	    else  //no buttons pressed
+	    {
+	        triedGreen[guitarString] = 0;
+    16c2:	11 96       	adiw	r26, 0x01	; 1
+    16c4:	1c 92       	st	X, r1
+    16c6:	1e 92       	st	-X, r1
+		the strum has a direction, so if you strum the
+		top 3 strings, you strum down, and if you strum
+		the bottom 3 strings, you're strumming up.
+	*/
+		// Check for strumming
+		if (stringState[guitarString] & 1)
+    16c8:	e5 01       	movw	r28, r10
+    16ca:	88 81       	ld	r24, Y
+    16cc:	80 ff       	sbrs	r24, 0
+    16ce:	08 c0       	rjmp	.+16     	; 0x16e0 <processFrets+0xec>
+		{
+			if (guitarString < 3)
+    16d0:	63 30       	cpi	r22, 0x03	; 3
+    16d2:	71 05       	cpc	r23, r1
+    16d4:	1c f4       	brge	.+6      	; 0x16dc <processFrets+0xe8>
+			{
+				data->downOn = 1;
+    16d6:	f6 82       	std	Z+6, r15	; 0x06
+				data->upOn   = 0;
+    16d8:	15 82       	std	Z+5, r1	; 0x05
+    16da:	02 c0       	rjmp	.+4      	; 0x16e0 <processFrets+0xec>
+			}
+			else
+			{
+				data->upOn   = 1;
+    16dc:	f5 82       	std	Z+5, r15	; 0x05
+				data->downOn = 0;
+    16de:	16 82       	std	Z+6, r1	; 0x06
+		you don't want that to register as a green button press.  So we do some
+		timing on that one, so when you press just green, it starts counting
+		instead of turing greenOn on, so if the red fret is turned on before it
+		counts up to the GREEN_TIMER_WAIT, red gets activated and green doesn't.
+	 */
+	for(int guitarString = 0; guitarString < 6; guitarString++)
+    16e0:	6f 5f       	subi	r22, 0xFF	; 255
+    16e2:	7f 4f       	sbci	r23, 0xFF	; 255
+    16e4:	82 e0       	ldi	r24, 0x02	; 2
+    16e6:	90 e0       	ldi	r25, 0x00	; 0
+    16e8:	a8 0e       	add	r10, r24
+    16ea:	b9 1e       	adc	r11, r25
+    16ec:	12 96       	adiw	r26, 0x02	; 2
+    16ee:	0e 5f       	subi	r16, 0xFE	; 254
+    16f0:	1f 4f       	sbci	r17, 0xFF	; 255
+    16f2:	66 30       	cpi	r22, 0x06	; 6
+    16f4:	71 05       	cpc	r23, r1
+    16f6:	09 f0       	breq	.+2      	; 0x16fa <processFrets+0x106>
+    16f8:	91 cf       	rjmp	.-222    	; 0x161c <processFrets+0x28>
+				data->downOn = 0;
+			}
+		}
+	}	// end of for loop
+	return;
+}
+    16fa:	df 91       	pop	r29
+    16fc:	cf 91       	pop	r28
+    16fe:	1f 91       	pop	r17
+    1700:	0f 91       	pop	r16
+    1702:	ff 90       	pop	r15
+    1704:	df 90       	pop	r13
+    1706:	cf 90       	pop	r12
+    1708:	bf 90       	pop	r11
+    170a:	af 90       	pop	r10
+    170c:	08 95       	ret
+
+0000170e <processStringState>:
+
+void processStringState(dataForController* data, int stringState[NUMBER_OF_STRINGS],
+									int buttonStringPatterns[][NUMBER_OF_STRINGS], char controllerMode, 
+									int greenTimers[NUMBER_OF_STRINGS], int triedGreen[NUMBER_OF_STRINGS])
+{
+    170e:	ef 92       	push	r14
+    1710:	ff 92       	push	r15
+    1712:	0f 93       	push	r16
+    1714:	1f 93       	push	r17
+	if (controllerMode == CHORDS) // If we're playing with Chords - default is FRETS
+    1716:	24 30       	cpi	r18, 0x04	; 4
+    1718:	19 f4       	brne	.+6      	; 0x1720 <processStringState+0x12>
+		processChords(data, stringState, buttonStringPatterns);
+    171a:	0e 94 cd 07 	call	0xf9a	; 0xf9a <processChords>
+    171e:	09 c0       	rjmp	.+18     	; 0x1732 <processStringState+0x24>
+
+	else if (controllerMode == NOTES) // We're playing with notes
+    1720:	22 30       	cpi	r18, 0x02	; 2
+    1722:	19 f4       	brne	.+6      	; 0x172a <processStringState+0x1c>
+		processNotes(data, stringState, buttonStringPatterns);
+    1724:	0e 94 47 0a 	call	0x148e	; 0x148e <processNotes>
+    1728:	04 c0       	rjmp	.+8      	; 0x1732 <processStringState+0x24>
+	
+	else // We're playing with frets
+		processFrets(data, stringState,	buttonStringPatterns, greenTimers, triedGreen);
+    172a:	98 01       	movw	r18, r16
+    172c:	87 01       	movw	r16, r14
+    172e:	0e 94 fa 0a 	call	0x15f4	; 0x15f4 <processFrets>
+
+	return;	
+}
+    1732:	1f 91       	pop	r17
+    1734:	0f 91       	pop	r16
+    1736:	ff 90       	pop	r15
+    1738:	ef 90       	pop	r14
+    173a:	08 95       	ret
+
+0000173c <displayTransitionState>:
+
+// This simple function takes in the controller mode and sets the
+//  data struct to certain patterns to give the user feedback
+//  as to what state is being pressed
+void displayTransitionState(dataForController* data, int controllerMode)
+{
+    173c:	fc 01       	movw	r30, r24
+	if (controllerMode == FRETS_TO_NOTES)
+    173e:	61 30       	cpi	r22, 0x01	; 1
+    1740:	71 05       	cpc	r23, r1
+    1742:	21 f4       	brne	.+8      	; 0x174c <displayTransitionState+0x10>
+	{
+		data->greenOn = 1;
+    1744:	81 e0       	ldi	r24, 0x01	; 1
+    1746:	80 83       	st	Z, r24
+		data->yellowOn = 1;
+    1748:	82 83       	std	Z+2, r24	; 0x02
+    174a:	08 95       	ret
+	}
+	else if (controllerMode == NOTES_TO_CHORDS)
+    174c:	63 30       	cpi	r22, 0x03	; 3
+    174e:	71 05       	cpc	r23, r1
+    1750:	21 f4       	brne	.+8      	; 0x175a <displayTransitionState+0x1e>
+	{
+		data->greenOn = 1;
+    1752:	81 e0       	ldi	r24, 0x01	; 1
+    1754:	80 83       	st	Z, r24
+		data->blueOn = 1;
+    1756:	83 83       	std	Z+3, r24	; 0x03
+    1758:	08 95       	ret
+	}
+	else if (controllerMode == CHORDS_TO_FRETS)
+    175a:	65 30       	cpi	r22, 0x05	; 5
+    175c:	71 05       	cpc	r23, r1
+    175e:	19 f4       	brne	.+6      	; 0x1766 <displayTransitionState+0x2a>
+	{
+		data->greenOn = 1;
+    1760:	81 e0       	ldi	r24, 0x01	; 1
+    1762:	80 83       	st	Z, r24
+		data->orangeOn = 1;
+    1764:	84 83       	std	Z+4, r24	; 0x04
+    1766:	08 95       	ret
+
+00001768 <configSetButtonData>:
+/* This function sets up the data struct when we're in config mode so that it shows
+ *  the user which colors are currently being programmed.
+ */
+void configSetButtonData(dataForController* data, int* buttonToAssign, int buttonStringPatterns[][6], 
+						int stringState[], char controllerMode, char* plusLock, char* previousPlusOn, int* debounceTimer)
+{
+    1768:	af 92       	push	r10
+    176a:	bf 92       	push	r11
+    176c:	cf 92       	push	r12
+    176e:	df 92       	push	r13
+    1770:	ef 92       	push	r14
+    1772:	ff 92       	push	r15
+    1774:	0f 93       	push	r16
+    1776:	cf 93       	push	r28
+    1778:	df 93       	push	r29
+    177a:	fc 01       	movw	r30, r24
+    177c:	db 01       	movw	r26, r22
+    177e:	b9 01       	movw	r22, r18
+    1780:	95 01       	movw	r18, r10
+	// Since 'colorOn' is 1 when a fret is pressed, we invert, shift, invert, and & it to set the
+	// corresponding button bit to zero, which corresponds to a button press.
+	if (*buttonToAssign == 0)
+    1782:	8d 91       	ld	r24, X+
+    1784:	9c 91       	ld	r25, X
+    1786:	11 97       	sbiw	r26, 0x01	; 1
+    1788:	00 97       	sbiw	r24, 0x00	; 0
+    178a:	19 f4       	brne	.+6      	; 0x1792 <configSetButtonData+0x2a>
+		data->greenOn = 1;
+    178c:	81 e0       	ldi	r24, 0x01	; 1
+    178e:	80 83       	st	Z, r24
+    1790:	34 c0       	rjmp	.+104    	; 0x17fa <configSetButtonData+0x92>
+	else if(*buttonToAssign == 1)
+    1792:	81 30       	cpi	r24, 0x01	; 1
+    1794:	91 05       	cpc	r25, r1
+    1796:	11 f4       	brne	.+4      	; 0x179c <configSetButtonData+0x34>
+		data->redOn = 1;
+    1798:	81 e0       	ldi	r24, 0x01	; 1
+    179a:	15 c0       	rjmp	.+42     	; 0x17c6 <configSetButtonData+0x5e>
+	else if(*buttonToAssign == 2)
+    179c:	82 30       	cpi	r24, 0x02	; 2
+    179e:	91 05       	cpc	r25, r1
+    17a0:	11 f4       	brne	.+4      	; 0x17a6 <configSetButtonData+0x3e>
+		data->yellowOn = 1;
+    17a2:	81 e0       	ldi	r24, 0x01	; 1
+    17a4:	23 c0       	rjmp	.+70     	; 0x17ec <configSetButtonData+0x84>
+	else if(*buttonToAssign == 3)
+    17a6:	83 30       	cpi	r24, 0x03	; 3
+    17a8:	91 05       	cpc	r25, r1
+    17aa:	11 f4       	brne	.+4      	; 0x17b0 <configSetButtonData+0x48>
+		data->blueOn = 1;
+    17ac:	81 e0       	ldi	r24, 0x01	; 1
+    17ae:	24 c0       	rjmp	.+72     	; 0x17f8 <configSetButtonData+0x90>
+	else if(*buttonToAssign == 4)
+    17b0:	84 30       	cpi	r24, 0x04	; 4
+    17b2:	91 05       	cpc	r25, r1
+    17b4:	19 f4       	brne	.+6      	; 0x17bc <configSetButtonData+0x54>
+		data->orangeOn = 1;
+    17b6:	81 e0       	ldi	r24, 0x01	; 1
+    17b8:	84 83       	std	Z+4, r24	; 0x04
+    17ba:	1f c0       	rjmp	.+62     	; 0x17fa <configSetButtonData+0x92>
+	else if(*buttonToAssign == 5)
+    17bc:	85 30       	cpi	r24, 0x05	; 5
+    17be:	91 05       	cpc	r25, r1
+    17c0:	21 f4       	brne	.+8      	; 0x17ca <configSetButtonData+0x62>
+	{
+		data->greenOn = 1;
+    17c2:	81 e0       	ldi	r24, 0x01	; 1
+    17c4:	80 83       	st	Z, r24
+		data->redOn = 1;
+    17c6:	81 83       	std	Z+1, r24	; 0x01
+    17c8:	18 c0       	rjmp	.+48     	; 0x17fa <configSetButtonData+0x92>
+	}
+	else if(*buttonToAssign == 6)
+    17ca:	86 30       	cpi	r24, 0x06	; 6
+    17cc:	91 05       	cpc	r25, r1
+    17ce:	19 f4       	brne	.+6      	; 0x17d6 <configSetButtonData+0x6e>
+	{
+		data->redOn = 1;
+    17d0:	81 e0       	ldi	r24, 0x01	; 1
+    17d2:	81 83       	std	Z+1, r24	; 0x01
+    17d4:	0b c0       	rjmp	.+22     	; 0x17ec <configSetButtonData+0x84>
+		data->yellowOn = 1;
+	}
+	else if(*buttonToAssign == 7)
+    17d6:	87 30       	cpi	r24, 0x07	; 7
+    17d8:	91 05       	cpc	r25, r1
+    17da:	19 f4       	brne	.+6      	; 0x17e2 <configSetButtonData+0x7a>
+	{
+		data->yellowOn = 1;
+    17dc:	81 e0       	ldi	r24, 0x01	; 1
+    17de:	82 83       	std	Z+2, r24	; 0x02
+    17e0:	0b c0       	rjmp	.+22     	; 0x17f8 <configSetButtonData+0x90>
+		data->blueOn = 1;
+	}
+	else if(*buttonToAssign == 8)
+    17e2:	88 30       	cpi	r24, 0x08	; 8
+    17e4:	91 05       	cpc	r25, r1
+    17e6:	21 f4       	brne	.+8      	; 0x17f0 <configSetButtonData+0x88>
+	{
+		data->greenOn = 1;
+    17e8:	81 e0       	ldi	r24, 0x01	; 1
+    17ea:	80 83       	st	Z, r24
+		data->yellowOn = 1;
+    17ec:	82 83       	std	Z+2, r24	; 0x02
+    17ee:	05 c0       	rjmp	.+10     	; 0x17fa <configSetButtonData+0x92>
+	}
+	else if(*buttonToAssign == 9)
+    17f0:	09 97       	sbiw	r24, 0x09	; 9
+    17f2:	19 f4       	brne	.+6      	; 0x17fa <configSetButtonData+0x92>
+	{
+		data->redOn = 1;
+    17f4:	81 e0       	ldi	r24, 0x01	; 1
+    17f6:	81 83       	std	Z+1, r24	; 0x01
+		data->blueOn = 1;
+    17f8:	83 83       	std	Z+3, r24	; 0x03
+	}
+
+
+
+	// Code to debounce our plus button, the current state of plusOn to it's recent history
+	if (data->plusOn != 0)  // So we're pressing plus
+    17fa:	87 81       	ldd	r24, Z+7	; 0x07
+    17fc:	88 23       	and	r24, r24
+    17fe:	09 f1       	breq	.+66     	; 0x1842 <configSetButtonData+0xda>
+	{ 
+		if (*previousPlusOn == 0)  // If we weren't pressing plus last time through the main loop
+    1800:	e6 01       	movw	r28, r12
+    1802:	88 81       	ld	r24, Y
+    1804:	88 23       	and	r24, r24
+    1806:	59 f4       	brne	.+22     	; 0x181e <configSetButtonData+0xb6>
+		{ 
+			*debounceTimer = TCNT1;  // Set up a timer
+    1808:	80 91 84 00 	lds	r24, 0x0084
+    180c:	90 91 85 00 	lds	r25, 0x0085
+    1810:	e9 01       	movw	r28, r18
+    1812:	99 83       	std	Y+1, r25	; 0x01
+    1814:	88 83       	st	Y, r24
+			*previousPlusOn = 1;     // remember plus was pressed for the next iteration
+    1816:	81 e0       	ldi	r24, 0x01	; 1
+    1818:	e6 01       	movw	r28, r12
+    181a:	88 83       	st	Y, r24
+    181c:	10 c0       	rjmp	.+32     	; 0x183e <configSetButtonData+0xd6>
+			data->plusOn = 0;        // but for now, consider plus not pressed.
+		}
+		else if ( (TCNT1 - *debounceTimer < DEBOUNCE_DELAY) && (TCNT1 - *debounceTimer >= 0))
+    181e:	80 91 84 00 	lds	r24, 0x0084
+    1822:	90 91 85 00 	lds	r25, 0x0085
+    1826:	e9 01       	movw	r28, r18
+    1828:	28 81       	ld	r18, Y
+    182a:	39 81       	ldd	r19, Y+1	; 0x01
+    182c:	82 1b       	sub	r24, r18
+    182e:	93 0b       	sbc	r25, r19
+    1830:	88 5e       	subi	r24, 0xE8	; 232
+    1832:	93 40       	sbci	r25, 0x03	; 3
+    1834:	40 f4       	brcc	.+16     	; 0x1846 <configSetButtonData+0xde>
+    1836:	80 91 84 00 	lds	r24, 0x0084
+    183a:	90 91 85 00 	lds	r25, 0x0085
+		{
+			data->plusOn = 0;  // This keeps telling us plus wasn't pressed until it's been held long enough
+    183e:	17 82       	std	Z+7, r1	; 0x07
+    1840:	02 c0       	rjmp	.+4      	; 0x1846 <configSetButtonData+0xde>
+		}		
+	}
+	else
+	{
+		*previousPlusOn = 0; // and if plus wasn't pressed, remember that for next time
+    1842:	e6 01       	movw	r28, r12
+    1844:	18 82       	st	Y, r1
+	}
+
+	// Now, if you press plus, it will lock in whatever string pattern
+	// and advance to working on the next pattern.
+	if((data->plusOn) && (*plusLock == 0))
+    1846:	87 81       	ldd	r24, Z+7	; 0x07
+    1848:	88 23       	and	r24, r24
+    184a:	09 f4       	brne	.+2      	; 0x184e <configSetButtonData+0xe6>
+    184c:	f7 c0       	rjmp	.+494    	; 0x1a3c <configSetButtonData+0x2d4>
+    184e:	f7 01       	movw	r30, r14
+    1850:	80 81       	ld	r24, Z
+    1852:	88 23       	and	r24, r24
+    1854:	09 f0       	breq	.+2      	; 0x1858 <configSetButtonData+0xf0>
+    1856:	f4 c0       	rjmp	.+488    	; 0x1a40 <configSetButtonData+0x2d8>
+	{
+
+		if (controllerMode == CHORDS) 
+    1858:	04 30       	cpi	r16, 0x04	; 4
+    185a:	09 f0       	breq	.+2      	; 0x185e <configSetButtonData+0xf6>
+    185c:	60 c0       	rjmp	.+192    	; 0x191e <configSetButtonData+0x1b6>
+		{   // Set the pattern to nothing pressed
+			buttonStringPatterns[*buttonToAssign][0] = 0;
+    185e:	8d 91       	ld	r24, X+
+    1860:	9c 91       	ld	r25, X
+    1862:	11 97       	sbiw	r26, 0x01	; 1
+    1864:	fc 01       	movw	r30, r24
+    1866:	ee 0f       	add	r30, r30
+    1868:	ff 1f       	adc	r31, r31
+    186a:	e8 0f       	add	r30, r24
+    186c:	f9 1f       	adc	r31, r25
+    186e:	ee 0f       	add	r30, r30
+    1870:	ff 1f       	adc	r31, r31
+    1872:	ee 0f       	add	r30, r30
+    1874:	ff 1f       	adc	r31, r31
+    1876:	e4 0f       	add	r30, r20
+    1878:	f5 1f       	adc	r31, r21
+    187a:	11 82       	std	Z+1, r1	; 0x01
+    187c:	10 82       	st	Z, r1
+			buttonStringPatterns[*buttonToAssign][1] = 0;
+    187e:	8d 91       	ld	r24, X+
+    1880:	9c 91       	ld	r25, X
+    1882:	11 97       	sbiw	r26, 0x01	; 1
+    1884:	fc 01       	movw	r30, r24
+    1886:	ee 0f       	add	r30, r30
+    1888:	ff 1f       	adc	r31, r31
+    188a:	e8 0f       	add	r30, r24
+    188c:	f9 1f       	adc	r31, r25
+    188e:	ee 0f       	add	r30, r30
+    1890:	ff 1f       	adc	r31, r31
+    1892:	ee 0f       	add	r30, r30
+    1894:	ff 1f       	adc	r31, r31
+    1896:	e4 0f       	add	r30, r20
+    1898:	f5 1f       	adc	r31, r21
+    189a:	13 82       	std	Z+3, r1	; 0x03
+    189c:	12 82       	std	Z+2, r1	; 0x02
+			buttonStringPatterns[*buttonToAssign][2] = 0;
+    189e:	8d 91       	ld	r24, X+
+    18a0:	9c 91       	ld	r25, X
+    18a2:	11 97       	sbiw	r26, 0x01	; 1
+    18a4:	fc 01       	movw	r30, r24
+    18a6:	ee 0f       	add	r30, r30
+    18a8:	ff 1f       	adc	r31, r31
+    18aa:	e8 0f       	add	r30, r24
+    18ac:	f9 1f       	adc	r31, r25
+    18ae:	ee 0f       	add	r30, r30
+    18b0:	ff 1f       	adc	r31, r31
+    18b2:	ee 0f       	add	r30, r30
+    18b4:	ff 1f       	adc	r31, r31
+    18b6:	e4 0f       	add	r30, r20
+    18b8:	f5 1f       	adc	r31, r21
+    18ba:	15 82       	std	Z+5, r1	; 0x05
+    18bc:	14 82       	std	Z+4, r1	; 0x04
+			buttonStringPatterns[*buttonToAssign][3] = 0;
+    18be:	8d 91       	ld	r24, X+
+    18c0:	9c 91       	ld	r25, X
+    18c2:	11 97       	sbiw	r26, 0x01	; 1
+    18c4:	fc 01       	movw	r30, r24
+    18c6:	ee 0f       	add	r30, r30
+    18c8:	ff 1f       	adc	r31, r31
+    18ca:	e8 0f       	add	r30, r24
+    18cc:	f9 1f       	adc	r31, r25
+    18ce:	ee 0f       	add	r30, r30
+    18d0:	ff 1f       	adc	r31, r31
+    18d2:	ee 0f       	add	r30, r30
+    18d4:	ff 1f       	adc	r31, r31
+    18d6:	e4 0f       	add	r30, r20
+    18d8:	f5 1f       	adc	r31, r21
+    18da:	17 82       	std	Z+7, r1	; 0x07
+    18dc:	16 82       	std	Z+6, r1	; 0x06
+			buttonStringPatterns[*buttonToAssign][4] = 0;
+    18de:	8d 91       	ld	r24, X+
+    18e0:	9c 91       	ld	r25, X
+    18e2:	11 97       	sbiw	r26, 0x01	; 1
+    18e4:	fc 01       	movw	r30, r24
+    18e6:	ee 0f       	add	r30, r30
+    18e8:	ff 1f       	adc	r31, r31
+    18ea:	e8 0f       	add	r30, r24
+    18ec:	f9 1f       	adc	r31, r25
+    18ee:	ee 0f       	add	r30, r30
+    18f0:	ff 1f       	adc	r31, r31
+    18f2:	ee 0f       	add	r30, r30
+    18f4:	ff 1f       	adc	r31, r31
+    18f6:	e4 0f       	add	r30, r20
+    18f8:	f5 1f       	adc	r31, r21
+    18fa:	11 86       	std	Z+9, r1	; 0x09
+    18fc:	10 86       	std	Z+8, r1	; 0x08
+			buttonStringPatterns[*buttonToAssign][5] = 0;
+    18fe:	8d 91       	ld	r24, X+
+    1900:	9c 91       	ld	r25, X
+    1902:	11 97       	sbiw	r26, 0x01	; 1
+    1904:	fc 01       	movw	r30, r24
+    1906:	ee 0f       	add	r30, r30
+    1908:	ff 1f       	adc	r31, r31
+    190a:	e8 0f       	add	r30, r24
+    190c:	f9 1f       	adc	r31, r25
+    190e:	ee 0f       	add	r30, r30
+    1910:	ff 1f       	adc	r31, r31
+    1912:	ee 0f       	add	r30, r30
+    1914:	ff 1f       	adc	r31, r31
+    1916:	e4 0f       	add	r30, r20
+    1918:	f5 1f       	adc	r31, r21
+    191a:	13 86       	std	Z+11, r1	; 0x0b
+    191c:	12 86       	std	Z+10, r1	; 0x0a
+		}
+			// Assign what's being pressed on the frets to what matches the current button press
+		buttonStringPatterns[*buttonToAssign][0] |= stringState[0];
+    191e:	8d 91       	ld	r24, X+
+    1920:	9c 91       	ld	r25, X
+    1922:	11 97       	sbiw	r26, 0x01	; 1
+    1924:	fc 01       	movw	r30, r24
+    1926:	ee 0f       	add	r30, r30
+    1928:	ff 1f       	adc	r31, r31
+    192a:	e8 0f       	add	r30, r24
+    192c:	f9 1f       	adc	r31, r25
+    192e:	ee 0f       	add	r30, r30
+    1930:	ff 1f       	adc	r31, r31
+    1932:	ee 0f       	add	r30, r30
+    1934:	ff 1f       	adc	r31, r31
+    1936:	e4 0f       	add	r30, r20
+    1938:	f5 1f       	adc	r31, r21
+    193a:	80 81       	ld	r24, Z
+    193c:	91 81       	ldd	r25, Z+1	; 0x01
+    193e:	eb 01       	movw	r28, r22
+    1940:	28 81       	ld	r18, Y
+    1942:	39 81       	ldd	r19, Y+1	; 0x01
+    1944:	82 2b       	or	r24, r18
+    1946:	93 2b       	or	r25, r19
+    1948:	91 83       	std	Z+1, r25	; 0x01
+    194a:	80 83       	st	Z, r24
+		buttonStringPatterns[*buttonToAssign][1] |= stringState[1];
+    194c:	8d 91       	ld	r24, X+
+    194e:	9c 91       	ld	r25, X
+    1950:	11 97       	sbiw	r26, 0x01	; 1
+    1952:	fc 01       	movw	r30, r24
+    1954:	ee 0f       	add	r30, r30
+    1956:	ff 1f       	adc	r31, r31
+    1958:	e8 0f       	add	r30, r24
+    195a:	f9 1f       	adc	r31, r25
+    195c:	ee 0f       	add	r30, r30
+    195e:	ff 1f       	adc	r31, r31
+    1960:	ee 0f       	add	r30, r30
+    1962:	ff 1f       	adc	r31, r31
+    1964:	e4 0f       	add	r30, r20
+    1966:	f5 1f       	adc	r31, r21
+    1968:	82 81       	ldd	r24, Z+2	; 0x02
+    196a:	93 81       	ldd	r25, Z+3	; 0x03
+    196c:	2a 81       	ldd	r18, Y+2	; 0x02
+    196e:	3b 81       	ldd	r19, Y+3	; 0x03
+    1970:	82 2b       	or	r24, r18
+    1972:	93 2b       	or	r25, r19
+    1974:	93 83       	std	Z+3, r25	; 0x03
+    1976:	82 83       	std	Z+2, r24	; 0x02
+		buttonStringPatterns[*buttonToAssign][2] |= stringState[2];
+    1978:	8d 91       	ld	r24, X+
+    197a:	9c 91       	ld	r25, X
+    197c:	11 97       	sbiw	r26, 0x01	; 1
+    197e:	fc 01       	movw	r30, r24
+    1980:	ee 0f       	add	r30, r30
+    1982:	ff 1f       	adc	r31, r31
+    1984:	e8 0f       	add	r30, r24
+    1986:	f9 1f       	adc	r31, r25
+    1988:	ee 0f       	add	r30, r30
+    198a:	ff 1f       	adc	r31, r31
+    198c:	ee 0f       	add	r30, r30
+    198e:	ff 1f       	adc	r31, r31
+    1990:	e4 0f       	add	r30, r20
+    1992:	f5 1f       	adc	r31, r21
+    1994:	84 81       	ldd	r24, Z+4	; 0x04
+    1996:	95 81       	ldd	r25, Z+5	; 0x05
+    1998:	2c 81       	ldd	r18, Y+4	; 0x04
+    199a:	3d 81       	ldd	r19, Y+5	; 0x05
+    199c:	82 2b       	or	r24, r18
+    199e:	93 2b       	or	r25, r19
+    19a0:	95 83       	std	Z+5, r25	; 0x05
+    19a2:	84 83       	std	Z+4, r24	; 0x04
+		buttonStringPatterns[*buttonToAssign][3] |= stringState[3];
+    19a4:	8d 91       	ld	r24, X+
+    19a6:	9c 91       	ld	r25, X
+    19a8:	11 97       	sbiw	r26, 0x01	; 1
+    19aa:	fc 01       	movw	r30, r24
+    19ac:	ee 0f       	add	r30, r30
+    19ae:	ff 1f       	adc	r31, r31
+    19b0:	e8 0f       	add	r30, r24
+    19b2:	f9 1f       	adc	r31, r25
+    19b4:	ee 0f       	add	r30, r30
+    19b6:	ff 1f       	adc	r31, r31
+    19b8:	ee 0f       	add	r30, r30
+    19ba:	ff 1f       	adc	r31, r31
+    19bc:	e4 0f       	add	r30, r20
+    19be:	f5 1f       	adc	r31, r21
+    19c0:	86 81       	ldd	r24, Z+6	; 0x06
+    19c2:	97 81       	ldd	r25, Z+7	; 0x07
+    19c4:	2e 81       	ldd	r18, Y+6	; 0x06
+    19c6:	3f 81       	ldd	r19, Y+7	; 0x07
+    19c8:	82 2b       	or	r24, r18
+    19ca:	93 2b       	or	r25, r19
+    19cc:	97 83       	std	Z+7, r25	; 0x07
+    19ce:	86 83       	std	Z+6, r24	; 0x06
+		buttonStringPatterns[*buttonToAssign][4] |= stringState[4];
+    19d0:	8d 91       	ld	r24, X+
+    19d2:	9c 91       	ld	r25, X
+    19d4:	11 97       	sbiw	r26, 0x01	; 1
+    19d6:	fc 01       	movw	r30, r24
+    19d8:	ee 0f       	add	r30, r30
+    19da:	ff 1f       	adc	r31, r31
+    19dc:	e8 0f       	add	r30, r24
+    19de:	f9 1f       	adc	r31, r25
+    19e0:	ee 0f       	add	r30, r30
+    19e2:	ff 1f       	adc	r31, r31
+    19e4:	ee 0f       	add	r30, r30
+    19e6:	ff 1f       	adc	r31, r31
+    19e8:	e4 0f       	add	r30, r20
+    19ea:	f5 1f       	adc	r31, r21
+    19ec:	80 85       	ldd	r24, Z+8	; 0x08
+    19ee:	91 85       	ldd	r25, Z+9	; 0x09
+    19f0:	28 85       	ldd	r18, Y+8	; 0x08
+    19f2:	39 85       	ldd	r19, Y+9	; 0x09
+    19f4:	82 2b       	or	r24, r18
+    19f6:	93 2b       	or	r25, r19
+    19f8:	91 87       	std	Z+9, r25	; 0x09
+    19fa:	80 87       	std	Z+8, r24	; 0x08
+		buttonStringPatterns[*buttonToAssign][5] |= stringState[5];
+    19fc:	8d 91       	ld	r24, X+
+    19fe:	9c 91       	ld	r25, X
+    1a00:	11 97       	sbiw	r26, 0x01	; 1
+    1a02:	fc 01       	movw	r30, r24
+    1a04:	ee 0f       	add	r30, r30
+    1a06:	ff 1f       	adc	r31, r31
+    1a08:	e8 0f       	add	r30, r24
+    1a0a:	f9 1f       	adc	r31, r25
+    1a0c:	ee 0f       	add	r30, r30
+    1a0e:	ff 1f       	adc	r31, r31
+    1a10:	ee 0f       	add	r30, r30
+    1a12:	ff 1f       	adc	r31, r31
+    1a14:	e4 0f       	add	r30, r20
+    1a16:	f5 1f       	adc	r31, r21
+    1a18:	82 85       	ldd	r24, Z+10	; 0x0a
+    1a1a:	93 85       	ldd	r25, Z+11	; 0x0b
+    1a1c:	2a 85       	ldd	r18, Y+10	; 0x0a
+    1a1e:	3b 85       	ldd	r19, Y+11	; 0x0b
+    1a20:	82 2b       	or	r24, r18
+    1a22:	93 2b       	or	r25, r19
+    1a24:	93 87       	std	Z+11, r25	; 0x0b
+    1a26:	82 87       	std	Z+10, r24	; 0x0a
+
+		*plusLock = 1;  // we set up a lock, so we don't assign all the buttons at once
+    1a28:	81 e0       	ldi	r24, 0x01	; 1
+    1a2a:	f7 01       	movw	r30, r14
+    1a2c:	80 83       	st	Z, r24
+		*buttonToAssign += 1;
+    1a2e:	8d 91       	ld	r24, X+
+    1a30:	9c 91       	ld	r25, X
+    1a32:	11 97       	sbiw	r26, 0x01	; 1
+    1a34:	01 96       	adiw	r24, 0x01	; 1
+    1a36:	8d 93       	st	X+, r24
+    1a38:	9c 93       	st	X, r25
+    1a3a:	02 c0       	rjmp	.+4      	; 0x1a40 <configSetButtonData+0x2d8>
+	}
+	else if(data->plusOn == 0)
+	{
+		*plusLock = 0;
+    1a3c:	e7 01       	movw	r28, r14
+    1a3e:	18 82       	st	Y, r1
+	}
+	return;
+}
+    1a40:	df 91       	pop	r29
+    1a42:	cf 91       	pop	r28
+    1a44:	0f 91       	pop	r16
+    1a46:	ff 90       	pop	r15
+    1a48:	ef 90       	pop	r14
+    1a4a:	df 90       	pop	r13
+    1a4c:	cf 90       	pop	r12
+    1a4e:	bf 90       	pop	r11
+    1a50:	af 90       	pop	r10
+    1a52:	08 95       	ret
+
+00001a54 <__eerd_block>:
+    1a54:	a0 e0       	ldi	r26, 0x00	; 0
+    1a56:	b0 e0       	ldi	r27, 0x00	; 0
+    1a58:	e0 e3       	ldi	r30, 0x30	; 48
+    1a5a:	fd e0       	ldi	r31, 0x0D	; 13
+    1a5c:	0c 94 6c 0d 	jmp	0x1ad8	; 0x1ad8 <__prologue_saves__+0x14>
+    1a60:	7c 01       	movw	r14, r24
+    1a62:	eb 01       	movw	r28, r22
+    1a64:	8a 01       	movw	r16, r20
+    1a66:	69 01       	movw	r12, r18
+    1a68:	09 c0       	rjmp	.+18     	; 0x1a7c <__eerd_block+0x28>
+    1a6a:	ce 01       	movw	r24, r28
+    1a6c:	21 96       	adiw	r28, 0x01	; 1
+    1a6e:	f6 01       	movw	r30, r12
+    1a70:	09 95       	icall
+    1a72:	f7 01       	movw	r30, r14
+    1a74:	81 93       	st	Z+, r24
+    1a76:	7f 01       	movw	r14, r30
+    1a78:	01 50       	subi	r16, 0x01	; 1
+    1a7a:	10 40       	sbci	r17, 0x00	; 0
+    1a7c:	01 15       	cp	r16, r1
+    1a7e:	11 05       	cpc	r17, r1
+    1a80:	a1 f7       	brne	.-24     	; 0x1a6a <__eerd_block+0x16>
+    1a82:	cd b7       	in	r28, 0x3d	; 61
+    1a84:	de b7       	in	r29, 0x3e	; 62
+    1a86:	e8 e0       	ldi	r30, 0x08	; 8
+    1a88:	0c 94 88 0d 	jmp	0x1b10	; 0x1b10 <__epilogue_restores__+0x14>
+
+00001a8c <__eewr_block>:
+    1a8c:	a0 e0       	ldi	r26, 0x00	; 0
+    1a8e:	b0 e0       	ldi	r27, 0x00	; 0
+    1a90:	ec e4       	ldi	r30, 0x4C	; 76
+    1a92:	fd e0       	ldi	r31, 0x0D	; 13
+    1a94:	0c 94 6c 0d 	jmp	0x1ad8	; 0x1ad8 <__prologue_saves__+0x14>
+    1a98:	ec 01       	movw	r28, r24
+    1a9a:	7b 01       	movw	r14, r22
+    1a9c:	8a 01       	movw	r16, r20
+    1a9e:	69 01       	movw	r12, r18
+    1aa0:	09 c0       	rjmp	.+18     	; 0x1ab4 <__eewr_block+0x28>
+    1aa2:	ce 01       	movw	r24, r28
+    1aa4:	21 96       	adiw	r28, 0x01	; 1
+    1aa6:	f7 01       	movw	r30, r14
+    1aa8:	61 91       	ld	r22, Z+
+    1aaa:	7f 01       	movw	r14, r30
+    1aac:	f6 01       	movw	r30, r12
+    1aae:	09 95       	icall
+    1ab0:	01 50       	subi	r16, 0x01	; 1
+    1ab2:	10 40       	sbci	r17, 0x00	; 0
+    1ab4:	01 15       	cp	r16, r1
+    1ab6:	11 05       	cpc	r17, r1
+    1ab8:	a1 f7       	brne	.-24     	; 0x1aa2 <__eewr_block+0x16>
+    1aba:	cd b7       	in	r28, 0x3d	; 61
+    1abc:	de b7       	in	r29, 0x3e	; 62
+    1abe:	e8 e0       	ldi	r30, 0x08	; 8
+    1ac0:	0c 94 88 0d 	jmp	0x1b10	; 0x1b10 <__epilogue_restores__+0x14>
+
+00001ac4 <__prologue_saves__>:
+    1ac4:	2f 92       	push	r2
+    1ac6:	3f 92       	push	r3
+    1ac8:	4f 92       	push	r4
+    1aca:	5f 92       	push	r5
+    1acc:	6f 92       	push	r6
+    1ace:	7f 92       	push	r7
+    1ad0:	8f 92       	push	r8
+    1ad2:	9f 92       	push	r9
+    1ad4:	af 92       	push	r10
+    1ad6:	bf 92       	push	r11
+    1ad8:	cf 92       	push	r12
+    1ada:	df 92       	push	r13
+    1adc:	ef 92       	push	r14
+    1ade:	ff 92       	push	r15
+    1ae0:	0f 93       	push	r16
+    1ae2:	1f 93       	push	r17
+    1ae4:	cf 93       	push	r28
+    1ae6:	df 93       	push	r29
+    1ae8:	cd b7       	in	r28, 0x3d	; 61
+    1aea:	de b7       	in	r29, 0x3e	; 62
+    1aec:	ca 1b       	sub	r28, r26
+    1aee:	db 0b       	sbc	r29, r27
+    1af0:	0f b6       	in	r0, 0x3f	; 63
+    1af2:	f8 94       	cli
+    1af4:	de bf       	out	0x3e, r29	; 62
+    1af6:	0f be       	out	0x3f, r0	; 63
+    1af8:	cd bf       	out	0x3d, r28	; 61
+    1afa:	09 94       	ijmp
+
+00001afc <__epilogue_restores__>:
+    1afc:	2a 88       	ldd	r2, Y+18	; 0x12
+    1afe:	39 88       	ldd	r3, Y+17	; 0x11
+    1b00:	48 88       	ldd	r4, Y+16	; 0x10
+    1b02:	5f 84       	ldd	r5, Y+15	; 0x0f
+    1b04:	6e 84       	ldd	r6, Y+14	; 0x0e
+    1b06:	7d 84       	ldd	r7, Y+13	; 0x0d
+    1b08:	8c 84       	ldd	r8, Y+12	; 0x0c
+    1b0a:	9b 84       	ldd	r9, Y+11	; 0x0b
+    1b0c:	aa 84       	ldd	r10, Y+10	; 0x0a
+    1b0e:	b9 84       	ldd	r11, Y+9	; 0x09
+    1b10:	c8 84       	ldd	r12, Y+8	; 0x08
+    1b12:	df 80       	ldd	r13, Y+7	; 0x07
+    1b14:	ee 80       	ldd	r14, Y+6	; 0x06
+    1b16:	fd 80       	ldd	r15, Y+5	; 0x05
+    1b18:	0c 81       	ldd	r16, Y+4	; 0x04
+    1b1a:	1b 81       	ldd	r17, Y+3	; 0x03
+    1b1c:	aa 81       	ldd	r26, Y+2	; 0x02
+    1b1e:	b9 81       	ldd	r27, Y+1	; 0x01
+    1b20:	ce 0f       	add	r28, r30
+    1b22:	d1 1d       	adc	r29, r1
+    1b24:	0f b6       	in	r0, 0x3f	; 63
+    1b26:	f8 94       	cli
+    1b28:	de bf       	out	0x3e, r29	; 62
+    1b2a:	0f be       	out	0x3f, r0	; 63
+    1b2c:	cd bf       	out	0x3d, r28	; 61
+    1b2e:	ed 01       	movw	r28, r26
+    1b30:	08 95       	ret
+
+00001b32 <_exit>:
+    1b32:	f8 94       	cli
+
+00001b34 <__stop_program>:
+    1b34:	ff cf       	rjmp	.-2      	; 0x1b34 <__stop_program>
