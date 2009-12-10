@@ -104,7 +104,7 @@
 	 * interrupt than INT0, you may have to define some of these.
 	 */
 	/* #define USB_INTR_CFG            MCUCR */  // register where interrupt features are configured
-	/* #define USB_INTR_CFG_SET        ((1 << ISC00) | (1 << ISC01)) */   //feature bits to set
+	 #define USB_INTR_CFG_SET        ((1 << ISC10) | (1 << ISC11))   //feature bits to set
 	/* #define USB_INTR_CFG_CLR        0 */  // feature bits to clear
 	/* #define USB_INTR_ENABLE         GIMSK */   //register where interrupt enable bit resides
 	 #define USB_INTR_ENABLE_BIT     INT1   // bit number in above register

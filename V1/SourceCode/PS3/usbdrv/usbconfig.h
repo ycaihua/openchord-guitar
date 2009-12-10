@@ -63,13 +63,13 @@ section at the end of this file).
  * default control endpoint 0 and an interrupt-in endpoint (any other endpoint
  * number).
  */
-#define USB_CFG_HAVE_INTRIN_ENDPOINT3   0
+#define USB_CFG_HAVE_INTRIN_ENDPOINT3   1
 /* Define this to 1 if you want to compile a version with three endpoints: The
  * default control endpoint 0, an interrupt-in endpoint 3 (or the number
  * configured below) and a catch-all default interrupt-in endpoint as above.
  * You must also define USB_CFG_HAVE_INTRIN_ENDPOINT to 1 for this feature.
  */
-#define USB_CFG_EP3_NUMBER              3
+#define USB_CFG_EP3_NUMBER              81
 /* If the so-called endpoint 3 is used, it can now be configured to any other
  * endpoint number (except 0) with this macro. Default if undefined is 3.
  */
@@ -93,7 +93,7 @@ section at the end of this file).
  * (e.g. HID), but never want to send any data. This option saves a couple
  * of bytes in flash memory and the transmit buffers in RAM.
  */
-#define USB_CFG_INTR_POLL_INTERVAL      100
+#define USB_CFG_INTR_POLL_INTERVAL      50
 /* If you compile a version with endpoint 1 (interrupt-in), this is the poll
  * interval. The value is in milliseconds and must not be less than 10 ms for
  * low speed devices.
@@ -102,7 +102,7 @@ section at the end of this file).
 /* Define this to 1 if the device has its own power supply. Set it to 0 if the
  * device is powered from the USB bus.
  */
-#define USB_CFG_MAX_BUS_POWER           20
+#define USB_CFG_MAX_BUS_POWER           100
 /* Set this variable to the maximum USB bus power consumption of your device.
  * The value is in milliamperes. [It will be divided by two since USB
  * communicates power requirements in units of 2 mA.]
@@ -194,7 +194,8 @@ section at the end of this file).
  * own Vendor ID, define it here. Otherwise you use one of obdev's free shared
  * VID/PID pairs. Be sure to read USBID-License.txt for rules!
  */
-#define  USB_CFG_DEVICE_ID       0xe8, 0x03 /* VOTI's lab use PID */
+
+#define  USB_CFG_DEVICE_ID       0x00, 0x02 /* VOTI's lab use PID */
 /* This is the ID of the product, low byte first. It is interpreted in the
  * scope of the vendor ID. If you have registered your own VID with usb.org
  * or if you have licensed a PID from somebody else, define it here. Otherwise
@@ -204,6 +205,7 @@ section at the end of this file).
 #define USB_CFG_DEVICE_VERSION  0x00, 0x01
 /* Version number of the device: Minor number first, then major number.
  */
+
 #define USB_CFG_VENDOR_NAME     'O', 'p', 'e', 'n', 'C', 'h', 'o', 'r', 'd', '.', 'o', 'r', 'g'
 #define USB_CFG_VENDOR_NAME_LEN 13
 /* These two values define the vendor name returned by the USB device. The name
@@ -214,7 +216,8 @@ section at the end of this file).
  * obdev's free shared VID/PID pair. See the file USBID-License.txt for
  * details.
  */
-#define USB_CFG_DEVICE_NAME     'V', '1', ' ', 'G', 'u', 'i', 't', 'a', 'r'
+
+#define USB_CFG_DEVICE_NAME     'V','1',' ','G','u','i','t','a','r'
 #define USB_CFG_DEVICE_NAME_LEN 9
 /* Same as above for the device name. If you don't want a device name, undefine
  * the macros. See the file USBID-License.txt before you assign a name if you
@@ -242,7 +245,7 @@ section at the end of this file).
  * HID class is 3, no subclass and protocol required (but may be useful!)
  * CDC class is 2, use subclass 2 and protocol 1 for ACM
  */
-#define USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH    74
+#define USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH    74 //52
 /* Define this to the length of the HID report descriptor, if you implement
  * an HID device. Otherwise don't define it or define it to 0.
  * If you use this define, you must add a PROGMEM character array named

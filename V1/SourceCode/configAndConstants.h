@@ -34,9 +34,9 @@
 	    The other options are for when we were using different chips and different boards for
 	    the Wii and USB options. */
 
-	//#define GENERAL_CIRCUIT_BOARD
+	#define GENERAL_CIRCUIT_BOARD
 	//#define ATMEGA164
-	#define ATMEGA168
+	//#define ATMEGA168
 
 
 /* ---------------- Lesser constants, generally ignorable -----------------*/

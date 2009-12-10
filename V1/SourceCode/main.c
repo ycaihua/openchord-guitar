@@ -239,6 +239,9 @@ inline void readOtherButtons(dataForController* data)
 	data->minusOn = !(i & (1<<minus_pin));
 }
 
+// Debugging LED EEPROM holding location - put above the main() function
+uint8_t EEMEM nonvolitileString[10];
+			
 int main(void)
 /* This controls the whole program.
 	 It works under normal mode by first initializing things then looping through the code.
@@ -252,9 +255,30 @@ int main(void)
 	  to display the current controller button being programmed, and then sends that data to the controller.
 */ 
 {
-	//Debug stuff - turn on a light on pin 0, port b
-	DDRB |= 1;
-	PORTB |= 1;
+  // Now set up all the communication stuff - initialization routines
+  //  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
+  startCommunication();
+
+	//Debug stuff - the following goes before the while loop in main()
+	int timer;
+    DDRB |= 1;
+  // set PORTB for output
+  
+  uint8_t string[1];
+  uint8_t x = 10;
+
+  eeprom_read_block( (void*)&string, (void*)&nonvolitileString, 1);
+  if (string[0] == 50)
+  {
+  	  x = 250;
+  	  eeprom_write_block( (void*)&x, (void*)&nonvolitileString, 1);
+  }
+  else
+  {
+  	  x = 50;
+  	  eeprom_write_block( (void*)&x, (void*)&nonvolitileString, 1);
+  }
+  timer = x;
 
 	// First, set up the guitar stuff - These functions are stored in guitarInitFunctions.h/.c
 	setPins();
@@ -278,16 +302,18 @@ int main(void)
 	char previousPlusOn = 0; // This is used as a lock so we don't program all the buttons at once
 	int debounceTimer = 0; // This is used as a global timer for debouncing buttons
 	char controllerMode = FRETS;
+	
 	dataForController data;
 	clearData(&data); //This function is contained in V1Typedefs.h
 
-  // Now set up all the communication stuff - initialization routines
-  //  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
-  startCommunication();
+	//Debug Stuff - it's complementary code is in ps3interface.h and .c
+	DDRC &= ~(1<<5); //Turn 5 on Port C to inputs
+	PORTC |= (1<<5); //Turn off the internal pullup resistor on pin 5
 
     while(1){  
 	              /* main event loop */
-        // We first read all the strings for button hits and store them into
+		
+		// We first read all the strings for button hits and store them into
 		//  our stringState array.  Strum processing is also handled here for now.
         stringState[0] = readFrets(first_string);
 		stringState[1] = readFrets(second_string);
@@ -372,6 +398,7 @@ int main(void)
 					}
 		}	}	}	 // End of Config Mode code
 
+		
 		// Normal operation
 		if (configMode == 0)
 		{
@@ -394,12 +421,12 @@ int main(void)
 				displayTransitionState(&data, controllerMode);
 			}
 		}
-	    
+			    
 		// Now our processing is complete, so using those button presses, we set up the 
 		// button data packet. This function depends on the console and is 
 		// set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
 		sendData(data);
-    
+
 	}// End of while loop
     return 0;
 }
