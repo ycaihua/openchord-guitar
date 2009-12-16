@@ -114,7 +114,7 @@
 
 #else // This code is used for legacy boards
 	#if defined PS3_USB
-	  #include "PS3/pindef-ps3.h"  //I changed this from ps3Interface to pindef-ps3.. Hope that doesn't break stuff?
+	  #include "PS3/pindef-ps3.h"
 	  #ifdef WII
 	    #error "Both WII and PS3_USB are defined in configAndConstants.h - choose only one"
 	  #endif

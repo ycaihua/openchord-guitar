@@ -21,11 +21,8 @@ other hardware interrupt, as long as it is the highest level interrupt, see
 section at the end of this file).
 */
 
-#define F_CPU 16000000UL
 
-
-#define USB_CFG_CLOCK_KHZ      16000
-// (F_CPU/1000)
+#define USB_CFG_CLOCK_KHZ     (F_CPU/1000)
 /* Clock rate of the AVR in kHz. Legal values are 12000, 12800, 15000, 16000,
  * 16500 and 20000. The 12.8 MHz and 16.5 MHz versions of the code require no
  * crystal, they tolerate +/- 1% deviation from the nominal frequency. All
@@ -93,7 +90,7 @@ section at the end of this file).
  * (e.g. HID), but never want to send any data. This option saves a couple
  * of bytes in flash memory and the transmit buffers in RAM.
  */
-#define USB_CFG_INTR_POLL_INTERVAL      50
+#define USB_CFG_INTR_POLL_INTERVAL      10
 /* If you compile a version with endpoint 1 (interrupt-in), this is the poll
  * interval. The value is in milliseconds and must not be less than 10 ms for
  * low speed devices.

@@ -9,7 +9,7 @@
 
 #ifndef V1_TYPEDEFS
 #define V1_TYPEDEFS
-
+/*
 	// This struct is used to store abstract data about what the controller's state is.
 	// It gets filled by the functions in main.c and then gets passed to the ___interface.c files
 	typedef struct dataForController
@@ -50,5 +50,5 @@
 			x--;
 		}
 	}
-
+*/
 #endif

@@ -147,7 +147,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1bc0
+.text           0x00000000     0x1bb8
  *(.vectors)
  .vectors       0x00000000       0x68 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm168.o
                 0x00000000                __vectors
@@ -237,55 +237,55 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
                 0x0000015c                __vector_16
                 0x0000015c                __vector_18
                 0x0000015c                __vector_20
- .text          0x00000160      0x780 main.o
+ .text          0x00000160      0x778 main.o
                 0x0000018a                readFrets
                 0x00000240                main
- .text          0x000008e0       0x90 guitarInitFunctions.o
-                0x000008e0                setPins
-                0x0000091a                setTimer
- .text          0x00000970      0xaba processStringState.o
-                0x00000e64                processNotes
-                0x00000970                processChords
-                0x0000113e                configSetButtonData
-                0x00000fca                processFrets
-                0x00001112                displayTransitionState
-                0x000010e4                processStringState
- .text          0x0000142a      0x168 ps3Interface.o
-                0x0000142a                usbFunctionSetup
-                0x00001558                startCommunication
-                0x00001470                sendData
- .text          0x00001592      0x2c2 usbdrv.o
-                0x000015b4                usbPoll
-                0x000017cc                usbSetInterrupt3
-                0x00001810                usbSetInterrupt
-                0x00001592                usbInit
- .text          0x00001854      0x28a usbdrvasm.o
-                0x00001854                usbCrc16
-                0x0000187e                usbCrc16Append
-                0x00001886                __vector_2
- .text          0x00001ade        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text          0x00001ade        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text          0x00001ade        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text          0x00001ade       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eerd_block.o)
-                0x00001ade                __eerd_block
- .text          0x00001b16       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eewr_block.o)
-                0x00001b16                __eewr_block
- .text          0x00001b4e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
- .text          0x00001b4e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
-                0x00001b4e                . = ALIGN (0x2)
+ .text          0x000008d8       0x90 guitarInitFunctions.o
+                0x000008d8                setPins
+                0x00000912                setTimer
+ .text          0x00000968      0xaba processStringState.o
+                0x00000e5c                processNotes
+                0x00000968                processChords
+                0x00001136                configSetButtonData
+                0x00000fc2                processFrets
+                0x0000110a                displayTransitionState
+                0x000010dc                processStringState
+ .text          0x00001422      0x168 ps3Interface.o
+                0x00001422                usbFunctionSetup
+                0x00001550                startCommunication
+                0x00001468                sendData
+ .text          0x0000158a      0x2c2 usbdrv.o
+                0x000015ac                usbPoll
+                0x000017c4                usbSetInterrupt3
+                0x00001808                usbSetInterrupt
+                0x0000158a                usbInit
+ .text          0x0000184c      0x28a usbdrvasm.o
+                0x0000184c                usbCrc16
+                0x00001876                usbCrc16Append
+                0x0000187e                __vector_2
+ .text          0x00001ad6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text          0x00001ad6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x00001ad6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00001ad6       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eerd_block.o)
+                0x00001ad6                __eerd_block
+ .text          0x00001b0e       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eewr_block.o)
+                0x00001b0e                __eewr_block
+ .text          0x00001b46        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+ .text          0x00001b46        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+                0x00001b46                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00001b4e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00001b4e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00001b4e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00001b4e       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
-                0x00001b4e                __prologue_saves__
- .text.libgcc   0x00001b86       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
-                0x00001b86                __epilogue_restores__
-                0x00001bbc                . = ALIGN (0x2)
+ .text.libgcc   0x00001b46        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00001b46        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00001b46        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00001b46       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+                0x00001b46                __prologue_saves__
+ .text.libgcc   0x00001b7e       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+                0x00001b7e                __epilogue_restores__
+                0x00001bb4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001bbc        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
-                0x00001bbc                exit
-                0x00001bbc                _exit
+ .fini9         0x00001bb4        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+                0x00001bb4                exit
+                0x00001bb4                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -304,11 +304,11 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001bbc        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00001bb4        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001bc0                _etext = .
+                0x00001bb8                _etext = .
 
-.data           0x00800100        0x2 load address 0x00001bc0
+.data           0x00800100        0x2 load address 0x00001bb8
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm168.o
@@ -369,8 +369,8 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
                 0x0080012b                usbRxBuf
                 0x00800141                usbTxStatus3
                 0x0080014d                PROVIDE (__bss_end, .)
-                0x00001bc0                __data_load_start = LOADADDR (.data)
-                0x00001bc2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00001bb8                __data_load_start = LOADADDR (.data)
+                0x00001bba                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080014d        0x0
                 0x0080014d                PROVIDE (__noinit_start, .)
@@ -459,13 +459,13 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .debug_pubnames
                 0x000001a9      0x1b6 usbdrv.o
 
-.debug_info     0x00000000     0x1a37
+.debug_info     0x00000000     0x1a3e
  *(.debug_info)
  .debug_info    0x00000000      0x87f main.o
- .debug_info    0x0000087f       0x86 guitarInitFunctions.o
- .debug_info    0x00000905      0x446 processStringState.o
- .debug_info    0x00000d4b      0x3b5 ps3Interface.o
- .debug_info    0x00001100      0x937 usbdrv.o
+ .debug_info    0x0000087f       0x8d guitarInitFunctions.o
+ .debug_info    0x0000090c      0x446 processStringState.o
+ .debug_info    0x00000d52      0x3b5 ps3Interface.o
+ .debug_info    0x00001107      0x937 usbdrv.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev   0x00000000      0x8eb
@@ -476,13 +476,13 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .debug_abbrev  0x0000043a      0x1f0 ps3Interface.o
  .debug_abbrev  0x0000062a      0x2c1 usbdrv.o
 
-.debug_line     0x00000000     0x1606
+.debug_line     0x00000000     0x161a
  *(.debug_line)
- .debug_line    0x00000000      0x7ea main.o
- .debug_line    0x000007ea      0x1bd guitarInitFunctions.o
- .debug_line    0x000009a7      0x5c9 processStringState.o
- .debug_line    0x00000f70      0x2c1 ps3Interface.o
- .debug_line    0x00001231      0x3d5 usbdrv.o
+ .debug_line    0x00000000      0x7f0 main.o
+ .debug_line    0x000007f0      0x1bd guitarInitFunctions.o
+ .debug_line    0x000009ad      0x5d1 processStringState.o
+ .debug_line    0x00000f7e      0x2c7 ps3Interface.o
+ .debug_line    0x00001245      0x3d5 usbdrv.o
 
 .debug_frame    0x00000000      0x180
  *(.debug_frame)
@@ -497,7 +497,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .debug_str     0x00000000      0x34a main.o
                                 0x383 (size before relaxing)
  .debug_str     0x0000034a       0x2a guitarInitFunctions.o
-                                 0xe5 (size before relaxing)
+                                 0xea (size before relaxing)
  .debug_str     0x00000374       0xbf processStringState.o
                                 0x261 (size before relaxing)
  .debug_str     0x00000433      0x144 ps3Interface.o

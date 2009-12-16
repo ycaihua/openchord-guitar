@@ -17,12 +17,12 @@
 //  thereby activating config mode. Works with both chords and scales.
 inline char testForConfigMode(int stringState[])
 {
-	if ((stringState[0] == 0b00000000) &&
-		(stringState[1] == 0b00000000) &&
-		(stringState[2] == 0b00000000) &&
-		(stringState[3] == 0b00011000) &&
-		(stringState[4] == 0b00011000) &&
-		(stringState[5] == 0b00011000))
+	if ((stringState[0] == 0b00110000) &&
+		(stringState[1] == 0b00110000) &&
+		(stringState[2] == 0b00110000) &&
+		(stringState[3] == 0b00000000) &&
+		(stringState[4] == 0b00000000) &&
+		(stringState[5] == 0b00000000))
 		return 1;
 	else
 		return 0;
@@ -32,10 +32,10 @@ inline char testForConfigMode(int stringState[])
 inline char testForEndConfigMode(int stringState[])
 {
 	if ((stringState[0] == 0b00000000) &&
-		(stringState[1] == 0b00000000) &&
-		(stringState[2] == 0b00011000) &&
-		(stringState[3] == 0b00011000) &&
-		(stringState[4] == 0b00011000) &&
+		(stringState[1] == 0b00110000) &&
+		(stringState[2] == 0b00110000) &&
+		(stringState[3] == 0b00110000) &&
+		(stringState[4] == 0b00000000) &&
 		(stringState[5] == 0b00000000))
 		return 1;
 	else
@@ -46,10 +46,10 @@ inline int testForSwitchModes(int stringState[])
 {
 	// Test for the right keypress to start the mode
 	if ((stringState[0] == 0b00000000) &&
-		(stringState[1] == 0b00011000) &&
+		(stringState[1] == 0b00000000) &&
 		(stringState[2] == 0b00011000) &&
 		(stringState[3] == 0b00011000) &&
-		(stringState[4] == 0b00000000) &&
+		(stringState[4] == 0b00011000) &&
 		(stringState[5] == 0b00000000))
 	    return 1;
     else
