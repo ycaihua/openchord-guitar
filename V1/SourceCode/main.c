@@ -325,6 +325,9 @@ int main(void)
 		// Next, we reset the data struct so we have a fresh place to store things
 		clearData(&data);  // This function is in V1Typedefs.h
 
+		// Now read our other buttons, plus and minus.
+		readOtherButtons(&data);
+
 		// Try and see if we're resetting the controller
 		if(testForResetButtonPatterns(stringState))
 		{
@@ -333,13 +336,6 @@ int main(void)
 			setEepromToDefault(&notesModeButtonPatterns, &chordModeButtonPatterns); // Stored in buttonStringPatterns.h
 		}
 
-		// Now read our other buttons, like plus and minus
-		readOtherButtons(&data);
-
-		//Test if Minus is being played by the chord instead of the button
-		if(testForMinusChord(stringState))
-			data.minusOn = 1;
-		
 		if ((controllerMode == NOTES) || (controllerMode == CHORDS))
 		{
 			// Check to see if we're trying to enter Config Mode; disabled if we're playing with frets
@@ -375,11 +371,14 @@ int main(void)
 					}
 				else
 				{
-					// Now set up the data packet to the Wii to say we're pressing whatever button we're currently
+					// Now set up the data packet to the interface layer to say we're pressing whatever button we're currently
 					// assigning, and if we're pressing 'plus', go ahead and lock that string combination in
 					//  The function itself can be found in processStringState.h/.c
 					configSetButtonData(&data, &buttonToAssign, buttonStringPatterns, stringState, controllerMode,
 											&plusLock, &previousPlusOn, &debounceTimer);
+					
+					data.plusOn = 0; // Make sure we're not actually sending a "plus" signal to the controller, though.
+									// If we were, it would pause the game.
 
 					// If we've assigned allcolors in Notes mode, cycle back to programming Green 
 					if (controllerMode == NOTES && buttonToAssign >= NUM_NOTES_BUTTONS && plusLock == 0 )
@@ -402,9 +401,14 @@ int main(void)
 		// Normal operation
 		if (configMode == 0)
 		{
+			//Test if Minus is being played by the chord instead of the button
+			// This means it won't get read in config mode, which is good.
+			if(testForMinusChord(stringState))
+				data.minusOn = 1;
+		
 			// Update controllerMode to see if we're trying to change controller modes
 			//  If we are, this changes the buttonStringPatterns as well to match
-			//  correctly with the modes
+			//  correctly with the modes - this function is here in main.c
 			switchPlayModes(stringState, buttonStringPatterns, &controllerMode);
 
 			// Next, using our strumState array, we process that data to figure out what sort

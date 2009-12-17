@@ -193,22 +193,6 @@ void sendData(dataForController data)
         reportBuffer[1] |= (data.plusOn << PLUS_BIT);
         reportBuffer[0] |= (data.minusOn << MINUS_BIT);
 
-		//DEBUG STUFF
-		//DDRC &= ~(1<<5); //Turn 5 on Port C to inputs
-		//PORTC |= (1<<5); //Turn off the internal pullup resistor on pin 5
-		_delay_ms(2);
-
-		if (PINC & (1<<5))
-		{
-			PORTB &= ~1; // Turn off LED
-			//reportBuffer.dx = 0;
-		}
-		else
-		{
-           reportBuffer[2] = 0b00000100; //Down
-			PORTB |= 1; // Turn on the LED if we're grounded
-		}
-
         //Then we finish off some USB stuff.
         wdt_reset();  //Reset the watchdog timer
         usbPoll();    //USB poll - must be called at least once per 10ms

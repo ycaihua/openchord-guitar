@@ -151,8 +151,6 @@ void processChords(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 			 data->blueOn = 1;
   		}
 
-
-
 	return;
 }
 
@@ -169,6 +167,13 @@ void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 	char strumOn = -1; // This holds which string the pick is strumming
 	char buttonPressed = 0;
 	char strumPressed  = 0;
+
+	//We also hardcode in a down strum on the empty 6th string, for navigation
+	if (stringState[0] &= 1)
+	{
+		data->downOn = 1;
+	}
+
 	for (int i = 0; i < 6; i++)
 	{
 		if (stringState[i] != 0) // Only look at strings that are being touched or strummed
@@ -257,6 +262,7 @@ void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 	{
 		data->upOn = 1;
 	}
+
 	return;
 }
 
@@ -371,17 +377,17 @@ void displayTransitionState(dataForController* data, int controllerMode)
 {
 	if (controllerMode == FRETS_TO_NOTES)
 	{
-		data->greenOn = 1;
+		data->blueOn = 1;
 		data->yellowOn = 1;
 	}
 	else if (controllerMode == NOTES_TO_CHORDS)
 	{
-		data->greenOn = 1;
 		data->blueOn = 1;
+		data->orangeOn = 1;
 	}
 	else if (controllerMode == CHORDS_TO_FRETS)
 	{
-		data->greenOn = 1;
+		data->yellowOn = 1;
 		data->orangeOn = 1;
 	}
 }
