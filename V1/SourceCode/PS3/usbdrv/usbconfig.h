@@ -319,4 +319,13 @@ section at the end of this file).
 #define USB_CFG_DESCR_PROPS_UNKNOWN                 0
 
 
+
+
+#ifndef __ASSEMBLER__
+extern void usbEventResetReady(void);
+#endif
+#define USB_RESET_HOOK(isReset)         if(!isReset){usbEventResetReady();}
+#define USB_CFG_HAVE_MEASURE_FRAME_LENGTH   1
+
+
 #endif /* __usbconfig_h_included__ */

@@ -13,7 +13,6 @@
 #ifndef PROCESS_STRING_STATE_h
 #define PROCESS_STRING_STATE_h
 
-#include "V1Typedefs.h"
 #include "configAndConstants.h"
 #include <avr/io.h>
 

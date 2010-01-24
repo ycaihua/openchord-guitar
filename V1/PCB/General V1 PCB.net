@@ -1,206 +1,247 @@
-# EESchema Netlist Version 1.1 created  30/10/2009 21:58:00
+# EESchema Netlist Version 1.1 created  16/01/2010 09:02:26
 (
- ( /4AEBBC24 $noname  JP1 JUMPER_BLOCK {Lib=JUMPER_BLOCK}
-  (    1 N-000001 )
-  (    2 N-000005 )
-  (    3 N-000002 )
-  (    4 N-000045 )
-  (    5 N-000026 )
-  (    6 N-000022 )
+ ( /4ACED029 SIL-4 +-Pick1 +___-__Pick__X
+  ( 1 N-000040 )
+  ( 2 N-000006 )
+  ( 3 N-000012 )
+  ( 4 N-000007 )
  )
- ( /4ADE5AE8 $noname  P6 CONN_1 {Lib=CONN_1}
-  (    1 N-000003 )
+ ( /4B4FBAE0 C1 C1 27pF
+  ( 1 N-000003 )
+  ( 2 GND )
  )
- ( /4ADE66B3 $noname  R23 R {Lib=R}
-  (    1 N-000004 )
-  (    2 N-000003 )
+ ( /4B4FBAEA C1 C2 27pF
+  ( 1 N-000004 )
+  ( 2 GND )
  )
- ( /4ADE5944 $noname  J1 USB_WII {Lib=USB_WII}
-  (    1 +5V )
-  (    2 N-000002 )
-  (    3 N-000045 )
-  (    4 GND )
+ ( /4ACD5E45 D3 D1 DIODE
+  ( 1 N-000009 )
+  ( 2 N-000016 )
  )
- ( /4ACEDC1C $noname  X1 ECS-2100X {Lib=ECS-2100X}
-  (    1 ? )
-  (    4 GND )
-  (    5 N-000019 )
-  (    8 +5V )
+ ( /4ACD5E4B D3 D2 DIODE
+  ( 1 N-000035 )
+  ( 2 N-000030 )
  )
- ( /4ACED079 $noname  P3 CONN_1 {Lib=CONN_1}
-  (    1 N-000018 )
+ ( /4ACD5E50 D3 D3 DIODE
+  ( 1 N-000036 )
+  ( 2 N-000031 )
  )
- ( /4ACED029 $noname  +-Pick1 CONN_4 {Lib=CONN_4}
-  (    1 N-000040 )
-  (    2 N-000011 )
-  (    3 N-000041 )
-  (    4 N-000010 )
+ ( /4ACD5E3E D3 D4 DIODE
+  ( 1 N-000010 )
+  ( 2 N-000032 )
  )
- ( /4ACED00C $noname  R22 10K {Lib=R}
-  (    1 N-000010 )
-  (    2 N-000012 )
+ ( /4ACD5E48 D3 D5 DIODE
+  ( 1 N-000011 )
+  ( 2 N-000015 )
  )
- ( /4ACEC548 DIL28  IC1 ATMEGA8-P {Lib=ATMEGA8-P}
-  (    1 N-000027 )
-  (    2 N-000037 )
-  (    3 N-000014 )
-  (    4 N-000036 )
-  (    5 N-000017 )
-  (    6 N-000034 )
-  (    7 +5V )
-  (    8 GND )
-  (    9 N-000019 )
-  (   10 N-000018 )
-  (   11 N-000016 )
-  (   12 N-000035 )
-  (   13 N-000015 )
-  (   14 N-000004 )
-  (   15 N-000024 )
-  (   16 N-000025 )
-  (   17 N-000032 )
-  (   18 N-000031 )
-  (   19 N-000023 )
-  (   20 +5V )
-  (   21 +5V )
-  (   22 GND )
-  (   23 N-000038 )
-  (   24 N-000013 )
-  (   25 N-000039 )
-  (   26 N-000012 )
-  (   27 N-000005 )
-  (   28 N-000001 )
+ ( /4ACD5E4D D3 D6 DIODE
+  ( 1 N-000008 )
+  ( 2 N-000017 )
  )
- ( /4ACD6D50 AVR-ISP-6  ISP1 AVR-ISP-6 {Lib=AVR-ISP-6}
-  (    1 N-000031 )
-  (    2 +5V )
-  (    3 N-000023 )
-  (    4 N-000032 )
-  (    5 N-000027 )
-  (    6 GND )
+ ( /4ACD5F39 C1 D7 ZENER_3.6V
+  ( 1 GND )
+  ( 2 N-000026 )
  )
- ( /4ACD6BE3 $noname  Frets1 CONN_5 {Lib=CONN_5}
-  (    1 N-000028 )
-  (    2 N-000021 )
-  (    3 N-000029 )
-  (    4 N-000020 )
-  (    5 N-000030 )
+ ( /4ACD5F26 C1 D8 ZENER_3.6V
+  ( 1 GND )
+  ( 2 N-000022 )
  )
- ( /4ACD6BBF $noname  Strings1 CONN_6 {Lib=CONN_6}
-  (    1 N-000042 )
-  (    2 N-000009 )
-  (    3 N-000008 )
-  (    4 N-000007 )
-  (    5 N-000043 )
-  (    6 N-000006 )
+ ( /4ACD5D37 C1 Dcpl1 0.1uF
+  ( 1 GND )
+  ( 2 +5V )
  )
- ( /4ACD639D $noname  R12 10K {Lib=R}
-  (    1 N-000026 )
-  (    2 +5V )
+ ( /4B4FBF52 C1 Dcpl2 0.1uF
+  ( 1 +5V )
+  ( 2 GND )
  )
- ( /4ACD5F39 $noname  D7 ZENER_3.6V {Lib=ZENER}
-  (    1 GND )
-  (    2 N-000026 )
+ ( /4ACD6BE3 SIL-5 Frets1 Fret_1_<>_Fret_5
+  ( 1 N-000021 )
+  ( 2 N-000027 )
+  ( 3 N-000020 )
+  ( 4 N-000028 )
+  ( 5 N-000019 )
  )
- ( /4ACD5F26 $noname  D8 ZENER_3.6V {Lib=ZENER}
-  (    1 GND )
-  (    2 N-000022 )
+ ( /4B4514E2 PINTST GND1 CONN_1
+  ( 1 GND )
  )
- ( /4ACD5E50 $noname  D3 DIODE {Lib=DIODE}
-  (    1 N-000006 )
-  (    2 N-000015 )
+ ( /4B4514E8 PINTST GND2 CONN_1
+  ( 1 GND )
  )
- ( /4ACD5E4D $noname  D6 DIODE {Lib=DIODE}
-  (    1 N-000043 )
-  (    2 N-000035 )
+ ( /4B4514F1 PINTST GND3 CONN_1
+  ( 1 GND )
  )
- ( /4ACD5E4B $noname  D2 DIODE {Lib=DIODE}
-  (    1 N-000007 )
-  (    2 N-000016 )
+ ( /4B45152F PINTST GND4 CONN_1
+  ( 1 GND )
  )
- ( /4ACD5E48 $noname  D5 DIODE {Lib=DIODE}
-  (    1 N-000042 )
-  (    2 N-000037 )
+ ( /4ACEC548 DIP-28__300 IC1 ATMEGA8-P
+  ( 1 N-000042 )
+  ( 2 N-000015 )
+  ( 3 N-000032 )
+  ( 4 N-000016 )
+  ( 5 N-000043 )
+  ( 6 N-000001 )
+  ( 7 +5V )
+  ( 8 GND )
+  ( 9 N-000003 )
+  ( 10 N-000004 )
+  ( 11 N-000030 )
+  ( 12 N-000017 )
+  ( 13 N-000031 )
+  ( 14 N-000038 )
+  ( 15 N-000025 )
+  ( 16 N-000024 )
+  ( 17 N-000018 )
+  ( 18 N-000023 )
+  ( 19 N-000029 )
+  ( 20 +5V )
+  ( 21 +5V )
+  ( 22 GND )
+  ( 23 N-000014 )
+  ( 24 N-000033 )
+  ( 25 N-000013 )
+  ( 26 N-000034 )
+  ( 27 N-000037 )
+  ( 28 N-000005 )
  )
- ( /4ACD5E45 $noname  D1 DIODE {Lib=DIODE}
-  (    1 N-000008 )
-  (    2 N-000036 )
+ ( /4ACD6D50 pin_array_3x2 ISP1 AVR-ISP-6
+  ( 1 N-000023 )
+  ( 2 +5V )
+  ( 3 N-000029 )
+  ( 4 N-000018 )
+  ( 5 N-000042 )
+  ( 6 GND )
  )
- ( /4ACD5E3E $noname  D4 DIODE {Lib=DIODE}
-  (    1 N-000009 )
-  (    2 N-000014 )
+ ( /4ADE5944 USB_B J1 USB
+  ( 1 +5V )
+  ( 2 N-000026 )
+  ( 3 N-000022 )
+  ( 4 GND )
  )
- ( /4ACD5C14 $noname  R2 10K {Lib=R}
-  (    1 N-000040 )
-  (    2 N-000038 )
+ ( /4ADE5AE8 PINTST P6 CONN_1
+  ( 1 N-000039 )
  )
- ( /4ACD5BFA $noname  R11 68 {Lib=R}
-  (    1 N-000026 )
-  (    2 N-000034 )
+ ( /4B50E04E PINTST P15 CONN_1
+  ( 1 N-000043 )
  )
- ( /4ACD5BF8 $noname  R10 68 {Lib=R}
-  (    1 N-000022 )
-  (    2 N-000017 )
+ ( /4B50E053 PINTST P16 CONN_1
+  ( 1 N-000001 )
  )
- ( /4ACD5D37 $noname  Dcpl1 0.1uF {Lib=C}
-  (    1 GND )
-  (    2 +5V )
+ ( /4ACD5CC1 R3 R1 10K
+  ( 1 N-000042 )
+  ( 2 +5V )
  )
- ( /4ACD5CC1 $noname  R1 10K {Lib=R}
-  (    1 N-000027 )
-  (    2 +5V )
+ ( /4ACD5C14 R3 R2 10K
+  ( 1 N-000040 )
+  ( 2 N-000014 )
  )
- ( /4ACD5C19 $noname  R9 10K {Lib=R}
-  (    1 N-000020 )
-  (    2 N-000031 )
+ ( /4ACD5C12 R3 R3 10K
+  ( 1 N-000006 )
+  ( 2 N-000033 )
  )
- ( /4ACD5C18 $noname  R6 10K {Lib=R}
-  (    1 N-000028 )
-  (    2 N-000024 )
+ ( /4ACD5C13 R3 R4 10K
+  ( 1 N-000012 )
+  ( 2 N-000013 )
  )
- ( /4ACD5C17 $noname  R8 10K {Lib=R}
-  (    1 N-000029 )
-  (    2 N-000032 )
+ ( /4ACD5C15 R3 R5 10K
+  ( 1 N-000019 )
+  ( 2 N-000029 )
  )
- ( /4ACD5C16 $noname  R7 10K {Lib=R}
-  (    1 N-000021 )
-  (    2 N-000025 )
+ ( /4ACD5C18 R3 R6 10K
+  ( 1 N-000021 )
+  ( 2 N-000025 )
  )
- ( /4ACD5C15 $noname  R5 10K {Lib=R}
-  (    1 N-000030 )
-  (    2 N-000023 )
+ ( /4ACD5C16 R3 R7 10K
+  ( 1 N-000027 )
+  ( 2 N-000024 )
  )
- ( /4ACD5C13 $noname  R4 10K {Lib=R}
-  (    1 N-000041 )
-  (    2 N-000039 )
+ ( /4ACD5C17 R3 R8 10K
+  ( 1 N-000020 )
+  ( 2 N-000018 )
  )
- ( /4ACD5C12 $noname  R3 10K {Lib=R}
-  (    1 N-000011 )
-  (    2 N-000013 )
+ ( /4ACD5C19 R3 R9 10K
+  ( 1 N-000028 )
+  ( 2 N-000023 )
+ )
+ ( /4ACD5BF8 R3 R10 68
+  ( 1 N-000022 )
+  ( 2 N-000043 )
+ )
+ ( /4ACD5BFA R3 R11 68
+  ( 1 N-000026 )
+  ( 2 N-000001 )
+ )
+ ( /4ACD639D R3 R12 10K
+  ( 1 N-000026 )
+  ( 2 +5V )
+ )
+ ( /4ACED00C R3 R22 10K
+  ( 1 N-000007 )
+  ( 2 N-000034 )
+ )
+ ( /4ADE66B3 R3 R23 Extra
+  ( 1 N-000038 )
+  ( 2 N-000039 )
+ )
+ ( /4B4FBBAF PINTST Reset1 CONN_1
+  ( 1 N-000042 )
+ )
+ ( /4ACD6BBF SIL-6 String1 String_1_<>_String_6
+  ( 1 N-000011 )
+  ( 2 N-000010 )
+  ( 3 N-000009 )
+  ( 4 N-000035 )
+  ( 5 N-000008 )
+  ( 6 N-000036 )
+ )
+ ( /4B4FBDCE PINTST VCC1 CONN_1
+  ( 1 +5V )
+ )
+ ( /4B451801 SIL-4 Wii1 GND_SCL_SDA_VCC
+  ( 1 +5V )
+  ( 2 N-000037 )
+  ( 3 N-000005 )
+  ( 4 GND )
+ )
+ ( /4B4FBA81 HC-18UV X1 16MHz
+  ( 1 N-000003 )
+  ( 2 N-000004 )
  )
 )
 *
 { Allowed footprints by component:
-$component JP1
- pin_array_3x2
+$component C1
+ SM*
+ C?
+ C1-1
 $endlist
-$component R23
- R?
- SM0603
- SM0805
+$component C2
+ SM*
+ C?
+ C1-1
 $endlist
-$component R22
- R?
- SM0603
- SM0805
+$component D1
+ D?
+ S*
 $endlist
-$component IC1
- 28DIP-ELL600
- 28dip600
+$component D2
+ D?
+ S*
 $endlist
-$component R12
- R?
- SM0603
- SM0805
+$component D3
+ D?
+ S*
+$endlist
+$component D4
+ D?
+ S*
+$endlist
+$component D5
+ D?
+ S*
+$endlist
+$component D6
+ D?
+ S*
 $endlist
 $component D7
  D?
@@ -212,81 +253,26 @@ $component D8
  SO*
  SM*
 $endlist
-$component D3
- D?
- S*
-$endlist
-$component D6
- D?
- S*
-$endlist
-$component D2
- D?
- S*
-$endlist
-$component D5
- D?
- S*
-$endlist
-$component D1
- D?
- S*
-$endlist
-$component D4
- D?
- S*
-$endlist
-$component R2
- R?
- SM0603
- SM0805
-$endlist
-$component R11
- R?
- SM0603
- SM0805
-$endlist
-$component R10
- R?
- SM0603
- SM0805
-$endlist
 $component Dcpl1
  SM*
  C?
  C1-1
+$endlist
+$component Dcpl2
+ SM*
+ C?
+ C1-1
+$endlist
+$component IC1
+ 28DIP-ELL600
+ 28dip600
 $endlist
 $component R1
  R?
  SM0603
  SM0805
 $endlist
-$component R9
- R?
- SM0603
- SM0805
-$endlist
-$component R6
- R?
- SM0603
- SM0805
-$endlist
-$component R8
- R?
- SM0603
- SM0805
-$endlist
-$component R7
- R?
- SM0603
- SM0805
-$endlist
-$component R5
- R?
- SM0603
- SM0805
-$endlist
-$component R4
+$component R2
  R?
  SM0603
  SM0805
@@ -296,163 +282,60 @@ $component R3
  SM0603
  SM0805
 $endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R23
+ R?
+ SM0603
+ SM0805
+$endlist
 $endfootprintlist
 }
-{ Pin List by Nets
-Net 1 "" ""
- IC1 28
- JP1 1
-Net 2 "" ""
- JP1 3
- J1 2
-Net 3 "" ""
- P6 1
- R23 2
-Net 4 "" ""
- R23 1
- IC1 14
-Net 5 "" ""
- JP1 2
- IC1 27
-Net 6 "" ""
- Strings1 6
- D3 1
-Net 7 "" ""
- Strings1 4
- D2 1
-Net 8 "" ""
- Strings1 3
- D1 1
-Net 9 "" ""
- D4 1
- Strings1 2
-Net 10 "" ""
- R22 1
- +-Pick1 4
-Net 11 "" ""
- R3 1
- +-Pick1 2
-Net 12 "" ""
- IC1 26
- R22 2
-Net 13 "" ""
- IC1 24
- R3 2
-Net 14 "" ""
- D4 2
- IC1 3
-Net 15 "" ""
- D3 2
- IC1 13
-Net 16 "" ""
- IC1 11
- D2 2
-Net 17 "" ""
- IC1 5
- R10 2
-Net 18 "" ""
- IC1 10
- P3 1
-Net 19 "" ""
- IC1 9
- X1 5
-Net 20 "" ""
- R9 1
- Frets1 4
-Net 21 "" ""
- R7 1
- Frets1 2
-Net 22 "" ""
- R10 1
- JP1 6
- D8 2
-Net 23 "" ""
- IC1 19
- ISP1 3
- R5 2
-Net 24 "" ""
- R6 2
- IC1 15
-Net 25 "" ""
- R7 2
- IC1 16
-Net 26 "" ""
- JP1 5
- D7 2
- R11 1
- R12 1
-Net 27 "" ""
- IC1 1
- ISP1 5
- R1 1
-Net 28 "" ""
- R6 1
- Frets1 1
-Net 29 "" ""
- R8 1
- Frets1 3
-Net 30 "" ""
- Frets1 5
- R5 1
-Net 31 "" ""
- ISP1 1
- R9 2
- IC1 18
-Net 32 "" ""
- R8 2
- ISP1 4
- IC1 17
-Net 33 "+5V" "+5V"
- R12 2
- IC1 7
- J1 1
- X1 8
- ISP1 2
- R1 2
- IC1 20
- IC1 21
- Dcpl1 2
-Net 34 "" ""
- IC1 6
- R11 2
-Net 35 "" ""
- D6 2
- IC1 12
-Net 36 "" ""
- IC1 4
- D1 2
-Net 37 "" ""
- D5 2
- IC1 2
-Net 38 "" ""
- IC1 23
- R2 2
-Net 39 "" ""
- R4 2
- IC1 25
-Net 40 "" ""
- +-Pick1 1
- R2 1
-Net 41 "" ""
- +-Pick1 3
- R4 1
-Net 42 "" ""
- D5 1
- Strings1 1
-Net 43 "" ""
- D6 1
- Strings1 5
-Net 44 "GND" "GND"
- X1 4
- ISP1 6
- J1 4
- D7 1
- D8 1
- IC1 22
- IC1 8
- Dcpl1 1
-Net 45 "" ""
- JP1 4
- J1 3
-}
-#End

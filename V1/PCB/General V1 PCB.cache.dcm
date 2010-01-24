@@ -1,4 +1,4 @@
-EESchema-DOCLIB  Version 2.0  03/11/2009 20:08:04
+EESchema-DOCLIB  Version 2.0  16/01/2010 08:59:33
 #
 $CMP ATMEGA8-P
 D 8 Bit AVR Microcontroller, 8kB Flash, 1024B SRAM, 512B EEPROM
@@ -37,12 +37,6 @@ $ENDCMP
 $CMP DIODE
 D Diode simple
 K DEV DIODE
-$ENDCMP
-#
-$CMP ECS-2100X
-D Sinewave output clock oscillator
-K Quartz
-F http://www.4timing.com
 $ENDCMP
 #
 $CMP R

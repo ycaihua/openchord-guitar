@@ -33,7 +33,6 @@
 #ifndef V1_h
 #define V1_h
 
-#include "V1Typedefs.h"
 #include <avr/eeprom.h>
 #include <string.h>
 #include <avr/io.h>

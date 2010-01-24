@@ -13,7 +13,6 @@
 
 #ifndef PS3INTERFACE
 #include "../configAndConstants.h"
-#include "../V1Typedefs.h"
 #include "../pindef.h"
 #include <avr/pgmspace.h>   /* required by usbdrv.h */
 #include "usbdrv/usbconfig.h"
@@ -22,6 +21,7 @@
 #include <avr/wdt.h>
 #include <avr/interrupt.h>  /* for sei() */
 #include <util/delay.h>     /* for _delay_ms() */
+#include <avr/eeprom.h>
 
 #ifndef PS3_USB
   #error "You're trying to compile for PS3/USB, but PS3_USB isn't defined in configAndConstants.h"

@@ -164,12 +164,13 @@ void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 	//  strummed on the correct string or not
 	data->upOn = 0;
 	data->downOn = 0;
-	char strumOn = -1; // This holds which string the pick is strumming
+	char strumOn = -1; // This holds which string the pick is strumming - we set it to -1 since the strings
+						// are numbered 0-5
 	char buttonPressed = 0;
 	char strumPressed  = 0;
 
 	//We also hardcode in a down strum on the empty 6th string, for navigation
-	if (stringState[0] &= 1)
+	if (stringState[0] & 1)
 	{
 		data->downOn = 1;
 	}
