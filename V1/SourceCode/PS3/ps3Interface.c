@@ -17,6 +17,7 @@
 #include "ps3interface.h"
 
 //code for 12.8 mhz option
+#if F_CPU == 12800000
 static void calibrateOscillator(void)
 {
 uchar       step = 128;
@@ -55,6 +56,7 @@ void    usbEventResetReady(void)
     eeprom_write_byte(0, OSCCAL);   // store the calibrated value in EEPROM
 }
 
+#endif
 //end 12.8 mhz code
 
 // These are which bits (from left to right) in the 6th byte of the packet
