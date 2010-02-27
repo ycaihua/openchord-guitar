@@ -63,9 +63,9 @@ void sendData(dataForController data)
 	but_dat[5] &= ~(data.upOn << UP_BIT);
 	but_dat[4] &= ~(data.downOn << DOWN_BIT);
 
-	int i = misc_pin; // check for plus and minus
-	char plusOn = !(i & (1<<plus_pin)); //Plus and minus are held high normally, but pressing sets it low
-	char minusOn = !(i & (1<<minus_pin));
+	// check for plus and minus
+	char plusOn = !(PLUS_PIN & (1<<PLUS_PIN_NUM)); //Plus and minus are held high normally, but pressing sets it low
+	char minusOn = !(MINUS_PIN & (1<<MINUS_PIN_NUM));
 
 	but_dat[4] &= ~(plusOn << PLUS_BIT);
 	but_dat[4] &= ~(minusOn << MINUS_BIT);

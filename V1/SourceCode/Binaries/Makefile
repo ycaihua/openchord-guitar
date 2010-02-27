@@ -8,12 +8,14 @@ MCU = atmega168
 TARGET = V1_USB.elf
 CC = avr-gcc
 
+CPP = avr-g++
+
 ## Options common to compile, link and assembly rules
 COMMON = -mmcu=$(MCU)
 
 ## Compile options common for all C compilation units.
 CFLAGS = $(COMMON)
-CFLAGS += -Wall -gdwarf-2 -std=gnu99                     -DF_CPU=16000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+CFLAGS += -Wall -gdwarf-2 -std=gnu99                             -DF_CPU=16000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CFLAGS += -MD -MP -MT $(*F).o -MF dep/$(@F).d 
 
 ## Assembly specific flags
@@ -44,9 +46,6 @@ LINKONLYOBJECTS =
 all: $(TARGET) V1_USB.hex V1_USB.eep V1_USB.lss size
 
 ## Compile
-usbdrvasm.o: ../PS3/usbdrv/usbdrvasm.S
-	$(CC) $(INCLUDES) $(ASMFLAGS) -c  $<
-
 main.o: ../main.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
@@ -61,6 +60,9 @@ ps3Interface.o: ../PS3/ps3Interface.c
 
 usbdrv.o: ../PS3/usbdrv/usbdrv.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+usbdrvasm.o: ../PS3/usbdrv/usbdrvasm.S
+	$(CC) $(INCLUDES) $(ASMFLAGS) -c  $<
 
 ##Link
 $(TARGET): $(OBJECTS)

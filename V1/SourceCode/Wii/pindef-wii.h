@@ -23,37 +23,64 @@
 		#define twi_scl_pin 0
 		#define twi_sda_pin 1
 
-		// Strings
-		#define string_pin  PINB
-		#define string_port PORTB
-		#define string_ddr  DDRB
-		#define first_string    5
-		#define second_string   4
-		#define third_string    3
-		#define fourth_string   2
-		#define fifth_string    1
-		#define sixth_string    0
+		// Strings on PORTB
+		#define STRING_1_PIN  PINB
+		#define STRING_1_PORT PORTB
+		#define STRING_1_DDR  DDRB
+		#define STRING_1_PIN_NUM    5
+		#define STRING_2_PIN  PINB
+		#define STRING_2_PORT PORTB
+		#define STRING_2_DDR  DDRB
+		#define STRING_2_PIN_NUM   4
+		#define STRING_3_PIN  PINB
+		#define STRING_3_PORT PORTB
+		#define STRING_3_DDR  DDRB
+		#define STRING_3_PIN_NUM    3
+		#define STRING_4_PIN  PINB
+		#define STRING_4_PORT PORTB
+		#define STRING_4_DDR  DDRB
+		#define STRING_4_PIN_NUM   2
+		#define STRING_5_PIN  PINB
+		#define STRING_5_PORT PORTB
+		#define STRING_5_DDR  DDRB
+		#define STRING_5_PIN_NUM    1
+		#define STRING_6_PIN  PINB
+		#define STRING_6_PORT PORTB
+		#define STRING_6_DDR  DDRB
+		#define STRING_6_PIN_NUM    0
 	
-		// Frets
-		#define fret_pin    PIND
-		#define fret_port   PORTD
-		#define fret_ddr    DDRD
-		#define green_pin   6
-		#define red_pin     3
-		#define yellow_pin  2
-		#define blue_pin    1
-		#define orange_pin  0
+		// Frets on PORTD
+		#define FRET_1_PIN    PIND
+		#define FRET_1_PORT   PORTD
+		#define FRET_1_DDR    DDRD
+		#define FRET_1_PIN_NUM  6
+		#define FRET_2_PIN    PIND
+		#define FRET_2_PORT   PORTD
+		#define FRET_2_DDR    DDRD
+		#define FRET_2_PIN_NUM  3
+		#define FRET_3_PIN    PIND
+		#define FRET_3_PORT   PORTD
+		#define FRET_3_DDR    DDRD
+		#define FRET_3_PIN_NUM  2
+		#define FRET_4_PIN    PIND
+		#define FRET_4_PORT   PORTD
+		#define FRET_4_DDR    DDRD
+		#define FRET_4_PIN_NUM  1
+		#define FRET_5_PIN    PIND
+		#define FRET_5_PORT   PORTD
+		#define FRET_5_DDR    DDRD
+		#define FRET_5_PIN_NUM  0
 
 		// Other Buttons
-		#define misc_pin    PINB	// misc_pin sets the port that other buttons (i.e. plus) are mapped to
-		#define misc_port   PORTB
-		#define misc_ddr    DDRB
-		#define plus_pin    7
+		#define PLUS_PIN    PINB
+		#define PLUS_PORT   PORTB
+		#define PLUS_DDR    DDRB
+		#define PLUS_PIN_NUM    7
 
-		#define pick_pin   PINB		// pick_pin sets the port that strum controls are mapped to
-		#define pick_port  PORTB
-		#define pick_ddr   DDRB
-		#define strum_pin   6 
+		#define PICK_PIN   PINB		// PICK_PIN sets the port that strum controls are mapped to
+		#define PICK_PORT  PORTB
+		#define PICK_DDR   DDRB
+		#define PICK_PIN_NUM   6 
 
 	#endif
 
@@ -65,38 +92,69 @@
 		#define twi_scl_pin 0
 		#define twi_sda_pin 1
 
-		// Strings
-		#define string_pin  PINA
-		#define string_port PORTA
-		#define string_ddr  DDRA
-		#define first_string    0
-		#define second_string   1
-		#define third_string    2
-		#define fourth_string   3
-		#define fifth_string    4
-		#define sixth_string    5
+		// Strings on PORTA
+		#define STRING_1_PIN  PINA
+		#define STRING_1_PORT PORTA
+		#define STRING_1_DDR  DDRA
+		#define STRING_1_PIN_NUM   0
+		#define STRING_2_PIN  PINA
+		#define STRING_2_PORT PORTA
+		#define STRING_2_DDR  DDRA
+		#define STRING_2_PIN_NUM   1
+		#define STRING_3_PIN  PINA
+		#define STRING_3_PORT PORTA
+		#define STRING_3_DDR  DDRA
+		#define STRING_3_PIN_NUM   2
+		#define STRING_4_PIN  PINA
+		#define STRING_4_PORT PORTA
+		#define STRING_4_DDR  DDRA
+		#define STRING_4_PIN_NUM   3
+		#define STRING_5_PIN  PINA
+		#define STRING_5_PORT PORTA
+		#define STRING_5_DDR  DDRA
+		#define STRING_5_PIN_NUM   4
+		#define STRING_6_PIN  PINA
+		#define STRING_6_PORT PORTA
+		#define STRING_6_DDR  DDRA
+		#define STRING_6_PIN_NUM   5
 	
-		// Frets
-		#define fret_pin    PINC
-		#define fret_port   PORTC
-		#define fret_ddr    DDRC
-		#define green_pin   3
-		#define red_pin     4
-		#define yellow_pin  5
-		#define blue_pin    6
-		#define orange_pin  7
+		// Frets on PORTC
+		#define FRET_1_PIN    PINC
+		#define FRET_1_PORT   PORTC
+		#define FRET_1_DDR    DDRC
+		#define FRET_1_PIN_NUM  3
+		#define FRET_2_PIN    PINC
+		#define FRET_2_PORT   PORTC
+		#define FRET_2_DDR    DDRC
+		#define FRET_2_PIN_NUM  4
+		#define FRET_3_PIN    PINC
+		#define FRET_3_PORT   PORTC
+		#define FRET_3_DDR    DDRC
+		#define FRET_3_PIN_NUM  5
+		#define FRET_4_PIN    PINC
+		#define FRET_4_PORT   PORTC
+		#define FRET_4_DDR    DDRC
+		#define FRET_4_PIN_NUM    6
+		#define FRET_5_PIN    PINC
+		#define FRET_5_PORT   PORTC
+		#define FRET_5_DDR    DDRC
+		#define FRET_5_PIN_NUM  7
 
 		// Other Buttons
-		#define misc_pin    PINA	// misc_pin sets the port that other buttons (i.e. plus) are mapped to
-		#define misc_port   PORTA
-		#define misc_ddr    DDRA
-		#define plus_pin    7
-		#define minus_pin   6
+		#define PLUS_PIN    PINA
+		#define PLUS_PORT   PORTA
+		#define PLUS_DDR    DDRA
+		#define PLUS_PIN_NUM    7
+		
+		#define MINUS_PIN    PINA
+		#define MINUS_PORT   PORTA
+		#define MINUS_DDR    DDRA
+		#define MINUS_PIN_NUM   6
 
-		#define pick_pin   PINC		// pick_pin sets the port that strum controls are mapped to
-		#define pick_port  PORTC
-		#define pick_ddr   DDRC
-		#define strum_pin   2 
+		#define PICK_PIN   PINC		// PICK_PIN sets the port that strum controls are mapped to
+		#define PICK_PORT  PORTC
+		#define PICK_DDR   DDRC
+		#define PICK_PIN_NUM   2 
 
 	#endif
 
@@ -109,38 +167,69 @@
 		#define twi_scl_pin 5	// PIN C 5 is the SCL
 		#define twi_sda_pin 4	// PIN C 4 is the SDA
 
-		// Strings				// All strings are mapped on PORTB
-		#define string_pin  PINB
-		#define string_port PORTB
-		#define string_ddr  DDRB
-		#define first_string    0
-		#define second_string   1
-		#define third_string    2
-		#define fourth_string   3
-		#define fifth_string    4
-		#define sixth_string    5
+		// Strings on PORTB				// All strings are mapped on PORTB
+		#define STRING_1_PIN  PINB
+		#define STRING_1_PORT PORTB
+		#define STRING_1_DDR  DDRB
+		#define STRING_1_PIN_NUM    0
+		#define STRING_2_PIN  PINB
+		#define STRING_2_PORT PORTB
+		#define STRING_2_DDR  DDRB
+		#define STRING_2_PIN_NUM   1
+		#define STRING_3_PIN  PINB
+		#define STRING_3_PORT PORTB
+		#define STRING_3_DDR  DDRB
+		#define STRING_3_PIN_NUM    2
+		#define STRING_4_PIN  PINB
+		#define STRING_4_PORT PORTB
+		#define STRING_4_DDR  DDRB
+		#define STRING_4_PIN_NUM   3
+		#define STRING_5_PIN  PINB
+		#define STRING_5_PORT PORTB
+		#define STRING_5_DDR  DDRB
+		#define STRING_5_PIN_NUM    4
+		#define STRING_6_PIN  PINB
+		#define STRING_6_PORT PORTB
+		#define STRING_6_DDR  DDRB
+		#define STRING_6_PIN_NUM    5
 	
-		// Frets				// Frets are mapped to PORTD
-		#define fret_pin    PIND
-		#define fret_port   PORTD
-		#define fret_ddr    DDRD
-		#define green_pin   0
-		#define red_pin     1
-		#define yellow_pin  2
-		#define blue_pin    3
-		#define orange_pin  4
+		// Frets on PORTD				// Frets are mapped to PORTD
+		#define FRET_1_PIN    PIND
+		#define FRET_1_PORT   PORTD
+		#define FRET_1_DDR    DDRD
+		#define FRET_1_PIN_NUM  0
+		#define FRET_2_PIN    PIND
+		#define FRET_2_PORT   PORTD
+		#define FRET_2_DDR    DDRD
+		#define FRET_2_PIN_NUM  1
+		#define FRET_3_PIN    PIND
+		#define FRET_3_PORT   PORTD
+		#define FRET_3_DDR    DDRD
+		#define FRET_3_PIN_NUM  2
+		#define FRET_4_PIN    PIND
+		#define FRET_4_PORT   PORTD
+		#define FRET_4_DDR    DDRD
+		#define FRET_4_PIN_NUM  3
+		#define FRET_5_PIN    PIND
+		#define FRET_5_PORT   PORTD
+		#define FRET_5_DDR    DDRD
+		#define FRET_5_PIN_NUM  4
 
 		// Other Buttons
-		#define pick_pin   PIND 	// pick_* sets the port that strum controls are mapped to
-		#define pick_port  PORTD
-		#define pick_ddr   DDRD
-		#define strum_pin   5 // pin D5
+		#define PICK_PIN   PIND 	// pick_* sets the port that strum controls are mapped to
+		#define PICK_PORT  PORTD
+		#define PICK_DDR   DDRD
+		#define PICK_PIN_NUM   5 // pin D5
 
-		#define misc_pin    PINB	// misc_* sets the port that other buttons (i.e. plus) are mapped to
-		#define misc_port   PORTB
-		#define misc_ddr    DDRB
-		#define plus_pin    6	// pin B6
-		#define minus_pin    7
+		#define PLUS_PIN    PINB	// misc_* sets the port that other buttons (i.e. plus) are mapped to
+		#define PLUS_PORT   PORTB
+		#define PLUS_DDR    DDRB
+		#define PLUS_PIN_NUM    6	// pin 
+		
+		#define MINUS_PIN    PINB	// misc_* sets the port that other buttons (i.e. plus) are mapped to
+		#define MINUS_PORT   PORTB
+		#define MINUS_DDR    DDRB
+		#define MINUS_PIN_NUM    7
 	
 
 

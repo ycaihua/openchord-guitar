@@ -32,36 +32,68 @@
 	*/
 
 	// Strings - These are on Port D, broken up by the pins used for USB D+ and D-
-	#define string_pin  PIND
-	#define string_port PORTD
-	#define string_ddr  DDRD
-	#define first_string    7
-	#define second_string   6
-	#define third_string    5
-	#define fourth_string   2
-	#define fifth_string    1
-	#define sixth_string    0
+	#define STRING_1_PIN  PIND
+	#define STRING_1_PORT PORTD
+	#define STRING_1_DDR  DDRD
+	#define STRING_1_PIN_NUM   7
+	#define STRING_2_PIN  PIND
+	#define STRING_2_PORT PORTD
+	#define STRING_2_DDR  DDRD
+	#define STRING_2_PIN_NUM   6
+	#define STRING_3_PIN  PIND
+	#define STRING_3_PORT PORTD
+	#define STRING_3_DDR  DDRD
+	#define STRING_3_PIN_NUM   5
+	#define STRING_4_PIN  PIND
+	#define STRING_4_PORT PORTD
+	#define STRING_4_DDR  DDRD
+	#define STRING_4_PIN_NUM   2
+	#define STRING_5_PIN  PIND
+	#define STRING_5_PORT PORTD
+	#define STRING_5_DDR  DDRD
+	#define STRING_5_PIN_NUM   1
+	#define STRING_6_PIN  PIND
+	#define STRING_6_PORT PORTD
+	#define STRING_6_DDR  DDRD
+	#define STRING_6_PIN_NUM   0
 	
-	// Frets
-	#define fret_pin    PINB
-	#define fret_port   PORTB
-	#define fret_ddr    DDRB
-	#define green_pin   1
-	#define red_pin     2
-	#define yellow_pin  3
-	#define blue_pin    4
-	#define orange_pin  5
+	// Frets on PORTB
+	#define FRET_1_PIN    PINB
+	#define FRET_1_PORT   PORTB
+	#define FRET_1_DDR    DDRB
+	#define FRET_1_PIN_NUM  1
+	#define FRET_2_PIN    PINB
+	#define FRET_2_PORT   PORTB
+	#define FRET_2_DDR    DDRB
+	#define FRET_2_PIN_NUM  2
+	#define FRET_3_PIN    PINB
+	#define FRET_3_PORT   PORTB
+	#define FRET_3_DDR    DDRB
+	#define FRET_3_PIN_NUM  3
+	#define FRET_4_PIN    PINB
+	#define FRET_4_PORT   PORTB
+	#define FRET_4_DDR    DDRB
+	#define FRET_4_PIN_NUM  4
+	#define FRET_5_PIN    PINB
+	#define FRET_5_PORT   PORTB
+	#define FRET_5_DDR    DDRB
+	#define FRET_5_PIN_NUM  5
 
 	// Other Buttons 
-	#define misc_pin    PINC// misc_pin sets the port that other buttons (i.e. plus) are mapped to
-	#define misc_port   PORTC
-	#define misc_ddr    DDRC
-	#define plus_pin    0
-	#define minus_pin   1
-	#define pick_pin   PINC	// pick_pin sets the port that strum controls are mapped to
-	#define pick_port  PORTC
-	#define pick_ddr   DDRC
-	#define strum_pin   2
+	#define PLUS_PIN    PINC
+	#define PLUS_PORT   PORTC
+	#define PLUS_DDR    DDRC
+	#define PLUS_PIN_NUM    0
+
+	#define MINUS_PIN   PINC
+	#define MINUS_PORT  PORTC
+	#define MINUS_DDR   DDRC
+	#define MINUS_PIN_NUM   1
+
+	#define PICK_PIN   PINC	// PICK_PIN sets the port that strum controls are mapped to
+	#define PICK_PORT  PORTC
+	#define PICK_DDR   DDRC
+	#define PICK_PIN_NUM   2
 
 	/* ---------------------------- Hardware Config ---------------------------- */
 	/* The USB stuff originally comes from usbconfig.c, but I put it here to keep all
