@@ -44,13 +44,13 @@
 	#define GREEN_TIMER_WAIT 100 // This controls the delay for the green button.
 					// There is a delay in order to avoid triggering green when red is played
 					// but the green fret is hit first, so you don't press red but see the green
-					// button flash for an instant before red activates
+	
+	#define STRING_DEBOUNCE_DELAY 15 // How many cycles to ignore a changed string state before
+                                     // updating the string state array. This hopefully helps with
+                                     // the pick and grounding it with your fingers - 
+                                     // Caution - too high of a value, and spurious hits will start to
+                                     // cancel out acutal hits.
 
-	#define STRING_DEBOUNCE_DELAY 20 // How many cycles to ignore a changed string state before
-									  // updating the string state array. This hopefully helps with
-									  // the pick and grounding it with your fingers - 
-									  // Caution - too high of a value, and spurious hits will start to
-									  // cancel out acutal hits.
 	#define DEBOUNCE_DELAY 1000 // Just a number to control our debouncing of the plus button
 
 	#define NUM_NOTES_BUTTONS 5   // There are 5 buttons programmable in Note Mode, 1 for each color
