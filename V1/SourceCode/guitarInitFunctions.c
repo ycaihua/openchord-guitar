@@ -15,40 +15,40 @@
 void setPins(void)
 {
 	// Set the fret pins as input pins, with internal resistor
-	FRET_1_DDR &= ~(1<<FRET_1_PIN_NUM);        // input
-	FRET_1_PORT |= (1<<FRET_1_PIN_NUM);		//pull-up enabled	
-	FRET_2_DDR &= ~(1<<FRET_2_PIN_NUM);
-	FRET_2_PORT |= (1<<FRET_2_PIN_NUM);
-	FRET_3_DDR &= ~(1<<FRET_3_PIN_NUM);
-	FRET_3_PORT |= (1<<FRET_3_PIN_NUM);
-	FRET_4_DDR &= ~(1<<FRET_4_PIN_NUM);
-	FRET_4_PORT |= (1<<FRET_4_PIN_NUM);
-	FRET_5_DDR &= ~(1<<FRET_5_PIN_NUM);
-	FRET_5_PORT |= (1<<FRET_5_PIN_NUM);
+	fret_ddr &= ~(1<<green_pin);        // input
+	fret_port |= (1<<green_pin);		//pull-up enabled	
+	fret_ddr &= ~(1<<red_pin);
+	fret_port |= (1<<red_pin);
+	fret_ddr &= ~(1<<yellow_pin);
+	fret_port |= (1<<yellow_pin);
+	fret_ddr &= ~(1<<blue_pin);
+	fret_port |= (1<<blue_pin);
+	fret_ddr &= ~(1<<orange_pin);
+	fret_port |= (1<<orange_pin);
 
 	// Set the pins on strumming and plus as inputs, with internal resistor
-	PLUS_DDR &= ~(1<<PLUS_PIN_NUM);
-	PLUS_PORT |= (1<<PLUS_PIN_NUM);
-	MINUS_DDR &= ~(1<<MINUS_PIN_NUM);
-	MINUS_PORT |= (1<<MINUS_PIN_NUM);
+	misc_ddr &= ~(1<<plus_pin);
+	misc_port |= (1<<plus_pin);
+	misc_ddr &= ~(1<<minus_pin);
+	misc_port |= (1<<minus_pin);
 
-	PICK_DDR &= ~(1<<PICK_PIN_NUM);
-	PICK_PIN |= (1<<PICK_PIN_NUM);
+	pick_ddr &= ~(1<<strum_pin);
+	pick_port |= (1<<strum_pin);
 
 	// Set the string pins as output pins, outputting HIGH
 	/* MAKE SURE YOU HAVE DIODES OPPOSING THIS CURRENT OUTFLOW! */
-	STRING_1_DDR |= (1<<STRING_1_PIN_NUM);  //output
-	STRING_1_PORT |= (1<<STRING_1_PIN_NUM); // set high
-	STRING_2_DDR |= (1<<STRING_2_PIN_NUM);  
-	STRING_2_PORT |= (1<<STRING_2_PIN_NUM);
-	STRING_3_DDR |= (1<<STRING_3_PIN_NUM);  
-	STRING_3_PORT |= (1<<STRING_3_PIN_NUM);
-	STRING_4_DDR |= (1<<STRING_4_PIN_NUM);  
-	STRING_4_PORT |= (1<<STRING_4_PIN_NUM);
-	STRING_5_DDR |= (1<<STRING_5_PIN_NUM);  
-	STRING_5_PORT |= (1<<STRING_5_PIN_NUM);
-	STRING_6_DDR |= (1<<STRING_6_PIN_NUM);  
-	STRING_6_PORT |= (1<<STRING_6_PIN_NUM);
+	string_ddr |= (1<<first_string);  //output
+	string_port |= (1<<first_string); // set high
+	string_ddr |= (1<<second_string);  
+	string_port |= (1<<second_string);
+	string_ddr |= (1<<third_string);  
+	string_port |= (1<<third_string);
+	string_ddr |= (1<<fourth_string);  
+	string_port |= (1<<fourth_string);
+	string_ddr |= (1<<fifth_string);  
+	string_port |= (1<<fifth_string);
+	string_ddr |= (1<<sixth_string);  
+	string_port |= (1<<sixth_string);
 }
 
 void setTimer(void) //This sets up a timer to handle the green button thing

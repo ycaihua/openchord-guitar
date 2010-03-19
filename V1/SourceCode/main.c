@@ -143,18 +143,18 @@ int EEMEM chordModeButtonPatterns[EEPROM_CHORDS_BLOCK_SIZE] =
 
 //readF reads the frets for a single string, and returns an int acting as a boolean array
 //  telling which frets are being touched by the string.
-int readFrets(int guitarString, char stringPort)
+int readFrets(int guitarString)
 {
- 	stringPort &= ~(1<<guitarString);  // Set the string LOW
+  	string_port &= ~(1<<guitarString);  // Set the string LOW
 
 	// Then we have to delay for a while, since right after the switch, the pin values
 	// jump around a bit
 	doXnops(20);	
-//TEST THIS! CAN WE GET RID OF IT?	// Read the values on the frets
-// 	int i = FRET_PIN;
-//	i = FRET_PIN;
-//	i = FRET_PIN;		// More delay funcitonality... without these delays, there is some bouncing
-//	i = FRET_PIN;		// on the pins, so the read screws up.
+	// Read the values on the frets
+  	int i = fret_pin;               
+	i = fret_pin;
+	i = fret_pin;		// More delay funcitonality... without these delays, there is some bouncing
+	i = fret_pin;		// on the pins, so the read screws up.
 	  
 	//Reset everything on the string
 	int stringState = 0;	                
@@ -163,17 +163,18 @@ int readFrets(int guitarString, char stringPort)
 	//  the string touches that fret and a zero if it doesn't touch, which we then load into our storage 
 	//  integer.
 
- 	stringState |= ( (!(FRET_1_PIN & (1<<FRET_1_PIN_NUM))) << 1); //green fret
- 	stringState |= ( (!(FRET_2_PIN & (1<<FRET_2_PIN_NUM))) << 2); //red fret
- 	stringState |= ( (!(FRET_3_PIN & (1<<FRET_3_PIN_NUM))) << 3); //yellow fret
- 	stringState |= ( (!(FRET_4_PIN & (1<<FRET_4_PIN_NUM))) << 4); //blue fret
- 	stringState |= ( (!(FRET_5_PIN & (1<<FRET_5_PIN_NUM))) << 5); //orange fret
+ 	stringState |= ( (!(i & (1<<green_pin))) << 1); //green fret
+ 	stringState |= ( (!(i & (1<<red_pin))) << 2); //red fret
+ 	stringState |= ( (!(i & (1<<yellow_pin))) << 3); //yellow fret
+ 	stringState |= ( (!(i & (1<<blue_pin))) << 4); //blue fret
+ 	stringState |= ( (!(i & (1<<orange_pin))) << 5); //orange fret
 
 	// Also, if we strummed a string, hold that in the 'zeroth' fret
- 	stringState |= ( (!(PICK_PIN & (1<<PICK_PIN_NUM))) << 0); //pick touching the string
+	i = pick_pin;
+ 	stringState |= ( (!(i & (1<<strum_pin))) << 0); //pick touching the string
 
 	//Turn the string back HIGH and return
-	stringPort |= (1<<guitarString); 
+	string_port |= (1<<guitarString); 
 	return stringState;
 }
 
@@ -233,11 +234,13 @@ static inline void switchPlayModes(int stringState[], int buttonStringPatterns[]
 inline void readOtherButtons(dataForController* data)
 {
 	// read our plus and minus buttons
-	int i = PLUS_PIN; // check for plus and minus
-	data->plusOn = !(i & (1<<PLUS_PIN_NUM)); //Plus and minus are held high normally, but pressing it drops it low
-	i = MINUS_PIN;
-	data->minusOn = !(i & (1<<MINUS_PIN_NUM));
+	int i = misc_pin; // check for plus and minus
+	data->plusOn = !(i & (1<<plus_pin)); //Plus and minus are held high normally, but pressing it drops it low
+	data->minusOn = !(i & (1<<minus_pin));
 }
+
+// Debugging LED EEPROM holding location - put above the main() function
+uint8_t EEMEM nonvolitileString[10];
 			
 int main(void)
 /* This controls the whole program.
@@ -252,9 +255,30 @@ int main(void)
 	  to display the current controller button being programmed, and then sends that data to the controller.
 */ 
 {
-    // Now set up all the communication stuff - initialization routines
-    //  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
-    startCommunication();
+  // Now set up all the communication stuff - initialization routines
+  //  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
+  startCommunication();
+
+	//Debug stuff - the following goes before the while loop in main()
+	int timer;
+    DDRB |= 1;
+  // set PORTB for output
+  
+  uint8_t string[1];
+  uint8_t x = 10;
+
+  eeprom_read_block( (void*)&string, (void*)&nonvolitileString, 1);
+  if (string[0] == 50)
+  {
+  	  x = 250;
+  	  eeprom_write_block( (void*)&x, (void*)&nonvolitileString, 1);
+  }
+  else
+  {
+  	  x = 50;
+  	  eeprom_write_block( (void*)&x, (void*)&nonvolitileString, 1);
+  }
+  timer = x;
 
 	// First, set up the guitar stuff - These functions are stored in guitarInitFunctions.h/.c
 	setPins();
@@ -263,20 +287,21 @@ int main(void)
     // Declaration of variables used in Main()
 	int greenTimers[NUMBER_OF_STRINGS] = {0,0,0,0,0,0}; //These give timing to properly read green buttons on each string.
 	int triedGreen[NUMBER_OF_STRINGS] = {0,0,0,0,0,0};  // Also used for the green button timing thing
-	int stringState[NUMBER_OF_STRINGS]; // This stores an int for each string,
+	int stringState[6] = {0,0,0,0,0,0}; // This stores an int for each string,
 										// with each int acting as a boolean array
 										// telling which frets a string is connected to,
 										// with the 0th bit being if a string is being strummed
-	int tempStringState[NUMBER_OF_STRINGS]; // Temporary place to record how the strings are
-											// being pressed, for debouncing purposes
+    int tempStringState[NUMBER_OF_STRINGS]; // Temporary place to record how the strings are
+                                            // being pressed, for debouncing purposes
 
-	int stringStateTimers[NUMBER_OF_STRINGS] = {0,0,0,0,0,0};
 
 	int buttonStringPatterns[NUM_CHORDS_BUTTONS][NUMBER_OF_STRINGS]; //This holds the button patterns the
 																	 // controller compares the string presses
 																	 // to in order to judge if a button is being
 																	 // pressed. It's the size of all the chord combinations,
 																	 // but in Note Mode, only the first 5 blocks get looked at. 
+    int stringStateTimers[NUMBER_OF_STRINGS] = {0,0,0,0,0,0};
+
 	char configMode = 0; // Start in normal mode
 	int buttonToAssign = 0; // declare some variables
 	char plusLock = 0;
@@ -287,47 +312,38 @@ int main(void)
 	dataForController data;
 	clearData(&data); //This function is contained in V1Typedefs.h
 
+	//Debug Stuff - it's complementary code is in ps3interface.h and .c
+	DDRC &= ~(1<<5); //Turn 5 on Port C to inputs
+	PORTC |= (1<<5); //Turn off the internal pullup resistor on pin 5
 
     while(1){  
 	              /* main event loop */
 
+
 		// We first read all the strings for button hits and store them into
-		//  our tempStringState array.  Strum processing is also handled here for now.
-		tempStringState[0] = readFrets(STRING_1_PIN_NUM, STRING_1_PORT);
-		tempStringState[1] = readFrets(STRING_2_PIN_NUM, STRING_2_PORT);
-		tempStringState[2] = readFrets(STRING_3_PIN_NUM, STRING_3_PORT);
-		tempStringState[3] = readFrets(STRING_4_PIN_NUM, STRING_4_PORT);
-		tempStringState[4] = readFrets(STRING_5_PIN_NUM, STRING_5_PORT);
-		tempStringState[5] = readFrets(STRING_6_PIN_NUM, STRING_6_PORT);
+		//  our stringState array.  Strum processing is also handled here for now.
+        tempStringState[0] = readFrets(first_string);
+		tempStringState[1] = readFrets(second_string);
+		tempStringState[2] = readFrets(third_string);
+		tempStringState[3] = readFrets(fourth_string);
+		tempStringState[4] = readFrets(fifth_string);
+		tempStringState[5] = readFrets(sixth_string);
 
-		// Allow some time for pins to restabilize
-		doXnops(20);
-
-		// Check the pick - it should have been pulled back up by now.  If it's
-		// still grounded, then it's actually the hand grounding it
-		if (!(PICK_PIN & (1 << PICK_PIN_NUM)))
-		{
-			for (int i = 0; i < NUMBER_OF_STRINGS; i++)
-			{
-				tempStringState[i] &= ~1;
-			}
-		}
-
-		// Debounce the strings by making sure what is being fretted
-		// remains for a certain number of cycles through the main loop
-		for (int i = 0; i <= 6; i++)
-		{
-			if (tempStringState[i] == stringState[i])
-				stringStateTimers[i] = 0;
-			else
-				stringStateTimers[i] += 1;
-			// If we've seen enough cycles of a new string state, update stringState 
-			if (stringStateTimers[i] >= STRING_DEBOUNCE_DELAY)
-			{
-				stringState[i] = tempStringState[i];
-				stringStateTimers[i] = 0;
-			}
-		}
+        // Debounce the strings by making sure what is being fretted
+        // remains for a certain number of cycles through the main loop
+        for (int i = 0; i <= 6; i++)
+        {
+                if (tempStringState[i] == stringState[i])
+                        stringStateTimers[i] = 0;
+                else
+                        stringStateTimers[i] += 1;
+                // If we've seen enough cycles of a new string state, update stringState 
+                if (stringStateTimers[i] >= STRING_DEBOUNCE_DELAY)
+                {
+                        stringState[i] = tempStringState[i];
+                        stringStateTimers[i] = 0;
+                }
+        }
 
 		// Next, we reset the data struct so we have a fresh place to store things
 		clearData(&data);  // This function is in V1Typedefs.h

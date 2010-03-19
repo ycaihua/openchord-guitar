@@ -42,7 +42,15 @@ void startCommunication(void)
 {
   	// Start the wiimote communication and make wiimote think this is a guitar
     wm_init(guitar_id, but_dat, cal_data, wm_timer_inc);
-}
+
+	// initialize button data array
+    but_dat[0] = 0b00011111;
+    but_dat[1] = 0b00011111;
+    but_dat[2] = 0b00001111; // last 5 bits are touchbar data, should be 0F for no touching
+    but_dat[3] = 0b00001111; // last 5 bits are whammy bar data, should be 0F probably
+    but_dat[4] = 0b11111111; // no buttons pressed (with the Wiimote, 0 is pressed)
+    but_dat[5] = 0b11111111; // no buttons pressed
+} // end of startCommunciation
 
 
 // This function takes the 'color'On values set by readF and sets up the but_dat array accordingly
@@ -63,11 +71,12 @@ void sendData(dataForController data)
 	but_dat[5] &= ~(data.upOn << UP_BIT);
 	but_dat[4] &= ~(data.downOn << DOWN_BIT);
 
-	// check for plus and minus
-	char plusOn = !(PLUS_PIN & (1<<PLUS_PIN_NUM)); //Plus and minus are held high normally, but pressing sets it low
-	char minusOn = !(MINUS_PIN & (1<<MINUS_PIN_NUM));
+	but_dat[4] &= ~(data.plusOn << PLUS_BIT);
+	but_dat[4] &= ~(data.minusOn << MINUS_BIT);
 
-	but_dat[4] &= ~(plusOn << PLUS_BIT);
-	but_dat[4] &= ~(minusOn << MINUS_BIT);
+	// Finally, we send that packet to the 
+	// TWI transfer register, handled by the wiimote.c library
+	wm_newaction(but_dat);
+
 }
 

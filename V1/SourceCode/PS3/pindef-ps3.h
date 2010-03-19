@@ -25,69 +25,38 @@
 		// and one other pin on the same port available for the USB library.
 		// The pins used are defined in usbconfig.h, and are Port D, pins 2 and 4.
 
-		// Strings on PORTA
-		#define STRING_1_PIN  PINA
-		#define STRING_1_PORT PORTA
-		#define STRING_1_DDR  DDRA
-		#define STRING_1_PIN_NUM   5
-		#define STRING_2_PIN  PINA
-		#define STRING_2_PORT PORTA
-		#define STRING_2_DDR  DDRA
-		#define STRING_2_PIN_NUM   4
-		#define STRING_3_PIN  PINA
-		#define STRING_3_PORT PORTA
-		#define STRING_3_DDR  DDRA
-		#define STRING_3_PIN_NUM   3
-		#define STRING_4_PIN  PINA
-		#define STRING_4_PORT PORTA
-		#define STRING_4_DDR  DDRA
-		#define STRING_4_PIN_NUM   2
-		#define STRING_5_PIN  PINA
-		#define STRING_5_PORT PORTA
-		#define STRING_5_DDR  DDRA
-		#define STRING_5_PIN_NUM   1
-		#define STRING_6_PIN  PINA
-		#define STRING_6_PORT PORTA
-		#define STRING_6_DDR  DDRA
-		#define STRING_6_PIN_NUM   0
+		// Strings
+		#define string_pin  PINA
+		#define string_port PORTA
+		#define string_ddr  DDRA
+		#define first_string    5
+		#define second_string   4
+		#define third_string    3
+		#define fourth_string   2
+		#define fifth_string    1
+		#define sixth_string    0
 	
-		// Frets on PORTC
-		#define FRET_1_PIN    PINC
-		#define FRET_1_PORT   PORTC
-		#define FRET_1_DDR    DDRC
-		#define FRET_1_PIN_NUM  3
-		#define FRET_2_PIN    PINC
-		#define FRET_2_PORT   PORTC
-		#define FRET_2_DDR    DDRC
-		#define FRET_2_PIN_NUM  4
-		#define FRET_3_PIN    PINC
-		#define FRET_3_PORT   PORTC
-		#define FRET_3_DDR    DDRC
-		#define FRET_3_PIN_NUM  5
-		#define FRET_4_PIN    PINC
-		#define FRET_4_PORT   PORTC
-		#define FRET_4_DDR    DDRC
-		#define FRET_4_PIN_NUM  6
-		#define FRET_5_PIN    PINC
-		#define FRET_5_PORT   PORTC
-		#define FRET_5_DDR    DDRC
-		#define FRET_5_PIN_NUM  7
+		// Frets
+		#define fret_pin    PINC
+		#define fret_port   PORTC
+		#define fret_ddr    DDRC
+		#define green_pin   3
+		#define red_pin     4
+		#define yellow_pin  5
+		#define blue_pin    6
+		#define orange_pin  7
 
 		// Other Buttons
-		#define PLUS_PIN    PINA
-		#define PLUS_PORT   PORTA
-		#define PLUS_DDR    DDRA
-		#define PLUS_PIN_NUM    7
+		#define misc_pin    PINA	// misc_pin sets the port that other buttons (i.e. plus) are mapped to
+		#define misc_port   PORTA
+		#define misc_ddr    DDRA
+		#define plus_pin    7
+		#define minus_pin   6
 
-		#define MINUS_PIN    PINA
-		#define MINUS_PORT   PORTA
-		#define MINUS_DDR    DDRA
-		#define MINUS_PIN_NUM   6
-
-		#define PICK_PIN   PINC		// PICK_PIN sets the port that strum controls are mapped to
-		#define PICK_PORT  PORTC
-		#define PICK_DDR   DDRC
-		#define PICK_PIN_NUM   2 
+		#define pick_pin   PINC		// pick_pin sets the port that strum controls are mapped to
+		#define pick_port  PORTC
+		#define pick_ddr   DDRC
+		#define strum_pin   2 
 
 	
 		/* ---------------------------- Hardware Config ---------------------------- */
@@ -137,69 +106,38 @@
 		// and one other pin on the same port available for the USB library.
 		// The pins used are defined in usbconfig.h, and are Port D, pins 2 and 4.
 
-		// Strings on PORTC
-		#define STRING_1_PIN  PINC
-		#define STRING_1_PORT PORTC
-		#define STRING_1_DDR  DDRC
-		#define STRING_1_PIN_NUM   5
-		#define STRING_2_PIN  PINC
-		#define STRING_2_PORT PORTC
-		#define STRING_2_DDR  DDRC
-		#define STRING_2_PIN_NUM   4
-		#define STRING_3_PIN  PINC
-		#define STRING_3_PORT PORTC
-		#define STRING_3_DDR  DDRC
-		#define STRING_3_PIN_NUM   3
-		#define STRING_4_PIN  PINC
-		#define STRING_4_PORT PORTC
-		#define STRING_4_DDR  DDRC
-		#define STRING_4_PIN_NUM   2
-		#define STRING_5_PIN  PINC
-		#define STRING_5_PORT PORTC
-		#define STRING_5_DDR  DDRC
-		#define STRING_5_PIN_NUM   1
-		#define STRING_6_PIN  PINC
-		#define STRING_6_PORT PORTC
-		#define STRING_6_DDR  DDRC
-		#define STRING_6_PIN_NUM   0
+		// Strings
+		#define string_pin  PINC
+		#define string_port PORTC
+		#define string_ddr  DDRC
+		#define first_string    5
+		#define second_string   4
+		#define third_string    3
+		#define fourth_string   2
+		#define fifth_string    1
+		#define sixth_string    0
 	
-		// Frets on PORT B
-		#define FRET_1_PIN    PINB
-		#define FRET_1_PORT   PORTB
-		#define FRET_1_DDR    DDRB
-		#define FRET_1_PIN_NUM   1
-		#define FRET_2_PIN    PINB
-		#define FRET_2_PORT   PORTB
-		#define FRET_2_DDR    DDRB
-		#define FRET_2_PIN_NUM     2
-		#define FRET_3_PIN    PINB
-		#define FRET_33_PORT   PORTB
-		#define FRET_3_DDR    DDRB
-		#define FRET_3_PIN_NUM  3
-		#define FRET_4_PIN    PINB
-		#define FRET_4_PORT   PORTB
-		#define FRET_4_DDR    DDRB
-		#define FRET_4_PIN_NUM    4
-		#define FRET_5_PIN    PINB
-		#define FRET_5_PORT   PORTB
-		#define FRET_5_DDR    DDRB
-		#define FRET_5_PIN_NUM  5
+		// Frets
+		#define fret_pin    PINB
+		#define fret_port   PORTB
+		#define fret_ddr    DDRB
+		#define green_pin   1
+		#define red_pin     2
+		#define yellow_pin  3
+		#define blue_pin    4
+		#define orange_pin  5
 
 		// Other Buttons
-		#define PLUS_PIN    PIND
-		#define PLUS_PORT   PORTD
-		#define PLUS_DDR    DDRD
-		#define PLUS_PIN_NUM    7
-		
-		#define MINUS_PIN    PIND
-		#define MINUS_PORT   PORTD
-		#define MINUS_DDR    DDRD
-		#define MINUS_PIN_NUM   6
+		#define misc_pin    PIND	// misc_pin sets the port that other buttons (i.e. plus) are mapped to
+		#define misc_port   PORTD
+		#define misc_ddr    DDRD
+		#define plus_pin    7
+		#define minus_pin   6
 
-		#define PICK_PIN   PIND		// PICK_PIN sets the port that strum controls are mapped to
-		#define PICK_PORT  PORTD
-		#define PICK_DDR   DDRD
-		#define PICK_PIN_NUM   5 
+		#define pick_pin   PIND		// pick_pin sets the port that strum controls are mapped to
+		#define pick_port  PORTD
+		#define pick_ddr   DDRD
+		#define strum_pin   5 
 
 		/* ---------------------------- Hardware Config ---------------------------- */
 		/* This all originally comes from usbconfig.c, but I put it here to keep all
