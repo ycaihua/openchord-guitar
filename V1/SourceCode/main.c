@@ -310,7 +310,7 @@ int main(void)
 	char controllerMode = FRETS;
 	
 	dataForController data;
-	clearData(&data); //This function is contained in V1Typedefs.h
+	clearData(&data); //This function is contained in configAndConstants.h
 
 	//Debug Stuff - it's complementary code is in ps3interface.h and .c
 	DDRC &= ~(1<<5); //Turn 5 on Port C to inputs

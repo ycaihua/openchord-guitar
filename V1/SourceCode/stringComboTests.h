@@ -71,12 +71,12 @@ inline int testForResetButtonPatterns(int stringState[])
 
 inline int testForMinusChord(int stringState[])
 {
-	if ((stringState[0] == 0b00011110) &&
-		(stringState[1] == 0b00011110) &&
-		(stringState[2] == 0b00011110) &&
-		(stringState[3] == 0b00011110) &&
-		(stringState[4] == 0b00011110) &&
-		(stringState[5] == 0b00011110))
+	if ((stringState[0] == 0b00000000) &&
+		(stringState[1] == 0b00000000) &&
+		(stringState[2] == 0b00000000) &&
+		(stringState[3] == 0b00000000) &&
+		(stringState[4] == 0b00000000) &&
+		(stringState[5] == 0b00100000))
 		return 1;
 	else
 		return 0;

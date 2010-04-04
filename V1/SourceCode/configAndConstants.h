@@ -86,6 +86,7 @@
 		char downOn;
 		char plusOn;
 		char minusOn;
+		char numberOfStringsPressed;
 	} dataForController;
 
 	inline void clearData(dataForController* data)
@@ -99,6 +100,7 @@
 		data->downOn   = 0;
 		data->plusOn   = 0;
 		data->minusOn  = 0;
+		data->numberOfStringsPressed = 0;
 	};
 
 	// Macro for No Operation assembly instructions

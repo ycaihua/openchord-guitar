@@ -280,8 +280,12 @@ void processFrets(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 		instead of turing greenOn on, so if the red fret is turned on before it
 		counts up to the GREEN_TIMER_WAIT, red gets activated and green doesn't.
 	 */
-	for(int guitarString = 0; guitarString < 6; guitarString++)
+	for(int guitarString = 0; guitarString < NUMBER_OF_STRINGS; guitarString++)
 	{
+		//First, we'll see if we're pressing anything at all (ignores strumming)
+		if (stringState[guitarString] > 1)
+			data->numberOfStringsPressed++;
+
 		// find the proper value by masking the stringState variable for each fret
 		char orange = (stringState[guitarString] & (1<<5));
 		char blue   = (stringState[guitarString] & (1<<4));
@@ -352,6 +356,36 @@ void processFrets(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 			}
 		}
 	}	// end of for loop
+
+	// Code for fixing some issues with gap chords (green/yellow, red/blue, etc.)
+	// If we're not pressing all the strings, make sure that gap chords are only showing
+	// when we press all strings
+	if (data->numberOfStringsPressed < NUMBER_OF_STRINGS)
+	{
+		if(data->blueOn   &&
+		   data->yellowOn &&
+		   data->redOn    &&
+		   data->greenOn)
+		{
+		   	data->yellowOn = 0;
+			data->greenOn  = 0;
+		}
+
+		if(data->orangeOn  &&
+		   data->blueOn   &&
+		   data->yellowOn)
+		   {data->blueOn = 0;}
+		if(data->blueOn  &&
+		   data->yellowOn   &&
+		   data->redOn)
+		   {data->yellowOn = 0;}
+		if(data->yellowOn  &&
+		   data->redOn   &&
+		   data->greenOn)
+		   {data->redOn = 0;}
+
+	}
+
 	return;
 }
 
