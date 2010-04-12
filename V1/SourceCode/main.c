@@ -239,8 +239,6 @@ inline void readOtherButtons(dataForController* data)
 	data->minusOn = !(i & (1<<minus_pin));
 }
 
-// Debugging LED EEPROM holding location - put above the main() function
-uint8_t EEMEM nonvolitileString[10];
 			
 int main(void)
 /* This controls the whole program.
@@ -254,37 +252,17 @@ int main(void)
 	  'Plus' is pressed and moves on to changing the next button.  It also sets the button data structure
 	  to display the current controller button being programmed, and then sends that data to the controller.
 */ 
-{
-  // Now set up all the communication stuff - initialization routines
-  //  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
-  startCommunication();
-
-	//Debug stuff - the following goes before the while loop in main()
-	int timer;
-    DDRB |= 1;
-  // set PORTB for output
-  
-  uint8_t string[1];
-  uint8_t x = 10;
-
-  eeprom_read_block( (void*)&string, (void*)&nonvolitileString, 1);
-  if (string[0] == 50)
-  {
-  	  x = 250;
-  	  eeprom_write_block( (void*)&x, (void*)&nonvolitileString, 1);
-  }
-  else
-  {
-  	  x = 50;
-  	  eeprom_write_block( (void*)&x, (void*)&nonvolitileString, 1);
-  }
-  timer = x;
-
+{	
 	// First, set up the guitar stuff - These functions are stored in guitarInitFunctions.h/.c
 	setPins();
 	setTimer();	
-
-    // Declaration of variables used in Main()
+ 	
+	// Now set up all the communication stuff - initialization routines
+ 	//  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
+ 	startPS3Communication();
+ 	startWiiCommunication();
+    
+	// Declaration of variables used in Main()
 	int greenTimers[NUMBER_OF_STRINGS] = {0,0,0,0,0,0}; //These give timing to properly read green buttons on each string.
 	int triedGreen[NUMBER_OF_STRINGS] = {0,0,0,0,0,0};  // Also used for the green button timing thing
 	int stringState[6] = {0,0,0,0,0,0}; // This stores an int for each string,
@@ -312,14 +290,9 @@ int main(void)
 	dataForController data;
 	clearData(&data); //This function is contained in configAndConstants.h
 
-	//Debug Stuff - it's complementary code is in ps3interface.h and .c
-	DDRC &= ~(1<<5); //Turn 5 on Port C to inputs
-	PORTC |= (1<<5); //Turn off the internal pullup resistor on pin 5
-
-    while(1){  
-	              /* main event loop */
-
-
+ 					 /* main event loop */
+    while(1)
+	{   
 		// We first read all the strings for button hits and store them into
 		//  our stringState array.  Strum processing is also handled here for now.
         tempStringState[0] = readFrets(first_string);
@@ -358,10 +331,17 @@ int main(void)
 			controllerMode = FRETS;
 			setEepromToDefault(&notesModeButtonPatterns, &chordModeButtonPatterns); // Stored in buttonStringPatterns.h
 		}
+		
+		// Test if we're trying to hit the Home button
+		if(testForHomeChord(stringState))
+		{
+			data.homeOn = 1;
+		}
 
+		// Check to see if we're trying to enter Config Mode;
+		// disabled if we're playing with frets
 		if ((controllerMode == NOTES) || (controllerMode == CHORDS))
 		{
-			// Check to see if we're trying to enter Config Mode; disabled if we're playing with frets
 			if (configMode == 0)
 			{
 				configMode = testForConfigMode(stringState);
@@ -452,7 +432,8 @@ int main(void)
 		// Now our processing is complete, so using those button presses, we set up the 
 		// button data packet. This function depends on the console and is 
 		// set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
-		sendData(data);
+		sendPS3Data(data);
+		sendWiiData(data);
 
 	}// End of while loop
     return 0;

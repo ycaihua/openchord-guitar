@@ -38,7 +38,7 @@ void wm_timer_inc()  // This function is unused by me.
         return;
 }
 
-void startCommunication(void)
+void startWiiCommunication(void)
 {
   	// Start the wiimote communication and make wiimote think this is a guitar
     wm_init(guitar_id, but_dat, cal_data, wm_timer_inc);
@@ -54,7 +54,7 @@ void startCommunication(void)
 
 
 // This function takes the 'color'On values set by readF and sets up the but_dat array accordingly
-void sendData(dataForController data)
+void sendWiiData(dataForController data)
 {
 	//set the buttons in the button data array to all 1's
 	but_dat[4] = 0b11111111;

@@ -28,10 +28,10 @@
 #endif
 
 // This function does all the communication initialization
-void startCommunication(void);
+void startPS3Communication(void);
 
 // This one goes ahead and changes the data
-void sendData(dataForController);
+void sendPS3Data(dataForController);
 
 
 #define PS3INTERFACE

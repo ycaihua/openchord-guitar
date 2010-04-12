@@ -27,7 +27,7 @@
 					 These should be changed to reflect what you're doing. ----------*/
 
 	#define PS3_USB
-	//#define WII
+	#define WII
 
 	
 	/* You should be using GENERAL_CIRCUIT_BOARD unless you have one of the first prototypes.
@@ -87,6 +87,7 @@
 		char plusOn;
 		char minusOn;
 		char numberOfStringsPressed;
+		char homeOn;
 	} dataForController;
 
 	inline void clearData(dataForController* data)
@@ -101,6 +102,7 @@
 		data->plusOn   = 0;
 		data->minusOn  = 0;
 		data->numberOfStringsPressed = 0;
+		data->homeOn   = 0;
 	};
 
 	// Macro for No Operation assembly instructions

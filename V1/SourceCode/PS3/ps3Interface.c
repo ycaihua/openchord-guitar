@@ -59,17 +59,19 @@ void    usbEventResetReady(void)
 #endif
 //end 12.8 mhz code
 
-// These are which bits (from left to right) in the 6th byte of the packet
+// These are which bits (from left to right) in the byte 0 of the packet
 // correspond to which buttons
 #define GREEN_BIT  1
 #define RED_BIT    2
 #define YELLOW_BIT 3
 #define BLUE_BIT   0
 #define ORANGE_BIT 4
-
-// These buttons are in the 5th byte
-#define PLUS_BIT   1
 #define MINUS_BIT  5 // Star power
+
+// These buttons are in the byte 1
+#define PLUS_BIT   1
+#define HOME_BIT   4
+
 /* The data being transferred is in the following format:
 	byte0 - 8 buttons ( bit0...bit7 =
 				[blue][green][red][yellow][orange][star power][is higher frets][unused]
@@ -155,32 +157,8 @@ usbRequest_t    *rq = (void *)data;
 
 /* ------------------------------------------------------------------------- */
 
-void startCommunication(void)
+void startPS3Communication(void)
 {
-    // initialize button data array
-/* The data being transferred is in the following format:
-	byte0 - 8 buttons ( bit0...bit7 =
-				[blue][green][red][yellow][orange][star power][is higher frets][unused]
-	byte1 - 5 buttons, 3bits padding bit0...bit7 = 
-				[select][start][??][??],[ps3 button],[pad][pad][pad]
-	byte2 - hat switch 
-			0000 N, 0001 N/E, 0010 E, 0011 SE, 0100 S, 0101 SW, 0110 W, 0111, NW, 1000, nothing pressed
-	byte3 - x axis (unused)
-	byte4 - y axis (unused)
-	byte5 - z axis (Whammy Bar)
-	byte6 - rzaxis (Choose solo style)
-*/
-
-	//set the buttons to all at default positions
-/*	reportBuffer[0] = 0b00000000;
-	reportBuffer[1] = 0b00000000;
-	reportBuffer[2] = 0b00001000;
-	reportBuffer[3] = 0b10000000;
-	reportBuffer[4] = 0b10000000;
-	reportBuffer[5] = 0b10000000;
-	reportBuffer[6] = 0b00000000;
-*/
-
     // First, set up all the USB communication stuff
     wdt_enable(WDTO_1S);
     /* Even if you don't use the watchdog, turn it off here. On newer devices,
@@ -204,9 +182,20 @@ void startCommunication(void)
 }
 
 
-void sendData(dataForController data)
+void sendPS3Data(dataForController data)
 {
-
+/* The data being transferred is in the following format:
+	byte0 - 8 buttons ( bit0...bit7 =
+				[blue][green][red][yellow][orange][star power][is higher frets][unused]
+	byte1 - 5 buttons, 3bits padding bit0...bit7 = 
+				[select][start][??][??],[ps3 button],[pad][pad][pad]
+	byte2 - hat switch 
+			0000 N, 0001 N/E, 0010 E, 0011 SE, 0100 S, 0101 SW, 0110 W, 0111, NW, 1000, nothing pressed
+	byte3 - x axis (unused)
+	byte4 - y axis (unused)
+	byte5 - z axis (Whammy Bar)
+	byte6 - rzaxis (Choose solo style)
+*/
        //set the buttons to all at default positions
         reportBuffer[0] = 0b00000000;
         reportBuffer[1] = 0b00000000;
@@ -231,8 +220,10 @@ void sendData(dataForController data)
         if (data.downOn)
                 reportBuffer[2] = 0b00000100;
 
-        reportBuffer[1] |= (data.plusOn << PLUS_BIT);
+		//Finally, Start, Star Power, and the Home button (not working yet)
+		reportBuffer[1] |= (data.plusOn << PLUS_BIT);
         reportBuffer[0] |= (data.minusOn << MINUS_BIT);
+		reportBuffer[1] |= (data.homeOn << HOME_BIT);
 
         //Then we finish off some USB stuff.
         wdt_reset();  //Reset the watchdog timer

@@ -82,6 +82,19 @@ inline int testForMinusChord(int stringState[])
 		return 0;
 }
 
+inline int testForHomeChord(int stringState[])
+{
+	if ((stringState[0] == 0b00100000) &&
+		(stringState[1] == 0b00000000) &&
+		(stringState[2] == 0b00000000) &&
+		(stringState[3] == 0b00000000) &&
+		(stringState[4] == 0b00000000) &&
+		(stringState[5] == 0b00100000))
+		return 1;
+	else
+		return 0;
+}
+
 inline int testForNoStringsPressed(int stringState[])
 {
 	if ((stringState[0] == 0b00000000) &&

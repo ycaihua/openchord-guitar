@@ -15,12 +15,11 @@ void processChords(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 									int buttonStringPatterns[][NUMBER_OF_STRINGS])
 {
 	// First take care of registering strumming
-	for (int guitarString = 0; guitarString < 6; guitarString++)
+	for (int guitarString = 0; guitarString < NUMBER_OF_STRINGS; guitarString++)
 	{
 		if (stringState[guitarString] & 1)
 		{
-			stringState[guitarString] &= ~1; //Set the last bit to zero
-			if (guitarString < 3)
+			if (guitarString < (NUMBER_OF_STRINGS / 2))
 			{
 				data->downOn = 1;
 				data->upOn   = 0;
@@ -33,119 +32,125 @@ void processChords(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 		}
 	}
 
+	// Now that strumming is taken care of, we want to be able to ignore
+	// which string is strummed so we can match fingering patterns against
+	// the patterns in EEPROM. However, for debouncing, we don't want to
+	// mess with the stringState[] array, so we'll mask stringState[i] every
+	// time we compare it
+
 	// First, save us some trouble and see if we're not pressing anything at all..
-	if ((stringState[0] == 0b00000000) &&
-		(stringState[1] == 0b00000000) &&
-		(stringState[2] == 0b00000000) &&
-		(stringState[3] == 0b00000000) &&
-		(stringState[4] == 0b00000000) &&
-		(stringState[5] == 0b00000000))
+	if (( (stringState[0] & (~1)) == 0b00000000) &&
+		( (stringState[1] & (~1)) == 0b00000000) &&
+		( (stringState[2] & (~1)) == 0b00000000) &&
+		( (stringState[3] & (~1)) == 0b00000000) &&
+		( (stringState[4] & (~1)) == 0b00000000) &&
+		( (stringState[5] & (~1)) == 0b00000000))
 		return;
 
 	// Now see if what's being played on the fretboard matches any of the button patterns in
 	//  buttonStringPatterns
 	// green
-	if(stringState[0] == buttonStringPatterns[0][0] &&
-	   stringState[1] == buttonStringPatterns[0][1] &&
-	   stringState[2] == buttonStringPatterns[0][2] &&
-	   stringState[3] == buttonStringPatterns[0][3] &&
-	   stringState[4] == buttonStringPatterns[0][4] &&
-	   stringState[5] == buttonStringPatterns[0][5]  ) 
+	if( (stringState[0] & (~1)) == buttonStringPatterns[0][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[0][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[0][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[0][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[0][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[0][5]  ) 
 		{
 			data->greenOn = 1;
   		}
 	// red
-	else if(stringState[0] == buttonStringPatterns[1][0] &&
-	   stringState[1] == buttonStringPatterns[1][1] &&
-	   stringState[2] == buttonStringPatterns[1][2] &&
-	   stringState[3] == buttonStringPatterns[1][3] &&
-	   stringState[4] == buttonStringPatterns[1][4] &&
-	   stringState[5] == buttonStringPatterns[1][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[1][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[1][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[1][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[1][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[1][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[1][5]  ) 
 		{
 			data->redOn = 1;
   		}
 
 	// yellow
-	else if(stringState[0] == buttonStringPatterns[2][0] &&
-	   stringState[1] == buttonStringPatterns[2][1] &&
-	   stringState[2] == buttonStringPatterns[2][2] &&
-	   stringState[3] == buttonStringPatterns[2][3] &&
-	   stringState[4] == buttonStringPatterns[2][4] &&
-	   stringState[5] == buttonStringPatterns[2][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[2][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[2][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[2][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[2][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[2][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[2][5]  ) 
 		{
 			 data->yellowOn = 1;
   		}
 	// blue
-	else if(stringState[0] == buttonStringPatterns[3][0] &&
-	   stringState[1] == buttonStringPatterns[3][1] &&
-	   stringState[2] == buttonStringPatterns[3][2] &&
-	   stringState[3] == buttonStringPatterns[3][3] &&
-	   stringState[4] == buttonStringPatterns[3][4] &&
-	   stringState[5] == buttonStringPatterns[3][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[3][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[3][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[3][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[3][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[3][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[3][5]  ) 
 		{
 			 data->blueOn = 1;
   		}
 	// orange
-	else if(stringState[0] == buttonStringPatterns[4][0] &&
-	   stringState[1] == buttonStringPatterns[4][1] &&
-	   stringState[2] == buttonStringPatterns[4][2] &&
-	   stringState[3] == buttonStringPatterns[4][3] &&
-	   stringState[4] == buttonStringPatterns[4][4] &&
-	   stringState[5] == buttonStringPatterns[4][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[4][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[4][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[4][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[4][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[4][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[4][5]  ) 
 		{
 			 data->orangeOn = 1;
   		}
 	//Green and Red
-	else if(stringState[0] == buttonStringPatterns[5][0] &&
-	   stringState[1] == buttonStringPatterns[5][1] &&
-	   stringState[2] == buttonStringPatterns[5][2] &&
-	   stringState[3] == buttonStringPatterns[5][3] &&
-	   stringState[4] == buttonStringPatterns[5][4] &&
-	   stringState[5] == buttonStringPatterns[5][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[5][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[5][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[5][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[5][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[5][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[5][5]  ) 
 		{
 			data->greenOn = 1;
 			data->redOn = 1;
   		}
 	//Red and Yellow
-	else if(stringState[0] == buttonStringPatterns[6][0] &&
-	   stringState[1] == buttonStringPatterns[6][1] &&
-	   stringState[2] == buttonStringPatterns[6][2] &&
-	   stringState[3] == buttonStringPatterns[6][3] &&
-	   stringState[4] == buttonStringPatterns[6][4] &&
-	   stringState[5] == buttonStringPatterns[6][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[6][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[6][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[6][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[6][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[6][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[6][5]  ) 
 		{
 			data->redOn = 1;
 			data->yellowOn = 1;
   		}
 	// Yellow and Blue
-	else if(stringState[0] == buttonStringPatterns[7][0] &&
-	   stringState[1] == buttonStringPatterns[7][1] &&
-	   stringState[2] == buttonStringPatterns[7][2] &&
-	   stringState[3] == buttonStringPatterns[7][3] &&
-	   stringState[4] == buttonStringPatterns[7][4] &&
-	   stringState[5] == buttonStringPatterns[7][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[7][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[7][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[7][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[7][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[7][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[7][5]  ) 
 		{
 			 data->yellowOn = 1;
 			 data->blueOn = 1;
   		}
 	// Green and Yellow
-	else if(stringState[0] == buttonStringPatterns[8][0] &&
-	   stringState[1] == buttonStringPatterns[8][1] &&
-	   stringState[2] == buttonStringPatterns[8][2] &&
-	   stringState[3] == buttonStringPatterns[8][3] &&
-	   stringState[4] == buttonStringPatterns[8][4] &&
-	   stringState[5] == buttonStringPatterns[8][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[8][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[8][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[8][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[8][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[8][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[8][5]  ) 
 		{
 			 data->greenOn = 1;
 			 data->yellowOn = 1;
   		}
 	// Red and Blue
-	else if(stringState[0] == buttonStringPatterns[9][0] &&
-	   stringState[1] == buttonStringPatterns[9][1] &&
-	   stringState[2] == buttonStringPatterns[9][2] &&
-	   stringState[3] == buttonStringPatterns[9][3] &&
-	   stringState[4] == buttonStringPatterns[9][4] &&
-	   stringState[5] == buttonStringPatterns[9][5]  ) 
+	else if( (stringState[0] & (~1)) == buttonStringPatterns[9][0] &&
+	    (stringState[1] & (~1)) == buttonStringPatterns[9][1] &&
+	    (stringState[2] & (~1)) == buttonStringPatterns[9][2] &&
+	    (stringState[3] & (~1)) == buttonStringPatterns[9][3] &&
+	    (stringState[4] & (~1)) == buttonStringPatterns[9][4] &&
+	    (stringState[5] & (~1)) == buttonStringPatterns[9][5]  ) 
 		{
 			 data->redOn = 1;
 			 data->blueOn = 1;
@@ -175,7 +180,7 @@ void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 		data->downOn = 1;
 	}
 
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < NUMBER_OF_STRINGS; i++)
 	{
 		if (stringState[i] != 0) // Only look at strings that are being touched or strummed
 		{
@@ -213,34 +218,39 @@ void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 			else
 				// First see if we're strumming or not
 				strumPressed = stringState[i] & 1;
-				// Now ensure the strum bit is zero
-				stringState[i] &= (~1);
+
+				// 	maskedStringState[i] is a masked version of the 
+				//  stringState that removes the strum data, so we can match
+				//  the fret pressing against the prebuilt pattern without
+				//  worrying about strumming or changing the stringState array
+				int maskedStringState = stringState[i] & (~1);
+
 				// Take care of displaying closed notes
-				if (stringState[i] == buttonStringPatterns[0][i]&& 
+				if (maskedStringState == buttonStringPatterns[0][i]&& 
 										buttonStringPatterns[0][i] != 0)
 				{
 					data->greenOn =  1;	
 					buttonPressed = 1;
 				}
-				if (stringState[i] == buttonStringPatterns[1][i] && 
+				if (maskedStringState == buttonStringPatterns[1][i] && 
 										buttonStringPatterns[1][i] != 0)
 				{
 					data->redOn =  1;	
 					buttonPressed = 1;
 				}
-				if (stringState[i] == buttonStringPatterns[2][i] && 
+				if (maskedStringState == buttonStringPatterns[2][i] && 
 										buttonStringPatterns[2][i] != 0)
 					{
 					data->yellowOn =  1;
 					buttonPressed = 1;
 				}
-				if (stringState[i] == buttonStringPatterns[3][i] && 
+				if (maskedStringState == buttonStringPatterns[3][i] && 
 										buttonStringPatterns[3][i] != 0)
 				{
 					data->blueOn =  1;
 					buttonPressed = 1;
 					}				
-				if (stringState[i] == buttonStringPatterns[4][i] && 
+				if (maskedStringState == buttonStringPatterns[4][i] && 
 										buttonStringPatterns[4][i] != 0)
 				{
 					data->orangeOn =  1;
@@ -255,11 +265,11 @@ void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 	}
 
 	//Now set the strum buttons properly, so we can have both up and down if we're in this mode
-	if ((strumOn >= 0) && (strumOn < 3))
+	if ((strumOn >= 0) && (strumOn < (NUMBER_OF_STRINGS / 2)))
 	{
 		data->downOn = 1;
 	}
-	else if ((strumOn >= 3) && (strumOn < 6 ) && (data->downOn != 1))
+	else if ((strumOn >= (NUMBER_OF_STRINGS / 2)) && (strumOn < NUMBER_OF_STRINGS ) && (data->downOn != 1))
 	{
 		data->upOn = 1;
 	}
@@ -344,7 +354,7 @@ void processFrets(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 		// Check for strumming
 		if (stringState[guitarString] & 1)
 		{
-			if (guitarString < 3)
+			if (guitarString < (NUMBER_OF_STRINGS / 2))
 			{
 				data->downOn = 1;
 				data->upOn   = 0;
