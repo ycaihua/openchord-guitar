@@ -152,7 +152,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x3172
+.text           0x00000000     0x31a4
  *(.vectors)
  .vectors       0x00000000       0x68 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm168.o
                 0x00000000                __vectors
@@ -261,53 +261,53 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
                 0x000020e4                usbFunctionSetup
                 0x0000212a                sendPS3Data
                 0x0000220e                startPS3Communication
- .text          0x00002248      0x28a usbdrvasm.o
+ .text          0x00002248      0x2bc usbdrvasm.o
                 0x00002248                usbCrc16
                 0x00002272                usbCrc16Append
                 0x0000227a                __vector_2
- .text          0x000024d2      0x2c2 usbdrv.o
-                0x000024f4                usbPoll
-                0x0000270c                usbSetInterrupt3
-                0x00002750                usbSetInterrupt
-                0x000024d2                usbInit
- .text          0x00002794      0x7fc wiimote.o
-                0x000027f8                wm_init
-                0x00002870                wm_gentabs
-                0x00002daa                __vector_24
-                0x00002794                twi_slave_init
-                0x000027e6                wm_newaction
-                0x000027bc                wm_ror8
-                0x000027ac                twi_clear_int
-                0x00002d04                wm_slaveRx
- .text          0x00002f90       0xe6 wiiInterface.o
-                0x00002f92                sendWiiData
-                0x00003042                startWiiCommunication
-                0x00002f90                wm_timer_inc
- .text          0x00003076        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text          0x00003076        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text          0x00003076        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text          0x00003076       0x1a c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(memcmp.o)
-                0x00003076                memcmp
- .text          0x00003090       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eerd_block.o)
-                0x00003090                __eerd_block
- .text          0x000030c8       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eewr_block.o)
-                0x000030c8                __eewr_block
- .text          0x00003100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
- .text          0x00003100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
-                0x00003100                . = ALIGN (0x2)
+ .text          0x00002504      0x2c2 usbdrv.o
+                0x00002526                usbPoll
+                0x0000273e                usbSetInterrupt3
+                0x00002782                usbSetInterrupt
+                0x00002504                usbInit
+ .text          0x000027c6      0x7fc wiimote.o
+                0x0000282a                wm_init
+                0x000028a2                wm_gentabs
+                0x00002ddc                __vector_24
+                0x000027c6                twi_slave_init
+                0x00002818                wm_newaction
+                0x000027ee                wm_ror8
+                0x000027de                twi_clear_int
+                0x00002d36                wm_slaveRx
+ .text          0x00002fc2       0xe6 wiiInterface.o
+                0x00002fc4                sendWiiData
+                0x00003074                startWiiCommunication
+                0x00002fc2                wm_timer_inc
+ .text          0x000030a8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text          0x000030a8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x000030a8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000030a8       0x1a c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(memcmp.o)
+                0x000030a8                memcmp
+ .text          0x000030c2       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eerd_block.o)
+                0x000030c2                __eerd_block
+ .text          0x000030fa       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eewr_block.o)
+                0x000030fa                __eewr_block
+ .text          0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+ .text          0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+                0x00003132                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00003100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00003100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00003100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00003100       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
-                0x00003100                __prologue_saves__
- .text.libgcc   0x00003138       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
-                0x00003138                __epilogue_restores__
-                0x0000316e                . = ALIGN (0x2)
+ .text.libgcc   0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00003132       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+                0x00003132                __prologue_saves__
+ .text.libgcc   0x0000316a       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+                0x0000316a                __epilogue_restores__
+                0x000031a0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000316e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
-                0x0000316e                exit
-                0x0000316e                _exit
+ .fini9         0x000031a0        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+                0x000031a0                exit
+                0x000031a0                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -326,11 +326,11 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000316e        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x000031a0        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00003172                _etext = .
+                0x000031a4                _etext = .
 
-.data           0x00800100       0x28 load address 0x00003172
+.data           0x00800100       0x28 load address 0x000031a4
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm168.o
@@ -401,8 +401,8 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  COMMON         0x00800297        0x6 wiiInterface.o
                 0x00800297                but_dat
                 0x0080029d                PROVIDE (__bss_end, .)
-                0x00003172                __data_load_start = LOADADDR (.data)
-                0x0000319a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000031a4                __data_load_start = LOADADDR (.data)
+                0x000031cc                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080029d        0x0
                 0x0080029d                PROVIDE (__noinit_start, .)
