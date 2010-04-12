@@ -1,11 +1,11 @@
 ###############################################################################
-# Makefile for the project V1_USB
+# Makefile for the project OpenChordV1
 ###############################################################################
 
 ## General Flags
-PROJECT = V1_USB
+PROJECT = OpenChordV1
 MCU = atmega168
-TARGET = V1_USB.elf
+TARGET = OpenChordV1.elf
 CC = avr-gcc
 
 CPP = avr-g++
@@ -15,7 +15,7 @@ COMMON = -mmcu=$(MCU)
 
 ## Compile options common for all C compilation units.
 CFLAGS = $(COMMON)
-CFLAGS += -Wall -gdwarf-2 -std=gnu99                                   -DF_CPU=12000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+CFLAGS += -Wall -gdwarf-2 -std=gnu99   -DF_CPU=12000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CFLAGS += -MD -MP -MT $(*F).o -MF dep/$(@F).d 
 
 ## Assembly specific flags
@@ -25,7 +25,7 @@ ASMFLAGS += -x assembler-with-cpp -Wa,-gdwarf2
 
 ## Linker flags
 LDFLAGS = $(COMMON)
-LDFLAGS +=  -Wl,-Map=V1_USB.map
+LDFLAGS +=  -Wl,-Map=OpenChordV1.map
 
 
 ## Intel Hex file production flags
@@ -37,32 +37,38 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 
 ## Objects that must be built in order to link
-OBJECTS = main.o guitarInitFunctions.o processStringState.o ps3Interface.o usbdrv.o usbdrvasm.o 
+OBJECTS = processStringState.o guitarInitFunctions.o main.o ps3Interface.o usbdrvasm.o usbdrv.o wiimote.o wiiInterface.o 
 
 ## Objects explicitly added by the user
 LINKONLYOBJECTS = 
 
 ## Build
-all: $(TARGET) V1_USB.hex V1_USB.eep V1_USB.lss size
+all: $(TARGET) OpenChordV1.hex OpenChordV1.eep OpenChordV1.lss size
 
 ## Compile
-main.o: ../main.c
+processStringState.o: ../processStringState.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 guitarInitFunctions.o: ../guitarInitFunctions.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
-processStringState.o: ../processStringState.c
+main.o: ../main.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 ps3Interface.o: ../PS3/ps3Interface.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
+usbdrvasm.o: ../PS3/usbdrv/usbdrvasm.S
+	$(CC) $(INCLUDES) $(ASMFLAGS) -c  $<
+
 usbdrv.o: ../PS3/usbdrv/usbdrv.c
 	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
-usbdrvasm.o: ../PS3/usbdrv/usbdrvasm.S
-	$(CC) $(INCLUDES) $(ASMFLAGS) -c  $<
+wiimote.o: ../Wii/wiimote.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
+
+wiiInterface.o: ../Wii/wiiInterface.c
+	$(CC) $(INCLUDES) $(CFLAGS) -c  $<
 
 ##Link
 $(TARGET): $(OBJECTS)
@@ -84,7 +90,7 @@ size: ${TARGET}
 ## Clean target
 .PHONY: clean
 clean:
-	-rm -rf $(OBJECTS) V1_USB.elf dep/* V1_USB.hex V1_USB.eep V1_USB.lss V1_USB.map
+	-rm -rf $(OBJECTS) OpenChordV1.elf dep/* OpenChordV1.hex OpenChordV1.eep OpenChordV1.lss OpenChordV1.map
 
 
 ## Other dependencies
