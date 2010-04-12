@@ -566,7 +566,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 
 .debug_macinfo
  *(.debug_macinfo)
-OUTPUT(OpenChordV1.elf elf32-avr)
+OUTPUT(OpenChordV1_12MHz.elf elf32-avr)
 LOAD linker stubs
 
 .debug_ranges   0x00000000      0x130
