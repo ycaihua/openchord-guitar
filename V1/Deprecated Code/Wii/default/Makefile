@@ -4,16 +4,18 @@
 
 ## General Flags
 PROJECT = OpenChord_V1_Wii
-MCU = atmega164p
+MCU = atmega328p
 TARGET = OpenChord_V1_Wii.elf
 CC = avr-gcc
+
+CPP = avr-g++
 
 ## Options common to compile, link and assembly rules
 COMMON = -mmcu=$(MCU)
 
 ## Compile options common for all C compilation units.
 CFLAGS = $(COMMON)
-CFLAGS += -Wall -gdwarf-2 -std=gnu99                                       -DF_CPU=8000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+CFLAGS += -Wall -gdwarf-2 -std=gnu99                                                         -DF_CPU=12000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CFLAGS += -MD -MP -MT $(*F).o -MF dep/$(@F).d 
 
 ## Assembly specific flags
@@ -35,7 +37,7 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 
 ## Include Directories
-INCLUDES = -I"C:\Documents and Settings\Alan\Desktop\V1\Wii\." 
+INCLUDES = -I"C:\Documents and Settings\Administrator\Desktop\OpenChord\SVN\V1\Deprecated Code\Wii\." 
 
 ## Objects that must be built in order to link
 OBJECTS = V1_Wii.o wiimote.o 

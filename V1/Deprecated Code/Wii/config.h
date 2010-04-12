@@ -8,8 +8,8 @@
 #ifndef CONFIG_H
 
 //#define ATMEGA164OLD
-#define ATMEGA164
-//#define ATMEGA168
+//#define ATMEGA164
+#define ATMEGA168
 
 
 #define CONFIG_H

@@ -1,7 +1,7 @@
 Archive member included because of file (symbol)
 
 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
-                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o (exit)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o (exit)
 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
                               V1_Wii.o (__do_copy_data)
 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
@@ -32,7 +32,7 @@ signature        0x00840000         0x00000400         rw !x
 Linker script and memory map
 
 Address of section .data set to 0x800100
-LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
+LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
 LOAD V1_Wii.o
 LOAD wiimote.o
 LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
@@ -129,51 +129,51 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x1faa
+.text           0x00000000     0x1f7a
  *(.vectors)
- .vectors       0x00000000       0x7c c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
+ .vectors       0x00000000       0x68 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vectors
                 0x00000000                __vector_default
  *(.vectors)
  *(.progmem.gcc*)
  *(.progmem*)
- .progmem.data  0x0000007c      0xa2a wiimote.o
-                0x0000007c                ans_tbl
-                0x000000a6                sboxes
-                0x00000aa6                . = ALIGN (0x2)
-                0x00000aa6                __trampolines_start = .
+ .progmem.data  0x00000068      0xa2a wiimote.o
+                0x00000068                ans_tbl
+                0x00000092                sboxes
+                0x00000a92                . = ALIGN (0x2)
+                0x00000a92                __trampolines_start = .
  *(.trampolines)
- .trampolines   0x00000aa6        0x0 linker stubs
+ .trampolines   0x00000a92        0x0 linker stubs
  *(.trampolines*)
-                0x00000aa6                __trampolines_end = .
+                0x00000a92                __trampolines_end = .
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x00000aa6                __ctors_start = .
+                0x00000a92                __ctors_start = .
  *(.ctors)
-                0x00000aa6                __ctors_end = .
-                0x00000aa6                __dtors_start = .
+                0x00000a92                __ctors_end = .
+                0x00000a92                __dtors_start = .
  *(.dtors)
-                0x00000aa6                __dtors_end = .
+                0x00000a92                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000aa6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
-                0x00000aa6                __init
+ .init0         0x00000a92        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
+                0x00000a92                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000aa6        0xc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
+ .init2         0x00000a92        0xc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x00000ab2       0x16 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
-                0x00000ab2                __do_copy_data
- .init4         0x00000ac8       0x10 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
-                0x00000ac8                __do_clear_bss
+ .init4         0x00000a9e       0x16 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+                0x00000a9e                __do_copy_data
+ .init4         0x00000ab4       0x10 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000ab4                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -184,69 +184,64 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000ad8        0x8 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
+ .init9         0x00000ac4        0x8 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
  *(.init9)
  *(.text)
- .text          0x00000ae0        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
-                0x00000ae0                __vector_22
-                0x00000ae0                __vector_28
-                0x00000ae0                __vector_1
-                0x00000ae0                __vector_24
-                0x00000ae0                __vector_12
-                0x00000ae0                __bad_interrupt
-                0x00000ae0                __vector_6
-                0x00000ae0                __vector_3
-                0x00000ae0                __vector_23
-                0x00000ae0                __vector_30
-                0x00000ae0                __vector_25
-                0x00000ae0                __vector_11
-                0x00000ae0                __vector_13
-                0x00000ae0                __vector_17
-                0x00000ae0                __vector_19
-                0x00000ae0                __vector_7
-                0x00000ae0                __vector_27
-                0x00000ae0                __vector_5
-                0x00000ae0                __vector_4
-                0x00000ae0                __vector_9
-                0x00000ae0                __vector_2
-                0x00000ae0                __vector_21
-                0x00000ae0                __vector_15
-                0x00000ae0                __vector_29
-                0x00000ae0                __vector_8
-                0x00000ae0                __vector_14
-                0x00000ae0                __vector_10
-                0x00000ae0                __vector_16
-                0x00000ae0                __vector_18
-                0x00000ae0                __vector_20
- .text          0x00000ae4      0xcac V1_Wii.o
-                0x00000b3c                readFrets
-                0x00000c06                main
-                0x00000ae6                setTimer
-                0x00000ae4                wm_timer_inc
- .text          0x00001790      0x7fc wiimote.o
-                0x000017f4                wm_init
-                0x0000186c                wm_gentabs
-                0x00001790                twi_slave_init
-                0x000017e2                wm_newaction
-                0x000017b8                wm_ror8
-                0x00001da6                __vector_26
-                0x000017a8                twi_clear_int
-                0x00001d00                wm_slaveRx
- .text          0x00001f8c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text          0x00001f8c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text          0x00001f8c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text          0x00001f8c       0x1a c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(memcmp.o)
-                0x00001f8c                memcmp
-                0x00001fa6                . = ALIGN (0x2)
+ .text          0x00000acc        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
+                0x00000acc                __vector_22
+                0x00000acc                __vector_1
+                0x00000acc                __vector_12
+                0x00000acc                __bad_interrupt
+                0x00000acc                __vector_6
+                0x00000acc                __vector_3
+                0x00000acc                __vector_23
+                0x00000acc                __vector_25
+                0x00000acc                __vector_11
+                0x00000acc                __vector_13
+                0x00000acc                __vector_17
+                0x00000acc                __vector_19
+                0x00000acc                __vector_7
+                0x00000acc                __vector_5
+                0x00000acc                __vector_4
+                0x00000acc                __vector_9
+                0x00000acc                __vector_2
+                0x00000acc                __vector_21
+                0x00000acc                __vector_15
+                0x00000acc                __vector_8
+                0x00000acc                __vector_14
+                0x00000acc                __vector_10
+                0x00000acc                __vector_16
+                0x00000acc                __vector_18
+                0x00000acc                __vector_20
+ .text          0x00000ad0      0xc90 V1_Wii.o
+                0x00000b28                readFrets
+                0x00000be2                main
+                0x00000ad2                setTimer
+                0x00000ad0                wm_timer_inc
+ .text          0x00001760      0x7fc wiimote.o
+                0x000017c4                wm_init
+                0x0000183c                wm_gentabs
+                0x00001d76                __vector_24
+                0x00001760                twi_slave_init
+                0x000017b2                wm_newaction
+                0x00001788                wm_ror8
+                0x00001778                twi_clear_int
+                0x00001cd0                wm_slaveRx
+ .text          0x00001f5c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text          0x00001f5c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x00001f5c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00001f5c       0x1a c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(memcmp.o)
+                0x00001f5c                memcmp
+                0x00001f76                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00001fa6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00001fa6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00001fa6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
-                0x00001fa6                . = ALIGN (0x2)
+ .text.libgcc   0x00001f76        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00001f76        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00001f76        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+                0x00001f76                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001fa6        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
-                0x00001fa6                exit
-                0x00001fa6                _exit
+ .fini9         0x00001f76        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+                0x00001f76                exit
+                0x00001f76                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -265,14 +260,14 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001fa6        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x00001f76        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00001faa                _etext = .
+                0x00001f7a                _etext = .
 
-.data           0x00800100       0x26 load address 0x00001faa
+.data           0x00800100       0x26 load address 0x00001f7a
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
- .data          0x00800100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
+ .data          0x00800100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
  .data          0x00800100       0x26 V1_Wii.o
                 0x00800106                cal_data
                 0x00800100                guitar_id
@@ -292,7 +287,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 .bss            0x00800126      0x145
                 0x00800126                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x00800126        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm164p.o
+ .bss           0x00800126        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
  .bss           0x00800126        0x0 V1_Wii.o
  .bss           0x00800126      0x124 wiimote.o
  .bss           0x0080024a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
@@ -308,8 +303,8 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
                 0x00800264                but_dat
                 0x0080026a                previousPlusOn
                 0x0080026b                PROVIDE (__bss_end, .)
-                0x00001faa                __data_load_start = LOADADDR (.data)
-                0x00001fd0                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00001f7a                __data_load_start = LOADADDR (.data)
+                0x00001fa0                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080026b        0x0
                 0x0080026b                PROVIDE (__noinit_start, .)
@@ -403,12 +398,12 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .debug_frame   0x00000000       0x50 V1_Wii.o
  .debug_frame   0x00000050       0x90 wiimote.o
 
-.debug_str      0x00000000      0x35f
+.debug_str      0x00000000      0x386
  *(.debug_str)
- .debug_str     0x00000000      0x267 V1_Wii.o
-                                0x2aa (size before relaxing)
- .debug_str     0x00000267       0xf8 wiimote.o
-                                0x1af (size before relaxing)
+ .debug_str     0x00000000      0x28e V1_Wii.o
+                                0x2d1 (size before relaxing)
+ .debug_str     0x0000028e       0xf8 wiimote.o
+                                0x1d6 (size before relaxing)
 
 .debug_loc      0x00000000      0x5f9
  *(.debug_loc)

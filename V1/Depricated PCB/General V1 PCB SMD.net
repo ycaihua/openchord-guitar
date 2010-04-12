@@ -1,0 +1,299 @@
+# EESchema Netlist Version 1.1 created  09/11/2009 15:32:12
+(
+ ( /4ACED029 SIL-4 +-Pick1 CONN_4
+  ( 1 N-000033 )
+  ( 2 N-000008 )
+  ( 3 N-000034 )
+  ( 4 N-000007 )
+ )
+ ( /4AF89A61 SM0805 27pF1 27pF
+  ( 1 N-000038 )
+  ( 2 GND )
+ )
+ ( /4AF89A5C SM0805 C1 27pF
+  ( 1 GND )
+  ( 2 N-000039 )
+ )
+ ( /4AF8A5B1 SM0805 C2 0.1mF
+  ( 1 GND )
+  ( 2 +5V )
+ )
+ ( /4ACD5E45 SM0805 D1 DIODE
+  ( 1 N-000005 )
+  ( 2 N-000029 )
+ )
+ ( /4ACD5E4B SM0805 D2 DIODE
+  ( 1 N-000004 )
+  ( 2 N-000013 )
+ )
+ ( /4ACD5E50 SM0805 D3 DIODE
+  ( 1 N-000003 )
+  ( 2 N-000012 )
+ )
+ ( /4ACD5E3E SM0805 D4 DIODE
+  ( 1 N-000006 )
+  ( 2 N-000011 )
+ )
+ ( /4ACD5E48 SM0805 D5 DIODE
+  ( 1 N-000035 )
+  ( 2 N-000030 )
+ )
+ ( /4ACD5E4D SM0805 D6 DIODE
+  ( 1 N-000036 )
+  ( 2 N-000028 )
+ )
+ ( /4ACD5F39 SM0805 D7 ZENER_3.6V
+  ( 1 GND )
+  ( 2 N-000020 )
+ )
+ ( /4ACD5F26 SM0805 D8 ZENER_3.6V
+  ( 1 GND )
+  ( 2 N-000002 )
+ )
+ ( /4ACD5D37 SM0805 Dcpl1 0.1uF
+  ( 1 GND )
+  ( 2 +5V )
+ )
+ ( /4ACD6BE3 SIL-5 Frets1 CONN_5
+  ( 1 N-000021 )
+  ( 2 N-000016 )
+  ( 3 N-000022 )
+  ( 4 N-000015 )
+  ( 5 N-000023 )
+ )
+ ( /4ACEC548 DIP-28__300 IC1 ATMEGA8-P
+  ( 1 N-000001 )
+  ( 2 N-000030 )
+  ( 3 N-000011 )
+  ( 4 N-000029 )
+  ( 5 N-000014 )
+  ( 6 N-000027 )
+  ( 7 +5V )
+  ( 8 GND )
+  ( 9 N-000039 )
+  ( 10 N-000038 )
+  ( 11 N-000013 )
+  ( 12 N-000028 )
+  ( 13 N-000012 )
+  ( 14 ? )
+  ( 15 N-000018 )
+  ( 16 N-000019 )
+  ( 17 N-000025 )
+  ( 18 N-000024 )
+  ( 19 N-000017 )
+  ( 20 +5V )
+  ( 21 +5V )
+  ( 22 GND )
+  ( 23 N-000031 )
+  ( 24 N-000010 )
+  ( 25 N-000032 )
+  ( 26 N-000009 )
+  ( 27 N-000002 )
+  ( 28 N-000020 )
+ )
+ ( /4ACD6D50 pin_array_3x2 ISP1 AVR-ISP-6
+  ( 1 N-000024 )
+  ( 2 +5V )
+  ( 3 N-000017 )
+  ( 4 N-000025 )
+  ( 5 N-000001 )
+  ( 6 GND )
+ )
+ ( /4ADE5944 USB_B J1 USB_WII
+  ( 1 +5V )
+  ( 2 N-000020 )
+  ( 3 N-000002 )
+  ( 4 GND )
+ )
+ ( /4ACD5CC1 SM0805 R1 10K
+  ( 1 N-000001 )
+  ( 2 +5V )
+ )
+ ( /4ACD5C14 SM0805 R2 10K
+  ( 1 N-000033 )
+  ( 2 N-000031 )
+ )
+ ( /4ACD5C12 SM0805 R3 10K
+  ( 1 N-000008 )
+  ( 2 N-000010 )
+ )
+ ( /4ACD5C13 SM0805 R4 10K
+  ( 1 N-000034 )
+  ( 2 N-000032 )
+ )
+ ( /4ACD5C15 SM0805 R5 10K
+  ( 1 N-000023 )
+  ( 2 N-000017 )
+ )
+ ( /4ACD5C18 SM0805 R6 10K
+  ( 1 N-000021 )
+  ( 2 N-000018 )
+ )
+ ( /4ACD5C16 SM0805 R7 10K
+  ( 1 N-000016 )
+  ( 2 N-000019 )
+ )
+ ( /4ACD5C17 SM0805 R8 10K
+  ( 1 N-000022 )
+  ( 2 N-000025 )
+ )
+ ( /4ACD5C19 SM0805 R9 10K
+  ( 1 N-000015 )
+  ( 2 N-000024 )
+ )
+ ( /4ACD5BF8 SM0805 R10 68
+  ( 1 N-000002 )
+  ( 2 N-000014 )
+ )
+ ( /4ACD5BFA SM0805 R11 68
+  ( 1 N-000020 )
+  ( 2 N-000027 )
+ )
+ ( /4ACD639D SM0805 R12 10K
+  ( 1 N-000020 )
+  ( 2 +5V )
+ )
+ ( /4ACED00C SM0805 R22 10K
+  ( 1 N-000007 )
+  ( 2 N-000009 )
+ )
+ ( /4ACD6BBF SIL-6 Strings1 CONN_6
+  ( 1 N-000035 )
+  ( 2 N-000006 )
+  ( 3 N-000005 )
+  ( 4 N-000004 )
+  ( 5 N-000036 )
+  ( 6 N-000003 )
+ )
+ ( /4AF89A16 HC-18UV X1 16MHz
+  ( 1 N-000039 )
+  ( 2 N-000038 )
+ )
+)
+*
+{ Allowed footprints by component:
+$component 27pF1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ D?
+ S*
+$endlist
+$component D2
+ D?
+ S*
+$endlist
+$component D3
+ D?
+ S*
+$endlist
+$component D4
+ D?
+ S*
+$endlist
+$component D5
+ D?
+ S*
+$endlist
+$component D6
+ D?
+ S*
+$endlist
+$component D7
+ D?
+ SO*
+ SM*
+$endlist
+$component D8
+ D?
+ SO*
+ SM*
+$endlist
+$component Dcpl1
+ SM*
+ C?
+ C1-1
+$endlist
+$component IC1
+ 28DIP-ELL600
+ 28dip600
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R8
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R9
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R10
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R11
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R12
+ R?
+ SM0603
+ SM0805
+$endlist
+$component R22
+ R?
+ SM0603
+ SM0805
+$endlist
+$endfootprintlist
+}
