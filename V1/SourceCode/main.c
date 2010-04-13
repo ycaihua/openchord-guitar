@@ -30,35 +30,6 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-/*  Fuses - the default fuses won't work with this setup, so they need to be changed
-
-	 Unfortunately, the clock fuses are different for USB vs. Wii
-	 With the Wii, the 8MHz oscillator is sufficient, but with the firmware USB library,
-     the internal 8MHz oscillator is too slow and inaccurate, so an external 16MHz
-	 crystal is needed.
-	  Other clock speeds are possible for USB communication, and there's
-	 even a certain ATTiny chip with an internal oscillator that will work.  More details about
-	 that are in usbconfig.h 
-
-JTAGEN = unchecked(disabled)  - JTAG works over the TWI pins, so it must be disabled
-EESAVE = checked(enabled)     - This keeps the EEPROM from 
-CKDIV8 = unchecked(disabled)  - This increases the clock speed to 8mHz, otherwise it's 
-					             too slow for any of our Wii/USB serial communication.
-if you're using the Wii:
-SUT_CKSEL = Internal RC oscillator
-						       With the WII, your fuses should probably then be
-                  					EXTENDED: 0xF9
-									HIGH:     0xD4
-									LOW:      0xC2
-if you're using the firmware USB option:
-SUT_CKSEL = Ext. Clock; Start-up time ... ...+0ms 
-                              - Choose this one based on what clock you're using
-							  Your fuses should read like
-                  					EXTENDED: 0xF9
-									HIGH:     0xD4
-									LOW:      Depends on what your clock source is
-*/
-
 #include "V1.h"
 
 // Space in the EEPROM memory for the button pattern data for each
