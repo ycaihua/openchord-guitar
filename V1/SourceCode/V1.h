@@ -4,6 +4,8 @@
 		Alan Chatham
 		Copyright 2009
 
+	For important information about compiling, see AVR
+
 	Thanks to the people at Objective Development for their open-source V-USB library
 	for the AVR microcontroller. http://www.obdev.at/avrusb/
 	
@@ -49,6 +51,10 @@
 
 #ifdef WII
 	#include "Wii/wiiinterface.h"
+#endif
+
+#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega88P__) ||	defined(__AVR_ATmega44P__)
+#error Right now, V-USB does not work right for the P series chips - compile for the ATmega168 and then use that binary.
 #endif
 
 

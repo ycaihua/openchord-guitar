@@ -4,6 +4,8 @@
 		Alan Chatham
 		Copyright 2009
 
+	Look at V1.h for important info about compiling this
+
 	Thanks to the people at Objective Development for their open-source V-USB library
 	for the AVR microcontroller. http://www.obdev.at/avrusb/
 
