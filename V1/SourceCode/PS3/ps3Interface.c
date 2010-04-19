@@ -121,6 +121,38 @@ PROGMEM char usbHidReportDescriptor[74] = { // USB report descriptor, size must 
   0x75,0x08, // report size 8 
   0x95,0x04, //71 report count 4 
   0x81,0x02, // Input (Data,Var,Abs)
+             //PS3 Home button from here?
+  /*0x06,0x00,0xff,              //   USAGE_PAGE (Vendor Defined Page 1)
+  0x09,0x20, // usage (Vendor-Defined 32) 
+  0x09,0x21, //80 usage (Vendor-Defined 33)
+  0x09,0x22, // usage (Vendor-Defined 34)
+  0x09,0x23, // usage (Vendor-Defined 35)
+  0x09,0x24, // usage (Vendor-Defined 36)
+  0x09,0x25, // usage (Vendor-Defined 37)
+  0x09,0x26, //90 usage (Vendor-Defined 38)
+  0x09,0x27, // usage (Vendor-Defined 39)
+  0x09,0x29, // usage (Vendor-Defined 40)
+  0x09,0x29, // usage (Vendor-Defined 41)
+  0x09,0x2a, // usage (Vendor-Defined 42)
+  0x09,0x2b, //100 usage (Vendor-Defined 43)
+  0x95,0x0c, // report count (12)
+  0x81,0x02, // Input (Data,Var,Abs,NWrp,Lin,Pref,NNul,Bit)
+  0x0a,0x21,0x26,  // Usage (Vendor-Defined 9761)
+  0x95,0x08, // Report Count (8)
+  0xb1,0x02, //111 Feature (Data,Var,Abs,NWrp,Lin,Pref,NNul,NVol,Bit)
+  
+  0x0a,0x21,0x26, // Usage (Vendor-Defined 9761) 
+  0x91,0x02, // Output (Data,Var,Abs,NWrp,Lin,Pref,NNul,NVol,Bit)
+  0x26,0xff,0x03, // Logical Maximum (1023) 
+  0x46,0xff,0x03, //122  Physical Maximum (1023) 
+  0x09,0x2c, // Usage (Vendor-Defined 44)
+  0x09,0x2d, // Usage (Vendor-Defined 45)
+  0x09,0x2e, // Usage (Vendor-Defined 46)
+  0x09,0x2f, //130 Usage (Vendor-Defined 47)
+  0x75,0x10, // Report Size (16)
+  0x95,0x04, // Report Count (4) 
+  0x81,0x02, // Input (Data,Var,Abs,NWrp,Lin,Pref,NNul,Bit) */
+  
   0xC0      };      // End Collection,End Collection   
 
 uchar reportBuffer[7];
@@ -137,16 +169,32 @@ usbRequest_t    *rq = (void *)data;
     /* The following requests are never used. But since they are required by
      * the specification, we implement them in this example.
      */
-    if((rq->bmRequestType & USBRQ_TYPE_MASK) == USBRQ_TYPE_CLASS){    /* class request type */
-        //DBG1(0x50, &rq->bRequest, 1);   /* debug output: print our request */
-        if(rq->bRequest == USBRQ_HID_GET_REPORT){  /* wValue: ReportType (highbyte), ReportID (lowbyte) */
-            /* we only have one report type, so don't look at wValue */
-            usbMsgPtr = (void *)&reportBuffer;
-            return sizeof(reportBuffer);
-        }else if(rq->bRequest == USBRQ_HID_GET_IDLE){
+	uchar extraBuffer[8];
+	
+    if((rq->bmRequestType & USBRQ_TYPE_MASK) == USBRQ_TYPE_CLASS)
+	{    /* class request type */
+        if(rq->bRequest == USBRQ_HID_GET_REPORT)
+		{  /* wValue: ReportType (highbyte), ReportID (lowbyte) */
+            //For PS3 Button compatibility
+			extraBuffer[0] = 0x21; // HID device
+			extraBuffer[1] = 38;
+			extraBuffer[2] =
+			extraBuffer[3] =
+			extraBuffer[4] = 
+			extraBuffer[5] =
+			extraBuffer[6] =
+			extraBuffer[7] = 0;
+
+            usbMsgPtr = extraBuffer;
+            return 8; //extraBuffer's size
+        }
+		else if(rq->bRequest == USBRQ_HID_GET_IDLE)
+		{
             usbMsgPtr = &idleRate;
             return 1;
-        }else if(rq->bRequest == USBRQ_HID_SET_IDLE){
+        }
+		else if(rq->bRequest == USBRQ_HID_SET_IDLE)
+		{
             idleRate = rq->wValue.bytes[1];
         }
     }else{

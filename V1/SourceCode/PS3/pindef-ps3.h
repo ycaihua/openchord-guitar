@@ -177,7 +177,7 @@
 		 #define USB_INTR_ENABLE_BIT     INT1   // bit number in above register
 		/* #define USB_INTR_PENDING        GIFR */  // register where interrupt pending bit resides
 		 #define USB_INTR_PENDING_BIT    INTF1  // bit number in above register
-		 #define USB_INTR_VECTOR         SIG_INTERRUPT1  // interrupt vector
+		 #define USB_INTR_VECTOR         INT1_vect  // interrupt vector
 
 	#endif
 
