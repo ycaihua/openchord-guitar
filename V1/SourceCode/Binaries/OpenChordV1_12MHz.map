@@ -152,7 +152,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x31a4
+.text           0x00000000     0x31c4
  *(.vectors)
  .vectors       0x00000000       0x68 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm168.o
                 0x00000000                __vectors
@@ -257,57 +257,57 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .text          0x000017c0      0x924 main.o
                 0x000017ea                readFrets
                 0x000018a0                main
- .text          0x000020e4      0x164 ps3Interface.o
+ .text          0x000020e4      0x184 ps3Interface.o
                 0x000020e4                usbFunctionSetup
-                0x0000212a                sendPS3Data
-                0x0000220e                startPS3Communication
- .text          0x00002248      0x2bc usbdrvasm.o
-                0x00002248                usbCrc16
-                0x00002272                usbCrc16Append
-                0x0000227a                __vector_2
- .text          0x00002504      0x2c2 usbdrv.o
-                0x00002526                usbPoll
-                0x0000273e                usbSetInterrupt3
-                0x00002782                usbSetInterrupt
-                0x00002504                usbInit
- .text          0x000027c6      0x7fc wiimote.o
-                0x0000282a                wm_init
-                0x000028a2                wm_gentabs
-                0x00002ddc                __vector_24
-                0x000027c6                twi_slave_init
-                0x00002818                wm_newaction
-                0x000027ee                wm_ror8
-                0x000027de                twi_clear_int
-                0x00002d36                wm_slaveRx
- .text          0x00002fc2       0xe6 wiiInterface.o
-                0x00002fc4                sendWiiData
-                0x00003074                startWiiCommunication
-                0x00002fc2                wm_timer_inc
- .text          0x000030a8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text          0x000030a8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text          0x000030a8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text          0x000030a8       0x1a c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(memcmp.o)
-                0x000030a8                memcmp
- .text          0x000030c2       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eerd_block.o)
-                0x000030c2                __eerd_block
- .text          0x000030fa       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eewr_block.o)
-                0x000030fa                __eewr_block
- .text          0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
- .text          0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
-                0x00003132                . = ALIGN (0x2)
+                0x0000214a                sendPS3Data
+                0x0000222e                startPS3Communication
+ .text          0x00002268      0x2bc usbdrvasm.o
+                0x00002268                usbCrc16
+                0x00002292                usbCrc16Append
+                0x0000229a                __vector_2
+ .text          0x00002524      0x2c2 usbdrv.o
+                0x00002546                usbPoll
+                0x0000275e                usbSetInterrupt3
+                0x000027a2                usbSetInterrupt
+                0x00002524                usbInit
+ .text          0x000027e6      0x7fc wiimote.o
+                0x0000284a                wm_init
+                0x000028c2                wm_gentabs
+                0x00002dfc                __vector_24
+                0x000027e6                twi_slave_init
+                0x00002838                wm_newaction
+                0x0000280e                wm_ror8
+                0x000027fe                twi_clear_int
+                0x00002d56                wm_slaveRx
+ .text          0x00002fe2       0xe6 wiiInterface.o
+                0x00002fe4                sendWiiData
+                0x00003094                startWiiCommunication
+                0x00002fe2                wm_timer_inc
+ .text          0x000030c8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text          0x000030c8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x000030c8        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000030c8       0x1a c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(memcmp.o)
+                0x000030c8                memcmp
+ .text          0x000030e2       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eerd_block.o)
+                0x000030e2                __eerd_block
+ .text          0x0000311a       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(eewr_block.o)
+                0x0000311a                __eewr_block
+ .text          0x00003152        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+ .text          0x00003152        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+                0x00003152                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x00003132        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x00003132       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
-                0x00003132                __prologue_saves__
- .text.libgcc   0x0000316a       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
-                0x0000316a                __epilogue_restores__
-                0x000031a0                . = ALIGN (0x2)
+ .text.libgcc   0x00003152        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00003152        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00003152        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00003152       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+                0x00003152                __prologue_saves__
+ .text.libgcc   0x0000318a       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+                0x0000318a                __epilogue_restores__
+                0x000031c0                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000031a0        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
-                0x000031a0                exit
-                0x000031a0                _exit
+ .fini9         0x000031c0        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+                0x000031c0                exit
+                0x000031c0                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -326,11 +326,11 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000031a0        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x000031c0        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000031a4                _etext = .
+                0x000031c4                _etext = .
 
-.data           0x00800100       0x28 load address 0x000031a4
+.data           0x00800100       0x28 load address 0x000031c4
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm168.o
@@ -401,8 +401,8 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  COMMON         0x00800297        0x6 wiiInterface.o
                 0x00800297                but_dat
                 0x0080029d                PROVIDE (__bss_end, .)
-                0x000031a4                __data_load_start = LOADADDR (.data)
-                0x000031cc                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000031c4                __data_load_start = LOADADDR (.data)
+                0x000031ec                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080029d        0x0
                 0x0080029d                PROVIDE (__noinit_start, .)
@@ -498,36 +498,36 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .debug_pubnames
                 0x000003f4       0x74 wiiInterface.o
 
-.debug_info     0x00000000     0x26ed
+.debug_info     0x00000000     0x2705
  *(.debug_info)
  .debug_info    0x00000000      0x477 processStringState.o
  .debug_info    0x00000477       0x8d guitarInitFunctions.o
- .debug_info    0x00000504      0x844 main.o
- .debug_info    0x00000d48      0x39e ps3Interface.o
- .debug_info    0x000010e6      0x937 usbdrv.o
- .debug_info    0x00001a1d      0xb05 wiimote.o
- .debug_info    0x00002522      0x1cb wiiInterface.o
+ .debug_info    0x00000504      0x83e main.o
+ .debug_info    0x00000d42      0x3bc ps3Interface.o
+ .debug_info    0x000010fe      0x937 usbdrv.o
+ .debug_info    0x00001a35      0xb05 wiimote.o
+ .debug_info    0x0000253a      0x1cb wiiInterface.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0xb69
+.debug_abbrev   0x00000000      0xb78
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x147 processStringState.o
  .debug_abbrev  0x00000147       0x3f guitarInitFunctions.o
- .debug_abbrev  0x00000186      0x295 main.o
- .debug_abbrev  0x0000041b      0x1d8 ps3Interface.o
- .debug_abbrev  0x000005f3      0x2c1 usbdrv.o
- .debug_abbrev  0x000008b4      0x1df wiimote.o
- .debug_abbrev  0x00000a93       0xd6 wiiInterface.o
+ .debug_abbrev  0x00000186      0x2a4 main.o
+ .debug_abbrev  0x0000042a      0x1d8 ps3Interface.o
+ .debug_abbrev  0x00000602      0x2c1 usbdrv.o
+ .debug_abbrev  0x000008c3      0x1df wiimote.o
+ .debug_abbrev  0x00000aa2       0xd6 wiiInterface.o
 
-.debug_line     0x00000000     0x1b92
+.debug_line     0x00000000     0x1b90
  *(.debug_line)
  .debug_line    0x00000000      0x639 processStringState.o
  .debug_line    0x00000639      0x1bd guitarInitFunctions.o
- .debug_line    0x000007f6      0x82d main.o
- .debug_line    0x00001023      0x2a2 ps3Interface.o
- .debug_line    0x000012c5      0x3d5 usbdrv.o
- .debug_line    0x0000169a      0x3f7 wiimote.o
- .debug_line    0x00001a91      0x101 wiiInterface.o
+ .debug_line    0x000007f6      0x82b main.o
+ .debug_line    0x00001021      0x2a2 ps3Interface.o
+ .debug_line    0x000012c3      0x3d5 usbdrv.o
+ .debug_line    0x00001698      0x3f7 wiimote.o
+ .debug_line    0x00001a8f      0x101 wiiInterface.o
 
 .debug_frame    0x00000000      0x250
  *(.debug_frame)
@@ -539,7 +539,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  .debug_frame   0x00000180       0x90 wiimote.o
  .debug_frame   0x00000210       0x40 wiiInterface.o
 
-.debug_str      0x00000000      0x9a0
+.debug_str      0x00000000      0x9ac
  *(.debug_str)
  .debug_str     0x00000000      0x260 processStringState.o
                                 0x29e (size before relaxing)
@@ -547,13 +547,13 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
                                  0xf7 (size before relaxing)
  .debug_str     0x0000028a      0x1f5 main.o
                                 0x3c2 (size before relaxing)
- .debug_str     0x0000047f      0x14a ps3Interface.o
-                                0x297 (size before relaxing)
- .debug_str     0x000005c9      0x29e usbdrv.o
+ .debug_str     0x0000047f      0x156 ps3Interface.o
+                                0x2a3 (size before relaxing)
+ .debug_str     0x000005d5      0x29e usbdrv.o
                                 0x441 (size before relaxing)
- .debug_str     0x00000867       0xe2 wiimote.o
+ .debug_str     0x00000873       0xe2 wiimote.o
                                 0x1d7 (size before relaxing)
- .debug_str     0x00000949       0x57 wiiInterface.o
+ .debug_str     0x00000955       0x57 wiiInterface.o
                                 0x1a4 (size before relaxing)
 
 .debug_loc      0x00000000      0xf21
