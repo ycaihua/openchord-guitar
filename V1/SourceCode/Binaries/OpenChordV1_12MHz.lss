@@ -2986,7 +2986,7 @@ int readFrets(int guitarString)
                 if (stringStateTimers[i] >= STRING_DEBOUNCE_DELAY)
     1a6c:	80 81       	ld	r24, Z
     1a6e:	91 81       	ldd	r25, Z+1	; 0x01
-    1a70:	0f 97       	sbiw	r24, 0x0f	; 15
+    1a70:	0a 97       	sbiw	r24, 0x0a	; 10
     1a72:	2c f0       	brlt	.+10     	; 0x1a7e <main+0x1de>
                 {
                         stringState[i] = tempStringState[i];
