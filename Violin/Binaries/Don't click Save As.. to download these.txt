@@ -1,0 +1,5 @@
+If you do, you'll save the files as a webpage.  
+In order to actually get the binary code, click on the file name
+to view it in your browser, then copy all the program text and
+paste it into your own file that you name whatever you want .hex,
+then upload that to your V1.
