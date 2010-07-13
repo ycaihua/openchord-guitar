@@ -1,11 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20090216-final) date = 3/4/2010 6:37:15 PM
-
-BeginCmp
-TimeStamp = /4ACED029;
-Reference = +-Pick1;
-ValeurCmp = +___-__Pick__X;
-IdModule  = SIL-4;
-EndCmp
+Cmp-Mod V01 Created by CVpcb (20090216-final) date = 5/7/2010 11:55:26 AM
 
 BeginCmp
 TimeStamp = /4B4FBAE0;
@@ -78,13 +71,6 @@ IdModule  = D3;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B7DD5C9;
-Reference = D9;
-ValeurCmp = DIODE;
-IdModule  = D3;
-EndCmp
-
-BeginCmp
 TimeStamp = /4B8F37FD;
 Reference = D11;
 ValeurCmp = DIODE;
@@ -95,6 +81,13 @@ BeginCmp
 TimeStamp = /4B8F3814;
 Reference = D12;
 ValeurCmp = DIODE;
+IdModule  = D3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BCE913F;
+Reference = D13;
+ValeurCmp = Shotky;
 IdModule  = D3;
 EndCmp
 
@@ -120,34 +113,6 @@ IdModule  = SIL-5;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B4514E2;
-Reference = GND1;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B4514E8;
-Reference = GND2;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B4514F1;
-Reference = GND3;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B45152F;
-Reference = GND4;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
 TimeStamp = /4ACEC548;
 Reference = IC1;
 ValeurCmp = ATMEGA8-P;
@@ -169,24 +134,45 @@ IdModule  = USB_B;
 EndCmp
 
 BeginCmp
-TimeStamp = /4ADE5AE8;
-Reference = P6;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /4BE45B2C;
+Reference = P1;
+ValeurCmp = RX/TX;
+IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B50E04E;
-Reference = P15;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /4BE45AE8;
+Reference = P2;
+ValeurCmp = D+/D-;
+IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B50E053;
-Reference = P16;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /4BE45BF2;
+Reference = P3;
+ValeurCmp = GND_SCL_SDA_VCC;
+IdModule  = SIL-4;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BE45CC1;
+Reference = P4;
+ValeurCmp = VCC;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BCE93C4;
+Reference = Pick1;
+ValeurCmp = Pick;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BCE9168;
+Reference = Plus1;
+ValeurCmp = Plus;
+IdModule  = SIL-2;
 EndCmp
 
 BeginCmp
@@ -199,21 +185,21 @@ EndCmp
 BeginCmp
 TimeStamp = /4ACD5C14;
 Reference = R2;
-ValeurCmp = 20K;
+ValeurCmp = TXD;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C12;
 Reference = R3;
-ValeurCmp = 20K;
+ValeurCmp = 10K;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C13;
 Reference = R4;
-ValeurCmp = 20K;
+ValeurCmp = 10K;
 IdModule  = R3;
 EndCmp
 
@@ -269,21 +255,35 @@ EndCmp
 BeginCmp
 TimeStamp = /4ACD639D;
 Reference = R12;
-ValeurCmp = 10K;
+ValeurCmp = 1.8K;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACED00C;
 Reference = R22;
-ValeurCmp = 20K;
+ValeurCmp = 10K;
 IdModule  = R3;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ADE66B3;
 Reference = R23;
-ValeurCmp = Extra;
+ValeurCmp = RXD;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BE45E65;
+Reference = R24;
+ValeurCmp = 1.8K;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BE45E5E;
+Reference = R25;
+ValeurCmp = 1.8K;
 IdModule  = R3;
 EndCmp
 
@@ -295,17 +295,17 @@ IdModule  = PINTST;
 EndCmp
 
 BeginCmp
+TimeStamp = /4BCE9217;
+Reference = Star1;
+ValeurCmp = Star;
+IdModule  = PIN_ARRAY_2X2;
+EndCmp
+
+BeginCmp
 TimeStamp = /4ACD6BBF;
 Reference = String1;
 ValeurCmp = String_1_<>_String_6;
 IdModule  = SIL-6;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B4FBDCE;
-Reference = VCC1;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
 EndCmp
 
 BeginCmp

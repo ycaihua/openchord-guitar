@@ -32,16 +32,25 @@
 	*/
 
 	// Strings - These are on Port D, broken up by the pins used for USB D+ and D-
-	#define string_pin  PIND
-	#define string_port PORTD
-	#define string_ddr  DDRD
+	#define string_1_port PORTD
+	#define string_1_ddr  DDRD
 	#define first_string    7
+	#define string_2_port PORTD
+	#define string_2_ddr  DDRD
 	#define second_string   6
+	#define string_3_port PORTD
+	#define string_3_ddr  DDRD
 	#define third_string    5
+	#define string_4_port PORTD
+	#define string_4_ddr  DDRD
 	#define fourth_string   2
-	#define fifth_string    1
-	#define sixth_string    0
-	
+	#define string_5_port PORTB
+	#define string_5_ddr  DDRB
+	#define fifth_string    0
+	#define string_6_port PORTC
+	#define string_6_ddr  DDRC
+	#define sixth_string    3
+
 	// Frets
 	#define fret_pin    PINB
 	#define fret_port   PORTB

@@ -175,11 +175,11 @@ void processNotes(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 	char strumPressed  = 0;
 
 	//We also hardcode in a down strum on the empty 6th string, for navigation
-	if (stringState[0] & 1)
+/*	if (stringState[0] & 1)
 	{
 		data->downOn = 1;
 	}
-
+*/
 	for (int i = 0; i < NUMBER_OF_STRINGS; i++)
 	{
 		if (stringState[i] != 0) // Only look at strings that are being touched or strummed

@@ -24,8 +24,7 @@ static inline void setEepromToDefault( void* notesAddress, void* chordsAddress)
 	int buttonStringPatterns[NUM_CHORDS_BUTTONS][NUMBER_OF_STRINGS];
 
     buttonStringPatterns[0][0] = 0b0000000; // [0][0] through [0][5] - green button
-    buttonStringPatterns[0][0] = 0x0000000; // [0][0] through [0][5] - green button
-	buttonStringPatterns[0][1] = 0b0001100; 
+    buttonStringPatterns[0][1] = 0b0001100; 
 	buttonStringPatterns[0][2] = 0b0000000;	
 	buttonStringPatterns[0][3] = 0b0000110;
 	buttonStringPatterns[0][4] = 0b0000000;

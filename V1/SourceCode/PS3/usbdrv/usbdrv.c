@@ -115,7 +115,7 @@ PROGMEM char usbDescriptorDevice[] = {    /* USB device descriptor */
     USB_CFG_DEVICE_CLASS,
     USB_CFG_DEVICE_SUBCLASS,
     0,                      /* protocol */
-    8,                      /* max packet size */
+    0x08,                      /* max packet size */
     /* the following two casts affect the first byte of the constant only, but
      * that's sufficient to avoid a warning with the default values.
      */
@@ -178,7 +178,7 @@ PROGMEM char usbDescriptorConfiguration[] = {    /* USB configuration descriptor
     USBDESCR_ENDPOINT,  /* descriptor type = endpoint */
     (char)0x81, /* IN endpoint number 1 */
     0x03,       /* attrib: Interrupt endpoint */
-    8, 0,       /* maximum packet size */
+    0x40, 0x00,       /* maximum packet size */
     USB_CFG_INTR_POLL_INTERVAL, /* in ms */
 #endif
 #if USB_CFG_HAVE_INTRIN_ENDPOINT3   /* endpoint descriptor for endpoint 3 */
@@ -186,7 +186,7 @@ PROGMEM char usbDescriptorConfiguration[] = {    /* USB configuration descriptor
     USBDESCR_ENDPOINT,  /* descriptor type = endpoint */
     (char)0x83, /* IN endpoint number 1 */
     0x03,       /* attrib: Interrupt endpoint */
-    8, 0,       /* maximum packet size */
+    0x40, 0x00,       /* maximum packet size */
     USB_CFG_INTR_POLL_INTERVAL, /* in ms */
 #endif
 };

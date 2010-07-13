@@ -45,7 +45,7 @@
 					// There is a delay in order to avoid triggering green when red is played
 					// but the green fret is hit first, so you don't press red but see the green
 	
-	#define STRING_DEBOUNCE_DELAY 15 // How many cycles to ignore a changed string state before
+	#define STRING_DEBOUNCE_DELAY 10 // How many cycles to ignore a changed string state before
                                      // updating the string state array. This hopefully helps with
                                      // the pick and grounding it with your fingers - 
                                      // Caution - too high of a value, and spurious hits will start to

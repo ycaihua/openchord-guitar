@@ -37,18 +37,18 @@ void setPins(void)
 
 	// Set the string pins as output pins, outputting HIGH
 	/* MAKE SURE YOU HAVE DIODES OPPOSING THIS CURRENT OUTFLOW! */
-	string_ddr |= (1<<first_string);  //output
-	string_port |= (1<<first_string); // set high
-	string_ddr |= (1<<second_string);  
-	string_port |= (1<<second_string);
-	string_ddr |= (1<<third_string);  
-	string_port |= (1<<third_string);
-	string_ddr |= (1<<fourth_string);  
-	string_port |= (1<<fourth_string);
-	string_ddr |= (1<<fifth_string);  
-	string_port |= (1<<fifth_string);
-	string_ddr |= (1<<sixth_string);  
-	string_port |= (1<<sixth_string);
+	string_1_ddr |= (1<<first_string);  //output
+	string_1_port |= (1<<first_string); // set high
+	string_2_ddr |= (1<<second_string);  
+	string_2_port |= (1<<second_string);
+	string_3_ddr |= (1<<third_string);  
+	string_3_port |= (1<<third_string);
+	string_4_ddr |= (1<<fourth_string);  
+	string_4_port |= (1<<fourth_string);
+	string_5_ddr |= (1<<fifth_string);  
+	string_5_port |= (1<<fifth_string);
+	string_6_ddr |= (1<<sixth_string);  
+	string_6_port |= (1<<sixth_string);
 }
 
 void setTimer(void) //This sets up a timer to handle the green button thing

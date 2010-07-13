@@ -1,11 +1,4 @@
-Cmp-Mod V01 Created by CVpcb (20090216-final) date = 2/26/2010 6:01:36 PM
-
-BeginCmp
-TimeStamp = /4ACED029;
-Reference = +-Pick1;
-ValeurCmp = +___-__Pick__X;
-IdModule  = SIL-4;
-EndCmp
+Cmp-Mod V01 Created by CVpcb (20090216-final) date = 5/5/2010 8:50:32 AM
 
 BeginCmp
 TimeStamp = /4B4FBAE0;
@@ -78,16 +71,23 @@ IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B7DD5C9;
-Reference = D9;
+TimeStamp = /4B8F37FD;
+Reference = D11;
 ValeurCmp = DIODE;
 IdModule  = SM0805;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B7DD5CF;
-Reference = D10;
+TimeStamp = /4B8F3814;
+Reference = D12;
 ValeurCmp = DIODE;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BCE913F;
+Reference = D13;
+ValeurCmp = Shotky;
 IdModule  = SM0805;
 EndCmp
 
@@ -113,37 +113,9 @@ IdModule  = SIL-5;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B4514E2;
-Reference = GND1;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B4514E8;
-Reference = GND2;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B4514F1;
-Reference = GND3;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B45152F;
-Reference = GND4;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B877079;
+TimeStamp = /4ACEC548;
 Reference = IC1;
-ValeurCmp = ATMEGA328P-TQFN;
+ValeurCmp = ATMEGA8-P;
 IdModule  = TQFP32;
 EndCmp
 
@@ -183,129 +155,115 @@ IdModule  = PINTST;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B87711A;
-Reference = P17;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /4BCE93C4;
+Reference = Pick1;
+ValeurCmp = Pick;
+IdModule  = PIN_ARRAY_2X1;
 EndCmp
 
 BeginCmp
-TimeStamp = /4B877121;
-Reference = P18;
-ValeurCmp = CONN_1;
-IdModule  = PINTST;
+TimeStamp = /4BCE9168;
+Reference = Plus1;
+ValeurCmp = Plus;
+IdModule  = PIN_ARRAY_2X1;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5CC1;
 Reference = R1;
 ValeurCmp = 10K;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C14;
 Reference = R2;
-ValeurCmp = 20K;
-IdModule  = SM0805;
+ValeurCmp = 1M?;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C12;
 Reference = R3;
-ValeurCmp = 20K;
-IdModule  = SM0805;
+ValeurCmp = 10K;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C13;
 Reference = R4;
-ValeurCmp = 20K;
-IdModule  = SM0805;
+ValeurCmp = 10K;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C15;
 Reference = R5;
 ValeurCmp = 10K;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C18;
 Reference = R6;
 ValeurCmp = 10K;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C16;
 Reference = R7;
 ValeurCmp = 10K;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C17;
 Reference = R8;
 ValeurCmp = 10K;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5C19;
 Reference = R9;
 ValeurCmp = 10K;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5BF8;
 Reference = R10;
 ValeurCmp = 68;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD5BFA;
 Reference = R11;
 ValeurCmp = 68;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACD639D;
 Reference = R12;
 ValeurCmp = 10K;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ACED00C;
 Reference = R22;
-ValeurCmp = 20K;
-IdModule  = SM0805;
+ValeurCmp = 10K;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /4ADE66B3;
 Reference = R23;
 ValeurCmp = Extra;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B8770E3;
-Reference = R24;
-ValeurCmp = ADC6;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /4B8770F4;
-Reference = R25;
-ValeurCmp = ADC7;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
@@ -313,6 +271,13 @@ TimeStamp = /4B4FBBAF;
 Reference = Reset1;
 ValeurCmp = CONN_1;
 IdModule  = PINTST;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BCE9217;
+Reference = Star1;
+ValeurCmp = Star;
+IdModule  = PIN_ARRAY_2X2;
 EndCmp
 
 BeginCmp
@@ -341,6 +306,13 @@ TimeStamp = /4B4FBA81;
 Reference = X1;
 ValeurCmp = 16MHz;
 IdModule  = HC-18UV;
+EndCmp
+
+BeginCmp
+TimeStamp = /4BCE937F;
+Reference = X2;
+ValeurCmp = Vibration;
+IdModule  = PIN_ARRAY_2X1;
 EndCmp
 
 EndListe

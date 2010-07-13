@@ -116,9 +116,9 @@ int EEMEM chordModeButtonPatterns[EEPROM_CHORDS_BLOCK_SIZE] =
 
 //readF reads the frets for a single string, and returns an int acting as a boolean array
 //  telling which frets are being touched by the string.
-int readFrets(int guitarString)
+int readFrets(int guitarString, volatile uint8_t *port)
 {
-  	string_port &= ~(1<<guitarString);  // Set the string LOW
+  	*port &= ~(1<<guitarString);  // Set the string LOW
 
 	// Then we have to delay for a while, since right after the switch, the pin values
 	// jump around a bit
@@ -147,7 +147,7 @@ int readFrets(int guitarString)
  	stringState |= ( (!(i & (1<<strum_pin))) << 0); //pick touching the string
 
 	//Turn the string back HIGH and return
-	string_port |= (1<<guitarString); 
+	*port |= (1<<guitarString); 
 	return stringState;
 }
 
@@ -268,12 +268,12 @@ int main(void)
 	{   
 		// We first read all the strings for button hits and store them into
 		//  our stringState array.  Strum processing is also handled here for now.
-        tempStringState[0] = readFrets(first_string);
-		tempStringState[1] = readFrets(second_string);
-		tempStringState[2] = readFrets(third_string);
-		tempStringState[3] = readFrets(fourth_string);
-		tempStringState[4] = readFrets(fifth_string);
-		tempStringState[5] = readFrets(sixth_string);
+        tempStringState[0] = readFrets(first_string, &string_1_port);
+		tempStringState[1] = readFrets(second_string, &string_2_port);
+		tempStringState[2] = readFrets(third_string, &string_3_port);
+		tempStringState[3] = readFrets(fourth_string, &string_4_port);
+		tempStringState[4] = readFrets(fifth_string, &string_5_port);
+		tempStringState[5] = readFrets(sixth_string, &string_6_port);
 
         // Debounce the strings by making sure what is being fretted
         // remains for a certain number of cycles through the main loop
