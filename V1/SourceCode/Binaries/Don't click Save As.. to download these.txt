@@ -3,3 +3,16 @@ In order to actually get the binary code, click on the file name
 to view it in your browser, then copy all the program text and
 paste it into your own file that you name whatever you want .hex,
 then upload that to your V1.
+
+Also, a note about the binaries - unfortunately, the circuit boards
+have undergone some changes over the life of the product.  Most
+importantly, with the May 2010 board revision, the pin mapping changed.
+Be sure you know which board you have, so you can download the proper
+binary.
+
+Additionally, a few of the very first boards came with a 16mHz crystal,
+instead of the current 12mHz crystal.  As of May 2010, we're no longer
+compiling binaries for those automatically, in order to reduce confusion.
+If you have one of those boards, either e-mail us and we'll compile you
+a binary, or we'd be happy to send you a 12mHz crystal you can swap in
+your board, free of charge. 
