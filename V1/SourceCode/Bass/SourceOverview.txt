@@ -1,0 +1,62 @@
+  OpenChord V1 AVR code for USB/PS3 *
+		www.OpenChord.org
+
+		Alan Chatham
+		Copyright 2009
+
+	Thanks to the people at Objective Development for their open-source V-USB library
+	for the AVR microcontroller. http://www.obdev.at/avrusb/
+
+	Special thanks to Frank Zhao and his Wiimote Extension Library,
+	details which can be found here:
+		
+	http://frank.circleofcurrent.com/content.php?page_id=wii_extension_lib
+	Also, thanks to Hector Martin's work on encryption and decryption
+
+	This program is distributed under the terms of the GNU General Public License, v3,
+	and includes the wiimote extension library, originally distributed under the Apache 2.0 license
+
+The files included in the code are broken down as such:
+
+configAndConstants.h - This file holds constants and configuration options. 
+	This is the file you will most likely have to modify, but it uses simple pre-processor directives to get
+	you to where you probably need to be. Adjust this to reflect the system and circuit board you're using.
+
+V1.h/main.c - These files handle the main program flow, as well as the actual reading of the guitar strings.
+	These files need to be somewhat further separated, as the mode information is somewhat too closely
+	integrated with the code.
+
+processStringState.h/.c - These files control how the program interprets the string presses.
+	It currently supports 3 modes, fret, string, and note modes. It probably needs to be refactored to allow for
+	additional modes to be added more easily.
+
+xxxxxInterface.h/.c - These functions handle the communication between the guitar and the xxxx device.
+	They implement two functions - startCommunication(void) which lets the other hardware start up,
+	and sendData(dataForController), which takes in the data in the form of a dataForController struct
+	(this struct is held in V1Typedefs.h).
+
+pindef.h - This file, and associated files, holds the numbers of the pins for each chip configuration
+
+stringComboTests.h -  This holds the patterns that the guitar checks against for for different combinations.
+	These combinations are the special 'escape chords' that activate mode changes, configuration mode,
+	and star power.
+
+buttonStringPatterns.h - This file holds the initial default mappings of fingerings to buttons on the guitar.
+	This default mapping can be restored by pressing the "Reset Guitar" escape chord.
+
+guitarInitFunctions.c - This holds startup parameters for the chip that are needed for the guitar.
+	It sets up pins and timers to be used by the guitar.
+
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.

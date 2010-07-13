@@ -1,0 +1,38 @@
+Fuses - on an AVR chip fresh from Atmel, the default fuses won't
+work with the V1 firmware, so they need to be changed.
+
+Generally speaking, the fuses should correspond to this -
+
+Brown-out detection at 1.8V
+ResetDisable   OFF
+DWEN           OFF
+SPIEnable      ON
+WatchDogOn     OFF
+EESave         ON
+BootSize       1024 words
+BootReset      ON
+ClockDiv8      OFF
+ClockOut       OFF
+Clock Select   Ext. Crystal Oscillator 8.0 - MHz, start up time, anything
+
+Additionally, when programming the bootloader to the chip, it's a good idea
+to set the programming lock bits to prevent writing in the boot sector.  This
+keeps you from accidentally overwriting the bootloader program should the new
+program you're trying to update is too big for the chip. Keep in mind that these
+lock-bits get reset on a chip erase, so every time you program via SPI, remember
+to reset the lockbits.
+
+Here are some pre-calculated fuse values, in case you're not using AVR Studio
+or a similar graphical fuse programmer:
+
+ATmega328p: 
+Extended     0xFE
+High         0xD2
+Low          0xCE
+
+ATmega168, ATmega88:
+Extended     0xF8
+High         0xD6
+Low          0xCE
+
+
