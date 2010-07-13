@@ -31,7 +31,8 @@
 		to amend that function to pass in the info about each string pin's register as well
 	*/
 
-	// Strings - These are on Port D, broken up by the pins used for USB D+ and D-
+  #ifdef MAY_2010_BOARD
+	// Strings - These are mostly on Port D, save for the first and second strings
 	#define string_1_port PORTD
 	#define string_1_ddr  DDRD
 	#define first_string    7
@@ -51,6 +52,29 @@
 	#define string_6_ddr  DDRC
 	#define sixth_string    3
 
+  #else
+	// Strings - These are on Port D, broken up by the pins used for USB D+ and D-
+	#define string_1_port PORTD
+	#define string_1_ddr  DDRD
+	#define first_string    7
+	#define string_2_port PORTD
+	#define string_2_ddr  DDRD
+	#define second_string   6
+	#define string_3_port PORTD
+	#define string_3_ddr  DDRD
+	#define third_string    5
+	#define string_4_port PORTD
+	#define string_4_ddr  DDRD
+	#define fourth_string   2
+	#define string_5_port PORTD
+	#define string_5_ddr  DDRD
+	#define fifth_string    1
+	#define string_6_port PORTD
+	#define string_6_ddr  DDRD
+	#define sixth_string    0
+
+  #endif
+
 	// Frets
 	#define fret_pin    PINB
 	#define fret_port   PORTB
@@ -61,6 +85,7 @@
 	#define blue_pin    4
 	#define orange_pin  5
 
+  #ifdef MAY_2010_BOARD
 	// Other Buttons 
 	#define misc_pin    PINC// misc_pin sets the port that other buttons (i.e. plus) are mapped to
 	#define misc_port   PORTC
@@ -71,6 +96,19 @@
 	#define pick_port  PORTC
 	#define pick_ddr   DDRC
 	#define strum_pin   2
+
+  #else
+		// Other Buttons 
+	#define misc_pin    PINC// misc_pin sets the port that other buttons (i.e. plus) are mapped to
+	#define misc_port   PORTC
+	#define misc_ddr    DDRC
+	#define plus_pin    0
+	#define minus_pin   1
+	#define pick_pin   PINC	// pick_pin sets the port that strum controls are mapped to
+	#define pick_port  PORTC
+	#define pick_ddr   DDRC
+	#define strum_pin   2
+  #endif
 
 	/* ---------------------------- Hardware Config ---------------------------- */
 	/* The USB stuff originally comes from usbconfig.c, but I put it here to keep all
@@ -123,10 +161,10 @@
 	 #define USB_INTR_PENDING_BIT    INTF1  // bit number in above register
 	 #define USB_INTR_VECTOR         SIG_INTERRUPT1  // interrupt vector
 
-#endif // end of General Board USB code, and General Board def's in particular
+#endif // end of the modern boards' USB code, and Wii code
 
 #else // This code is used for legacy boards
-	#if defined PS3_USB
+	#ifdef PS3_USB
 	  #include "PS3/pindef-ps3.h"
 	  #ifdef WII
 	    #error "Both WII and PS3_USB are defined in configAndConstants.h - choose only one"
