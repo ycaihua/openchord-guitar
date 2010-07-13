@@ -229,7 +229,7 @@ int main(void)
 	// Declaration of variables used in Main()
 	int greenTimers[NUMBER_OF_STRINGS] = {0,0,0,0}; //These give timing to properly read green buttons on each string.
 	int triedGreen[NUMBER_OF_STRINGS] = {0,0,0,0};  // Also used for the green button timing thing
-	int stringState[6] = {0,0,0,0,0,0}; // This stores an int for each string,
+	int stringState[NUMBER_OF_STRINGS] = {0,0,0,0}; // This stores an int for each string,
 										// with each int acting as a boolean array
 										// telling which frets a string is connected to,
 										// with the 0th bit being if a string is being strummed
