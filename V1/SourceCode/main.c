@@ -212,6 +212,33 @@ inline void readOtherButtons(dataForController* data)
 	data->minusOn = !(i & (1<<minus_pin));
 }
 
+int	main2(void)
+{
+uchar reportBuffer[] = {0,0,0,0,0,0,0,0};
+
+	wdt_enable(WDTO_2S);
+   // hardwareInit();
+	//odDebugInit();
+	usbInit();
+	sei();
+
+	// Main loop
+	// This loop checks one gamepad, if the state of buttons changed, it waits untill it can send the data and then send it,
+	// otherwise it checks the other gamepad and does the same thing (this approach saves time)  
+	for(;;){	
+	
+		wdt_reset();
+		usbPoll();
+
+        if(usbInterruptIsReady())
+        {
+            usbSetInterrupt((void *)&reportBuffer, sizeof(reportBuffer));
+        }	
+	}
+
+	return 0;
+}
+
 			
 int main(void)
 /* This controls the whole program.

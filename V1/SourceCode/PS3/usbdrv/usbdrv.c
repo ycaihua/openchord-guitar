@@ -178,7 +178,7 @@ PROGMEM char usbDescriptorConfiguration[] = {    /* USB configuration descriptor
     USBDESCR_ENDPOINT,  /* descriptor type = endpoint */
     (char)0x81, /* IN endpoint number 1 */
     0x03,       /* attrib: Interrupt endpoint */
-    0x40, 0x00,       /* maximum packet size */
+    8,0, //0x40, 0x00,       /* maximum packet size */
     USB_CFG_INTR_POLL_INTERVAL, /* in ms */
 #endif
 #if USB_CFG_HAVE_INTRIN_ENDPOINT3   /* endpoint descriptor for endpoint 3 */
@@ -186,7 +186,7 @@ PROGMEM char usbDescriptorConfiguration[] = {    /* USB configuration descriptor
     USBDESCR_ENDPOINT,  /* descriptor type = endpoint */
     (char)0x83, /* IN endpoint number 1 */
     0x03,       /* attrib: Interrupt endpoint */
-    0x40, 0x00,       /* maximum packet size */
+    8,0, //0x40, 0x00,       /* maximum packet size */
     USB_CFG_INTR_POLL_INTERVAL, /* in ms */
 #endif
 };

@@ -5,7 +5,7 @@
 ## General Flags
 PROJECT = OpenChordV1
 MCU = atmega168
-TARGET = OpenChordV1_May2010.elf
+TARGET = V1-Vista7.elf
 CC = avr-gcc
 
 CPP = avr-g++
@@ -15,7 +15,7 @@ COMMON = -mmcu=$(MCU)
 
 ## Compile options common for all C compilation units.
 CFLAGS = $(COMMON)
-CFLAGS += -Wall -gdwarf-2 -std=gnu99                                                       -DF_CPU=12000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
+CFLAGS += -Wall -gdwarf-2 -std=gnu99                                                           -DF_CPU=12000000UL -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums
 CFLAGS += -MD -MP -MT $(*F).o -MF dep/$(@F).d 
 
 ## Assembly specific flags
@@ -25,7 +25,7 @@ ASMFLAGS += -x assembler-with-cpp -Wa,-gdwarf2
 
 ## Linker flags
 LDFLAGS = $(COMMON)
-LDFLAGS +=  -Wl,-Map=OpenChordV1_May2010.map
+LDFLAGS +=  -Wl,-Map=V1-Vista7.map
 
 
 ## Intel Hex file production flags
@@ -43,7 +43,7 @@ OBJECTS = processStringState.o guitarInitFunctions.o main.o ps3Interface.o usbdr
 LINKONLYOBJECTS = 
 
 ## Build
-all: $(TARGET) OpenChordV1_May2010.hex OpenChordV1_May2010.eep OpenChordV1_May2010.lss size
+all: $(TARGET) V1-Vista7.hex V1-Vista7.eep V1-Vista7.lss size
 
 ## Compile
 processStringState.o: ../processStringState.c
@@ -90,7 +90,7 @@ size: ${TARGET}
 ## Clean target
 .PHONY: clean
 clean:
-	-rm -rf $(OBJECTS) OpenChordV1_May2010.elf dep/* OpenChordV1_May2010.hex OpenChordV1_May2010.eep OpenChordV1_May2010.lss OpenChordV1_May2010.map
+	-rm -rf $(OBJECTS) V1-Vista7.elf dep/* V1-Vista7.hex V1-Vista7.eep V1-Vista7.lss V1-Vista7.map
 
 
 ## Other dependencies
