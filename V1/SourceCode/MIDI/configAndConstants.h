@@ -26,12 +26,15 @@
 	#define NOTE_COUNTDOWN 2000
 	// What MIDI channel we're sending data on
 	#define MIDI_CHANNEL 0
+	// Standard velocity with which to send the notes at
+	#define DEFAULT_VELOCITY 200
 
 /* ---------------- The following definitions control what files get 
                      included and what system and chip the program gets built for.  
 					 These should be changed to reflect what you're doing. ----------*/
 
-	#define PS3_USB
+	#define MIDI_ENABLED
+	//#define PS3_USB
 	//#define WII
 
 	
@@ -90,9 +93,11 @@
 	// it's been held down for, and other things.
 	typedef struct noteInfo
 	{
-		char note;
-		char velocity;
-		int16_t countdown;
+		char note;  // Note number
+		char velocity; // Note velocity
+		int16_t countdown; // A countdown timer to turn the notes off after a certain time 
+		char newNoteFlag; // Is this a newly active note info packed
+		char pickFlag;   // A flag for if the guitar is being picked
 	} noteInfo;
 
 	inline void stopNote(noteInfo* note)

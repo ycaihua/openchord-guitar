@@ -202,8 +202,13 @@ int main(void)
  	
 	// Now set up all the communication stuff - initialization routines
  	//  set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
- 	startMIDICommunication();
-	//startPS3Communication();
+ 	#ifdef MIDI_ENABLED
+		startMIDICommunication();
+	#endif
+
+	#ifdef PS3_USB
+		startPS3Communication();
+	#endif
     
 	// Declaration of variables used in Main()
 	int stringState[NUMBER_OF_STRINGS] = {0,0,0,0,0,0}; // This stores an int for each string,
@@ -220,16 +225,16 @@ int main(void)
 	clearData(&data); //This function is contained in configAndConstants.h
 
 	//emptyFretNotes are the MIDI notes that the guitar's open strings are tuned to.
-	int openStringNotes[NUMBER_OF_STRINGS] = {52, 57, 62, 67, 71, 76};
+	int openStringNotes[NUMBER_OF_STRINGS] = {40, 45, 50, 55, 59, 64};
 
 	noteInfo currentNotes[NUMBER_OF_STRINGS];
-
-	int noteFlags[NUMBER_OF_STRINGS] = {0,0,0,0,0,0};
 
 	for (int i = 0; i <= NUMBER_OF_STRINGS; i++)
 	{
 		stopNote(&currentNotes[i]);
 	}
+
+	uint16_t timer = 0; // Timer for counting loops
  					 /* main event loop */
     while(1)
 	{   
@@ -267,20 +272,20 @@ int main(void)
 		// Next, using our strumState array, we process that data to figure out what sort
 		//  of notes we want to be playing, or not playing.
 
-		for (int string = 0; string < NUMBER_OF_STRINGS; string++) // Each string can only be playing one note
+		for (int string = NUMBER_OF_STRINGS - 1; string >= 0; string--)// NUMBER_OF_STRINGS; string++) // Each string can only be playing one note
 		{
-			//Clear the note flag
-			noteFlags[string] = 0;
-
 			noteInfo stringNote = currentNotes[string];
+
 			// First, we decrement the countdown of all notes, so each note lasts only so long
 			// and turn off the note if the countdown is over
 			if (stringNote.countdown > 0)
 			{
 				stringNote.countdown--;
 				if (stringNote.countdown == 0)
+				{
 					stringNote.velocity = 0;
-				noteFlags[string] = 1; //set the changed note flag
+					stringNote.newNoteFlag = 1; //set the changed note flag
+				}
 			}
 
 			// Next, we cancel any note that isn't being fretted anymore
@@ -289,40 +294,59 @@ int main(void)
 				stringNote.note = figureOutNote(stringState[string], openStringNotes[string]);
 				stringNote.velocity = 0;
 				stringNote.countdown = 0;
-				noteFlags[string] = 1; //set the changed note flag
+				stringNote.newNoteFlag = 1; //set the changed note flag
 			}
 
 			// Now, we trigger a note if it is strummed
 			if (stringState[string] & 0b0001)  // This means that it's being strummed
 			{
-				stringNote.note = figureOutNote(stringState[string], openStringNotes[string]);
-				stringNote.velocity = 0x45;
-				stringNote.countdown = NOTE_COUNTDOWN;
-				noteFlags[string] = 1; //set the changed note flag
+				stringNote.pickFlag = 1; // set this flag to tell us we were plucking the string
 			}
+			else if ( stringNote.pickFlag == 1 ) // Not currently strummed, but just released
+			{
+				stringNote.note = figureOutNote(stringState[string], openStringNotes[string]);
+				stringNote.velocity = DEFAULT_VELOCITY;
+				stringNote.countdown = NOTE_COUNTDOWN;
+				stringNote.newNoteFlag = 1; //set the changed note flag since we're no longer plucking the string
+				stringNote.pickFlag = 0;
+			}
+
 
 			// Make sure that we write our current note back into the array
 			currentNotes[string] = stringNote;
 		}
 
 		// Now we send the note data to the computer
+	#ifdef MIDI_ENABLED
 
-		for (int string = 0; string < 1; string	++ )//NUMBER_OF_STRINGS; string++) // Each string can only be playing one note
+		for (int string = NUMBER_OF_STRINGS - 1; string >= 0; string--)// NUMBER_OF_STRINGS; string++)//NUMBER_OF_STRINGS; string++) // Each string can only be playing one note
 		{
-			if (noteFlags[string] == 1)
-				test(currentNotes[string].note, currentNotes[string].velocity);//sendMIDINote(currentNotes[string].note, currentNotes[string].velocity, MIDI_CHANNEL);
+			if (currentNotes[string].newNoteFlag == 1)
+			{
+				sendMIDINote(currentNotes[string].note, currentNotes[string].velocity, MIDI_CHANNEL);
+				//Clear the note flag
+				currentNotes[string].newNoteFlag = 0;
+			}
 			else // keep the USB connection alive
+			{
 				wdt_reset();
 				usbPoll();
+			}
 		}
+	#endif
+
+
 
 		
 		// Test code to see if the notes are working out well
-		if (currentNotes[0].countdown > 0)
-		{
-			data.numberOfStringsPressed = currentNotes[0].note * 2;
-			if (currentNotes[0].velocity == 0x99)
-				data.blueOn = 1;
+		for (int string = 0; string < NUMBER_OF_STRINGS; string++)//NUMBER_OF_STRINGS; string++) // Each string can only be playing one note
+		{	
+			if (currentNotes[string].newNoteFlag == 1)
+			{
+				data.numberOfStringsPressed = currentNotes[string].note * 2;
+				if (currentNotes[string].countdown > 1)
+					data.blueOn = 1;
+			}
 		}
 
 		// Big function for testing stringState visually
@@ -337,7 +361,10 @@ int main(void)
 		// Now our processing is complete, so using those button presses, we set up the 
 		// button data packet. This function depends on the console and is 
 		// set specially in the interface functions - see ps3interface.h, wiiinterface.h, etc.
-		//sendPS3Data(data);
+
+	#ifdef PS3_USB
+		  sendPS3Data(data);
+	#endif
 		//test();
 
 	}// End of while loop

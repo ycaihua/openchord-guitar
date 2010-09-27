@@ -223,8 +223,6 @@ uchar usbFunctionSetup(uchar data[8])
 {
 	usbRequest_t *rq = (void *) data;
 
-	// DEBUG LED
-	PORTC ^= 0x01;
 
 	if ((rq->bmRequestType & USBRQ_TYPE_MASK) == USBRQ_TYPE_CLASS) {	/* class request type */
 
@@ -244,8 +242,6 @@ uchar usbFunctionSetup(uchar data[8])
 
 uchar usbFunctionRead(uchar * data, uchar len)
 {
-	// DEBUG LED
-	PORTC ^= 0x02;
 
 	data[0] = 0;
 	data[1] = 0;
@@ -265,8 +261,6 @@ uchar usbFunctionRead(uchar * data, uchar len)
 
 uchar usbFunctionWrite(uchar * data, uchar len)
 {
-	// DEBUG LED
-	PORTC ^= 0x04;
 	return 1;
 }
 
@@ -280,8 +274,6 @@ uchar usbFunctionWrite(uchar * data, uchar len)
 
 void usbFunctionWriteOut(uchar * data, uchar len)
 {
-	// DEBUG LED
-	PORTC ^= 0x20;
 }
 
 
@@ -321,11 +313,27 @@ static void hardwareInit(void)
 // setupMIDI sets up the MIDI interface
 void startMIDICommunication(void)
 {
-	wdt_enable(WDTO_1S);
-	hardwareInit();
-	odDebugInit();
-	usbInit();
-	sei();
+
+    // First, set up all the USB communication stuff
+    wdt_enable(WDTO_1S);
+    /* Even if you don't use the watchdog, turn it off here. On newer devices,
+     * the status of the watchdog (on/off, period) is PRESERVED OVER RESET!
+
+     * RESET status: all port bits are inputs without pull-up.
+     * That's the way we need D+ and D-. Therefore we don't need any
+     * additional hardware initialization.
+     */
+
+    usbInit();
+    usbDeviceDisconnect();  /* enforce re-enumeration, do this while interrupts are disabled! */
+    uchar i = 0;
+    while(--i){             /* fake USB disconnect for > 250 ms */
+        wdt_reset();
+        _delay_ms(1);
+    }
+    usbDeviceConnect();
+    sei();
+	usbPoll();
 }
 
 // sendMIDINote outputs a single note via the USB MIDI interface
@@ -334,10 +342,12 @@ void sendMIDINote(int note, int velocity, int channel)
 	wdt_reset(); // Keep the watchdog timer from resetting the MCU
 	usbPoll();   // and keep the USB connection alive
 
+	sendEmptyFrame = 0;
+
 	// Do some sanity checking on our channel - you only get to have
 	// up to 16 as your channel value
 	channel &= 0b00001111;
-	uchar midiMsg[1];
+	uchar midiMsg[8];
 	if (usbInterruptIsReady()) {
         // use last key and not current key status in order to avoid lost
         // changes in key status.
@@ -349,7 +359,7 @@ void sendMIDINote(int note, int velocity, int channel)
    		midiMsg[1] = 0x90;
     	midiMsg[2] = note; // Random note - G
     	midiMsg[3] = velocity; // Middle Velocity
-        usbSetInterrupt(midiMsg, 8); //And send it on it's way!
+        usbSetInterrupt(midiMsg, 4); //And send it on it's way!
 	}		// usbInterruptIsReady()
 
 }
@@ -360,28 +370,17 @@ void silenceAllMIDINotes(void);
 
 int test(int note, int velocity)
 {
-	uchar midiMsg[8];
-	uchar channel = 0;
+	uchar midiMsg[8] = {0,0,0,0,0,0,0,0};
 	uchar iii;
-
-
-
 
 	sendEmptyFrame = 0;
 	
 	// only ADC channel 6 and channel 7 are used
-	channel = 6;
-	uint16_t LEDToggle = 0;
-	int playNote = 1;
-	DDRC |= 0b10000;
-	PORTC |= 0b10000;
 	//for (;;) {		/* main event loop */
 		wdt_reset();
 		usbPoll();
-		
+	//	_delay_ms(1);
 		if (usbInterruptIsReady()) {
-            // DEBUG LED
-            PORTC ^= 0b10000;
             /* use last key and not current key status in order to avoid lost
                changes in key status. */
             // up to two midi events in one midi msg.
@@ -390,20 +389,20 @@ int test(int note, int velocity)
             // 4. USB MIDI Event Packets
             iii = 0;
            
-            if (playNote) {	/* press */
+            //if (playNote) {	/* press */
                 midiMsg[iii++] = 0x09;
                 midiMsg[iii++] = 0x90;
                 midiMsg[iii++] = note;
                 midiMsg[iii++] = velocity;
-				playNote = 0;
-            }
+			//	playNote = 0;
+            /*}
              else
-            {	/* release */
+            {	// release 
                 midiMsg[iii++] = 0x08;
                 midiMsg[iii++] = 0x80;
                 midiMsg[iii++] = note;
                 midiMsg[iii++] = 0x00;
-            }
+            }*/
             usbSetInterrupt(midiMsg, iii);
    		}		// usbInterruptIsReady()
 //	}
