@@ -32,6 +32,12 @@
 	*/
 
   #ifdef MAY_2010_BOARD
+	// Hardware MIDI is only supported by May 2010 and newer boards
+	#define MIDI_port PORTD
+	#define MIDI_ddr  DDRD
+	#define MIDI_1    0
+	#define MIDI_2    1
+  	
 	// Strings - These are mostly on Port D, save for the first and second strings
 	#define string_1_port PORTD
 	#define string_1_ddr  DDRD

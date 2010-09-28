@@ -370,7 +370,7 @@ void processFrets(dataForController* data, int stringState[NUMBER_OF_STRINGS],
 	// Code for fixing some issues with gap chords (green/yellow, red/blue, etc.)
 	// If we're not pressing all the strings, make sure that gap chords are only showing
 	// when we press all strings
-	if (data->numberOfStringsPressed < NUMBER_OF_STRINGS)
+	if (data->numberOfStringsPressed > NUMBER_OF_STRINGS - 2)
 	{
 		if(data->blueOn   &&
 		   data->yellowOn &&

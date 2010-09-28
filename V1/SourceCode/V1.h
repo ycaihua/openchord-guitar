@@ -44,6 +44,7 @@
 #include "stringComboTests.h"
 #include "pindef.h"
 #include "buttonStringPatterns.h"
+#include "hardwareMIDI.h"
 
 #ifdef PS3_USB
 	#include "PS3/ps3interface.h"
