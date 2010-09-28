@@ -39,8 +39,14 @@
 	    The other options are for when we were using different chips and different boards for
 	    the Wii and USB options. */
 
-	//#define MAY_2010_BOARD
-	#define PRE_MAY_2010_BOARD
+	#define MAY_2010_BOARD
+	//#define PRE_MAY_2010_BOARD
+
+	// This turns on whether our program figures out if we have hardware
+	// MIDI output enabled
+	#ifdef MAY_2010_BOARD
+		#define HARDWARE_MIDI
+	#endif
 
 	//#define ATMEGA164
 	//#define ATMEGA168

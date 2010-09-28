@@ -268,6 +268,9 @@ void sendPS3Data(dataForController data)
         if (data.downOn)
                 reportBuffer[2] = 0b00000100;
 
+		// Now set the whammy bar data
+		reportBuffer[5] = data.numberOfStringsPressed;
+
 		//Finally, Start, Star Power, and the Home button (not working yet)
 		reportBuffer[1] |= (data.plusOn << PLUS_BIT);
         reportBuffer[0] |= (data.minusOn << MINUS_BIT);

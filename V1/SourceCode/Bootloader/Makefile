@@ -14,12 +14,13 @@
 #     make flash   # to load the boot loader into flash
 #     make lock    # to protect the boot loader from overwriting
 
-DEVICE = atmega328p
+DEVICE = atmega168
 #for ATmega328P 
-BOOTLOADER_ADDRESS = 7800
+#BOOTLOADER_ADDRESS = 7800
 
 #for ATmega168
-#BOOTLOADER_ADDRESS = 3800
+BOOTLOADER_ADDRESS = 3800
+
 #for ATmega88
 #BOOTLOADER_ADDRESS = 1800
 
