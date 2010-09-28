@@ -13,7 +13,7 @@
 #define MIDI_INTERFACE
 
 #include "configAndConstants.h"
-#include "pindef.h"
+#include "../pindef.h"
 #include <avr/pgmspace.h>   /* required by usbdrv.h */
 #include "usbdrv/usbconfig.h"
 #include "usbdrv/usbdrv.h"

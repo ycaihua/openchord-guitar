@@ -43,9 +43,16 @@
 	    the Wii and USB options. */
 
 	#define GENERAL_CIRCUIT_BOARD
-	//#define ATMEGA164
-	//#define ATMEGA168
 
+	/* These next two defines further define which circuit board you're using.
+	   You should be using MAY_2010_BOARD if your circuit board is labeled May 2010
+	   or later.  Otherwise, PRE_MAY_2010_BOARD is right for you, unless you have
+	   one of the first prototypes.
+	    The other options are for when we were using different chips and different boards for
+	    the Wii and USB options. */
+
+	#define MAY_2010_BOARD
+	//#define PRE_MAY_2010_BOARD
 
 /* ---------------- Lesser constants, generally ignorable -----------------*/
 
