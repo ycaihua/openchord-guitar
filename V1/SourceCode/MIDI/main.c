@@ -32,7 +32,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "V1.h"
+#include "V1-MIDI.h"
 
 // Space in the EEPROM memory for the button pattern data for each
 // mode of playing, as well as the address of the check string
@@ -233,8 +233,6 @@ int main(void)
 	{
 		stopNote(&currentNotes[i]);
 	}
-
-	uint16_t timer = 0; // Timer for counting loops
  					 /* main event loop */
     while(1)
 	{   

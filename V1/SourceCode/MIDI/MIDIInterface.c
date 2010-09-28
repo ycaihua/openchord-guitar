@@ -282,33 +282,6 @@ void usbFunctionWriteOut(uchar * data, uchar len)
 /* hardwareInit                                                              */
 /*---------------------------------------------------------------------------*/
 
-static void hardwareInit(void)
-{
-	uchar i, j;
-
-	/* activate pull-ups except on USB lines */
-	USB_CFG_IOPORT =
-	    (uchar) ~ ((1 << USB_CFG_DMINUS_BIT) |
-		       (1 << USB_CFG_DPLUS_BIT));
-	/* all pins input except USB (-> USB reset) */
-#ifdef USB_CFG_PULLUP_IOPORT	/* use usbDeviceConnect()/usbDeviceDisconnect() if available */
-	USBDDR = 0;		/* we do RESET by deactivating pullup */
-	usbDeviceDisconnect();
-#else
-	USBDDR = (1 << USB_CFG_DMINUS_BIT) | (1 << USB_CFG_DPLUS_BIT);
-#endif
-
-	j = 0;
-	while (--j) {		/* USB Reset by device only required on Watchdog Reset */
-		i = 0;
-		while (--i);	/* delay >10ms for USB reset */
-	}
-#ifdef USB_CFG_PULLUP_IOPORT
-	usbDeviceConnect();
-#else
-	USBDDR = 0;		/*  remove USB reset condition */
-#endif
-}
 
 // setupMIDI sets up the MIDI interface
 void startMIDICommunication(void)
@@ -347,6 +320,7 @@ void sendMIDINote(int note, int velocity, int channel)
 	// Do some sanity checking on our channel - you only get to have
 	// up to 16 as your channel value
 	channel &= 0b00001111;
+	_delay_ms(5);
 	uchar midiMsg[8];
 	if (usbInterruptIsReady()) {
         // use last key and not current key status in order to avoid lost
